@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-zh="China Quality Service Co., Ltd. - 专业品控咨询服务" data-en="Product Inspection Service China | China Quality Service - Professional QC & Inspection Company">China Quality Service Co., Ltd. - 专业品控咨询服务</title>
+  <meta name="description" data-zh="China Quality Service Co., Ltd. - 专业的第三方品控咨询服务，提供验货、验厂、供应商审核、实验室测试等一站式品质管理解决方案。" data-en="China Quality Service is a leading product inspection service in China, providing third-party quality control, pre-shipment inspection, factory audit, supplier assessment and lab testing across China's major manufacturing hubs." content="China Quality Service Co., Ltd. - 专业的第三方品控咨询服务，提供验货、验厂、供应商审核、实验室测试等一站式品质管理解决方案。">
+  <meta name="keywords" content="product inspection service China,inspection services China,quality control China,China QC inspection,pre-shipment inspection,factory audit China,品控咨询,品质控制,验货服务,验厂服务,供应商审核,第三方检测,China Quality Service">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+/* ============================================================
+   China Quality Service Co., Ltd. - 主样式表 (内嵌)
+   品控咨询服务行业 · 专业 · 现代 · 响应式
+   ============================================================ */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --primary: #1a5276;
+  --primary-dark: #123a52;
+  --primary-light: #2980b9;
+  --accent: #e67e22;
+  --accent-hover: #d35400;
+  --bg-light: #f5f7fa;
+  --bg-white: #ffffff;
+  --bg-footer: #1a1f2b;
+  --text-dark: #2c3e50;
+  --text-body: #555;
+  --text-muted: #999;
+  --border: #e0e5ec;
+  --shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --radius: 8px;
+  --radius-sm: 4px;
+  --transition: 0.3s ease;
+  --max-width: 1200px;
+  --header-h: 72px;
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-dark);
+  background: var(--bg-white);
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--primary); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--primary-light); }
+ul, ol { list-style: none; }
+.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+.section { padding: 80px 0; }
+.section-title { text-align: center; margin-bottom: 50px; }
+.section-title h2 { font-size: 2rem; color: var(--primary); margin-bottom: 12px; position: relative; display: inline-block; }
+.section-title h2::after { content: ''; display: block; width: 50px; height: 3px; background: var(--accent); margin: 12px auto 0; border-radius: 2px; }
+.section-title p { color: var(--text-muted); font-size: 1.05rem; }
+.bg-light { background: var(--bg-light); }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-block; padding: 12px 32px; border-radius: 4px; font-size: 1rem; font-weight: 600; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all var(--transition); line-height: 1.5; }
+.btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: #fff; }
+.btn-outline { background: transparent; color: #fff; border-color: #fff; }
+.btn-outline:hover { background: #fff; color: var(--primary); }
+.btn-white { background: #fff; color: var(--primary); border-color: #fff; }
+.btn-white:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* ---------- Header / Navigation ---------- */
+.header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.97); backdrop-filter: blur(10px); box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06); transition: all var(--transition); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
+.logo { flex-shrink: 0; }
+.logo a { display: flex; align-items: center; font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+.logo img { height: 48px; margin-right: 10px; }
+.logo span { letter-spacing: 1px; }
+.nav { display: flex; align-items: center; gap: 4px; }
+.nav a { display: block; padding: 10px 18px; color: var(--text-dark); font-size: 0.95rem; font-weight: 500; border-radius: var(--radius-sm); transition: all var(--transition); position: relative; }
+.nav a:hover, .nav a.active { color: var(--primary); background: rgba(26, 82, 118, 0.06); }
+
+/* Language Switch */
+.lang-switch { margin-left: 16px; display: flex; gap: 4px; align-items: center; }
+.lang-switch a { padding: 4px 10px; font-size: 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-muted); cursor: pointer; }
+.lang-switch a:hover, .lang-switch a.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* Mobile Menu Toggle */
+.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; z-index: 1001; }
+.menu-toggle span { display: block; width: 26px; height: 2.5px; background: var(--primary); border-radius: 2px; transition: all 0.3s; }
+
+/* ---------- Hero / Banner ---------- */
+.hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; background: url('../images/hero-banner.jpg') center/cover no-repeat; animation: kenBurns 20s ease-in-out infinite alternate; }
+.hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,47,69,0.88) 0%, rgba(26,82,118,0.85) 40%, rgba(26,110,142,0.85) 100%); }
+@keyframes kenBurns { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+.hero-canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; }
+.hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
+.hero h1 { font-size: 3rem; font-weight: 700; line-height: 1.3; margin-bottom: 20px; letter-spacing: 2px; animation: heroFadeUp 1s ease-out 0.3s both; }
+.hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 36px; line-height: 1.8; animation: heroFadeUp 1s ease-out 0.6s both; }
+.hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: heroFadeUp 1s ease-out 0.9s both; }
+@keyframes heroFadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Hero Scroll Down */
+.hero-scroll { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); animation: bounce 2s infinite; cursor: pointer; color: rgba(255,255,255,0.7); font-size: 0.85rem; z-index: 2; }
+.hero-scroll::after { content: ''; display: block; width: 20px; height: 20px; border-right: 2px solid rgba(255,255,255,0.7); border-bottom: 2px solid rgba(255,255,255,0.7); transform: rotate(45deg); margin: 8px auto 0; }
+@keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
+
+/* ---------- Cards ---------- */
+.card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 36px 28px; transition: all var(--transition); border: 1px solid transparent; }
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--primary-light); }
+.card-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.8rem; color: #fff; }
+.card h3 { font-size: 1.25rem; margin-bottom: 12px; color: var(--primary-dark); }
+.card p { font-size: 0.95rem; color: var(--text-body); line-height: 1.7; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+/* ---------- Stats Bar ---------- */
+.stats-bar { background: var(--primary); color: #fff; padding: 40px 0; }
+.stats-bar .container { display: flex; justify-content: space-around; text-align: center; flex-wrap: wrap; gap: 20px; }
+.stat-item h3 { font-size: 2.5rem; font-weight: 700; margin-bottom: 4px; }
+.stat-item p { font-size: 0.95rem; opacity: 0.8; }
+
+/* ---------- Service Section (Home) ---------- */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+/* ---------- About Preview ---------- */
+.about-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.about-preview img { border-radius: var(--radius); box-shadow: var(--shadow); }
+.about-preview h2 { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
+.about-preview p { color: var(--text-body); margin-bottom: 16px; }
+.about-list { margin-top: 20px; }
+.about-list li { padding: 8px 0; padding-left: 24px; position: relative; color: var(--text-body); }
+.about-list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+
+/* ---------- News Section (Home) ---------- */
+.news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.news-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all var(--transition); }
+.news-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.news-card-img { height: 200px; overflow: hidden; background: var(--bg-light); }
+.news-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.news-card:hover .news-card-img img { transform: scale(1.05); }
+.news-card-body { padding: 20px; }
+.news-card-body h3 { font-size: 1.1rem; margin-bottom: 10px; line-height: 1.5; }
+.news-card-body h3 a { color: var(--text-dark); }
+.news-card-body h3 a:hover { color: var(--primary); }
+.news-card-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
+.news-card-body p { font-size: 0.9rem; color: var(--text-body); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* ---------- CTA Section ---------- */
+.cta { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; text-align: center; padding: 70px 0; }
+.cta h2 { font-size: 2rem; margin-bottom: 16px; }
+.cta p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--bg-footer); color: rgba(255, 255, 255, 0.7); padding: 60px 0 30px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer-about h3 { color: #fff; font-size: 1.2rem; margin-bottom: 16px; }
+.footer-about p { font-size: 0.9rem; line-height: 1.8; }
+.footer-col h4 { color: #fff; font-size: 1rem; margin-bottom: 16px; }
+.footer-col a { display: block; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; padding: 5px 0; transition: all var(--transition); }
+.footer-col a:hover { color: #fff; padding-left: 6px; }
+.footer-bottom { text-align: center; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
+
+/* ---------- Back to Top ---------- */
+.back-to-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; background: var(--primary); color: #fff; border: none; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all var(--transition); box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2); z-index: 999; }
+.back-to-top.visible { opacity: 1; visibility: visible; }
+.back-to-top:hover { background: var(--primary-dark); transform: translateY(-3px); }
+
+/* ---------- Animations ---------- */
+.fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 992px) {
+  :root { --header-h: 64px; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-preview { grid-template-columns: 1fr; gap: 30px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+  .nav { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: #fff; flex-direction: column; padding: 80px 24px 24px; gap: 0; box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1); transition: right 0.3s ease; overflow-y: auto; }
+  .nav.open { right: 0; }
+  .nav a { padding: 14px 12px; border-bottom: 1px solid var(--border); border-radius: 0; font-size: 1rem; }
+  .lang-switch { margin: 16px 0 0; padding-left: 12px; }
+  .menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4); z-index: 999; }
+  .menu-overlay.open { display: block; }
+  .hero { min-height: 80vh; }
+  .hero h1 { font-size: 1.8rem; }
+  .hero p { font-size: 0.95rem; }
+  .section { padding: 50px 0; }
+  .section-title h2 { font-size: 1.5rem; }
+  .grid-2, .grid-3, .services-grid, .news-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+  .stats-bar .container { gap: 30px; }
+  .stat-item h3 { font-size: 2rem; }
+}
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="index.html">
+          <img src="Upload/logo.png" alt="China Quality Service" onerror="this.style.display='none'">
+          <span>China Quality Service</span>
+        </a>
+      </div>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="index.html" class="active" data-zh="首页" data-en="Home">首页</a>
+        <a href="about.html" data-zh="关于我们" data-en="About Us">关于我们</a>
+        <a href="services.html" data-zh="服务范围" data-en="Services">服务范围</a>
+        <a href="news.html" data-zh="新闻资讯" data-en="News">新闻资讯</a>
+        <a href="download.html" data-zh="资料下载" data-en="Downloads">资料下载</a>
+        <a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a>
+        <div class="lang-switch">
+          <a href="javascript:void(0)" data-lang="zh" class="active">中</a>
+          <a href="javascript:void(0)" data-lang="en">EN</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="menu-overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <h1 data-zh="专业品控咨询 | 为您的供应链保驾护航" data-en="Trusted Product Inspection Service in China">专业品控咨询<br>为您的供应链保驾护航</h1>
+      <p data-zh="China Quality Service Co., Ltd. 致力于为全球客户提供专业的第三方品质控制服务，包括产品检验、工厂审核、供应商评估及实验室测试，确保您的产品质量符合国际标准。" data-en="China Quality Service is a premier product inspection service in China, providing professional third-party quality control including pre-shipment inspection, factory audit, supplier assessment and lab testing — ensuring your products sourced from China meet international quality standards.">China Quality Service Co., Ltd. 致力于为全球客户提供专业的第三方品质控制服务，包括产品检验、工厂审核、供应商评估及实验室测试，确保您的产品质量符合国际标准。</p>
+      <div class="hero-btns">
+        <a href="services.html" class="btn btn-primary" data-zh="了解我们的服务" data-en="Our Services">了解我们的服务</a>
+        <a href="contact.html" class="btn btn-outline" data-zh="立即咨询" data-en="Contact Us">立即咨询</a>
+      </div>
+    </div>
+    <div class="hero-scroll" data-zh="向下滚动" data-en="Scroll Down" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">向下滚动</div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stat-item">
+        <h3 class="stat-number" data-target="17" data-suffix="+">0+</h3>
+        <p data-zh="年行业经验" data-en="Years Experience">年行业经验</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="stat-number" data-target="500" data-suffix="+">0+</h3>
+        <p data-zh="服务客户" data-en="Clients Served">服务客户</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="stat-number" data-target="50" data-suffix="+">0+</h3>
+        <p data-zh="覆盖国家" data-en="Countries Covered">覆盖国家</p>
+      </div>
+      <div class="stat-item">
+        <h3 class="stat-number" data-target="5000" data-suffix="+">0+</h3>
+        <p data-zh="完成检验批次" data-en="Inspections Completed">完成检验批次</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Overview -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2 data-zh="我们的核心服务" data-en="Our Core Services">我们的核心服务</h2>
+        <p data-zh="一站式品质控制解决方案，覆盖供应链全流程" data-en="One-stop product inspection service in China covering the entire supply chain">一站式品质控制解决方案，覆盖供应链全流程</p>
+      </div>
+      <div class="services-grid">
+        <div class="card fade-in">
+          <div class="card-icon">&#128269;</div>
+          <h3 data-zh="产品检验服务" data-en="Product Inspection">产品检验服务</h3>
+          <p data-zh="提供生产初期检验、中期检验、出货前检验、全检及集装箱装载监柜服务，确保产品符合规格与质量标准。涵盖电子、纺织、机械、玩具等多个行业。" data-en="Providing initial production inspection, during production inspection, pre-shipment inspection, full inspection and container loading supervision services to ensure products meet specifications and quality standards. Covering electronics, textiles, machinery, toys and more.">提供生产初期检验、中期检验、出货前检验、全检及集装箱装载监柜服务，确保产品符合规格与质量标准。涵盖电子、纺织、机械、玩具等多个行业。</p>
+        </div>
+        <div class="card fade-in">
+          <div class="card-icon">&#127981;</div>
+          <h3 data-zh="工厂审核服务" data-en="Factory Audit">工厂审核服务</h3>
+          <p data-zh="对供应商工厂进行全面的质量管理体系审核、社会责任审核及生产能力评估，帮助您筛选合格的供应商伙伴。" data-en="Conduct comprehensive quality management system audits, social responsibility audits and production capacity assessments on supplier factories, helping you select qualified supplier partners.">对供应商工厂进行全面的质量管理体系审核、社会责任审核及生产能力评估，帮助您筛选合格的供应商伙伴。</p>
+        </div>
+        <div class="card fade-in">
+          <div class="card-icon">&#128300;</div>
+          <h3 data-zh="实验室测试" data-en="Laboratory Testing">实验室测试</h3>
+          <p data-zh="与CNAS认证实验室合作，提供物理性能测试、化学成分分析、安全性能检测等专业测试服务，确保产品符合目标市场法规要求。" data-en="Partnering with CNAS-accredited laboratories to provide physical performance testing, chemical composition analysis, safety performance testing and other professional testing services, ensuring products comply with target market regulatory requirements.">与CNAS认证实验室合作，提供物理性能测试、化学成分分析、安全性能检测等专业测试服务，确保产品符合目标市场法规要求。</p>
+        </div>
+        <div class="card fade-in">
+          <div class="card-icon">&#128188;</div>
+          <h3 data-zh="供应商管理" data-en="Supplier Management">供应商管理</h3>
+          <p data-zh="帮助企业建立完善的供应商评估与管理体系，从筛选、审核到持续改进，降低供应链风险。" data-en="Help enterprises establish comprehensive supplier assessment and management systems, from screening and auditing to continuous improvement, reducing supply chain risks.">帮助企业建立完善的供应商评估与管理体系，从筛选、审核到持续改进，降低供应链风险。</p>
+        </div>
+        <div class="card fade-in">
+          <div class="card-icon">&#128218;</div>
+          <h3 data-zh="技术咨询" data-en="Technical Consulting">技术咨询</h3>
+          <p data-zh="提供产品标准解读、技术规范制定、质量体系建立等专业咨询服务，助力企业提升品质管理水平。" data-en="Providing professional consulting services including product standard interpretation, technical specification development, and quality system establishment to help enterprises enhance quality management.">提供产品标准解读、技术规范制定、质量体系建立等专业咨询服务，助力企业提升品质管理水平。</p>
+        </div>
+        <div class="card fade-in">
+          <div class="card-icon">&#127760;</div>
+          <h3 data-zh="国际合规" data-en="International Compliance">国际合规</h3>
+          <p data-zh="帮助企业了解并满足欧盟CE、美国FDA、RoHS、REACH等国际市场的法规要求，顺利进入全球市场。" data-en="Help enterprises understand and meet regulatory requirements of international markets such as EU CE, US FDA, RoHS, REACH, facilitating smooth entry into global markets.">帮助企业了解并满足欧盟CE、美国FDA、RoHS、REACH等国际市场的法规要求，顺利进入全球市场。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="about-preview">
+        <div class="fade-in">
+          <img src="Upload/about-us.jpg" alt="About China Quality Service" onerror="this.style.display='none'" style="background:#e0e5ec; min-height:300px;">
+        </div>
+        <div class="fade-in">
+          <h2 data-zh="关于 China Quality Service" data-en="About China Quality Service — Your Product Inspection Partner in China">关于 China Quality Service</h2>
+          <p data-zh="China Quality Service Co., Ltd. 是一家专业的第三方品质控制咨询公司，致力于为全球客户提供独立、客观的品质检验与咨询服务。" data-en="China Quality Service Co., Ltd. is a professional third-party QC company providing product inspection services in China. We are dedicated to delivering independent, objective quality inspection and consulting for global buyers sourcing from China.">China Quality Service Co., Ltd. 是一家专业的第三方品质控制咨询公司，致力于为全球客户提供独立、客观的品质检验与咨询服务。</p>
+          <p data-zh="我们拥有一支经验丰富的技术团队，熟悉各类产品的国际标准与质量要求。公司秉承"专业、独立、诚信"的服务理念，为客户提供量身定制的品质解决方案。" data-en="With an experienced technical team based across China's key manufacturing regions, we offer tailored quality solutions. Our product inspection service China operations span electronics, textiles, machinery, toys and more.">我们拥有一支经验丰富的技术团队，熟悉各类产品的国际标准与质量要求。公司秉承"专业、独立、诚信"的服务理念，为客户提供量身定制的品质解决方案。</p>
+          <ul class="about-list">
+            <li data-zh="17年以上行业经验，覆盖50多个国家和地区" data-en="17+ years of industry experience, covering 50+ countries and regions">17年以上行业经验，覆盖50多个国家和地区</li>
+            <li data-zh="专业的检验团队，严格的技术培训体系" data-en="Professional inspection team with rigorous technical training system">专业的检验团队，严格的技术培训体系</li>
+            <li data-zh="与CNAS认可实验室战略合作" data-en="Strategic partnership with CNAS-accredited laboratories">与CNAS认可实验室战略合作</li>
+            <li data-zh="快速响应，48小时内安排检验任务" data-en="Rapid response, inspection tasks arranged within 48 hours">快速响应，48小时内安排检验任务</li>
+          </ul>
+          <a href="about.html" class="btn btn-primary" style="margin-top:20px" data-zh="了解更多" data-en="Learn More">了解更多</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advantages & Expertise -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2 data-zh="我们的优势与专长" data-en="Why Choose Our Product Inspection Service in China">我们的优势与专长</h2>
+        <p data-zh="选择China Quality Service的理由" data-en="Trusted by 500+ global clients for QC inspection across China">选择China Quality Service的理由</p>
+      </div>
+      <div class="grid-2">
+        <div class="card fade-in">
+          <h3 data-zh="专业的检验团队" data-en="Professional Inspection Team">专业的检验团队</h3>
+          <p data-zh="我们的检验员均经过严格的岗前培训与考核，具备丰富的行业经验和专业技术知识，能够准确识别产品缺陷和质量问题。" data-en="Our inspectors undergo rigorous pre-job training and assessment, possessing rich industry experience and professional technical knowledge to accurately identify product defects and quality issues.">我们的检验员均经过严格的岗前培训与考核，具备丰富的行业经验和专业技术知识，能够准确识别产品缺陷和质量问题。</p>
+        </div>
+        <div class="card fade-in">
+          <h3 data-zh="覆盖广泛的检验网络" data-en="Extensive Inspection Network">覆盖广泛的检验网络</h3>
+          <p data-zh="我们在中国主要制造业基地设有服务点，能够快速响应客户需求，在最短时间内安排检验任务。" data-en="We have service points in major manufacturing bases across China, enabling rapid response to customer needs and arranging inspection tasks in the shortest time.">我们在中国主要制造业基地设有服务点，能够快速响应客户需求，在最短时间内安排检验任务。</p>
+        </div>
+        <div class="card fade-in">
+          <h3 data-zh="标准化的检验流程" data-en="Standardized Inspection Process">标准化的检验流程</h3>
+          <p data-zh="采用国际通用的AQL抽样标准，结合客户产品特点制定详细的检验方案，确保每一次检验都规范、可靠。" data-en="Adopting internationally recognized AQL sampling standards, combined with client product characteristics to develop detailed inspection plans, ensuring every inspection is standardized and reliable.">采用国际通用的AQL抽样标准，结合客户产品特点制定详细的检验方案，确保每一次检验都规范、可靠。</p>
+        </div>
+        <div class="card fade-in">
+          <h3 data-zh="全球合规知识" data-en="Global Compliance Knowledge">全球合规知识</h3>
+          <p data-zh="深入理解各国市场准入要求，帮助企业确保产品符合目标市场的安全、环保和质量标准。" data-en="In-depth understanding of market access requirements across countries, helping enterprises ensure products meet safety, environmental and quality standards of target markets.">深入理解各国市场准入要求，帮助企业确保产品符合目标市场的安全、环保和质量标准。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest News -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-title fade-in">
+        <h2 data-zh="新闻资讯" data-en="News">新闻资讯</h2>
+        <p data-zh="了解行业动态与公司最新消息" data-en="Stay updated with industry trends and company news">了解行业动态与公司最新消息</p>
+      </div>
+      <div class="news-grid">
+        <div class="news-card fade-in">
+          <div class="news-card-img">
+            <img src="Upload/news-1.jpg" alt="News" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-date">2024-06-15</div>
+            <h3><a href="news-detail.html" data-zh="出口欧盟产品CE认证最新要求解读" data-en="Latest CE Certification Requirements for EU Export Products">出口欧盟产品CE认证最新要求解读</a></h3>
+            <p data-zh="随着欧盟法规的不断更新，出口产品CE认证的要求也在持续变化，我们为您解读最新政策动态..." data-en="As EU regulations continue to update, CE certification requirements for export products are constantly changing. We interpret the latest policy developments for you...">随着欧盟法规的不断更新，出口产品CE认证的要求也在持续变化，我们为您解读最新政策动态...</p>
+          </div>
+        </div>
+        <div class="news-card fade-in">
+          <div class="news-card-img">
+            <img src="Upload/news-2.jpg" alt="News" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-date">2024-05-28</div>
+            <h3><a href="news-detail.html" data-zh="China Quality Service 成功通过ISO 9001年度复审" data-en="China Quality Service Successfully Passes ISO 9001 Annual Review">China Quality Service 成功通过ISO 9001年度复审</a></h3>
+            <p data-zh="经过严格的审核评估，China Quality Service Co., Ltd.再次顺利通过ISO 9001质量管理体系年度复审..." data-en="After rigorous audit assessment, China Quality Service Co., Ltd. has once again successfully passed the ISO 9001 quality management system annual review...">经过严格的审核评估，China Quality Service Co., Ltd.再次顺利通过ISO 9001质量管理体系年度复审...</p>
+          </div>
+        </div>
+        <div class="news-card fade-in">
+          <div class="news-card-img">
+            <img src="Upload/news-3.jpg" alt="News" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-date">2024-05-10</div>
+            <h3><a href="news-detail.html" data-zh="供应链质量管理趋势：数字化检验解决方案" data-en="Supply Chain Quality Management Trends: Digital Inspection Solutions">供应链质量管理趋势：数字化检验解决方案</a></h3>
+            <p data-zh="数字化转型正在重塑供应链质量管理模式，了解最新的智能检验技术和趋势..." data-en="Digital transformation is reshaping supply chain quality management models. Learn about the latest smart inspection technologies and trends...">数字化转型正在重塑供应链质量管理模式，了解最新的智能检验技术和趋势...</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="news.html" class="btn btn-outline" style="border-color:var(--primary);color:var(--primary)" data-zh="查看更多新闻" data-en="View More News">查看更多新闻</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container fade-in">
+      <h2 data-zh="需要专业的品控服务？" data-en="Need Professional QC Services?">需要专业的品控服务？</h2>
+      <p data-zh="无论您是需要单次产品检验，还是建立长期的质量管理体系，我们都能为您提供最合适的解决方案。" data-en="Whether you need a single product inspection or establish a long-term quality management system, we can provide the most suitable solution for you.">无论您是需要单次产品检验，还是建立长期的质量管理体系，我们都能为您提供最合适的解决方案。</p>
+      <a href="contact.html" class="btn btn-white" data-zh="立即联系我们" data-en="Contact Us Now">立即联系我们</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h3>China Quality Service Co., Ltd.</h3>
+          <p data-zh="专业的第三方品控咨询服务商，致力于为全球客户提供独立、客观的品质检验与咨询服务，确保您的产品符合国际质量标准。" data-en="Professional product inspection service in China — independent, objective quality inspection and consulting for global clients. Ensuring your products manufactured in China meet international quality standards.">专业的第三方品控咨询服务商，致力于为全球客户提供独立、客观的品质检验与咨询服务，确保您的产品符合国际质量标准。</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-zh="快速链接" data-en="Quick Links">快速链接</h4>
+          <a href="about.html" data-zh="关于我们" data-en="About Us">关于我们</a>
+          <a href="services.html" data-zh="服务范围" data-en="Services">服务范围</a>
+          <a href="news.html" data-zh="新闻资讯" data-en="News">新闻资讯</a>
+          <a href="download.html" data-zh="资料下载" data-en="Downloads">资料下载</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-zh="核心服务" data-en="Core Services">核心服务</h4>
+          <a href="services.html" data-zh="产品检验" data-en="Product Inspection">产品检验</a>
+          <a href="services.html" data-zh="工厂审核" data-en="Factory Audit">工厂审核</a>
+          <a href="services.html" data-zh="实验室测试" data-en="Lab Testing">实验室测试</a>
+          <a href="services.html" data-zh="供应商管理" data-en="Supplier Management">供应商管理</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-zh="联系我们" data-en="Contact Us">联系我们</h4>
+          <a href="contact.html" data-zh="在线留言" data-en="Online Message">在线留言</a>
+          <a href="contact.html" data-zh="联系方式" data-en="Contact Info">联系方式</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright &copy; 2021-2024 China Quality Service Co., Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to Top" title="Back to Top">&#9650;</button>
+
+  <script>
+  /* ========== Hero Particle Network Canvas ========== */
+  (function() {
+    var canvas = document.getElementById('heroCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var particles = [];
+    var mouse = { x: -999, y: -999 };
+    var PARTICLE_COUNT = 80;
+    var CONNECT_DIST = 150;
+    var MOUSE_RADIUS = 120;
+
+    function resize() {
+      var hero = canvas.parentElement;
+      canvas.width = hero.offsetWidth;
+      canvas.height = hero.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Create particles
+    for (var i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        r: Math.random() * 2 + 1,
+        opacity: Math.random() * 0.5 + 0.2
+      });
+    }
+
+    canvas.addEventListener('mousemove', function(e) {
+      var rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+    canvas.addEventListener('mouseleave', function() {
+      mouse.x = -999;
+      mouse.y = -999;
+    });
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+
+        // Move
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Mouse interaction
+        var dx = mouse.x - p.x;
+        var dy = mouse.y - p.y;
+        var distToMouse = Math.sqrt(dx * dx + dy * dy);
+        if (distToMouse < MOUSE_RADIUS && mouse.x > 0) {
+          var force = (MOUSE_RADIUS - distToMouse) / MOUSE_RADIUS;
+          p.x -= dx * force * 0.03;
+          p.y -= dy * force * 0.03;
+        }
+
+        // Bounce edges
+        if (p.x < 0) { p.x = 0; p.vx *= -1; }
+        if (p.x > canvas.width) { p.x = canvas.width; p.vx *= -1; }
+        if (p.y < 0) { p.y = 0; p.vy *= -1; }
+        if (p.y > canvas.height) { p.y = canvas.height; p.vy *= -1; }
+
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255,255,255,' + p.opacity + ')';
+        ctx.fill();
+
+        // Draw connections
+        for (var j = i + 1; j < particles.length; j++) {
+          var p2 = particles[j];
+          var dx2 = p.x - p2.x;
+          var dy2 = p.y - p2.y;
+          var dist = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+          if (dist < CONNECT_DIST) {
+            var lineOpacity = (1 - dist / CONNECT_DIST) * 0.2;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = 'rgba(255,255,255,' + lineOpacity + ')';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+  })();
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
