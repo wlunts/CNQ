@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /Upload/
+Disallow: /js/
+Disallow: /downloads/
+
+Sitemap: https://www.cn-q.com/sitemap.xml

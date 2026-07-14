@@ -5,6 +5,17 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // ========== Language Switcher ==========
+  // Cache original English values so we can restore them
+  document.querySelectorAll('[data-zh]').forEach(function (el) {
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.setAttribute('data-en', el.placeholder);
+    } else if (el.tagName === 'META') {
+      el.setAttribute('data-en', el.content);
+    } else {
+      el.setAttribute('data-en', el.textContent);
+    }
+  });
+
   const urlParams = new URLSearchParams(window.location.search);
   const urlLang = urlParams.get('lang');
   const storedLang = localStorage.getItem('cnq-lang');
@@ -13,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function applyLanguage(lang) {
     document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
-    // English is the default HTML text — only need to swap for Chinese
-    if (lang !== 'en') {
-      document.querySelectorAll('[data-zh]').forEach(function (el) {
+    document.querySelectorAll('[data-zh]').forEach(function (el) {
+      if (lang === 'zh') {
+        // Switch to Chinese
         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
           el.placeholder = el.getAttribute('data-zh');
         } else if (el.tagName === 'META') {
@@ -23,8 +34,17 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           el.textContent = el.getAttribute('data-zh');
         }
-      });
-    }
+      } else {
+        // Switch to English — restore original values
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = el.getAttribute('data-en') || '';
+        } else if (el.tagName === 'META') {
+          el.content = el.getAttribute('data-en') || '';
+        } else {
+          el.textContent = el.getAttribute('data-en') || '';
+        }
+      }
+    });
     // Update lang switch buttons
     document.querySelectorAll('.lang-switch a').forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
