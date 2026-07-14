@@ -7,33 +7,20 @@ document.addEventListener('DOMContentLoaded', function () {
   // ========== Language Switcher ==========
   const currentLang = localStorage.getItem('cnq-lang') || 'en';
   applyLanguage(currentLang);
-  document.body.style.visibility = 'visible';
 
   function applyLanguage(lang) {
     document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
-    document.querySelectorAll('[data-zh]').forEach(function (el) {
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-        el.placeholder = lang === 'en' ? (el.getAttribute('data-en-placeholder') || el.getAttribute('data-zh')) : el.getAttribute('data-zh');
-      } else if (el.tagName === 'OPTION') {
-        el.textContent = lang === 'en' ? (el.getAttribute('data-en') || el.getAttribute('data-zh')) : el.getAttribute('data-zh');
-      } else {
-        el.textContent = lang === 'en' ? (el.getAttribute('data-en') || el.getAttribute('data-zh')) : el.getAttribute('data-zh');
-      }
-    });
-    // Update title
-    var titleZh = document.querySelector('title').getAttribute('data-zh');
-    var titleEn = document.querySelector('title').getAttribute('data-en');
-    if (titleZh && titleEn) {
-      document.querySelector('title').textContent = lang === 'en' ? titleEn : titleZh;
-    }
-    // Update meta description
-    var metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      var descZh = metaDesc.getAttribute('data-zh');
-      var descEn = metaDesc.getAttribute('data-en');
-      if (descZh && descEn) {
-        metaDesc.content = lang === 'en' ? descEn : descZh;
-      }
+    // English is the default HTML text — only need to swap for Chinese
+    if (lang !== 'en') {
+      document.querySelectorAll('[data-zh]').forEach(function (el) {
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = el.getAttribute('data-zh');
+        } else if (el.tagName === 'META') {
+          el.content = el.getAttribute('data-zh');
+        } else {
+          el.textContent = el.getAttribute('data-zh');
+        }
+      });
     }
     // Update lang switch buttons
     document.querySelectorAll('.lang-switch a').forEach(function (btn) {
