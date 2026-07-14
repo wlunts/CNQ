@@ -5,7 +5,10 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // ========== Language Switcher ==========
-  const currentLang = localStorage.getItem('cnq-lang') || 'en';
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlLang = urlParams.get('lang');
+  const storedLang = localStorage.getItem('cnq-lang');
+  const currentLang = urlLang || storedLang || 'en';
   applyLanguage(currentLang);
 
   function applyLanguage(lang) {
@@ -26,7 +29,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.lang-switch a').forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
+    // Persist language preference, sync URL param for hreflang SEO
     localStorage.setItem('cnq-lang', lang);
+    if (lang === 'zh') {
+      var url = new URL(window.location);
+      url.searchParams.set('lang', 'zh');
+      window.history.replaceState(null, '', url);
+    } else {
+      var urlEn = new URL(window.location);
+      urlEn.searchParams.delete('lang');
+      window.history.replaceState(null, '', urlEn);
+    }
   }
 
   // Language switch click handlers
