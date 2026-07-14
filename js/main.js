@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // ========== Language Switcher ==========
   const currentLang = localStorage.getItem('cnq-lang') || 'en';
   applyLanguage(currentLang);
+  document.body.style.visibility = 'visible';
 
   function applyLanguage(lang) {
     document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
