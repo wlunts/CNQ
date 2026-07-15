@@ -25,7 +25,7 @@ img { max-width: 100%; height: auto; display: block; } a { color: var(--primary)
 .nav { display: flex; align-items: center; gap: 4px; } .nav a { display: block; padding: 10px 18px; color: var(--text-dark); font-size: 0.95rem; font-weight: 500; border-radius: 4px; } .nav a:hover, .nav a.active { color: var(--primary); background: rgba(26,82,118,0.06); }
 .lang-switch { margin-left: 16px; display: flex; gap: 4px; } .lang-switch a { padding: 4px 10px; font-size: 0.8rem; border: 1px solid var(--border); border-radius: 4px; color: var(--text-muted); } .lang-switch a.active { background: var(--primary); color: #fff; }
 .page-header { background: linear-gradient(135deg, rgba(13,47,69,0.9), rgba(26,82,118,0.88)), url('../images/news-banner.jpg') center/cover no-repeat; color: #fff; padding: 120px 0 60px; text-align: center; }
-.page-header h1 { font-size: 2.4rem; margin-bottom: 12px; } .page-header .breadcrumb { font-size: 0.9rem; opacity: 0.75; } .page-header .breadcrumb a { color: rgba(255,255,255,0.8); }
+.page-header .page-title { font-size: 2.4rem; margin-bottom: 12px; font-weight: 700; } .page-header .breadcrumb { font-size: 0.9rem; opacity: 0.75; } .page-header .breadcrumb a { color: rgba(255,255,255,0.8); }
 .article-header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid var(--border); } .article-header h1 { font-size: 1.8rem; margin-bottom: 12px; }
 .article-meta { font-size: 0.9rem; color: var(--text-muted); display: flex; justify-content: center; gap: 24px; }
 .article-body { font-size: 1.05rem; line-height: 2; color: var(--text-body); } .article-body p { margin-bottom: 20px; } .article-body h3 { font-size: 1.2rem; color: var(--primary-dark); margin: 28px 0 14px; }
@@ -66,7 +66,7 @@ img { max-width: 100%; height: auto; display: block; } a { color: var(--primary)
 </head>
 <body>
   <header class="header"><div class="container header-inner"><div class="logo"><a href="/"><img src="Upload/logo.png" alt="China Quality Service - product inspection in China" onerror="this.style.display='none'"><span>China Quality Service</span></a></div><nav class="nav"><a href="/">Home</a><a href="about">About Us</a><a href="services">Services</a><a href="news" class="active">News</a><a href="download">Downloads</a><a href="contact">Contact</a><div class="lang-switch"><a href="javascript:void(0)" data-lang="zh" class="active">中</a><a href="javascript:void(0)" data-lang="en">EN</a></div></nav></div></header>
-  <section class="page-header"><div class="container"><h1 data-zh="新闻详情">News Detail</h1><div class="breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span> <a href="news">News</a> <span>&rsaquo;</span> <span>Article</span></div></div></section>
+  <section class="page-header"><div class="container"><div class="page-title" data-zh="新闻详情">News Detail</div><div class="breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span> <a href="news">News</a> <span>&rsaquo;</span> <span>Article</span></div></div></section>
   <section class="section"><div class="container" style="max-width: 860px;">
     <div class="article-header fade-in"><h1>2026 EU & US Toy Safety Standard Update Highlights</h1><div class="article-meta"><span>Published: 2026-04-22</span><span>Views: 1,156</span><span>Source: China Quality Service</span></div></div>
     <div class="article-body fade-in">

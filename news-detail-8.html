@@ -16,7 +16,7 @@
   <meta property="og:site_name" content="China Quality Service"><meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://www.cn-q.com/images/og-image.png">
 <style>
-::root { --primary: #1a5276; --primary-dark: #123a52; --primary-light: #2980b9; --accent: #e67e22; --accent-hover: #d35400; --bg-light: #f5f7fa; --bg-white: #ffffff; --bg-footer: #1a1f2b; --text-dark: #2c3e50; --text-body: #555; --text-muted: #999; --border: #e0e5ec; --shadow: 0 2px 20px rgba(0,0,0,0.08); --radius: 8px; --radius-sm: 4px; --transition: 0.3s ease; --max-width: 1200px; --header-h: 72px; }
+::root { --primary: #1a5276; --primary-dark: #123a52; --primary-light: #2980b9; --accent: #e67e22; --accent-hover: #d35400; --bg-light: #f5f7fa; --bg-white: #ffffff; --bg-footer: #1a1f2b; --text-dark: #2c3e50; --text-body: #555; --text-muted: #999; --border: #e0e5ec; --shadow: 0 2px 20px rgba(0,0,0,0.08); --shadow-hover: 0 8px 30px rgba(0,0,0,0.12); --radius: 8px; --radius-sm: 4px; --transition: 0.3s ease; --max-width: 1200px; --header-h: 72px; }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.7; color: var(--text-dark); background: var(--bg-white); }
@@ -33,7 +33,8 @@ ul, ol { list-style: none; }
 .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; z-index: 1001; } .menu-toggle span { display: block; width: 26px; height: 2.5px; background: var(--primary); }
 .about-list { margin-top: 20px; } .about-list li { padding: 8px 0; padding-left: 24px; position: relative; color: var(--text-body); } .about-list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
 .page-header { background: linear-gradient(135deg, rgba(13,47,69,0.9), rgba(26,82,118,0.88)), url('../images/news-banner.jpg') center/cover no-repeat; color: #fff; padding: 120px 0 60px; text-align: center; }
-.page-header h1 { font-size: 2.4rem; margin-bottom: 12px; } .page-header .breadcrumb { font-size: 0.9rem; opacity: 0.75; } .page-header .breadcrumb a { color: rgba(255,255,255,0.8); }
+.page-header .page-title { font-size: 2.4rem; margin-bottom: 12px; font-weight: 700; } .page-header .breadcrumb { font-size: 0.9rem; opacity: 0.75; } .page-header .breadcrumb a { color: rgba(255,255,255,0.8); } .page-header .breadcrumb a:hover { color: #fff; }
+.font-size-controls { display: flex; gap: 8px; align-items: center; margin-bottom: 16px; } .font-size-controls button { padding: 4px 12px; border: 1px solid var(--border); background: #fff; border-radius: var(--radius-sm); cursor: pointer; font-size: 0.85rem; } .font-size-controls button:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
 .article-header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid var(--border); } .article-header h1 { font-size: 1.8rem; color: var(--text-dark); margin-bottom: 12px; }
 .article-meta { font-size: 0.9rem; color: var(--text-muted); display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
 .article-body { font-size: 1.05rem; line-height: 2; color: var(--text-body); } .article-body p { margin-bottom: 20px; } .article-body h3 { font-size: 1.2rem; color: var(--primary-dark); margin: 28px 0 14px; }
@@ -43,13 +44,14 @@ ul, ol { list-style: none; }
 .footer-col h4 { color: #fff; font-size: 1rem; margin-bottom: 16px; } .footer-col a { display: block; color: rgba(255,255,255,0.6); font-size: 0.9rem; padding: 5px 0; } .footer-col a:hover { color: #fff; padding-left: 6px; }
 .footer-bottom { text-align: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: rgba(255,255,255,0.4); }
 .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; background: var(--primary); color: #fff; border: none; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all var(--transition); box-shadow: 0 2px 12px rgba(0,0,0,0.2); z-index: 999; }
-.back-to-top.visible { opacity: 1; visibility: visible; } .back-to-top:hover { background: var(--primary-dark); }
+.back-to-top.visible { opacity: 1; visibility: visible; } .back-to-top:hover { background: var(--primary-dark); transform: translateY(-3px); }
+html.js-ready .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; } html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
 @media (max-width: 768px) {
   .menu-toggle { display: flex; }
   .nav { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: #fff; flex-direction: column; padding: 80px 24px 24px; box-shadow: -4px 0 20px rgba(0,0,0,0.1); transition: right 0.3s; }
   .nav.open { right: 0; } .nav a { padding: 14px 12px; border-bottom: 1px solid var(--border); border-radius: 0; }
   .menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; } .menu-overlay.open { display: block; }
-  .page-header h1 { font-size: 1.8rem; } .article-header h1 { font-size: 1.4rem; } .article-nav { flex-direction: column; }
+  .page-header .page-title { font-size: 1.8rem; } .article-header h1 { font-size: 1.4rem; } .article-nav { flex-direction: column; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 }
 </style>
@@ -81,12 +83,18 @@ ul, ol { list-style: none; }
   </script>
 </head>
 <body>
-  <header class="header"><div class="container header-inner"><div class="logo"><a href="/"><img src="Upload/logo.png" alt="China Quality Service" onerror="this.style.display='none'"><span>China Quality Service</span></a></div><button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button><nav class="nav"><a href="/">Home</a><a href="about">About Us</a><a href="services">Services</a><a href="news" class="active">News</a><a href="download">Downloads</a><a href="contact">Contact</a><div class="lang-switch"><a href="javascript:void(0)" data-lang="zh" class="active">中</a><a href="javascript:void(0)" data-lang="en">EN</a></div></nav></div></header><div class="menu-overlay"></div>
-  <section class="page-header"><div class="container"><h1>News Detail</h1><div class="breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span> <a href="news">News</a> <span>&rsaquo;</span> <span>Article</span></div></div></section>
+  <header class="header"><div class="container header-inner"><div class="logo"><a href="/"><img src="Upload/logo.png" alt="China Quality Service" onerror="this.style.display='none'"><span>China Quality Service</span></a></div><button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button><nav class="nav"><a href="/" data-zh="首页">Home</a><a href="about" data-zh="关于我们">About Us</a><a href="services" data-zh="服务范围">Services</a><a href="news" class="active" data-zh="新闻资讯">News</a><a href="download" data-zh="资料下载">Downloads</a><a href="contact" data-zh="联系我们">Contact</a><div class="lang-switch"><a href="javascript:void(0)" data-lang="zh" class="active">中</a><a href="javascript:void(0)" data-lang="en">EN</a></div></nav></div></header><div class="menu-overlay"></div>
+  <section class="page-header"><div class="container"><div class="page-title">News Detail</div><div class="breadcrumb"><a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="news" data-zh="新闻资讯">News</a> <span>&rsaquo;</span> <span data-zh="正文">Article</span></div></div></section>
   <section class="section"><div class="container" style="max-width: 860px;">
     <div class="article-header fade-in">
       <h1>CBAM (Carbon Border Adjustment Mechanism) — Impact on Chinese Manufacturing Exports</h1>
       <div class="article-meta"><span>Published: 2026-07-15</span><span>Views: 1,532</span><span>Source: China Quality Service</span></div>
+    </div>
+    <div class="font-size-controls">
+      <span style="font-size:0.85rem;color:var(--text-muted)" data-zh="字体：">Font: </span>
+      <button onclick="changeFontSize('small')" data-zh="小">S</button>
+      <button onclick="changeFontSize('medium')" data-zh="中">M</button>
+      <button onclick="changeFontSize('large')" data-zh="大">L</button>
     </div>
     <div class="article-body fade-in" id="articleContent">
       <p>The EU's Carbon Border Adjustment Mechanism (CBAM) is reshaping trade dynamics for carbon-intensive products. Chinese manufacturers in steel, aluminum, and chemicals sectors face new reporting obligations and carbon cost pressures. This article analyzes the compliance roadmap and how quality control processes must evolve to incorporate carbon data verification.</p>
@@ -115,5 +123,13 @@ ul, ol { list-style: none; }
   <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-about"><h3>CNQ(China Quality Service)</h3><p>Professional product inspection service in China — independent, objective quality inspection and consulting for global clients.</p></div><div class="footer-col"><h4>Quick Links</h4><a href="about">About Us</a><a href="services">Services</a><a href="news">News</a><a href="download">Downloads</a></div><div class="footer-col"><h4>Core Services</h4><a href="services">Product Inspection</a><a href="services">Factory Audit</a><a href="services">Lab Testing</a><a href="services">Supplier Management</a></div><div class="footer-col"><h4>Contact Us</h4><a href="contact">Online Message</a><a href="contact">Contact Info</a></div></div><div class="footer-bottom"><p>Copyright &copy; 2026 CNQ(China Quality Service) All Rights Reserved.</p></div></div></footer>
   <button class="back-to-top" aria-label="Back to Top">&#9650;</button>
   <script src="js/main.js" defer></script>
+  <script>
+    function changeFontSize(size) {
+      var article = document.getElementById('articleContent');
+      if (size === 'small') article.style.fontSize = '0.95rem';
+      else if (size === 'medium') article.style.fontSize = '1.05rem';
+      else if (size === 'large') article.style.fontSize = '1.2rem';
+    }
+  </script>
 </body>
 </html>

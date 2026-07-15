@@ -47,7 +47,7 @@ ul, ol { list-style: none; }
 .about-list li { padding: 8px 0; padding-left: 24px; position: relative; color: var(--text-body); }
 .about-list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
 .page-header { background: linear-gradient(135deg, rgba(13,47,69,0.9), rgba(26,82,118,0.88)), url('../images/news-banner.jpg') center/cover no-repeat; color: #fff; padding: 120px 0 60px; text-align: center; }
-.page-header h1 { font-size: 2.4rem; margin-bottom: 12px; }
+.page-header .page-title { font-size: 2.4rem; margin-bottom: 12px; font-weight: 700; }
 .page-header .breadcrumb { font-size: 0.9rem; opacity: 0.75; }
 .page-header .breadcrumb a { color: rgba(255,255,255,0.8); }
 .page-header .breadcrumb a:hover { color: #fff; }
@@ -87,7 +87,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   .menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; }
   .menu-overlay.open { display: block; }
   .section { padding: 50px 0; }
-  .page-header h1 { font-size: 1.8rem; }
+  .page-header .page-title { font-size: 1.8rem; }
   .article-header h1 { font-size: 1.4rem; }
   .article-nav { flex-direction: column; gap: 8px; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -159,7 +159,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
 
   <section class="page-header">
     <div class="container">
-      <h1 data-zh="新闻详情">News Detail</h1>
+      <div class="page-title" data-zh="新闻详情">News Detail</div>
       <div class="breadcrumb">
         <a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="news" data-zh="新闻资讯">News</a> <span>&rsaquo;</span> <span data-zh="正文">Article</span>
       </div>
