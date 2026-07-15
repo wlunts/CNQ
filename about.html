@@ -87,8 +87,8 @@ ul, ol { list-style: none; }
 .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; background: var(--primary); color: #fff; border: none; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all var(--transition); box-shadow: 0 2px 12px rgba(0,0,0,0.2); z-index: 999; }
 .back-to-top.visible { opacity: 1; visibility: visible; }
 .back-to-top:hover { background: var(--primary-dark); transform: translateY(-3px); }
-.fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
+html.js-ready .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
 @media (max-width: 992px) { :root { --header-h: 64px; } .page-layout { grid-template-columns: 200px 1fr; gap: 24px; } .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 768px) {
   .menu-toggle { display: flex; }
@@ -113,6 +113,28 @@ ul, ol { list-style: none; }
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About China Quality Service",
+    "url": "https://www.cn-q.com/about",
+    "about": {
+      "@type": "Organization",
+      "name": "CNQ(China Quality Service)",
+      "alternateName": "China Quality Service",
+      "url": "https://www.cn-q.com",
+      "logo": "https://www.cn-q.com/Upload/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Unit 232, No.120 Xifu Rd, TongAn District",
+        "addressLocality": "Xiamen",
+        "addressRegion": "Fujian",
+        "addressCountry": "CN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+86-136-6607-1299",
+        "contactType": "customer service",
+        "email": "contact@cn-q.com",
+        "availableLanguage": ["English", "Chinese"]
+      }
+    },
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
@@ -129,7 +151,7 @@ ul, ol { list-style: none; }
     <div class="container header-inner">
       <div class="logo">
         <a href="/">
-          <img src="Upload/logo.png" alt="China Quality Service" onerror="this.style.display='none'">
+          <img src="Upload/logo.png" alt="China Quality Service - product inspection in China" onerror="this.style.display='none'">
           <span>China Quality Service</span>
         </a>
       </div>
@@ -174,8 +196,8 @@ ul, ol { list-style: none; }
             <h4 data-zh="联系方式">Contact</h4>
             <ul>
               <li data-zh="电话：+86 136 6607 1299">Tel: +86 136 6607 1299</li>
-              <li data-zh="邮箱：contact@cn-q.com">Email: contact@cn-q.com</li>
-              <li data-zh="网址：www.cn-Q.com">Web: www.cn-Q.com</li>
+              <li data-zh="邮箱：contact@cn-q.com">Email: <a href="mailto:contact@cn-q.com">contact@cn-q.com</a></li>
+              <li data-zh="邮箱：compliance@cn-q.com">Email: <a href="mailto:compliance@cn-q.com">compliance@cn-q.com</a></li>
             </ul>
           </div>
         </aside>
@@ -183,7 +205,7 @@ ul, ol { list-style: none; }
         <div class="main-content">
           <section id="company-intro">
             <h2 data-zh="公司简介">Company Profile</h2>
-            <p data-zh="China Quality Service Co., Ltd.（CNS品质控制咨询有限公司）是一家专业的第三方品质控制咨询公司，致力于为全球客户提供独立、客观的品质检验与咨询服务。公司总部位于福建省厦门市同安区西福路120号232单元，服务网络覆盖中国主要制造业基地及东南亚地区。">China Quality Service Co., Ltd. is a professional product inspection service in China, headquartered at Unit 232, No.120 Xifu Rd, TongAn District, Xiamen City, Fujian. We provide independent, objective quality inspection and consulting services for global importers, with our inspection network covering all major manufacturing hubs across China and Southeast Asia.</p>
+            <p data-zh="CNQ(China Quality Service) (CNQ品质控制咨询有限公司) 是一家专业的第三方品质控制咨询公司，致力于为全球客户提供独立、客观的品质检验与咨询服务。公司总部位于福建省厦门市同安区西福路120号232单元，服务网络覆盖中国主要制造业基地及东南亚地区。">China Quality Service Co., Ltd. is a professional product inspection service in China, headquartered at Unit 232, No.120 Xifu Rd, TongAn District, Xiamen City, Fujian. We provide independent, objective quality inspection and consulting services for global importers, with our inspection network covering all major manufacturing hubs across China and Southeast Asia.</p>
             <p data-zh="自成立以来，China Quality Service始终秉持独立、客观和毫不妥协的专业精神这一核心原则。我们作为客户在工厂现场的眼睛，致力于降低供应链风险，确保每一批货物严格符合国际标准。">Since our founding, China Quality Service has upheld the core principles of independence, objectivity, and uncompromising professionalism. We act as our clients' trusted eyes on the factory floor, committed to mitigating supply chain risks and ensuring that every batch strictly complies with global standards.</p>
             <p data-zh="我们服务的行业涵盖电子电器、纺织服装、家居用品、玩具礼品、机械设备、食品接触材料等多个领域，客户遍及欧洲、北美、中东、东南亚等50多个国家和地区。">Our services cover electronics, textiles, home products, toys & gifts, machinery, food contact materials and more, with clients across 50+ countries and regions including Europe, North America, Middle East and Southeast Asia.</p>
           </section>

@@ -137,6 +137,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Signal that JavaScript is available for fade-in animations
+  document.documentElement.classList.add('js-ready');
+
   // ========== Scroll Animations (fade-in) ==========
   const fadeElements = document.querySelectorAll('.fade-in');
   const observerOptions = { root: null, rootMargin: '0px 0px -60px 0px', threshold: 0.1 };
