@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-zh="行业动态 - 厦门亚商检验检测技术有限公司">Industry Updates | Product Inspection Service China - CNQ</title>
-  <meta name="description" data-zh="厦门亚商检验检测技术有限公司 行业动态 - 了解品质控制行业最新动态、法规变更、公司新闻和技术分享。" content="Industry updates from China's product inspection sector. Stay informed with China Quality Service on QC trends, regulatory changes, and inspection service updates.">
-  <meta name="keywords" content="product inspection service China,QC industry news,inspection industry China,quality control news,品控新闻,检验行业资讯">
+  <title data-zh="验货案例 - 厦门亚商检验检测技术有限公司">Inspection Cases | Product Inspection Service China - CNQ</title>
+  <meta name="description" data-zh="厦门亚商检验检测技术有限公司 验货案例 - 真实的产品检验案例分析，涵盖电子、纺织、机械、玩具等多个行业的品质问题。" content="Real-world product inspection cases from China Quality Service. See how we identify quality issues across electronics, textiles, machinery, toys and more.">
+  <meta name="keywords" content="product inspection cases, inspection case study China, QC case examples, quality control case studies, 验货案例, 品质检验案例">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <!-- Open Graph / Social -->
-  <meta property="og:title" content="Industry Updates | Product Inspection Service China - China Quality Service">
-  <meta property="og:description" content="Industry updates from China's product inspection sector. Stay informed with China Quality Service on QC trends, regulatory changes, and inspection service updates.">
-  <meta property="og:url" content="https://www.cn-q.com/industry-updates">
+  <meta property="og:title" content="Inspection Cases | Product Inspection Service China - China Quality Service">
+  <meta property="og:description" content="Real-world product inspection cases from China Quality Service. See how we identify quality issues across multiple industries.">
+  <meta property="og:url" content="https://www.cn-q.com/inspection-cases">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.cn-q.com/images/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -58,18 +58,19 @@ ul, ol { list-style: none; }
 .page-header .breadcrumb { font-size: 0.9rem; opacity: 0.75; }
 .page-header .breadcrumb a { color: rgba(255,255,255,0.8); }
 .page-header .breadcrumb a:hover { color: #fff; }
-.news-list-item { display: flex; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--border); align-items: flex-start; transition: all var(--transition); }
-.news-list-item:hover { padding-left: 8px; }
-.news-list-thumb { width: 200px; height: 140px; flex-shrink: 0; border-radius: var(--radius-sm); overflow: hidden; background: var(--bg-light); }
-.news-list-thumb img { width: 100%; height: 100%; object-fit: cover; }
-.news-list-info h3 { font-size: 1.15rem; margin: 0 0 8px; }
-.news-list-info h3 a { color: var(--text-dark); }
-.news-list-info h3 a:hover { color: var(--primary); }
-.news-list-info .date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
-.news-list-info p { font-size: 0.92rem; color: var(--text-body); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.pagination { display: flex; justify-content: center; gap: 8px; margin-top: 40px; }
-.pagination a, .pagination span { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 40px; padding: 0 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.9rem; color: var(--text-body); transition: all var(--transition); }
-.pagination a:hover, .pagination .current { background: var(--primary); color: #fff; border-color: var(--primary); }
+.case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.case-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all var(--transition); }
+.case-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.case-card-img { height: 200px; overflow: hidden; background: var(--bg-light); }
+.case-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.case-card:hover .case-card-img img { transform: scale(1.05); }
+.case-card-body { padding: 20px; }
+.case-card-body h3 { font-size: 1.1rem; margin-bottom: 10px; line-height: 1.5; }
+.case-card-body h3 a { color: var(--text-dark); }
+.case-card-body h3 a:hover { color: var(--primary); }
+.case-card-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
+.case-card-cat { display: inline-block; font-size: 0.75rem; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+.case-card-body p { font-size: 0.9rem; color: var(--text-body); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .footer { background: var(--bg-footer); color: rgba(255,255,255,0.7); padding: 60px 0 30px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
 .footer-about h3 { color: #fff; font-size: 1.2rem; margin-bottom: 16px; }
@@ -83,6 +84,11 @@ ul, ol { list-style: none; }
 .back-to-top:hover { background: var(--primary-dark); transform: translateY(-3px); }
 html.js-ready .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
 html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 992px) {
+  :root { --header-h: 64px; }
+  .case-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 768px) {
   :root { --header-h: 64px; }
   .menu-toggle { display: flex; }
@@ -90,7 +96,6 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   .nav.open { right: 0; }
   .nav a { padding: 14px 12px; border-bottom: 1px solid var(--border); border-radius: 0; font-size: 1rem; }
   .lang-switch { margin: 16px 0 0; padding-left: 12px; }
-  /* Mobile dropdown */
   .nav-dropdown > a { justify-content: space-between; }
   .dropdown-menu { position: static; box-shadow: none; opacity: 1; visibility: visible; transform: none; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0; background: transparent; min-width: auto; }
   .nav-dropdown.open .dropdown-menu { max-height: 600px; }
@@ -99,92 +104,20 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   .menu-overlay.open { display: block; }
   .section { padding: 50px 0; }
   .page-header h1 { font-size: 1.8rem; }
-  .news-list-item { flex-direction: column; gap: 12px; }
-  .news-list-thumb { width: 100%; height: 180px; }
+  .case-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 }
-@media (max-width: 992px) {
-  :root { --header-h: 64px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-}
 </style>
-  <link rel="canonical" href="https://www.cn-q.com/industry-updates">
-  <link rel="alternate" hreflang="en" href="https://www.cn-q.com/industry-updates">
-  <link rel="alternate" hreflang="x-default" href="https://www.cn-q.com/industry-updates">
+  <link rel="canonical" href="https://www.cn-q.com/inspection-cases">
+  <link rel="alternate" hreflang="en" href="https://www.cn-q.com/inspection-cases">
+  <link rel="alternate" hreflang="x-default" href="https://www.cn-q.com/inspection-cases">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Industry Updates | China Quality Service",
-    "numberOfItems": 6,
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "Article",
-          "headline": "Latest CE Certification Requirements for EU Export Products",
-          "url": "https://www.cn-q.com/news-detail",
-          "datePublished": "2026-06-15",
-          "dateModified": "2026-06-15"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "Article",
-          "headline": "China Quality Service Successfully Passes ISO 9001 Annual Review",
-          "url": "https://www.cn-q.com/news-detail-2",
-          "datePublished": "2026-05-28",
-          "dateModified": "2026-05-28"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "Article",
-          "headline": "Supply Chain Quality Management Trends: Digital Inspection Solutions",
-          "url": "https://www.cn-q.com/news-detail-3",
-          "datePublished": "2026-05-10",
-          "dateModified": "2026-05-10"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "item": {
-          "@type": "Article",
-          "headline": "2026 EU & US Toy Safety Standard Update Highlights",
-          "url": "https://www.cn-q.com/news-detail-4",
-          "datePublished": "2026-04-22",
-          "dateModified": "2026-04-22"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "item": {
-          "@type": "Article",
-          "headline": "How Pre-Shipment Inspection Effectively Reduces Return Rates",
-          "url": "https://www.cn-q.com/news-detail-5",
-          "datePublished": "2026-04-08",
-          "dateModified": "2026-04-08"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 6,
-        "item": {
-          "@type": "Article",
-          "headline": "Southeast Asia Supply Chain Shift Trends & QC Challenges",
-          "url": "https://www.cn-q.com/news-detail-6",
-          "datePublished": "2026-03-20",
-          "dateModified": "2026-03-20"
-        }
-      }
-    ]
+    "@type": "CollectionPage",
+    "name": "Inspection Cases | China Quality Service",
+    "description": "Real-world product inspection cases from China Quality Service covering electronics, textiles, machinery, toys and more.",
+    "url": "https://www.cn-q.com/inspection-cases"
   }
   </script>
   <script type="application/ld+json">
@@ -193,7 +126,8 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cn-q.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Industry Updates", "item": "https://www.cn-q.com/industry-updates" }
+      { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.cn-q.com/insights" },
+      { "@type": "ListItem", "position": 3, "name": "Inspection Cases", "item": "https://www.cn-q.com/inspection-cases" }
     ]
   }
   </script>
@@ -224,9 +158,9 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
 
   <section class="page-header">
     <div class="container">
-      <h1 data-zh="行业动态">Industry Updates — Product Inspection in China</h1>
+      <h1 data-zh="验货案例">Inspection Cases</h1>
       <div class="breadcrumb">
-        <a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="insights" data-zh="洞察">Insights</a> <span>&rsaquo;</span> <span data-zh="行业动态">Industry Updates</span>
+        <a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="insights" data-zh="洞察">Insights</a> <span>&rsaquo;</span> <span data-zh="验货案例">Inspection Cases</span>
       </div>
     </div>
   </section>
@@ -234,77 +168,35 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   <section class="section">
     <div class="container">
 
-      <div class="news-list-item fade-in">
-        <div class="news-list-thumb">
-          <img src="Upload/news-1.jpg" alt="EU CE Certification latest requirements for exported products" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
+      <p style="text-align:center;color:var(--text-muted);margin-bottom:40px;max-width:700px;margin-left:auto;margin-right:auto;" data-zh="真实验货案例分析 — 涵盖电子、纺织、机械、玩具等多个行业，展示我们如何帮助客户发现并解决产品质量问题。">
+        Real-world product inspection cases from multiple industries — see how we identify and resolve quality issues for our clients.
+      </p>
+
+      <div class="case-grid">
+        <!-- Case 1: TPR Flow Mark -->
+        <div class="case-card fade-in">
+          <div class="case-card-img">
+            <img src="Upload/cases/tpr-noodle/1.jpg" alt="Gold TPR Steamed Bun - Obvious Flow Mark inspection case" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
+          </div>
+          <div class="case-card-body">
+            <div class="case-card-cat">Inspection Cases</div>
+            <div class="case-card-date">2026-06-28</div>
+            <h3><a href="inspection-case-tpr-flow-mark" data-zh="金色TPR包子 — 明显流痕缺陷">Gold TPR Steamed Stuffed Bun — Obvious Flow Mark</a></h3>
+            <p data-zh="在金色TPR包子验货中发现典型的流痕缺陷，分析根本原因并提供可行的解决方案，帮助买家在大货生产中预防此类问题。">A typical flow mark defect found during our QC inspection for gold TPR stuffed bun. We analyze the root cause and provide actionable solutions for buyers to prevent this in mass production.</p>
+          </div>
         </div>
-        <div class="news-list-info">
-          <h3><a href="news-detail" data-zh="出口欧盟产品CE认证最新要求解读">Latest CE Certification Requirements for EU Export Products</a></h3>
-          <div class="date">2026-06-15</div>
-          <p data-zh="随着欧盟法规的不断更新，出口产品CE认证的要求也在持续变化。本文将为您详细解读最新的CE认证技术文件要求、符合性声明规范以及市场监督条例变化，帮助企业及时调整合规策略，确保产品顺利进入欧盟市场。">As EU regulations continue to update, CE certification requirements for export products are constantly changing. This article provides a detailed interpretation of the latest CE certification technical documentation requirements, Declaration of Conformity specifications, and market surveillance regulation changes.</p>
-        </div>
+
+
       </div>
 
-      <div class="news-list-item fade-in">
-        <div class="news-list-thumb">
-          <img src="Upload/news-2.jpg" alt="China Quality Service passes ISO 9001 annual quality management review" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
-        </div>
-        <div class="news-list-info">
-          <h3><a href="news-detail-2" data-zh="厦门亚商检验检测技术有限公司成功通过ISO 9001年度复审">CNQ(China Quality Service) Successfully Passes ISO 9001 Annual Review</a></h3>
-          <div class="date">2026-05-28</div>
-          <p data-zh="经过严格的审核评估，厦门亚商检验检测技术有限公司 再次顺利通过ISO 9001质量管理体系年度复审。审核组对公司完善的质量管理体系、专业的服务流程和高度的客户满意度给予了充分肯定。">After rigorous audit assessment, CNQ(China Quality Service) has once again successfully passed the ISO 9001 quality management system annual review.</p>
-        </div>
+      <div style="text-align:center;margin-top:60px;padding:40px;background:var(--bg-light);border-radius:var(--radius);">
+        <h3 style="color:var(--primary);margin-bottom:12px;" data-zh="更多验货案例持续更新中">More Inspection Cases Coming Soon</h3>
+        <p style="color:var(--text-muted);" data-zh="我们的验货团队每天都在处理各类品质问题，更多案例将陆续发布。有类似的质量困扰？欢迎联系我们。">
+          Our inspection team handles various quality issues every day. More cases will be published soon. Have similar quality concerns? Contact us.
+        </p>
+        <a href="contact" class="btn btn-primary" style="margin-top:16px;display:inline-block;padding:12px 32px;background:var(--accent);color:#fff;border-radius:4px;font-weight:600;" data-zh="联系我们">Contact Us</a>
       </div>
 
-      <div class="news-list-item fade-in">
-        <div class="news-list-thumb">
-          <img src="Upload/news-3.jpg" alt="Digital inspection solutions and smart quality control technology" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
-        </div>
-        <div class="news-list-info">
-          <h3><a href="news-detail-3" data-zh="供应链质量管理趋势：数字化检验解决方案">Supply Chain Quality Management Trends: Digital Inspection Solutions</a></h3>
-          <div class="date">2026-05-10</div>
-          <p data-zh="数字化转型正在重塑供应链质量管理模式。本文介绍最新的智能检验技术、AI辅助缺陷识别系统、实时数据看板等创新解决方案，探讨品质控制行业的发展趋势。">Digital transformation is reshaping supply chain quality management models. This article introduces the latest smart inspection technologies, AI-assisted defect recognition systems, real-time data dashboards and other innovative solutions.</p>
-        </div>
-      </div>
-
-      <div class="news-list-item fade-in">
-        <div class="news-list-thumb">
-          <img src="Upload/news-4.jpg" alt="2026 EU and US toy safety standard updates for China exporters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
-        </div>
-        <div class="news-list-info">
-          <h3><a href="news-detail-4" data-zh="2026年欧美玩具安全标准更新要点">2026 EU & US Toy Safety Standard Update Highlights</a></h3>
-          <div class="date">2026-04-22</div>
-          <p data-zh="美国CPSC和欧盟委员会近期更新了多项玩具安全标准，涉及化学物质限值、机械物理性能测试方法等方面。本文梳理了主要变更内容及对出口企业的影响。">The US CPSC and European Commission have recently updated multiple toy safety standards, covering chemical substance limits and mechanical/physical performance testing methods.</p>
-        </div>
-      </div>
-
-      <div class="news-list-item fade-in">
-        <div class="news-list-thumb">
-          <img src="Upload/news-5.jpg" alt="How pre-shipment inspection reduces product return rates" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
-        </div>
-        <div class="news-list-info">
-          <h3><a href="news-detail-5" data-zh="如何通过出货前检验有效降低退货率">How Pre-Shipment Inspection Effectively Reduces Return Rates</a></h3>
-          <div class="date">2026-04-08</div>
-          <p data-zh="跨境电商时代，产品退货率直接影响卖家利润和店铺评级。本文将分享如何通过专业的出货前检验服务，在发货前拦截缺陷产品，显著降低退货率和客诉。">In the era of cross-border e-commerce, product return rates directly impact seller profits and store ratings.</p>
-        </div>
-      </div>
-
-      <div class="news-list-item fade-in">
-        <div class="news-list-thumb">
-          <img src="Upload/news-6.jpg" alt="Southeast Asia supply chain shift trends and quality control challenges" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
-        </div>
-        <div class="news-list-info">
-          <h3><a href="news-detail-6" data-zh="东南亚供应链转移趋势与品质管控挑战">Southeast Asia Supply Chain Shift Trends & QC Challenges</a></h3>
-          <div class="date">2026-03-20</div>
-          <p data-zh="随着全球供应链格局调整，越来越多的企业将生产基地转移至东南亚。本文分析东南亚各国的制造业现状、品质管控水平以及如何在新兴市场建立可靠的品控体系。">As the global supply chain landscape adjusts, more enterprises are shifting production bases to Southeast Asia.</p>
-        </div>
-      </div>
-
-      <div class="pagination">
-        <span class="current">1</span>
-        <a href="news-2">2</a>
-        <a href="news-2">&rsaquo;</a>
-      </div>
     </div>
   </section>
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-zh="China Quality Service 成功通过ISO 9001年度复审 - CNQ">China Quality Service Successfully Passes ISO 9001 Annual Review</title>
+  <title data-zh="厦门亚商检验检测技术有限公司 成功通过ISO 9001年度复审 - CNQ">China Quality Service Successfully Passes ISO 9001 Annual Review</title>
   <meta name="description" content="China Quality Service once again successfully passes ISO 9001 quality management system annual review, demonstrating commitment to quality in product inspection service in China.">
   <meta name="keywords" content="product inspection service China,ISO 9001,quality management,QC certification China,ISO认证,品控服务">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -33,6 +33,7 @@ ul, ol { list-style: none; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
 .logo { flex-shrink: 0; } .logo a { display: flex; align-items: center; font-size: 1.4rem; font-weight: 700; color: var(--primary); } .logo img { height: 48px; margin-right: 10px; }
 .nav { display: flex; align-items: center; gap: 4px; } .nav a { display: block; padding: 10px 18px; color: var(--text-dark); font-size: 0.95rem; font-weight: 500; border-radius: var(--radius-sm); transition: all var(--transition); } .nav a:hover, .nav a.active { color: var(--primary); background: rgba(26,82,118,0.06); }
+.nav-dropdown { position: relative; } .nav-dropdown > a { display: flex; align-items: center; gap: 4px; } .nav-dropdown > a::after { content: '▾'; font-size: 0.7rem; margin-left: 2px; transition: transform var(--transition); } .nav-dropdown.open > a::after { transform: rotate(180deg); } .dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 240px; background: #fff; border-radius: var(--radius); box-shadow: 0 8px 30px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(8px); transition: all var(--transition); z-index: 1002; padding: 8px 0; } .nav-dropdown.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); } .dropdown-menu a { display: block; padding: 10px 20px; color: var(--text-dark); font-size: 0.9rem; border-radius: 0; white-space: nowrap; transition: all var(--transition); } .dropdown-menu a:hover { background: rgba(26,82,118,0.06); color: var(--primary); padding-left: 24px; }
 .lang-switch { margin-left: 16px; display: flex; gap: 4px; align-items: center; } .lang-switch a { padding: 4px 10px; font-size: 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-muted); cursor: pointer; } .lang-switch a:hover, .lang-switch a.active { background: var(--primary); color: #fff; border-color: var(--primary); }
 .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; z-index: 1001; } .menu-toggle span { display: block; width: 26px; height: 2.5px; background: var(--primary); }
 .page-header { background: linear-gradient(135deg, rgba(13,47,69,0.9), rgba(26,82,118,0.88)), url('../images/news-banner.jpg') center/cover no-repeat; color: #fff; padding: 120px 0 60px; text-align: center; }
@@ -56,6 +57,7 @@ html.js-ready .fade-in { opacity: 0; transform: translateY(20px); transition: al
   .nav { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: #fff; flex-direction: column; padding: 80px 24px 24px; box-shadow: -4px 0 20px rgba(0,0,0,0.1); transition: right 0.3s; overflow-y: auto; }
   .nav.open { right: 0; } .nav a { padding: 14px 12px; border-bottom: 1px solid var(--border); border-radius: 0; font-size: 1rem; }
   .lang-switch { margin: 16px 0 0; padding-left: 12px; }
+  .nav-dropdown > a { justify-content: space-between; } .dropdown-menu { position: static; box-shadow: none; opacity: 1; visibility: visible; transform: none; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0; background: transparent; min-width: auto; } .nav-dropdown.open .dropdown-menu { max-height: 600px; } .dropdown-menu a { padding-left: 32px; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
   .menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; } .menu-overlay.open { display: block; }
   .page-header .page-title { font-size: 1.8rem; } .article-header h1 { font-size: 1.4rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -67,7 +69,7 @@ html.js-ready .fade-in { opacity: 0; transform: translateY(20px); transition: al
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     "headline": "China Quality Service Successfully Passes ISO 9001 Annual Review",
-    "description": "CNQ(China Quality Service) once again successfully passes ISO 9001:2015 quality management system annual review, demonstrating commitment to quality in product inspection service in China.",
+    "description": "China Quality Service once again successfully passes ISO 9001:2015 quality management system annual review, demonstrating commitment to quality in product inspection service in China.",
     "image": "https://www.cn-q.com/images/og-image.png",
     "datePublished": "2026-05-28",
     "dateModified": "2026-05-28",
@@ -76,7 +78,7 @@ html.js-ready .fade-in { opacity: 0; transform: translateY(20px); transition: al
       "@id": "https://www.cn-q.com/news-detail-2"
     },
     "author": { "@type": "Organization", "name": "China Quality Service" },
-    "publisher": { "@type": "Organization", "name": "CNQ(China Quality Service)", "logo": { "@type": "ImageObject", "url": "https://www.cn-q.com/Upload/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "China Quality Service", "logo": { "@type": "ImageObject", "url": "https://www.cn-q.com/Upload/logo.png" } },
     "inLanguage": "en"
   }
   </script>
@@ -99,10 +101,10 @@ html.js-ready .fade-in { opacity: 0; transform: translateY(20px); transition: al
       <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
       <nav class="nav">
         <a href="/" data-zh="首页">Home</a>
-        <a href="about" data-zh="关于我们">About Us</a>
-        <a href="services" data-zh="服务范围">Services</a>
-        <a href="news" class="active" data-zh="新闻资讯">News</a>
-        <a href="download" data-zh="资料下载">Downloads</a>
+        <div class="nav-dropdown"><a href="about" data-zh="关于我们">About Us</a><div class="dropdown-menu"><a href="about#company-intro" data-zh="公司简介">Company Profile</a><a href="about#mission" data-zh="使命与愿景">Mission & Vision</a><a href="about#team" data-zh="专业团队">Professional Team</a><a href="about#advantage" data-zh="核心优势">Core Advantages</a></div></div>
+        <div class="nav-dropdown"><a href="services" data-zh="服务范围">Services</a><div class="dropdown-menu"><a href="services#inspection" data-zh="产品检验">Product Inspection</a><a href="services#audit" data-zh="工厂审核">Factory Audit</a><a href="services#lab" data-zh="实验室测试">Laboratory Testing</a><a href="services#supplier" data-zh="供应商管理">Supplier Management</a><a href="services#consulting" data-zh="技术咨询">Technical Consulting</a><a href="services#compliance" data-zh="国际合规">International Compliance</a><a href="services#faq" data-zh="常见问题">Frequently Asked Questions</a></div></div>
+        <div class="nav-dropdown"><a href="insights" class="active" data-zh="洞察">Insights</a><div class="dropdown-menu"><a href="inspection-cases" data-zh="验货案例">Inspection Cases</a><a href="factory-resource" data-zh="工厂资源">Factory Resource</a><a href="industry-updates" data-zh="行业动态">Industry Updates</a></div></div>
+        <div class="nav-dropdown"><a href="download" data-zh="资料下载">Downloads</a><div class="dropdown-menu"><a href="download#standards" data-zh="行业标准">Industry Standards</a><a href="download#regulations" data-zh="法规汇编">Regulatory Compilations</a><a href="download#whitepaper" data-zh="白皮书">Whitepapers</a><a href="download#templates" data-zh="工厂评估">Factory Assessment</a><a href="download#brochure" data-zh="检验模板">Inspection Template</a></div></div>
         <a href="contact" data-zh="联系我们">Contact</a>
         <div class="lang-switch"><a href="javascript:void(0)" data-lang="zh" class="active">中</a><a href="javascript:void(0)" data-lang="en">EN</a></div>
       </nav>
@@ -112,8 +114,8 @@ html.js-ready .fade-in { opacity: 0; transform: translateY(20px); transition: al
 
   <section class="page-header">
     <div class="container">
-      <div class="page-title" data-zh="新闻详情">News Detail</div>
-      <div class="breadcrumb"><a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="news" data-zh="新闻资讯">News</a> <span>&rsaquo;</span> <span data-zh="正文">Article</span></div>
+      <div class="page-title" data-zh="行业动态详情">Industry Update Detail</div>
+      <div class="breadcrumb"><a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="insights" data-zh="洞察">Insights</a> <span>&rsaquo;</span> <a href="industry-updates" data-zh="行业动态">Industry Updates</a> <span>&rsaquo;</span> <span data-zh="正文">Article</span></div>
     </div>
   </section>
 
@@ -128,7 +130,7 @@ html.js-ready .fade-in { opacity: 0; transform: translateY(20px); transition: al
         </div>
       </div>
       <div class="article-body fade-in">
-        <p data-zh="经过严格的审核评估，CNQ(China Quality Service) 再次顺利通过ISO 9001:2015质量管理体系年度复审。这标志着公司在品质管理体系建设方面持续保持国际领先水平。">After rigorous audit assessment, CNQ(China Quality Service) has once again successfully passed the ISO 9001:2015 quality management system annual review. This demonstrates the company's continued international leadership in quality management system development.</p>
+        <p data-zh="经过严格的审核评估，China Quality Service 再次顺利通过ISO 9001:2015质量管理体系年度复审。这标志着公司在品质管理体系建设方面持续保持国际领先水平。">After rigorous audit assessment, China Quality Service has once again successfully passed the ISO 9001:2015 quality management system annual review. This demonstrates the company's continued international leadership in quality management system development.</p>
         <h3 data-zh="审核过程">The Audit Process</h3>
         <p data-zh="本次年度复审由国际知名认证机构执行，审核范围涵盖公司全部业务流程，包括检验服务管理、客户沟通、供应商管理、文件控制、内部审核等关键环节。审核组对公司的质量管理体系给予了高度评价。">This annual review was conducted by an internationally recognized certification body, covering all business processes including inspection service management, client communication, supplier management, document control, and internal auditing. The audit team highly praised the company's quality management system.</p>
         <h3 data-zh="客户价值">Client Value</h3>
@@ -146,8 +148,8 @@ html.js-ready .fade-in { opacity: 0; transform: translateY(20px); transition: al
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-about"><h3>CNQ(China Quality Service)</h3><p data-zh="专业的第三方品控咨询服务商。">Professional product inspection service in China.</p></div>
-        <div class="footer-col"><h4 data-zh="快速链接">Quick Links</h4><a href="about" data-zh="关于我们">About Us</a><a href="services" data-zh="服务范围">Services</a><a href="news" data-zh="新闻资讯">News</a><a href="download" data-zh="资料下载">Downloads</a></div>
+        <div class="footer-about"><h3>China Quality Service</h3><p data-zh="专业的第三方品控咨询服务商。">Professional product inspection service in China.</p></div>
+        <div class="footer-col"><h4 data-zh="快速链接">Quick Links</h4><a href="about" data-zh="关于我们">About Us</a><a href="services" data-zh="服务范围">Services</a><a href="insights" data-zh="洞察">Insights</a><a href="download" data-zh="资料下载">Downloads</a></div>
         <div class="footer-col"><h4 data-zh="核心服务">Core Services</h4><a href="services" data-zh="产品检验">Product Inspection</a><a href="services" data-zh="工厂审核">Factory Audit</a><a href="services" data-zh="实验室测试">Lab Testing</a><a href="services" data-zh="供应商管理">Supplier Management</a></div>
         <div class="footer-col"><h4 data-zh="联系我们">Contact Us</h4><a href="contact" data-zh="在线留言">Online Message</a><a href="contact" data-zh="联系方式">Contact Info</a></div>
       </div>

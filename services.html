@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-zh="服务范围 - CNQ(China Quality Service)">Product Inspection Service China | Quality Control &amp; Inspection Solutions - CNQ</title>
-  <meta name="description" data-zh="China Quality Service 服务范围 - 产品检验、工厂审核、实验室测试、供应商管理、技术咨询、国际合规等一站式品控服务。" content="Comprehensive product inspection service in China — pre-shipment inspection, factory audit, lab testing, supplier management, and international compliance solutions for global importers.">
+  <title data-zh="服务范围 - 厦门亚商检验检测技术有限公司">Product Inspection Service China | Quality Control &amp; Inspection Solutions - CNQ</title>
+  <meta name="description" data-zh="厦门亚商检验检测技术有限公司 服务范围 - 产品检验、工厂审核、实验室测试、供应商管理、技术咨询、国际合规等一站式品控服务。" content="Comprehensive product inspection service in China — pre-shipment inspection, factory audit, lab testing, supplier management, and international compliance solutions for global importers.">
   <meta name="keywords" content="product inspection service China,inspection services China,China product inspection,factory audit China,lab testing China,产品检验,工厂审核,实验室测试,供应商管理">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <!-- Open Graph / Social -->
@@ -41,6 +41,16 @@ ul, ol { list-style: none; }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a { display: block; padding: 10px 18px; color: var(--text-dark); font-size: 0.95rem; font-weight: 500; border-radius: var(--radius-sm); transition: all var(--transition); }
 .nav a:hover, .nav a.active { color: var(--primary); background: rgba(26,82,118,0.06); }
+
+/* Dropdown Menu */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+.nav-dropdown > a::after { content: '▾'; font-size: 0.7rem; margin-left: 2px; transition: transform var(--transition); }
+.nav-dropdown.open > a::after { transform: rotate(180deg); }
+.dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 240px; background: #fff; border-radius: var(--radius); box-shadow: 0 8px 30px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(8px); transition: all var(--transition); z-index: 1002; padding: 8px 0; }
+.nav-dropdown.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown-menu a { display: block; padding: 10px 20px; color: var(--text-dark); font-size: 0.9rem; border-radius: 0; white-space: nowrap; transition: all var(--transition); }
+.dropdown-menu a:hover { background: rgba(26,82,118,0.06); color: var(--primary); padding-left: 24px; }
 .lang-switch { margin-left: 16px; display: flex; gap: 4px; align-items: center; }
 .lang-switch a { padding: 4px 10px; font-size: 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-muted); cursor: pointer; }
 .lang-switch a:hover, .lang-switch a.active { background: var(--primary); color: #fff; border-color: var(--primary); }
@@ -108,6 +118,11 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   .nav.open { right: 0; }
   .nav a { padding: 14px 12px; border-bottom: 1px solid var(--border); border-radius: 0; font-size: 1rem; }
   .lang-switch { margin: 16px 0 0; padding-left: 12px; }
+  /* Mobile dropdown */
+  .nav-dropdown > a { justify-content: space-between; }
+  .dropdown-menu { position: static; box-shadow: none; opacity: 1; visibility: visible; transform: none; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0; background: transparent; min-width: auto; }
+  .nav-dropdown.open .dropdown-menu { max-height: 600px; }
+  .dropdown-menu a { padding-left: 32px; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
   .menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; }
   .menu-overlay.open { display: block; }
   .section { padding: 50px 0; }
@@ -116,6 +131,23 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 }
+/* FAQ Accordion */
+.faq-item { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 16px; overflow: hidden; transition: all var(--transition); }
+.faq-item:hover { box-shadow: var(--shadow); }
+.faq-question { padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem; font-weight: 600; color: var(--primary-dark); user-select: none; transition: background var(--transition); }
+.faq-question:hover { background: var(--bg-light); }
+.faq-question::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--primary); transition: transform 0.3s; flex-shrink: 0; margin-left: 16px; }
+.faq-item.open .faq-question::after { content: '−'; transform: rotate(180deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
+.faq-item.open .faq-answer { max-height: 2000px; }
+.faq-answer-inner { padding: 0 24px 24px; color: var(--text-body); line-height: 1.9; font-size: 0.98rem; }
+.faq-answer-inner p { margin-bottom: 12px; }
+.faq-answer-inner ul { list-style: disc; padding-left: 20px; margin-bottom: 12px; }
+.faq-answer-inner ul li { margin-bottom: 6px; }
+.faq-answer-inner ol { list-style: decimal; padding-left: 20px; margin-bottom: 12px; }
+.faq-answer-inner ol li { margin-bottom: 6px; }
+.faq-answer-inner strong { color: var(--primary-dark); }
+@media (max-width: 768px) { .faq-question { font-size: 0.95rem; padding: 16px 18px; } }
 </style>
   <link rel="canonical" href="https://www.cn-q.com/services">
   <link rel="alternate" hreflang="en" href="https://www.cn-q.com/services">
@@ -134,7 +166,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
           "@type": "Service",
           "name": "Product Inspection Services",
           "url": "https://www.cn-q.com/services#inspection",
-          "provider": { "@type": "Organization", "name": "CNQ(China Quality Service)" },
+          "provider": { "@type": "Organization", "name": "China Quality Service" },
           "serviceType": "Product Inspection",
           "areaServed": ["China", "Southeast Asia", "Europe", "North America"],
           "description": "Initial Production Check, During Production Inspection, Pre-Shipment Inspection, Full Inspection, and Container Loading Supervision for products manufactured in China."
@@ -147,7 +179,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
           "@type": "Service",
           "name": "Factory Audit Services",
           "url": "https://www.cn-q.com/services#audit",
-          "provider": { "@type": "Organization", "name": "CNQ(China Quality Service)" },
+          "provider": { "@type": "Organization", "name": "China Quality Service" },
           "serviceType": "Factory Audit",
           "areaServed": ["China", "Southeast Asia"],
           "description": "Quality Management System Audit, Social Compliance Audit, Production Capacity Assessment, and C-TPAT Security Audit."
@@ -160,7 +192,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
           "@type": "Service",
           "name": "Laboratory Testing",
           "url": "https://www.cn-q.com/services#lab",
-          "provider": { "@type": "Organization", "name": "CNQ(China Quality Service)" },
+          "provider": { "@type": "Organization", "name": "China Quality Service" },
           "serviceType": "Laboratory Testing",
           "areaServed": ["China"],
           "description": "Physical performance testing, chemical analysis, safety testing, food contact material testing, textile testing, and toy safety testing through CNAS-accredited lab partnerships."
@@ -173,7 +205,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
           "@type": "Service",
           "name": "Supplier Management",
           "url": "https://www.cn-q.com/services#supplier",
-          "provider": { "@type": "Organization", "name": "CNQ(China Quality Service)" },
+          "provider": { "@type": "Organization", "name": "China Quality Service" },
           "serviceType": "Supplier Management",
           "areaServed": ["China", "Southeast Asia"],
           "description": "Supplier qualification assessment, performance evaluation, tiered management, capability improvement, and supply chain risk control."
@@ -186,7 +218,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
           "@type": "Service",
           "name": "Technical Consulting",
           "url": "https://www.cn-q.com/services#consulting",
-          "provider": { "@type": "Organization", "name": "CNQ(China Quality Service)" },
+          "provider": { "@type": "Organization", "name": "China Quality Service" },
           "serviceType": "Technical Consulting",
           "areaServed": ["China"],
           "description": "Product standard interpretation, quality management system establishment, inspection plan design, and corrective/preventive action consulting."
@@ -199,7 +231,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
           "@type": "Service",
           "name": "International Compliance Services",
           "url": "https://www.cn-q.com/services#compliance",
-          "provider": { "@type": "Organization", "name": "CNQ(China Quality Service)" },
+          "provider": { "@type": "Organization", "name": "China Quality Service" },
           "serviceType": "International Compliance",
           "areaServed": ["Europe", "North America", "China", "Japan", "Australia", "Middle East"],
           "description": "EU CE, US FDA/FCC/UL, RoHS, REACH, CCC, PSE, RCM, GCC certification and regulatory tracking for global market access."
@@ -218,6 +250,24 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How much does your inspection service charge?", "acceptedAnswer": { "@type": "Answer", "text": "Product Inspection: $168/man-day. Factory Assessment: Swift Audit: $199/factory. Comprehensive Evaluation: $268/factory." } },
+      { "@type": "Question", "name": "Product Categories You Cover?", "acceptedAnswer": { "@type": "Answer", "text": "We provide specialized product inspection and quality control support for: Textile & Garments, KD Furniture, Garden & Outdoor, Consumer Electronics, Gifts & Premiums, Bags & Storage, Toys, Seasonal Decor, Kitchenware, and many more consumer products." } },
+      { "@type": "Question", "name": "What sampling standard do you use for product inspections? (What is AQL?)", "acceptedAnswer": { "@type": "Answer", "text": "We strictly conduct our product inspections in China based on the international AQL (Acceptable Quality Limit) standard, specifically utilizing the ANSI/ASQ Z1.4 (or ISO 2859-1) sampling plans." } },
+      { "@type": "Question", "name": "How do you classify product defects during an inspection?", "acceptedAnswer": { "@type": "Answer", "text": "We follow standard international QA protocols to classify findings into three distinct levels: Critical Defects, Major Defects, and Minor Defects." } },
+      { "@type": "Question", "name": "Which regions in China do your product inspection services cover?", "acceptedAnswer": { "@type": "Answer", "text": "We provide nationwide on-site inspection coverage across all major manufacturing hubs in Mainland China, including Guangdong, Zhejiang, Fujian, Jiangsu, and Shandong provinces." } },
+      { "@type": "Question", "name": "How do you ensure inspector integrity and prevent factory bribery?", "acceptedAnswer": { "@type": "Answer", "text": "Integrity is our absolute bottom line. We enforce a strict Zero-Tolerance Anti-Bribery and Code of Ethics Policy. Every technician signs a binding integrity agreement." } },
+      { "@type": "Question", "name": "What range of inspection services do you provide?", "acceptedAnswer": { "@type": "Answer", "text": "We offer Pre-Shipment Inspection (PSI), During Production Inspection (DPI), Pre-Production Inspection (PPI), Production Monitoring (PMR), Sample Picking Up (SPK), Container Loading Supervision (CLS), and Sorting Service & Full Inspection." } },
+      { "@type": "Question", "name": "What range of factory audits services do you provide?", "acceptedAnswer": { "@type": "Answer", "text": "We offer two levels of factory assessment services to verify supplier legitimacy, production capacity, and infrastructure quality before you place your order." } },
+      { "@type": "Question", "name": "What kind of report do you provide?", "acceptedAnswer": { "@type": "Answer", "text": "You receive a detailed, photo-rich inspection report within 24 hours of the on-site inspection. The report includes defect identification, classification, and clear pass/fail decisions based on AQL standards." } },
+      { "@type": "Question", "name": "What is your Inspection Workflow?", "acceptedAnswer": { "@type": "Answer", "text": "1. You send us product specs, order quantity, and packaging requirements. 2. Our technical team creates a custom checklist based on AQL standards. 3. Assign correlative professional technicians to execute the inspection on-site. 4. You receive a detailed, photo-rich technical report within 24 hours." } }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -229,10 +279,10 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
       <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
       <nav class="nav">
         <a href="/" data-zh="首页">Home</a>
-        <a href="about" data-zh="关于我们">About Us</a>
-        <a href="services" class="active" data-zh="服务范围">Services</a>
-        <a href="news" data-zh="新闻资讯">News</a>
-        <a href="download" data-zh="资料下载">Downloads</a>
+        <div class="nav-dropdown"><a href="about" data-zh="关于我们">About Us</a><div class="dropdown-menu"><a href="about#company-intro" data-zh="公司简介">Company Profile</a><a href="about#mission" data-zh="使命与愿景">Mission & Vision</a><a href="about#team" data-zh="专业团队">Professional Team</a><a href="about#advantage" data-zh="核心优势">Core Advantages</a></div></div>
+        <div class="nav-dropdown"><a href="services" class="active" data-zh="服务范围">Services</a><div class="dropdown-menu"><a href="services#inspection" data-zh="产品检验">Product Inspection</a><a href="services#audit" data-zh="工厂审核">Factory Audit</a><a href="services#lab" data-zh="实验室测试">Laboratory Testing</a><a href="services#supplier" data-zh="供应商管理">Supplier Management</a><a href="services#consulting" data-zh="技术咨询">Technical Consulting</a><a href="services#compliance" data-zh="国际合规">International Compliance</a><a href="services#faq" data-zh="常见问题">Frequently Asked Questions</a></div></div>
+        <div class="nav-dropdown"><a href="insights" data-zh="洞察">Insights</a><div class="dropdown-menu"><a href="inspection-cases" data-zh="验货案例">Inspection Cases</a><a href="factory-resource" data-zh="工厂资源">Factory Resource</a><a href="industry-updates" data-zh="行业动态">Industry Updates</a></div></div>
+        <div class="nav-dropdown"><a href="download" data-zh="资料下载">Downloads</a><div class="dropdown-menu"><a href="download#standards" data-zh="行业标准">Industry Standards</a><a href="download#regulations" data-zh="法规汇编">Regulatory Compilations</a><a href="download#whitepaper" data-zh="白皮书">Whitepapers</a><a href="download#templates" data-zh="工厂评估">Factory Assessment</a><a href="download#brochure" data-zh="检验模板">Inspection Template</a></div></div>
         <a href="contact" data-zh="联系我们">Contact</a>
         <div class="lang-switch">
           <a href="javascript:void(0)" data-lang="zh" class="active">中</a>
@@ -264,13 +314,14 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
             <a href="#supplier" data-zh="供应商管理">Supplier Management</a>
             <a href="#consulting" data-zh="技术咨询">Technical Consulting</a>
             <a href="#compliance" data-zh="国际合规">International Compliance</a>
+            <a href="#faq" data-zh="常见问题">Frequently Asked Questions</a>
           </div>
           <div class="sidebar-contact">
             <h4 data-zh="联系我们">Contact Us</h4>
             <ul>
               <li data-zh="电话：+86 136 6607 1299">Phone: +86 136 6607 1299</li>
               <li data-zh="邮箱：contact@cn-q.com">Email: <a href="mailto:contact@cn-q.com">contact@cn-q.com</a></li>
-              <li data-zh="合规邮箱：compliance@cn-q.com">Compliance: <a href="mailto:compliance@cn-q.com">compliance@cn-q.com</a></li>
+              <li data-zh="合规邮箱：compliance@cn-q.com">&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:compliance@cn-q.com">compliance@cn-q.com</a></li>
             </ul>
           </div>
         </aside>
@@ -449,6 +500,117 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
               </div>
             </div>
           </section>
+
+          <!-- FAQ -->
+          <section id="faq">
+            <h2 data-zh="常见问题">Frequently Asked Questions</h2>
+
+            <div class="faq-item" id="svc-faq-1">
+              <div class="faq-question"><span data-zh="你们的检验服务如何收费？">How much does your inspection service charge?</span></div>
+              <div class="faq-answer"><div class="faq-answer-inner">
+                <p><strong>Product Inspection:</strong> $168/man-day.</p>
+                <p><strong>Factory Assessment:</strong></p>
+                <ul>
+                  <li><strong>Swift Audit:</strong> $199/factory (Focused verification).</li>
+                  <li><strong>Comprehensive Evaluation:</strong> $268/factory (Deep-dive capability &amp; infrastructure check).</li>
+                </ul>
+              </div></div>
+            </div>
+
+            <div class="faq-item" id="svc-faq-2">
+              <div class="faq-question"><span data-zh="你们覆盖哪些产品品类？">Product Categories You Cover?</span></div>
+              <div class="faq-answer"><div class="faq-answer-inner">
+                <p data-zh="凭借我们在中国工业领域的深厚专业知识，我们为以下品类提供专业的产品检验和质量控制支持，帮助您降低风险：">Leveraging our deep expertise in China's industrial landscape, we provide specialized product inspection and quality control support to mitigate risks for these categories:</p>
+                <ul>
+                  <li>✅ Textile &amp; Garments</li>
+                  <li>✅ KD Furniture</li>
+                  <li>✅ Garden &amp; Outdoor</li>
+                  <li>✅ Consumer Electronics</li>
+                  <li>✅ Gifts &amp; Premiums</li>
+                  <li>✅ Bags &amp; Storage</li>
+                  <li>✅ Toys</li>
+                  <li>✅ Seasonal Decor</li>
+                  <li>✅ Kitchenware</li>
+                  <li><em data-zh="以及更多消费品...">And many more consumer products...</em></li>
+                </ul>
+              </div></div>
+            </div>
+
+            <div class="faq-item" id="svc-faq-3">
+              <div class="faq-question"><span data-zh="你们使用什么抽样标准？（什么是AQL？）">What sampling standard do you use for product inspections? (What is AQL?)</span></div>
+              <div class="faq-answer"><div class="faq-answer-inner">
+                <p>We strictly conduct our product inspections in China based on the international <strong>AQL (Acceptable Quality Limit)</strong> standard, specifically utilizing the <strong>ANSI/ASQ Z1.4</strong> (or ISO 2859-1) sampling plans. By default, we apply <strong>General Inspection Level II</strong> with standard sampling tables to determine the exact sample size for your lot. This ensures that the inspection results are statistically valid, mathematically sound, and fully recognized by global retail chains and compliance auditors.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item" id="svc-faq-4">
+              <div class="faq-question"><span data-zh="你们如何对产品缺陷进行分类？">How do you classify product defects during an inspection?</span></div>
+              <div class="faq-answer"><div class="faq-answer-inner">
+                <p>We follow standard international QA protocols to classify findings into three distinct levels:</p>
+                <ul>
+                  <li><strong>Critical Defects:</strong> Issues that fail safety regulations or present potential hazards to the end-user (e.g., sharp metal edges, exposed wiring).</li>
+                  <li><strong>Major Defects:</strong> Deficiencies that reduce the usability or salability of the product (e.g., structural cracks, severe color bleeding, misaligned components).</li>
+                  <li><strong>Minor Defects:</strong> Workmanship imperfections that do not affect function or safety but deviate from the specifications (e.g., minor flashes on handles, loose threads).</li>
+                </ul>
+              </div></div>
+            </div>
+
+            <div class="faq-item" id="svc-faq-5">
+              <div class="faq-question"><span data-zh="你们的检验服务覆盖中国哪些地区？">Which regions in China do your product inspection services cover?</span></div>
+              <div class="faq-answer"><div class="faq-answer-inner">
+                <p>We provide nationwide on-site inspection coverage across all major manufacturing hubs in Mainland China. Our technicians regularly visit factories in <strong>Guangdong</strong> (Shenzhen, Guangzhou, Dongguan), <strong>Zhejiang</strong> (Ningbo, Yiwu, Hangzhou), <strong>Fujian</strong> (Xiamen, Fuzhou), <strong>Jiangsu</strong>, and <strong>Shandong</strong> provinces. No matter where your supplier is located, we can deploy a local inspector to the factory floor promptly.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item" id="svc-faq-6">
+              <div class="faq-question"><span data-zh="你们如何确保检验员诚信并防止工厂贿赂？">How do you ensure inspector integrity and prevent factory bribery?</span></div>
+              <div class="faq-answer"><div class="faq-answer-inner">
+                <p>Integrity is our absolute bottom line. As professional engineers, we enforce a strict <strong>Zero-Tolerance Anti-Bribery and Code of Ethics Policy</strong>. Every technician signs a binding integrity agreement before stepping onto a factory floor. We perform independent, impartial cross-checks on all inspection reports, ensuring that what you see in the report is 100% representative of the actual cargo.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item" id="svc-faq-7">
+              <div class="faq-question"><span data-zh="你们提供哪些检验服务？">What range of inspection services do you provide?</span></div>
+              <div class="faq-answer"><div class="faq-answer-inner">
+                <p>We offer an end-to-end quality assurance suite to safeguard your supply chain:</p>
+                <ul>
+                  <li>Pre-Shipment Inspection (PSI)</li>
+                  <li>During Production Inspection (DPI)</li>
+                  <li>Pre-Production Inspection (PPI)</li>
+                  <li>Production Monitoring (PMR)</li>
+                  <li>Sample Picking Up (SPK)</li>
+                  <li>Container Loading Supervision (CLS)</li>
+                  <li>Sorting Service &amp; Full Inspection</li>
+                </ul>
+              </div></div>
+            </div>
+
+            <div class="faq-item" id="svc-faq-8">
+              <div class="faq-question"><span data-zh="你们提供哪些工厂审核服务？">What range of factory audits services do you provide?</span></div>
+              <div class="faq-answer"><div class="faq-answer-inner">
+                <p>We offer two levels of factory assessment services to verify supplier legitimacy, production capacity, and infrastructure quality before you place your order, protecting you from potential sourcing traps.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item" id="svc-faq-9">
+              <div class="faq-question"><span data-zh="你们提供什么样的报告？">What kind of report do you provide?</span></div>
+              <div class="faq-answer"><div class="faq-answer-inner">
+                <p>You receive a detailed, photo-rich inspection report within <strong>24 hours</strong> of the on-site inspection. The report includes defect identification, classification (Critical / Major / Minor), and clear pass/fail decisions based on AQL standards.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item" id="svc-faq-10">
+              <div class="faq-question"><span data-zh="你们的检验流程是怎样的？">What is your Inspection Workflow?</span></div>
+              <div class="faq-answer"><div class="faq-answer-inner">
+                <ol>
+                  <li>You send us product specs, order quantity, and packaging requirements.</li>
+                  <li>Our technical team will create a custom checklist based on AQL (ANSI/ASQ Z1.4) standards.</li>
+                  <li>Assign correlative professional technicians to execute the inspection on-site.</li>
+                  <li>You receive a detailed, photo-rich technical report within 24 hours.</li>
+                </ol>
+              </div></div>
+            </div>
+          </section>
         </div>
       </div>
     </div>
@@ -466,14 +628,14 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
     <div class="container">
       <div class="footer-grid">
         <div class="footer-about">
-          <h3>CNQ(China Quality Service)</h3>
+          <h3>China Quality Service</h3>
           <p data-zh="专业的第三方品控咨询服务商，致力于为全球客户提供独立、客观的品质检验与咨询服务。">Professional product inspection service in China — independent, objective quality inspection and consulting for global clients sourcing from Chinese manufacturers.</p>
         </div>
         <div class="footer-col">
           <h4 data-zh="快速链接">Quick Links</h4>
           <a href="about" data-zh="关于我们">About Us</a>
           <a href="services" data-zh="服务范围">Services</a>
-          <a href="news" data-zh="新闻资讯">News</a>
+          <a href="insights" data-zh="洞察">Insights</a>
           <a href="download" data-zh="资料下载">Downloads</a>
         </div>
         <div class="footer-col">
@@ -497,5 +659,16 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
 
   <button class="back-to-top" aria-label="Back to Top">&#9650;</button>
   <script src="js/main.js" defer></script>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(function(q) {
+      q.addEventListener('click', function() {
+        var item = this.parentElement;
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+  </script>
 </body>
 </html>

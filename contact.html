@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-zh="联系我们 - CNQ(China Quality Service)">Contact CNQ - Product Inspection Service China | Get a Quote</title>
-  <meta name="description" data-zh="联系 CNQ(China Quality Service) - 提供在线留言和联系方式，专业的品控咨询服务期待与您合作。" content="Contact China Quality Service for professional product inspection services in China. Send us an inquiry for pre-shipment inspection, factory audit, or lab testing — we respond within 24 hours.">
+  <title data-zh="联系我们 - 厦门亚商">Contact CNQ - Product Inspection Service China | Get a Quote</title>
+  <meta name="description" data-zh="联系 厦门亚商 - 提供在线留言和联系方式，专业的品控咨询服务期待与您合作。" content="Contact China Quality Service for professional product inspection services in China. Send us an inquiry for pre-shipment inspection, factory audit, or lab testing — we respond within 24 hours.">
   <meta name="keywords" content="product inspection service China,contact quality control China,get inspection quote,QC services contact,联系我们,品控咨询,品质控制服务">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <!-- Open Graph / Social -->
-  <meta property="og:title" content="Contact China Quality Service - Product Inspection Service China | Get a Quote">
+  <meta property="og:title" content="Contact CNQ - Product Inspection Service China | Get a Quote">
   <meta property="og:description" content="Contact China Quality Service for professional product inspection services in China. Send us an inquiry for pre-shipment inspection, factory audit, or lab testing — we respond within 24 hours.">
   <meta property="og:url" content="https://www.cn-q.com/contact">
   <meta property="og:type" content="website">
@@ -43,6 +43,16 @@ ul, ol { list-style: none; }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a { display: block; padding: 10px 18px; color: var(--text-dark); font-size: 0.95rem; font-weight: 500; border-radius: var(--radius-sm); transition: all var(--transition); }
 .nav a:hover, .nav a.active { color: var(--primary); background: rgba(26,82,118,0.06); }
+
+/* Dropdown Menu */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+.nav-dropdown > a::after { content: '▾'; font-size: 0.7rem; margin-left: 2px; transition: transform var(--transition); }
+.nav-dropdown.open > a::after { transform: rotate(180deg); }
+.dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 240px; background: #fff; border-radius: var(--radius); box-shadow: 0 8px 30px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(8px); transition: all var(--transition); z-index: 1002; padding: 8px 0; }
+.nav-dropdown.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown-menu a { display: block; padding: 10px 20px; color: var(--text-dark); font-size: 0.9rem; border-radius: 0; white-space: nowrap; transition: all var(--transition); }
+.dropdown-menu a:hover { background: rgba(26,82,118,0.06); color: var(--primary); padding-left: 24px; }
 .lang-switch { margin-left: 16px; display: flex; gap: 4px; align-items: center; }
 .lang-switch a { padding: 4px 10px; font-size: 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-muted); cursor: pointer; }
 .lang-switch a:hover, .lang-switch a.active { background: var(--primary); color: #fff; border-color: var(--primary); }
@@ -95,6 +105,11 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   .nav.open { right: 0; }
   .nav a { padding: 14px 12px; border-bottom: 1px solid var(--border); border-radius: 0; font-size: 1rem; }
   .lang-switch { margin: 16px 0 0; padding-left: 12px; }
+  /* Mobile dropdown */
+  .nav-dropdown > a { justify-content: space-between; }
+  .dropdown-menu { position: static; box-shadow: none; opacity: 1; visibility: visible; transform: none; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0; background: transparent; min-width: auto; }
+  .nav-dropdown.open .dropdown-menu { max-height: 600px; }
+  .dropdown-menu a { padding-left: 32px; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
   .menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; }
   .menu-overlay.open { display: block; }
   .section { padding: 50px 0; }
@@ -114,7 +129,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
     "url": "https://www.cn-q.com/contact",
     "about": {
       "@type": "Organization",
-      "name": "CNQ(China Quality Service)",
+      "name": "China Quality Service",
       "url": "https://www.cn-q.com",
       "logo": "https://www.cn-q.com/Upload/logo.png",
       "address": {
@@ -152,7 +167,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "China Quality Service Co., Ltd.",
+    "name": "China Quality Service",
     "alternateName": "CNQ",
     "url": "https://www.cn-q.com",
     "logo": "https://www.cn-q.com/Upload/logo.png",
@@ -217,10 +232,10 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
       <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
       <nav class="nav">
         <a href="/" data-zh="首页">Home</a>
-        <a href="about" data-zh="关于我们">About Us</a>
-        <a href="services" data-zh="服务范围">Services</a>
-        <a href="news" data-zh="新闻资讯">News</a>
-        <a href="download" data-zh="资料下载">Downloads</a>
+        <div class="nav-dropdown"><a href="about" data-zh="关于我们">About Us</a><div class="dropdown-menu"><a href="about#company-intro" data-zh="公司简介">Company Profile</a><a href="about#mission" data-zh="使命与愿景">Mission & Vision</a><a href="about#team" data-zh="专业团队">Professional Team</a><a href="about#advantage" data-zh="核心优势">Core Advantages</a></div></div>
+        <div class="nav-dropdown"><a href="services" data-zh="服务范围">Services</a><div class="dropdown-menu"><a href="services#inspection" data-zh="产品检验">Product Inspection</a><a href="services#audit" data-zh="工厂审核">Factory Audit</a><a href="services#lab" data-zh="实验室测试">Laboratory Testing</a><a href="services#supplier" data-zh="供应商管理">Supplier Management</a><a href="services#consulting" data-zh="技术咨询">Technical Consulting</a><a href="services#compliance" data-zh="国际合规">International Compliance</a><a href="services#faq" data-zh="常见问题">Frequently Asked Questions</a></div></div>
+        <div class="nav-dropdown"><a href="insights" data-zh="洞察">Insights</a><div class="dropdown-menu"><a href="inspection-cases" data-zh="验货案例">Inspection Cases</a><a href="factory-resource" data-zh="工厂资源">Factory Resource</a><a href="industry-updates" data-zh="行业动态">Industry Updates</a></div></div>
+        <div class="nav-dropdown"><a href="download" data-zh="资料下载">Downloads</a><div class="dropdown-menu"><a href="download#standards" data-zh="行业标准">Industry Standards</a><a href="download#regulations" data-zh="法规汇编">Regulatory Compilations</a><a href="download#whitepaper" data-zh="白皮书">Whitepapers</a><a href="download#templates" data-zh="工厂评估">Factory Assessment</a><a href="download#brochure" data-zh="检验模板">Inspection Template</a></div></div>
         <a href="contact" class="active" data-zh="联系我们">Contact</a>
         <div class="lang-switch">
           <a href="javascript:void(0)" data-lang="zh" class="active">中</a>
@@ -345,14 +360,14 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
     <div class="container">
       <div class="footer-grid">
         <div class="footer-about">
-          <h3>CNQ(China Quality Service)</h3>
+          <h3>China Quality Service</h3>
           <p data-zh="专业的第三方品控咨询服务商，致力于为全球客户提供独立、客观的品质检验与咨询服务。">Professional product inspection service in China — independent, objective quality inspection and consulting for global clients sourcing from Chinese manufacturers.</p>
         </div>
         <div class="footer-col">
           <h4 data-zh="快速链接">Quick Links</h4>
           <a href="about" data-zh="关于我们">About Us</a>
           <a href="services" data-zh="服务范围">Services</a>
-          <a href="news" data-zh="新闻资讯">News</a>
+          <a href="insights" data-zh="洞察">Insights</a>
           <a href="download" data-zh="资料下载">Downloads</a>
         </div>
         <div class="footer-col">

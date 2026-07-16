@@ -1,5 +1,5 @@
 /* ============================================================
-   China Quality Service Co., Ltd. - Main JavaScript
+   China Quality Service - Main JavaScript
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -86,17 +86,58 @@ document.addEventListener('DOMContentLoaded', function () {
   if (overlay) {
     overlay.addEventListener('click', function () {
       nav.classList.remove('open');
-      overlay.classList.remove('open');
+      if (overlay) overlay.classList.remove('open');
       document.body.style.overflow = '';
+      // Close all dropdowns when overlay is clicked
+      document.querySelectorAll('.nav-dropdown.open').forEach(function (dd) { dd.classList.remove('open'); });
     });
   }
-  document.querySelectorAll('.nav a').forEach(function (link) {
+  // Nav links close mobile menu (but not dropdown toggles)
+  document.querySelectorAll('.nav > a').forEach(function (link) {
     link.addEventListener('click', function () {
       if (nav.classList.contains('open')) {
         nav.classList.remove('open');
         if (overlay) overlay.classList.remove('open');
         document.body.style.overflow = '';
       }
+    });
+  });
+
+  // ========== Dropdown Menu (Click to toggle) ==========
+  document.querySelectorAll('.nav-dropdown > a').forEach(function (dropdownLink) {
+    dropdownLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      var dropdown = this.parentElement;
+      var isOpen = dropdown.classList.contains('open');
+      // Close all other dropdowns
+      document.querySelectorAll('.nav-dropdown.open').forEach(function (dd) { dd.classList.remove('open'); });
+      // Toggle this dropdown
+      if (!isOpen) {
+        dropdown.classList.add('open');
+      }
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(function (dd) { dd.classList.remove('open'); });
+    }
+  });
+
+  // Dropdown item clicks — navigate and close
+  document.querySelectorAll('.dropdown-menu a').forEach(function (item) {
+    item.addEventListener('click', function (e) {
+      // Close the dropdown
+      var dropdown = this.closest('.nav-dropdown');
+      if (dropdown) dropdown.classList.remove('open');
+      // On mobile, close the whole nav
+      if (nav && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        if (overlay) overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      // Let the link navigate naturally
     });
   });
 

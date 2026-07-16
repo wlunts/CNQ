@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    ============================================================
+    Article Template — China Quality Service
+    适用于: Inspection Cases / Factory Resource 文章页面
+
+    使用方法:
+    1. 复制此文件并重命名
+    2. 替换所有 [PLACEHOLDER] 占位符
+    3. 更新日期、分类、描述
+    4. 添加实际图片和内容
+    ============================================================
+  -->
+  <title data-zh="[中文标题]">[English Title] | China Quality Service</title>
+  <meta name="description" content="[Article description for SEO — 150-160 characters]">
+  <meta name="keywords" content="[keywords, separated, by, commas]">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="[English Title] | China Quality Service">
+  <meta property="og:description" content="[Article description]">
+  <meta property="og:url" content="https://www.cn-q.com/[article-slug]">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://www.cn-q.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="China Quality Service">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.cn-q.com/images/og-image.png">
+<style>
+:root { --primary: #1a5276; --primary-dark: #123a52; --primary-light: #2980b9; --accent: #e67e22; --accent-hover: #d35400; --bg-light: #f5f7fa; --bg-white: #ffffff; --bg-footer: #1a1f2b; --text-dark: #2c3e50; --text-body: #555; --text-muted: #999; --border: #e0e5ec; --shadow: 0 2px 20px rgba(0,0,0,0.08); --shadow-hover: 0 8px 30px rgba(0,0,0,0.12); --radius: 8px; --radius-sm: 4px; --transition: 0.3s ease; --max-width: 1200px; --header-h: 72px; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.7; color: var(--text-dark); background: var(--bg-white); overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--primary); text-decoration: none; transition: color var(--transition); } a:hover { color: var(--primary-light); }
+ul, ol { list-style: none; }
+.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+.section { padding: 80px 0; }
+
+/* Header */
+.header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
+.logo { flex-shrink: 0; } .logo a { display: flex; align-items: center; font-size: 1.4rem; font-weight: 700; color: var(--primary); } .logo img { height: 48px; margin-right: 10px; }
+.nav { display: flex; align-items: center; gap: 4px; }
+.nav a { display: block; padding: 10px 18px; color: var(--text-dark); font-size: 0.95rem; font-weight: 500; border-radius: var(--radius-sm); transition: all var(--transition); }
+.nav a:hover, .nav a.active { color: var(--primary); background: rgba(26,82,118,0.06); }
+
+/* Dropdown Menu */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+.nav-dropdown > a::after { content: '▾'; font-size: 0.7rem; margin-left: 2px; transition: transform var(--transition); }
+.nav-dropdown.open > a::after { transform: rotate(180deg); }
+.dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 240px; background: #fff; border-radius: var(--radius); box-shadow: 0 8px 30px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(8px); transition: all var(--transition); z-index: 1002; padding: 8px 0; }
+.nav-dropdown.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown-menu a { display: block; padding: 10px 20px; color: var(--text-dark); font-size: 0.9rem; border-radius: 0; white-space: nowrap; transition: all var(--transition); }
+.dropdown-menu a:hover { background: rgba(26,82,118,0.06); color: var(--primary); padding-left: 24px; }
+.lang-switch { margin-left: 16px; display: flex; gap: 4px; align-items: center; } .lang-switch a { padding: 4px 10px; font-size: 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-muted); cursor: pointer; } .lang-switch a:hover, .lang-switch a.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; z-index: 1001; } .menu-toggle span { display: block; width: 26px; height: 2.5px; background: var(--primary); }
+
+/* Page Header */
+.page-header { background: linear-gradient(135deg, rgba(13,47,69,0.9), rgba(26,82,118,0.88)), url('../images/news-banner.jpg') center/cover no-repeat; color: #fff; padding: 120px 0 60px; text-align: center; }
+.page-header .page-title { font-size: 2.4rem; margin-bottom: 12px; font-weight: 700; }
+.page-header .breadcrumb { font-size: 0.9rem; opacity: 0.75; } .page-header .breadcrumb a { color: rgba(255,255,255,0.8); } .page-header .breadcrumb a:hover { color: #fff; }
+
+/* Article Header */
+.article-header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.article-header h1 { font-size: 1.8rem; color: var(--text-dark); margin-bottom: 12px; }
+.article-meta { font-size: 0.9rem; color: var(--text-muted); display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+.article-meta .category-tag { display: inline-block; background: var(--primary); color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+
+/* Article Body */
+.article-body { font-size: 1.05rem; line-height: 2; color: var(--text-body); }
+.article-body p { margin-bottom: 20px; }
+.article-body h2 { font-size: 1.4rem; color: var(--primary); padding-bottom: 8px; border-bottom: 2px solid var(--primary); margin: 36px 0 18px; }
+.article-body h3 { font-size: 1.2rem; color: var(--primary-dark); margin: 28px 0 14px; }
+.article-body strong { color: var(--primary-dark); }
+.article-body blockquote { border-left: 4px solid var(--primary-light); margin: 20px 0; padding: 12px 20px; background: var(--bg-light); color: var(--text-body); font-style: italic; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.article-body ul, .article-body ol { list-style: disc; padding-left: 24px; margin-bottom: 20px; }
+.article-body ul li, .article-body ol li { margin-bottom: 8px; }
+.article-body ol { list-style: decimal; }
+
+/* Article Tables */
+.article-body table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+.article-body table th { background: var(--primary); color: #fff; padding: 12px 16px; text-align: left; font-weight: 600; }
+.article-body table td { padding: 10px 16px; border-bottom: 1px solid var(--border); }
+.article-body table tr:nth-child(even) td { background: var(--bg-light); }
+.article-body table tr:hover td { background: rgba(26,82,118,0.04); }
+
+/* Star Rating (for defect frequency etc.) */
+.star-rating { color: var(--accent); letter-spacing: 2px; }
+
+/* Image Gallery */
+.article-image { margin: 24px 0; text-align: center; }
+.article-image img { max-width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); }
+.article-image .caption { font-size: 0.9rem; color: var(--text-muted); margin-top: 8px; font-style: italic; }
+
+/* HR */
+.article-body hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+/* Info Box / Callout */
+.info-box { background: var(--bg-light); border-left: 4px solid var(--primary); padding: 16px 20px; margin: 20px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.95rem; color: var(--text-body); }
+
+/* Article Navigation */
+.article-nav { display: flex; justify-content: space-between; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.95rem; flex-wrap: wrap; gap: 8px; }
+.article-nav a { color: var(--text-body); } .article-nav a:hover { color: var(--primary); }
+.article-nav span { color: var(--text-muted); }
+
+/* Font Size Controls */
+.font-size-controls { display: flex; gap: 8px; align-items: center; margin-bottom: 16px; } .font-size-controls button { padding: 4px 12px; border: 1px solid var(--border); background: #fff; border-radius: var(--radius-sm); cursor: pointer; font-size: 0.85rem; } .font-size-controls button:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* Footer */
+.footer { background: var(--bg-footer); color: rgba(255,255,255,0.7); padding: 60px 0 30px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; } .footer-about h3 { color: #fff; font-size: 1.2rem; margin-bottom: 16px; } .footer-about p { font-size: 0.9rem; line-height: 1.8; }
+.footer-col h4 { color: #fff; font-size: 1rem; margin-bottom: 16px; } .footer-col a { display: block; color: rgba(255,255,255,0.6); font-size: 0.9rem; padding: 5px 0; transition: all var(--transition); } .footer-col a:hover { color: #fff; padding-left: 6px; }
+.footer-bottom { text-align: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: rgba(255,255,255,0.4); }
+.back-to-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; background: var(--primary); color: #fff; border: none; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all var(--transition); box-shadow: 0 2px 12px rgba(0,0,0,0.2); z-index: 999; }
+.back-to-top.visible { opacity: 1; visibility: visible; } .back-to-top:hover { background: var(--primary-dark); transform: translateY(-3px); }
+html.js-ready .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; } html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 992px) { :root { --header-h: 64px; } .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 768px) {
+  :root { --header-h: 64px; }
+  .menu-toggle { display: flex; }
+  .nav { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: #fff; flex-direction: column; padding: 80px 24px 24px; gap: 0; box-shadow: -4px 0 20px rgba(0,0,0,0.1); transition: right 0.3s ease; overflow-y: auto; }
+  .nav.open { right: 0; }
+  .nav a { padding: 14px 12px; border-bottom: 1px solid var(--border); border-radius: 0; font-size: 1rem; }
+  .lang-switch { margin: 16px 0 0; padding-left: 12px; }
+  .nav-dropdown > a { justify-content: space-between; }
+  .dropdown-menu { position: static; box-shadow: none; opacity: 1; visibility: visible; transform: none; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0; background: transparent; min-width: auto; }
+  .nav-dropdown.open .dropdown-menu { max-height: 600px; }
+  .dropdown-menu a { padding-left: 32px; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
+  .menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; } .menu-overlay.open { display: block; }
+  .section { padding: 50px 0; }
+  .page-header .page-title { font-size: 1.8rem; }
+  .article-header h1 { font-size: 1.4rem; }
+  .article-nav { flex-direction: column; gap: 8px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+</style>
+  <link rel="canonical" href="https://www.cn-q.com/[article-slug]">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "[English Title]",
+    "description": "[Article description]",
+    "image": "https://www.cn-q.com/images/og-image.png",
+    "datePublished": "[YYYY-MM-DD]",
+    "dateModified": "[YYYY-MM-DD]",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.cn-q.com/[article-slug]" },
+    "author": { "@type": "Organization", "name": "China Quality Service" },
+    "publisher": { "@type": "Organization", "name": "China Quality Service", "logo": { "@type": "ImageObject", "url": "https://www.cn-q.com/Upload/logo.png" } },
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cn-q.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.cn-q.com/insights" },
+      { "@type": "ListItem", "position": 3, "name": "[Category: Inspection Cases or Factory Resource]", "item": "https://www.cn-q.com/[category-slug]" },
+      { "@type": "ListItem", "position": 4, "name": "[English Title]", "item": "https://www.cn-q.com/[article-slug]" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="header"><div class="container header-inner"><div class="logo"><a href="/"><img src="Upload/logo.png" alt="China Quality Service" onerror="this.style.display='none'"><span>China Quality Service</span></a></div><button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button><nav class="nav"><a href="/" data-zh="首页">Home</a><div class="nav-dropdown"><a href="about" data-zh="关于我们">About Us</a><div class="dropdown-menu"><a href="about#company-intro" data-zh="公司简介">Company Profile</a><a href="about#mission" data-zh="使命与愿景">Mission & Vision</a><a href="about#team" data-zh="专业团队">Professional Team</a><a href="about#advantage" data-zh="核心优势">Core Advantages</a></div></div><div class="nav-dropdown"><a href="services" data-zh="服务范围">Services</a><div class="dropdown-menu"><a href="services#inspection" data-zh="产品检验">Product Inspection</a><a href="services#audit" data-zh="工厂审核">Factory Audit</a><a href="services#lab" data-zh="实验室测试">Laboratory Testing</a><a href="services#supplier" data-zh="供应商管理">Supplier Management</a><a href="services#consulting" data-zh="技术咨询">Technical Consulting</a><a href="services#compliance" data-zh="国际合规">International Compliance</a><a href="services#faq" data-zh="常见问题">Frequently Asked Questions</a></div></div><div class="nav-dropdown"><a href="insights" class="active" data-zh="洞察">Insights</a><div class="dropdown-menu"><a href="inspection-cases" data-zh="验货案例">Inspection Cases</a><a href="factory-resource" data-zh="工厂资源">Factory Resource</a><a href="industry-updates" data-zh="行业动态">Industry Updates</a></div></div><div class="nav-dropdown"><a href="download" data-zh="资料下载">Downloads</a><div class="dropdown-menu"><a href="download#standards" data-zh="行业标准">Industry Standards</a><a href="download#regulations" data-zh="法规汇编">Regulatory Compilations</a><a href="download#whitepaper" data-zh="白皮书">Whitepapers</a><a href="download#templates" data-zh="工厂评估">Factory Assessment</a><a href="download#brochure" data-zh="检验模板">Inspection Template</a></div></div><a href="contact" data-zh="联系我们">Contact</a><div class="lang-switch"><a href="javascript:void(0)" data-lang="zh" class="active">中</a><a href="javascript:void(0)" data-lang="en">EN</a></div></nav></div></header><div class="menu-overlay"></div>
+
+  <section class="page-header"><div class="container"><div class="page-title" data-zh="[中文分类名称]">[Category: Inspection Cases or Factory Resource]</div><div class="breadcrumb"><a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="insights" data-zh="洞察">Insights</a> <span>&rsaquo;</span> <a href="[category-slug]" data-zh="[中文分类]">[Category]</a> <span>&rsaquo;</span> <span data-zh="正文">Article</span></div></div></section>
+
+  <section class="section"><div class="container" style="max-width: 860px;">
+    <div class="article-header fade-in">
+      <h1 data-zh="[中文标题]">[English Title]</h1>
+      <div class="article-meta">
+        <span data-zh="发布时间：[YYYY年MM月DD日]">Published: [YYYY-MM-DD]</span>
+        <span class="category-tag">[Category: Inspection Cases / Factory Resource]</span>
+      </div>
+    </div>
+
+    <div class="font-size-controls">
+      <span style="font-size:0.85rem;color:var(--text-muted)" data-zh="字体：">Font: </span>
+      <button onclick="changeFontSize('small')" data-zh="小">S</button>
+      <button onclick="changeFontSize('medium')" data-zh="中">M</button>
+      <button onclick="changeFontSize('large')" data-zh="大">L</button>
+    </div>
+
+    <div class="article-body fade-in" id="articleContent">
+
+      <!-- ============================================================
+           ARTICLE CONTENT — Replace [PLACEHOLDER] sections below
+           ============================================================ -->
+
+      <!-- Intro paragraph -->
+      <p data-zh="[中文介绍段落]">[English introductory paragraph — set the context for the article.]</p>
+
+      <!-- Section with heading -->
+      <h2 data-zh="[中文二级标题]">[English H2 Section Title]</h2>
+
+      <p data-zh="[中文内容]">[English content paragraph. Use <strong>bold</strong> for emphasis.]</p>
+
+      <!-- Blockquote (for quotes, testimonials, or highlighted insights) -->
+      <blockquote data-zh="[中文引用]">
+        <p>"[English quote or highlighted statement]"</p>
+      </blockquote>
+
+      <!-- Table (for defect analysis, factory profiles, comparisons etc.) -->
+      <h3 data-zh="[中文小标题]">[English H3 Subtitle]</h3>
+
+      <table>
+        <tr><th data-zh="[列1中文]">[Column 1]</th><th data-zh="[列2中文]">[Column 2]</th></tr>
+        <tr><td data-zh="[数据]">[Data row 1, col 1]</td><td data-zh="[数据]">[Data row 1, col 2]</td></tr>
+        <tr><td data-zh="[数据]">[Data row 2, col 1]</td><td data-zh="[数据]">[Data row 2, col 2]</td></tr>
+      </table>
+
+      <!-- Star ratings (for defect frequency, rework difficulty etc.) -->
+      <p><strong data-zh="频率：">Frequency:</strong> <span class="star-rating">★★★★☆</span></p>
+
+      <hr>
+
+      <!-- Another section -->
+      <h2 data-zh="[中文二级标题]">[English H2 Section Title]</h2>
+
+      <p data-zh="[中文内容]">[English content with <strong>important terms</strong> highlighted.]</p>
+
+      <ul>
+        <li data-zh="[中文列表项1]">[Bullet point 1]</li>
+        <li data-zh="[中文列表项2]">[Bullet point 2]</li>
+        <li data-zh="[中文列表项3]">[Bullet point 3]</li>
+      </ul>
+
+      <!-- Numbered list -->
+      <ol>
+        <li data-zh="[中文步骤1]">[Step 1]</li>
+        <li data-zh="[中文步骤2]">[Step 2]</li>
+        <li data-zh="[中文步骤3]">[Step 3]</li>
+      </ol>
+
+      <hr>
+
+      <!-- Image gallery section -->
+      <h2 data-zh="[现场照片/工厂照片]">On-Site Evidence Gallery</h2>
+
+      <p data-zh="[图片说明段落]">[Description of the images below — technical snapshots from the on-site visit.]</p>
+
+      <div class="article-image fade-in">
+        <img src="Upload/[article-image-1].jpg" alt="[Image description]" loading="lazy" onerror="this.style.display='none';this.parentElement.style.minHeight='200px';this.parentElement.style.background='var(--bg-light)'">
+        <div class="caption" data-zh="[图片1中文说明]">[Caption for image 1]</div>
+      </div>
+
+      <div class="article-image fade-in">
+        <img src="Upload/[article-image-2].jpg" alt="[Image description]" loading="lazy" onerror="this.style.display='none';this.parentElement.style.minHeight='200px';this.parentElement.style.background='var(--bg-light)'">
+        <div class="caption" data-zh="[图片2中文说明]">[Caption for image 2]</div>
+      </div>
+
+      <!-- Add more images as needed -->
+
+      <hr>
+
+      <!-- Conclusion / Bottom Line -->
+      <h2 data-zh="总结">The Bottom Line</h2>
+
+      <p data-zh="[中文总结]">[Summary paragraph — key takeaways for the reader.]</p>
+
+      <div class="info-box">
+        <p data-zh="[中文提示信息]"><strong>Key takeaway:</strong> [Concise takeaway message.]</p>
+      </div>
+
+      <!-- Disclaimer (for factory resource articles) -->
+      <!-- Uncomment if needed:
+      <p style="font-size:0.9rem;color:var(--text-muted);margin-top:30px">
+        <strong data-zh="免责声明：">Disclaimer:</strong>
+        <span data-zh="[中文免责声明]">[Disclaimer text — this is a historical record of specific quality control outcomes. We maintain no financial alignment with any supplier.]</span>
+      </p>
+      -->
+
+      <p style="margin-top:30px;font-style:italic;color:var(--text-muted)" data-zh="有类似的质量问题？欢迎联系我们 — 我们乐于分享经验。">
+        <em>Have a similar quality issue? Feel free to reach out — we're happy to share our experience.</em>
+      </p>
+    </div>
+
+    <!-- Previous / Next article navigation -->
+    <div class="article-nav fade-in">
+      <div class="prev"><span data-zh="上一篇：">Previous: </span><a href="[prev-article-slug]" data-zh="[上一篇中文标题]">[Previous Article Title]</a></div>
+      <div class="next"><span data-zh="下一篇：">Next: </span><a href="[next-article-slug]" data-zh="[下一篇中文标题]">[Next Article Title]</a></div>
+    </div>
+  </div></section>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-about"><h3>China Quality Service</h3><p data-zh="专业的第三方品控咨询服务商，致力于为全球客户提供独立、客观的品质检验与咨询服务。">Professional product inspection service in China — independent, objective quality inspection and consulting for global clients.</p></div><div class="footer-col"><h4 data-zh="快速链接">Quick Links</h4><a href="about" data-zh="关于我们">About Us</a><a href="services" data-zh="服务范围">Services</a><a href="insights" data-zh="洞察">Insights</a><a href="download" data-zh="资料下载">Downloads</a></div><div class="footer-col"><h4 data-zh="核心服务">Core Services</h4><a href="services" data-zh="产品检验">Product Inspection</a><a href="services" data-zh="工厂审核">Factory Audit</a><a href="services" data-zh="实验室测试">Lab Testing</a><a href="services" data-zh="供应商管理">Supplier Management</a></div><div class="footer-col"><h4 data-zh="联系我们">Contact Us</h4><a href="contact" data-zh="在线留言">Online Message</a><a href="contact" data-zh="联系方式">Contact Info</a></div></div><div class="footer-bottom"><p>Copyright &copy; 2026 CNQ(China Quality Service) All Rights Reserved.</p></div></div></footer>
+  <button class="back-to-top" aria-label="Back to Top">&#9650;</button>
+  <script src="js/main.js" defer></script>
+  <script>
+    function changeFontSize(size) {
+      var article = document.getElementById('articleContent');
+      if (size === 'small') article.style.fontSize = '0.95rem';
+      else if (size === 'medium') article.style.fontSize = '1.05rem';
+      else if (size === 'large') article.style.fontSize = '1.2rem';
+    }
+  </script>
+</body>
+</html>

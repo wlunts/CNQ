@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-zh="CNQ(China Quality Service) - 专业品控咨询服务">Product Inspection Service China | China Quality Service</title>
-  <meta name="description" data-zh="CNQ(China Quality Service) - 专业的第三方品控咨询服务，提供验货、验厂、供应商审核、实验室测试等一站式品质管理解决方案。" content="CNQ(China Quality Service) is a leading product inspection service in China, providing third-party quality control, pre-shipment inspection, factory audit and lab testing across China's major manufacturing hubs.">
+  <title data-zh="厦门亚商检验检测技术有限公司 - 专业品控咨询服务">Product Inspection Service China | China Quality Service</title>
+  <meta name="description" data-zh="厦门亚商检验检测技术有限公司 - 专业的第三方品控咨询服务，提供验货、验厂、供应商审核、实验室测试等一站式品质管理解决方案。" content="CNQ(China Quality Service) is a leading product inspection service in China, providing third-party quality control, pre-shipment inspection, factory audit and lab testing across China's major manufacturing hubs.">
   <meta name="keywords" content="product inspection service China, inspection services China, quality control China, China QC inspection, pre-shipment inspection, factory audit China, 品控咨询,品质控制,验货服务,验厂服务,供应商审核,第三方检测,China Quality Service">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <!-- Open Graph / Social -->
   <meta property="og:title" content="Product Inspection Service China | China Quality Service">
-  <meta property="og:description" content="CNQ(China Quality Service) is a leading product inspection service in China, providing third-party quality control, pre-shipment inspection, factory audit and lab testing across China's major manufacturing hubs.">
+  <meta property="og:description" content="China Quality Service is a leading product inspection service in China, providing third-party quality control, pre-shipment inspection, factory audit and lab testing across China's major manufacturing hubs.">
   <meta property="og:url" content="https://www.cn-q.com/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.cn-q.com/images/og-image.png">
@@ -21,7 +21,7 @@
   <meta name="twitter:image" content="https://www.cn-q.com/images/og-image.png">
 <style>
 /* ============================================================
-   CNQ(China Quality Service) - 主样式表 (内嵌)
+   China Quality Service - 主样式表 (内嵌)
    品控咨询服务行业 · 专业 · 现代 · 响应式
    ============================================================ */
 
@@ -91,6 +91,16 @@ ul, ol { list-style: none; }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a { display: block; padding: 10px 18px; color: var(--text-dark); font-size: 0.95rem; font-weight: 500; border-radius: var(--radius-sm); transition: all var(--transition); position: relative; }
 .nav a:hover, .nav a.active { color: var(--primary); background: rgba(26, 82, 118, 0.06); }
+
+/* Dropdown Menu */
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+.nav-dropdown > a::after { content: '▾'; font-size: 0.7rem; margin-left: 2px; transition: transform var(--transition); }
+.nav-dropdown.open > a::after { transform: rotate(180deg); }
+.dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 240px; background: #fff; border-radius: var(--radius); box-shadow: 0 8px 30px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(8px); transition: all var(--transition); z-index: 1002; padding: 8px 0; }
+.nav-dropdown.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown-menu a { display: block; padding: 10px 20px; color: var(--text-dark); font-size: 0.9rem; border-radius: 0; white-space: nowrap; transition: all var(--transition); }
+.dropdown-menu a:hover { background: rgba(26,82,118,0.06); color: var(--primary); padding-left: 24px; }
 
 /* Language Switch */
 .lang-switch { margin-left: 16px; display: flex; gap: 4px; align-items: center; }
@@ -199,6 +209,11 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   .nav.open { right: 0; }
   .nav a { padding: 14px 12px; border-bottom: 1px solid var(--border); border-radius: 0; font-size: 1rem; }
   .lang-switch { margin: 16px 0 0; padding-left: 12px; }
+  /* Mobile dropdown */
+  .nav-dropdown > a { justify-content: space-between; }
+  .dropdown-menu { position: static; box-shadow: none; opacity: 1; visibility: visible; transform: none; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0; background: transparent; min-width: auto; }
+  .nav-dropdown.open .dropdown-menu { max-height: 600px; }
+  .dropdown-menu a { padding-left: 32px; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
   .menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4); z-index: 999; }
   .menu-overlay.open { display: block; }
   .hero { min-height: 80vh; }
@@ -222,7 +237,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "CNQ(China Quality Service)",
+    "name": "China Quality Service",
     "alternateName": ["China Quality Service"],
     "url": "https://www.cn-q.com",
     "logo": "https://www.cn-q.com/Upload/logo.png",
@@ -287,10 +302,10 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
       </button>
       <nav class="nav">
         <a href="/" class="active" data-zh="首页">Home</a>
-        <a href="about" data-zh="关于我们">About Us</a>
-        <a href="services" data-zh="服务范围">Services</a>
-        <a href="news" data-zh="新闻资讯">News</a>
-        <a href="download" data-zh="资料下载">Downloads</a>
+        <div class="nav-dropdown"><a href="about" data-zh="关于我们">About Us</a><div class="dropdown-menu"><a href="about#company-intro" data-zh="公司简介">Company Profile</a><a href="about#mission" data-zh="使命与愿景">Mission & Vision</a><a href="about#team" data-zh="专业团队">Professional Team</a><a href="about#advantage" data-zh="核心优势">Core Advantages</a></div></div>
+        <div class="nav-dropdown"><a href="services" data-zh="服务范围">Services</a><div class="dropdown-menu"><a href="services#inspection" data-zh="产品检验">Product Inspection</a><a href="services#audit" data-zh="工厂审核">Factory Audit</a><a href="services#lab" data-zh="实验室测试">Laboratory Testing</a><a href="services#supplier" data-zh="供应商管理">Supplier Management</a><a href="services#consulting" data-zh="技术咨询">Technical Consulting</a><a href="services#compliance" data-zh="国际合规">International Compliance</a><a href="services#faq" data-zh="常见问题">Frequently Asked Questions</a></div></div>
+        <div class="nav-dropdown"><a href="insights" data-zh="洞察">Insights</a><div class="dropdown-menu"><a href="inspection-cases" data-zh="验货案例">Inspection Cases</a><a href="factory-resource" data-zh="工厂资源">Factory Resource</a><a href="industry-updates" data-zh="行业动态">Industry Updates</a></div></div>
+        <div class="nav-dropdown"><a href="download" data-zh="资料下载">Downloads</a><div class="dropdown-menu"><a href="download#standards" data-zh="行业标准">Industry Standards</a><a href="download#regulations" data-zh="法规汇编">Regulatory Compilations</a><a href="download#whitepaper" data-zh="白皮书">Whitepapers</a><a href="download#templates" data-zh="工厂评估">Factory Assessment</a><a href="download#brochure" data-zh="检验模板">Inspection Template</a></div></div>
         <a href="contact" data-zh="联系我们">Contact</a>
         <div class="lang-switch">
           <a href="javascript:void(0)" data-lang="zh" class="active">中</a>
@@ -307,7 +322,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
     <canvas class="hero-canvas" id="heroCanvas"></canvas>
     <div class="hero-content">
       <h1 data-zh="专业品控咨询 | 为您的供应链保驾护航">Trusted Product Inspection Service in China</h1>
-      <p data-zh="CNQ(China Quality Service) 致力于为全球客户提供专业的第三方品质控制服务，包括产品检验、工厂审核、供应商评估及实验室测试，确保您的产品质量符合国际标准。">CNQ(China Quality Service) is a premier product inspection service in China, providing professional third-party quality control including pre-shipment inspection, factory audit, supplier assessment and lab testing — ensuring your products sourced from China meet international quality standards.</p>
+      <p data-zh="厦门亚商检验检测技术有限公司 致力于为全球客户提供专业的第三方品质控制服务，包括产品检验、工厂审核、供应商评估及实验室测试，确保您的产品质量符合国际标准。">CNQ(China Quality Service) is a premier product inspection service in China, providing professional third-party quality control including pre-shipment inspection, factory audit, supplier assessment and lab testing — ensuring your products sourced from China meet international quality standards.</p>
       <div class="hero-btns">
         <a href="services" class="btn btn-primary" data-zh="了解我们的服务">Our Services</a>
         <a href="contact" class="btn btn-outline" data-zh="立即咨询">Contact Us</a>
@@ -388,8 +403,8 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
           <img src="Upload/about-us.jpg" alt="About China Quality Service - professional product inspection team in China" loading="lazy" onerror="this.style.display='none'" style="background:#e0e5ec; min-height:300px;">
         </div>
         <div class="fade-in">
-          <h2 data-zh="关于 China Quality Service">About China Quality Service — Your Product Inspection Partner in China</h2>
-          <p data-zh="CNQ(China Quality Service) 是一家专业的第三方品质控制咨询公司，致力于为全球客户提供独立、客观的品质检验与咨询服务。">CNQ(China Quality Service) is a professional third-party QC company providing product inspection services in China. We are dedicated to delivering independent, objective quality inspection and consulting for global buyers sourcing from China.</p>
+          <h2 data-zh="关于 厦门亚商检验检测技术有限公司">About China Quality Service — Your Product Inspection Partner in China</h2>
+          <p data-zh="厦门亚商检验检测技术有限公司 是一家专业的第三方品质控制咨询公司，致力于为全球客户提供独立、客观的品质检验与咨询服务。">CNQ(China Quality Service) is a professional third-party QC company providing product inspection services in China. We are dedicated to delivering independent, objective quality inspection and consulting for global buyers sourcing from China.</p>
           <p data-zh="我们拥有一支经验丰富的技术团队，熟悉各类产品的国际标准与质量要求。公司秉承"专业、独立、诚信"的服务理念，为客户提供量身定制的品质解决方案。">With an experienced technical team based across China's key manufacturing regions, we offer tailored quality solutions. Our product inspection service China operations span electronics, textiles, machinery, toys and more.</p>
           <ul class="about-list">
             <li data-zh="17年以上行业经验，覆盖50多个国家和地区">17+ years of industry experience, covering 50+ countries and regions</li>
@@ -408,7 +423,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
     <div class="container">
       <div class="section-title fade-in">
         <h2 data-zh="我们的优势与专长">Why Choose Our Product Inspection Service in China</h2>
-        <p data-zh="选择China Quality Service的理由">Trusted by 500+ global clients for QC inspection across China</p>
+        <p data-zh="选择厦门亚商的理由">Trusted by 500+ global clients for QC inspection across China</p>
       </div>
       <div class="grid-2">
         <div class="card fade-in">
@@ -435,7 +450,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   <section class="section bg-light">
     <div class="container">
       <div class="section-title fade-in">
-        <h2 data-zh="新闻资讯">News</h2>
+        <h2 data-zh="洞察">Insights</h2>
         <p data-zh="了解行业动态与公司最新消息">Stay updated with industry trends and company news</p>
       </div>
       <div class="news-grid">
@@ -455,8 +470,8 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
           </div>
           <div class="news-card-body">
             <div class="news-card-date">2024-05-28</div>
-            <h3><a href="news-detail-2" data-zh="China Quality Service 成功通过ISO 9001年度复审">China Quality Service Successfully Passes ISO 9001 Annual Review</a></h3>
-            <p data-zh="经过严格的审核评估，CNQ(China Quality Service) 再次顺利通过ISO 9001质量管理体系年度复审...">After rigorous audit assessment, CNQ(China Quality Service) has once again successfully passed the ISO 9001 quality management system annual review...</p>
+            <h3><a href="news-detail-2" data-zh="厦门亚商检验检测技术有限公司 成功通过ISO 9001年度复审">CNQ(China Quality Service) Successfully Passes ISO 9001 Annual Review</a></h3>
+            <p data-zh="经过严格的审核评估，厦门亚商 再次顺利通过ISO 9001质量管理体系年度复审...">After rigorous audit assessment, CNQ(China Quality Service) has once again successfully passed the ISO 9001 quality management system annual review...</p>
           </div>
         </div>
         <div class="news-card fade-in">
@@ -471,7 +486,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
         </div>
       </div>
       <div style="text-align:center; margin-top:40px;">
-        <a href="news" class="btn btn-outline" style="border-color:var(--primary);color:var(--primary)" data-zh="查看更多新闻">View More News</a>
+        <a href="insights" class="btn btn-outline" style="border-color:var(--primary);color:var(--primary)" data-zh="查看更多">View More Insights</a>
       </div>
     </div>
   </section>
@@ -490,14 +505,14 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
     <div class="container">
       <div class="footer-grid">
         <div class="footer-about">
-          <h3>CNQ(China Quality Service)</h3>
+          <h3>China Quality Service</h3>
           <p data-zh="专业的第三方品控咨询服务商，致力于为全球客户提供独立、客观的品质检验与咨询服务，确保您的产品符合国际质量标准。">Professional product inspection service in China — independent, objective quality inspection and consulting for global clients. Ensuring your products manufactured in China meet international quality standards.</p>
         </div>
         <div class="footer-col">
           <h4 data-zh="快速链接">Quick Links</h4>
           <a href="about" data-zh="关于我们">About Us</a>
           <a href="services" data-zh="服务范围">Services</a>
-          <a href="news" data-zh="新闻资讯">News</a>
+          <a href="insights" data-zh="洞察">Insights</a>
           <a href="download" data-zh="资料下载">Downloads</a>
         </div>
         <div class="footer-col">
