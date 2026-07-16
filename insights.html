@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-zh="验货案例 - 厦门亚商检验检测技术有限公司">Inspection Cases | Product Inspection Service China - CNQ</title>
-  <meta name="description" data-zh="厦门亚商检验检测技术有限公司 验货案例 - 真实的产品检验案例分析，涵盖电子、纺织、机械、玩具等多个行业的品质问题。" content="Real-world product inspection cases from China Quality Service. See how we identify quality issues across electronics, textiles, machinery, toys and more.">
-  <meta name="keywords" content="product inspection cases, inspection case study China, QC case examples, quality control case studies, 验货案例, 品质检验案例">
+  <title data-zh="洞察 - 厦门亚商检验检测技术有限公司">Insights | Product Inspection Service China - CNQ</title>
+  <meta name="description" data-zh="厦门亚商检验检测技术有限公司 洞察 — 验货案例、工厂资源与行业动态，帮助您了解中国产品检验与品质控制的最新资讯。" content="Insights from China Quality Service — inspection cases, factory resources, and industry updates to help you navigate product inspection in China.">
+  <meta name="keywords" content="product inspection insights, QC insights China, inspection cases, factory resource, industry updates, 品控洞察, 验货资讯">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="Inspection Cases | Product Inspection Service China - China Quality Service">
-  <meta property="og:description" content="Real-world product inspection cases from China Quality Service. See how we identify quality issues across multiple industries.">
-  <meta property="og:url" content="https://www.cn-q.com/inspection-cases">
+  <meta property="og:title" content="Insights | Product Inspection Service China - China Quality Service">
+  <meta property="og:description" content="Insights from China Quality Service — inspection cases, factory resources, and industry updates.">
+  <meta property="og:url" content="https://www.cn-q.com/insights">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.cn-q.com/images/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -38,8 +37,6 @@ ul, ol { list-style: none; }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a { display: block; padding: 10px 18px; color: var(--text-dark); font-size: 0.95rem; font-weight: 500; border-radius: var(--radius-sm); transition: all var(--transition); }
 .nav a:hover, .nav a.active { color: var(--primary); background: rgba(26,82,118,0.06); }
-
-/* Dropdown Menu */
 .nav-dropdown { position: relative; }
 .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
 .nav-dropdown > a::after { content: '▾'; font-size: 0.7rem; margin-left: 2px; transition: transform var(--transition); }
@@ -58,19 +55,17 @@ ul, ol { list-style: none; }
 .page-header .breadcrumb { font-size: 0.9rem; opacity: 0.75; }
 .page-header .breadcrumb a { color: rgba(255,255,255,0.8); }
 .page-header .breadcrumb a:hover { color: #fff; }
-.case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.case-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all var(--transition); }
-.case-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-.case-card-img { height: 200px; overflow: hidden; background: var(--bg-light); }
-.case-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-.case-card:hover .case-card-img img { transform: scale(1.05); }
-.case-card-body { padding: 20px; }
-.case-card-body h3 { font-size: 1.1rem; margin-bottom: 10px; line-height: 1.5; }
-.case-card-body h3 a { color: var(--text-dark); }
-.case-card-body h3 a:hover { color: var(--primary); }
-.case-card-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
-.case-card-cat { display: inline-block; font-size: 0.75rem; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
-.case-card-body p { font-size: 0.9rem; color: var(--text-body); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.insight-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all var(--transition); }
+.insight-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.insight-card-img { height: 200px; overflow: hidden; background: var(--bg-light); }
+.insight-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.insight-card:hover .insight-card-img img { transform: scale(1.05); }
+.insight-card-body { padding: 24px; }
+.insight-card-body h2 { font-size: 1.25rem; color: var(--primary-dark); margin-bottom: 12px; }
+.insight-card-body p { font-size: 0.95rem; color: var(--text-body); margin-bottom: 20px; line-height: 1.7; }
+.insight-card-body .btn { display: inline-block; padding: 10px 24px; background: var(--accent); color: #fff; border-radius: 4px; font-weight: 600; transition: all var(--transition); }
+.insight-card-body .btn:hover { background: var(--accent-hover); color: #fff; }
 .footer { background: var(--bg-footer); color: rgba(255,255,255,0.7); padding: 60px 0 30px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
 .footer-about h3 { color: #fff; font-size: 1.2rem; margin-bottom: 16px; }
@@ -84,40 +79,19 @@ ul, ol { list-style: none; }
 .back-to-top:hover { background: var(--primary-dark); transform: translateY(-3px); }
 html.js-ready .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
 html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
-@media (max-width: 992px) {
-  :root { --header-h: 64px; }
-  .case-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 768px) {
-  :root { --header-h: 64px; }
-  .menu-toggle { display: flex; }
-  .nav { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: #fff; flex-direction: column; padding: 80px 24px 24px; gap: 0; box-shadow: -4px 0 20px rgba(0,0,0,0.1); transition: right 0.3s ease; overflow-y: auto; }
-  .nav.open { right: 0; }
-  .nav a { padding: 14px 12px; border-bottom: 1px solid var(--border); border-radius: 0; font-size: 1rem; }
-  .lang-switch { margin: 16px 0 0; padding-left: 12px; }
-  .nav-dropdown > a { justify-content: space-between; }
-  .dropdown-menu { position: static; box-shadow: none; opacity: 1; visibility: visible; transform: none; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0; background: transparent; min-width: auto; }
-  .nav-dropdown.open .dropdown-menu { max-height: 600px; }
-  .dropdown-menu a { padding-left: 32px; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
-  .menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; }
-  .menu-overlay.open { display: block; }
-  .section { padding: 50px 0; }
-  .page-header h1 { font-size: 1.8rem; }
-  .case-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-}
+@media (max-width: 992px) { :root { --header-h: 64px; } .insights-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 768px) { :root { --header-h: 64px; } .menu-toggle { display: flex; } .nav { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: #fff; flex-direction: column; padding: 80px 24px 24px; gap: 0; box-shadow: -4px 0 20px rgba(0,0,0,0.1); transition: right 0.3s ease; overflow-y: auto; } .nav.open { right: 0; } .nav a { padding: 14px 12px; border-bottom: 1px solid var(--border); border-radius: 0; font-size: 1rem; } .lang-switch { margin: 16px 0 0; padding-left: 12px; } .nav-dropdown > a { justify-content: space-between; } .dropdown-menu { position: static; box-shadow: none; opacity: 1; visibility: visible; transform: none; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0; background: transparent; min-width: auto; } .nav-dropdown.open .dropdown-menu { max-height: 600px; } .dropdown-menu a { padding-left: 32px; font-size: 0.9rem; border-bottom: 1px solid var(--border); } .menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; } .menu-overlay.open { display: block; } .section { padding: 50px 0; } .page-header h1 { font-size: 1.8rem; } .footer-grid { grid-template-columns: 1fr; gap: 24px; } }
 </style>
-  <link rel="canonical" href="https://www.cn-q.com/inspection-cases">
-  <link rel="alternate" hreflang="en" href="https://www.cn-q.com/inspection-cases">
-  <link rel="alternate" hreflang="x-default" href="https://www.cn-q.com/inspection-cases">
+  <link rel="canonical" href="https://www.cn-q.com/insights">
+  <link rel="alternate" hreflang="en" href="https://www.cn-q.com/insights">
+  <link rel="alternate" hreflang="x-default" href="https://www.cn-q.com/insights">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Inspection Cases | China Quality Service",
-    "description": "Real-world product inspection cases from China Quality Service covering electronics, textiles, machinery, toys and more.",
-    "url": "https://www.cn-q.com/inspection-cases"
+    "name": "Insights | China Quality Service",
+    "description": "Inspection cases, factory resources, and industry updates from China Quality Service.",
+    "url": "https://www.cn-q.com/insights"
   }
   </script>
   <script type="application/ld+json">
@@ -126,8 +100,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cn-q.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.cn-q.com/insights" },
-      { "@type": "ListItem", "position": 3, "name": "Inspection Cases", "item": "https://www.cn-q.com/inspection-cases" }
+      { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.cn-q.com/insights" }
     ]
   }
   </script>
@@ -158,45 +131,49 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
 
   <section class="page-header">
     <div class="container">
-      <h1 data-zh="验货案例">Inspection Cases</h1>
+      <h1 data-zh="洞察">Insights</h1>
       <div class="breadcrumb">
-        <a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="insights" data-zh="洞察">Insights</a> <span>&rsaquo;</span> <span data-zh="验货案例">Inspection Cases</span>
+        <a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <span data-zh="洞察">Insights</span>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="inspection-cases">
     <div class="container">
-
-      <p style="text-align:center;color:var(--text-muted);margin-bottom:40px;max-width:700px;margin-left:auto;margin-right:auto;" data-zh="真实验货案例分析 — 涵盖电子、纺织、机械、玩具等多个行业，展示我们如何帮助客户发现并解决产品质量问题。">
-        Real-world product inspection cases from multiple industries — see how we identify and resolve quality issues for our clients.
-      </p>
-
-      <div class="case-grid">
-        <!-- Case 1: TPR Flow Mark -->
-        <div class="case-card fade-in">
-          <div class="case-card-img">
-            <img src="Upload/cases/tpr-noodle/1.jpg" alt="Gold TPR Steamed Bun - Obvious Flow Mark inspection case" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
+      <div class="insights-grid">
+        <div class="insight-card fade-in">
+          <div class="insight-card-img">
+            <img src="Upload/cases/tpr-noodle/1.jpg" alt="Inspection Cases - real product inspection cases from China" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
           </div>
-          <div class="case-card-body">
-            <div class="case-card-cat">Inspection Cases</div>
-            <div class="case-card-date">2026-06-28</div>
-            <h3><a href="inspection-case-tpr-flow-mark" data-zh="金色TPR包子 — 明显流痕缺陷">Gold TPR Steamed Stuffed Bun — Obvious Flow Mark</a></h3>
-            <p data-zh="在金色TPR包子验货中发现典型的流痕缺陷，分析根本原因并提供可行的解决方案，帮助买家在大货生产中预防此类问题。">A typical flow mark defect found during our QC inspection for gold TPR stuffed bun. We analyze the root cause and provide actionable solutions for buyers to prevent this in mass production.</p>
+          <div class="insight-card-body">
+            <h2 data-zh="验货案例">Inspection Cases</h2>
+            <p data-zh="真实的产品检验案例分析，涵盖电子、纺织、机械、玩具等多个行业，展示我们如何帮助客户发现并解决产品质量问题。">Real-world product inspection cases from multiple industries — see how we identify and resolve quality issues for our clients.</p>
+            <a href="inspection-cases" class="btn" data-zh="查看案例">View Cases</a>
           </div>
         </div>
 
+        <div class="insight-card fade-in" id="factory-resource">
+          <div class="insight-card-img">
+            <img src="Upload/factory/qinteng-3d-print/1.jpg" alt="Factory Resource - trusted factory partners in China" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
+          </div>
+          <div class="insight-card-body">
+            <h2 data-zh="工厂资源">Factory Resource</h2>
+            <p data-zh="精选优质工厂资源，帮助您快速找到符合要求的供应商合作伙伴，降低采购风险。">Curated factory resources to help you quickly find qualified supplier partners and reduce sourcing risks.</p>
+            <a href="factory-resource" class="btn" data-zh="查看工厂">View Factories</a>
+          </div>
+        </div>
 
+        <div class="insight-card fade-in" id="industry-updates">
+          <div class="insight-card-img">
+            <img src="Upload/news-1.jpg" alt="Industry Updates - latest QC industry trends and regulations" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#e0e5ec'">
+          </div>
+          <div class="insight-card-body">
+            <h2 data-zh="行业动态">Industry Updates</h2>
+            <p data-zh="了解品质控制行业最新动态、法规变更、公司新闻和技术分享，掌握行业趋势。">Stay informed with the latest QC industry trends, regulatory changes, company news and technology insights.</p>
+            <a href="industry-updates" class="btn" data-zh="查看动态">View Updates</a>
+          </div>
+        </div>
       </div>
-
-      <div style="text-align:center;margin-top:60px;padding:40px;background:var(--bg-light);border-radius:var(--radius);">
-        <h3 style="color:var(--primary);margin-bottom:12px;" data-zh="更多验货案例持续更新中">More Inspection Cases Coming Soon</h3>
-        <p style="color:var(--text-muted);" data-zh="我们的验货团队每天都在处理各类品质问题，更多案例将陆续发布。有类似的质量困扰？欢迎联系我们。">
-          Our inspection team handles various quality issues every day. More cases will be published soon. Have similar quality concerns? Contact us.
-        </p>
-        <a href="contact" class="btn btn-primary" style="margin-top:16px;display:inline-block;padding:12px 32px;background:var(--accent);color:#fff;border-radius:4px;font-weight:600;" data-zh="联系我们">Contact Us</a>
-      </div>
-
     </div>
   </section>
 
