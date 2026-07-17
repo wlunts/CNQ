@@ -7,6 +7,7 @@
   <meta name="description" data-zh="厦门亚商检验检测技术有限公司 - 专业的第三方品控咨询服务，提供验货、验厂、供应商审核、实验室测试等一站式品质管理解决方案。" content="CNQ(China Quality Service) is a leading product inspection service in China, providing third-party quality control, pre-shipment inspection, factory audit and lab testing across China's major manufacturing hubs.">
   <meta name="keywords" content="product inspection service China, inspection services China, quality control China, China QC inspection, pre-shipment inspection, factory audit China, 品控咨询,品质控制,验货服务,验厂服务,供应商审核,第三方检测,China Quality Service">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <!-- Open Graph / Social -->
   <meta property="og:title" content="Product Inspection Service China | China Quality Service">
   <meta property="og:description" content="China Quality Service is a leading product inspection service in China, providing third-party quality control, pre-shipment inspection, factory audit and lab testing across China's major manufacturing hubs.">
@@ -116,6 +117,62 @@ ul, ol { list-style: none; }
 .hero-bg { position: absolute; inset: 0; z-index: 0; background: url('../images/hero-banner.jpg') center/cover no-repeat; animation: kenBurns 20s ease-in-out infinite alternate; }
 .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,47,69,0.88) 0%, rgba(26,82,118,0.85) 40%, rgba(26,110,142,0.85) 100%); }
 @keyframes kenBurns { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+/* 新增：底层动态柔光光晕（解决 Hero 区域“空”的问题） */
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* 位于粒子(Canvas, z-index:1) 和 文字内容(z-index:2) 之下 */
+  pointer-events: none; /* 让鼠标事件穿透，避免挡住按钮点击 */
+  overflow: hidden;
+}
+
+.hero-glow .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px); /* 大范围模糊产生柔和光晕 */
+  opacity: 0.5;
+  animation: floatGlow 18s infinite alternate ease-in-out;
+}
+
+/* 第一个光晕：品牌蓝紫色调（呼应你的主色 #1a5276） */
+.hero-glow .orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(41, 128, 185, 0.6), rgba(26, 82, 118, 0.1));
+  top: -20%;
+  left: -10%;
+  animation-duration: 20s;
+}
+
+/* 第二个光晕：品牌橙色调（呼应你的按钮色 #e67e22） */
+.hero-glow .orb-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(230, 126, 34, 0.35), rgba(230, 126, 34, 0.05));
+  bottom: -30%;
+  right: -10%;
+  animation-duration: 25s;
+  animation-delay: -5s;
+}
+
+/* 第三个光晕：增加深邃感 */
+.hero-glow .orb-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(26, 82, 118, 0.5), transparent);
+  top: 40%;
+  left: 60%;
+  animation-duration: 16s;
+  animation-delay: -10s;
+}
+
+/* 浮动动画 */
+@keyframes floatGlow {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, -40px) scale(1.1); }
+  66% { transform: translate(-30px, 50px) scale(0.9); }
+  100% { transform: translate(40px, -60px) scale(1.05); }
+}
 .hero-canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; }
 .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
 .hero h1 { font-size: 3rem; font-weight: 700; line-height: 1.3; margin-bottom: 20px; letter-spacing: 2px; animation: heroFadeUp 1s ease-out 0.3s both; }
@@ -317,8 +374,15 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   <div class="menu-overlay"></div>
 
   <!-- Hero Section -->
+  <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-bg"></div>
+    <!-- 新增：动态柔光光晕层 -->
+    <div class="hero-glow">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
     <canvas class="hero-canvas" id="heroCanvas"></canvas>
     <div class="hero-content">
       <h1 data-zh="专业品控咨询 | 为您的供应链保驾护航">Trusted Product Inspection Service in China</h1>
