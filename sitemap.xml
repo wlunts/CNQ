@@ -26,13 +26,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/news</loc>
+    <loc>https://www.cn-q.com/industry-updates/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/news-detail</loc>
+    <loc>https://www.cn-q.com/industry-updates/news-detail</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -50,97 +50,91 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/inspection-cases</loc>
+    <loc>https://www.cn-q.com/inspection-cases/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/inspection-case-tpr-flow-mark</loc>
+    <loc>https://www.cn-q.com/inspection-cases/tpr-flow-mark</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/inspection-case-metal-shed-sharp-edge</loc>
+    <loc>https://www.cn-q.com/inspection-cases/metal-shed-sharp-edge</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/factory-resource</loc>
+    <loc>https://www.cn-q.com/factory-resource/</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/factory-qinteng-3d-print</loc>
+    <loc>https://www.cn-q.com/factory-resource/qinteng-3d-print</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/factory-children-tent-zhejiang</loc>
+    <loc>https://www.cn-q.com/factory-resource/children-tent-zhejiang</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/industry-updates</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.cn-q.com/news-2</loc>
+    <loc>https://www.cn-q.com/industry-updates/news-2</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/news-detail-2</loc>
+    <loc>https://www.cn-q.com/industry-updates/news-detail-2</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/news-detail-3</loc>
+    <loc>https://www.cn-q.com/industry-updates/news-detail-3</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/news-detail-4</loc>
+    <loc>https://www.cn-q.com/industry-updates/news-detail-4</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/news-detail-5</loc>
+    <loc>https://www.cn-q.com/industry-updates/news-detail-5</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/news-detail-6</loc>
+    <loc>https://www.cn-q.com/industry-updates/news-detail-6</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/news-detail-7</loc>
+    <loc>https://www.cn-q.com/industry-updates/news-detail-7</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/news-detail-8</loc>
+    <loc>https://www.cn-q.com/industry-updates/news-detail-8</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.cn-q.com/news-detail-9</loc>
+    <loc>https://www.cn-q.com/industry-updates/news-detail-9</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
