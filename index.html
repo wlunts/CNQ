@@ -114,9 +114,68 @@ ul, ol { list-style: none; }
 
 /* ---------- Hero / Banner ---------- */
 .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; z-index: 0; background: url('../images/hero-banner.jpg') center/cover no-repeat; animation: kenBurns 20s ease-in-out infinite alternate; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; background: url('../images/hero-banner.jpg') center/cover no-repeat; animation: kenBurns 17s ease-in-out infinite alternate; }
 .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(13,47,69,0.88) 0%, rgba(26,82,118,0.85) 40%, rgba(26,110,142,0.85) 100%); }
+
 @keyframes kenBurns { 0% { transform: scale(1); } 100% { transform: scale(1.15); } }
+
+/* 新增：动态柔光光晕层 */
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* 位于粒子(Canvas, z-index:1) 和 文字内容(z-index:2) 之下 */
+  pointer-events: none; /* 让鼠标事件穿透，不阻挡按钮点击 */
+  overflow: hidden;
+}
+
+.hero-glow .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.95;  /* 提高透明度，确保明显可见 */
+  animation: floatGlow 18s infinite alternate ease-in-out;
+}
+
+/* 第一个光晕：蓝色调（呼应主色） */
+.hero-glow .orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(41, 128, 185, 0.8), rgba(26, 82, 118, 0.2));
+  top: -20%;
+  left: -10%;
+  animation-duration: 20s;
+}
+
+/* 第二个光晕：橙色调（呼应按钮） */
+.hero-glow .orb-2 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(230, 126, 34, 0.6), rgba(230, 126, 34, 0.1));
+  bottom: -30%;
+  right: -10%;
+  animation-duration: 25s;
+  animation-delay: -5s;
+}
+
+/* 第三个光晕：深邃蓝 */
+.hero-glow .orb-3 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(26, 82, 118, 0.7), transparent);
+  top: 40%;
+  left: 60%;
+  animation-duration: 16s;
+  animation-delay: -10s;
+}
+
+/* 浮动动画 */
+@keyframes floatGlow {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(60px, -40px) scale(1.1); }
+  66% { transform: translate(-30px, 50px) scale(0.9); }
+  100% { transform: translate(40px, -60px) scale(1.05); }
+}
+
 .hero-canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; }
 .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
 .hero h1 { font-size: 3rem; font-weight: 700; line-height: 1.3; margin-bottom: 20px; letter-spacing: 2px; animation: heroFadeUp 1s ease-out 0.3s both; }
@@ -321,6 +380,12 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-bg"></div>
+<!-- 新增：动态柔光光晕层 -->
+<div class="hero-glow">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
     <canvas class="hero-canvas" id="heroCanvas"></canvas>
     <div class="hero-content">
       <h1 data-zh="专业品控咨询 | 为您的供应链保驾护航">Trusted Product Inspection Service in China</h1>
@@ -564,8 +629,8 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-       vx: (Math.random() - 0.5) * (0.8 + Math.random() * 1.0),
-       vy: (Math.random() - 0.5) * (0.8 + Math.random() * 1.0),
+       vx: (Math.random() - 0.5) * (0.8 + Math.random() * 0.8),
+       vy: (Math.random() - 0.5) * (0.8 + Math.random() * 0.8),
         r: Math.random() * 2 + 1,
         opacity: Math.random() * 0.5 + 0.2
       });
