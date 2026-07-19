@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ========== Scroll Animations (fade-in) ==========
   var fadeElements = document.querySelectorAll('.fade-in');
-  var observerOptions = { root: null, rootMargin: '0px 0px -60px 0px', threshold: 0.1 };
+  var observerOptions = { root: null, rootMargin: '0px 0px 0px 0px', threshold: 0.05 };
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
@@ -180,7 +180,14 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }, observerOptions);
-  fadeElements.forEach(function (el) { observer.observe(el); });
+  fadeElements.forEach(function (el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
 
   // ========== Counter Animation (Stats) ==========
   var statNumbers = document.querySelectorAll('.stat-number');

@@ -182,16 +182,31 @@ ul, ol { list-style: none; }
 .insight-card-body .btn:hover { background: var(--accent-hover); color: #fff; }
 
 /* ---------- Case Cards (Inspection Cases List) ---------- */
-.case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .case-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all var(--transition); }
 .case-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-.case-card-img { height: 220px; overflow: hidden; background: var(--bg-light); }
+.case-card-img { height: 200px; overflow: hidden; background: var(--bg-light); }
 .case-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
 .case-card:hover .case-card-img img { transform: scale(1.05); }
 .case-card-body { padding: 24px; }
 .case-card-body h2 { font-size: 1.15rem; margin-bottom: 10px; line-height: 1.5; }
 .case-card-body h2 a { color: var(--text-dark); }
 .case-card-body h2 a:hover { color: var(--primary); }
+.case-card-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
+.case-card-body p { font-size: 0.9rem; color: var(--text-body); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* ---------- News List (Industry Updates List) ---------- */
+.news-list-item { display: flex; gap: 24px; margin-bottom: 30px; padding: 20px; border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); transition: all var(--transition); }
+.news-list-item:hover { box-shadow: var(--shadow-hover); }
+.news-list-thumb { width: 280px; height: 140px; border-radius: var(--radius); overflow: hidden; background: var(--bg-light); flex-shrink: 0; }
+.news-list-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.news-list-item:hover .news-list-thumb img { transform: scale(1.05); }
+.news-list-info { flex: 1; }
+.news-list-info h2 { font-size: 1.15rem; margin-bottom: 10px; line-height: 1.5; }
+.news-list-info h2 a { color: var(--text-dark); }
+.news-list-info h2 a:hover { color: var(--primary); }
+.news-list-meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
+.news-list-info p { font-size: 0.9rem; color: var(--text-body); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .case-card-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
 .case-card-body p { font-size: 0.95rem; color: var(--text-body); line-height: 1.7; }
 
@@ -375,6 +390,8 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   .article-header h1 { font-size: 1.5rem; }
   .article-nav { flex-direction: column; gap: 12px; }
   .article-nav .next { text-align: left; }
+  .news-list-item { flex-direction: column; }
+  .news-list-thumb { width: 100%; height: 200px; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
   .stats-bar .container { gap: 30px; }
   .stat-item h3 { font-size: 2rem; }
