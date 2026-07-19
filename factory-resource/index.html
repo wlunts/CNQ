@@ -2,6 +2,7 @@
 <html lang="en">
 <head><base href="/">
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-zh="工厂评估资源与采购洞察 - 厦门亚商检验检测技术有限公司">Factory Assessment Resources &amp; Sourcing Insights | China Quality Service</title>
   <meta name="description" data-zh="获取专业的工厂评估资源与采购洞察，了解如何验证制造商可靠性并优化您的中国供应链。" content="Access expert factory assessment resources and sourcing insights. Learn how to verify manufacturer reliability and optimize your supply chain in China with CNQ.">
@@ -20,113 +21,7 @@
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://www.cn-q.com/images/og-image.png">
-<style>
-:root { --primary: #1a5276; --primary-dark: #123a52; --primary-light: #2980b9; --accent: #e67e22; --accent-hover: #d35400; --bg-light: #f5f7fa; --bg-white: #ffffff; --bg-footer: #1a1f2b; --text-dark: #2c3e50; --text-body: #555; --text-muted: #999; --border: #e0e5ec; --shadow: 0 2px 20px rgba(0,0,0,0.08); --shadow-hover: 0 8px 30px rgba(0,0,0,0.12); --radius: 8px; --radius-sm: 4px; --transition: 0.3s ease; --max-width: 1200px; --header-h: 72px; }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.7; color: var(--text-dark); background: var(--bg-white); overflow-x: hidden; }
-img { max-width: 100%; height: auto; display: block; }
-a { color: var(--primary); text-decoration: none; transition: color var(--transition); }
-a:hover { color: var(--primary-light); }
-ul, ol { list-style: none; }
-.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
-.section { padding: 80px 0; }
-.header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); box-shadow: 0 1px 4px rgba(0,0,0,0.06); transition: all var(--transition); }
-.header-inner { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
-.logo { flex-shrink: 0; }
-.logo a { display: flex; align-items: center; font-size: 1.4rem; font-weight: 700; color: var(--primary); }
-.logo img { height: 48px; margin-right: 10px; }
-.nav { display: flex; align-items: center; gap: 4px; }
-.nav a { display: block; padding: 10px 18px; color: var(--text-dark); font-size: 0.95rem; font-weight: 500; border-radius: var(--radius-sm); transition: all var(--transition); }
-.nav a:hover, .nav a.active { color: var(--primary); background: rgba(26,82,118,0.06); }
-
-/* Dropdown Menu */
-.nav-dropdown { position: relative; }
-.nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-.nav-dropdown > a::after { content: '▾'; font-size: 0.7rem; margin-left: 2px; transition: transform var(--transition); }
-.nav-dropdown.open > a::after { transform: rotate(180deg); }
-.dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 240px; background: #fff; border-radius: var(--radius); box-shadow: 0 8px 30px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(8px); transition: all var(--transition); z-index: 1002; padding: 8px 0; }
-.nav-dropdown.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-.dropdown-menu a { display: block; padding: 10px 20px; color: var(--text-dark); font-size: 0.9rem; border-radius: 0; white-space: nowrap; transition: all var(--transition); }
-.dropdown-menu a:hover { background: rgba(26,82,118,0.06); color: var(--primary); padding-left: 24px; }
-.lang-switch { margin-left: 16px; display: flex; gap: 4px; align-items: center; }
-.lang-switch a { padding: 4px 10px; font-size: 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-muted); cursor: pointer; }
-.lang-switch a:hover, .lang-switch a.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-.menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; z-index: 1001; }
-.menu-toggle span { display: block; width: 26px; height: 2.5px; background: var(--primary); border-radius: 2px; transition: all 0.3s; }
-.page-header { background: linear-gradient(135deg, rgba(13,47,69,0.9), rgba(26,82,118,0.88)), url('../images/news-banner.jpg') center/cover no-repeat; color: #fff; padding: 120px 0 60px; text-align: center; }
-.page-header h1 { font-size: 2.4rem; margin-bottom: 12px; }
-.page-header .breadcrumb { font-size: 0.9rem; opacity: 0.75; }
-.page-header .breadcrumb a { color: rgba(255,255,255,0.8); }
-.page-header .breadcrumb a:hover { color: #fff; }
-
-/* Region Cards */
-.region-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-.region-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 36px 28px; transition: all var(--transition); border: 1px solid transparent; }
-.region-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--primary-light); }
-.region-card h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 8px; }
-.region-card .region-sub { font-size: 0.9rem; color: var(--accent); font-weight: 600; margin-bottom: 16px; }
-.region-card p { font-size: 0.95rem; color: var(--text-body); line-height: 1.7; margin-bottom: 12px; }
-.region-card .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-.region-card .tag { display: inline-block; padding: 4px 12px; background: var(--bg-light); border-radius: 20px; font-size: 0.8rem; color: var(--text-body); }
-
-.footer { background: var(--bg-footer); color: rgba(255,255,255,0.7); padding: 60px 0 30px; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-.footer-about h3 { color: #fff; font-size: 1.2rem; margin-bottom: 16px; }
-.footer-about p { font-size: 0.9rem; line-height: 1.8; }
-.footer-col h4 { color: #fff; font-size: 1rem; margin-bottom: 16px; }
-.footer-col a { display: block; color: rgba(255,255,255,0.6); font-size: 0.9rem; padding: 5px 0; transition: all var(--transition); }
-.footer-col a:hover { color: #fff; padding-left: 6px; }
-.footer-bottom { text-align: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: rgba(255,255,255,0.4); }
-.back-to-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; background: var(--primary); color: #fff; border: none; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all var(--transition); box-shadow: 0 2px 12px rgba(0,0,0,0.2); z-index: 999; }
-.back-to-top.visible { opacity: 1; visibility: visible; }
-.back-to-top:hover { background: var(--primary-dark); transform: translateY(-3px); }
-html.js-ready .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
-html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-/* Case Grid (reused from inspection-cases) */
-.case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.case-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all var(--transition); }
-.case-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-.case-card-img { height: 200px; overflow: hidden; background: var(--bg-light); }
-.case-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-.case-card:hover .case-card-img img { transform: scale(1.05); }
-.case-card-body { padding: 20px; }
-.case-card-body h3 { font-size: 1.1rem; margin-bottom: 10px; line-height: 1.5; }
-.case-card-body h3 a { color: var(--text-dark); }
-.case-card-body h3 a:hover { color: var(--primary); }
-.case-card-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
-.case-card-cat { display: inline-block; font-size: 0.75rem; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
-.case-card-body p { font-size: 0.9rem; color: var(--text-body); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-
-
-
-@media (max-width: 992px) {
-  :root { --header-h: 64px; }
-  .case-grid { grid-template-columns: repeat(2, 1fr); }
-  .region-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 768px) {
-  :root { --header-h: 64px; }
-  .menu-toggle { display: flex; }
-  .nav { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: #fff; flex-direction: column; padding: 80px 24px 24px; gap: 0; box-shadow: -4px 0 20px rgba(0,0,0,0.1); transition: right 0.3s ease; overflow-y: auto; }
-  .nav.open { right: 0; }
-  .nav a { padding: 14px 12px; border-bottom: 1px solid var(--border); border-radius: 0; font-size: 1rem; }
-  .lang-switch { margin: 16px 0 0; padding-left: 12px; }
-  .nav-dropdown > a { justify-content: space-between; }
-  .dropdown-menu { position: static; box-shadow: none; opacity: 1; visibility: visible; transform: none; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0; background: transparent; min-width: auto; }
-  .nav-dropdown.open .dropdown-menu { max-height: 600px; }
-  .dropdown-menu a { padding-left: 32px; font-size: 0.9rem; border-bottom: 1px solid var(--border); }
-  .menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; }
-  .menu-overlay.open { display: block; }
-  .section { padding: 50px 0; }
-  .page-header h1 { font-size: 1.8rem; }
-  .case-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-}
-</style>
-  <link rel="canonical" href="https://www.cn-q.com/factory-resource">
+<link rel="canonical" href="https://www.cn-q.com/factory-resource">
   <link rel="alternate" hreflang="en" href="https://www.cn-q.com/factory-resource">
   <link rel="alternate" hreflang="x-default" href="https://www.cn-q.com/factory-resource">
   <script type="application/ld+json">
@@ -322,7 +217,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   </footer>
 
   <button class="back-to-top" aria-label="Back to Top">&#9650;</button>
-  <script src="js/main.js" defer></script>
+  <script src="/js/main.js" defer></script>
 
 </body>
 </html>
