@@ -255,8 +255,8 @@ document.addEventListener('DOMContentLoaded', function () {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * (0.8 + Math.random() * 0.8),
-          vy: (Math.random() - 0.5) * (0.8 + Math.random() * 0.8),
+          vx: (Math.random() - 0.5) * (0.7 + Math.random() * 0.8),
+          vy: (Math.random() - 0.5) * (0.7 + Math.random() * 0.8),
           r: Math.random() * 2 + 1,
           opacity: Math.random() * 0.5 + 0.2
         });
