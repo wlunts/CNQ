@@ -144,7 +144,7 @@ ul, ol { list-style: none; }
 /* ---------- Stats Bar (Home) ---------- */
 .stats-bar { background: var(--primary); color: #fff; padding: 40px 0; }
 .stats-bar .container { display: flex; justify-content: space-around; text-align: center; flex-wrap: wrap; gap: 20px; }
-.stat-item h3 { font-size: 2.5rem; font-weight: 700; margin-bottom: 4px; }
+.stat-item .stat-number { font-size: 2.5rem; font-weight: 700; margin-bottom: 4px; }
 .stat-item p { font-size: 0.95rem; opacity: 0.8; }
 
 /* ---------- About Preview (Home) ---------- */
@@ -396,5 +396,5 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   .news-list-thumb { width: 100%; height: 200px; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
   .stats-bar .container { gap: 30px; }
-  .stat-item h3 { font-size: 2rem; }
+  .stat-item .stat-number { font-size: 2rem; }
 }
