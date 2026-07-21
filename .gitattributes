@@ -1,0 +1,9 @@
+* text=auto
+*.docx binary
+*.docm binary
+*.xlsx binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.svg binary
+*.ico binary
