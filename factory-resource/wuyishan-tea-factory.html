@@ -112,9 +112,10 @@
     <section class="section">
       <div class="container" style="max-width: 860px;">
       <div class="font-size-controls fade-in">
-        <button data-size="small" aria-label="Small text" data-zh="小">A</button>
-        <button data-size="medium" aria-label="Medium text" data-zh="中">A</button>
-        <button data-size="large" aria-label="Large text" data-zh="大">A</button>
+        <span style="font-size:0.85rem;color:var(--text-muted)" data-zh="字体：">Font: </span>
+        <button onclick="changeFontSize('small')" data-zh="小">S</button>
+        <button onclick="changeFontSize('medium')" data-zh="中">M</button>
+        <button onclick="changeFontSize('large')" data-zh="大">L</button>
       </div>
 
       <div class="article-body fade-in" id="articleContent">

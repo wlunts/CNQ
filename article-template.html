@@ -99,20 +99,17 @@
   <!-- ======== 主体内容 START (只修改这部分) ======== -->
   <main id="main-content">
 
-    <!-- ===== 蓝色页眉 (标题 + 面包屑) ===== -->
+    <!-- 蓝色页眉 (banner) — h1 直接在此，SEO 最优 -->
     <section class="page-header">
       <div class="container">
-        <!-- 面包屑 (必须替换) -->
         <div class="breadcrumb fade-in">
           <a href="/">Home</a> ›
           <a href="/========== 分类列表页/ ==========">========== Category Name ==========</a> ›
           <span>========== Article Title ==========</span>
         </div>
-        <!-- 文章标题 (必须替换) -->
         <h1 class="fade-in" data-zh="========== 中文标题 ==========">
           ========== 英文标题 ==========
         </h1>
-        <!-- 元信息 (必须替换) -->
         <div class="page-header-meta fade-in">
           <span>========== 日期 ==========</span> ·
           <span>========== 分类 ==========</span> ·
@@ -121,19 +118,19 @@
       </div>
     </section>
 
-    <!-- ===== 文章正文区域 (核心：所有内容必须放在 .article-body 内) ===== -->
+    <!-- 文章正文区域 -->
     <section class="section">
       <div class="container" style="max-width: 860px;">
 
-        <!-- 字体大小控制 (DO NOT TOUCH) -->
+        <!-- 字体大小控制 -->
         <div class="font-size-controls fade-in">
-          <span data-zh="字号：">Font: </span>
-          <button data-size="small" aria-label="Small text" data-zh="小">A</button>
-          <button data-size="medium" aria-label="Medium text" data-zh="中">A</button>
-          <button data-size="large" aria-label="Large text" data-zh="大">A</button>
+          <span style="font-size:0.85rem;color:var(--text-muted)" data-zh="字体：">Font: </span>
+          <button onclick="changeFontSize('small')" data-zh="小">S</button>
+          <button onclick="changeFontSize('medium')" data-zh="中">M</button>
+          <button onclick="changeFontSize('large')" data-zh="大">L</button>
         </div>
 
-        <!-- 所有内容必须包裹在 .article-body 内，否则 CSS 表格、列表、图片、段落样式全部失效！ -->
+        <!-- 所有内容必须包裹在 .article-body 内，否则 CSS 表格/列表/段落样式全部失效！ -->
         <div class="article-body fade-in" id="articleContent">
 
           <!-- ========== 正文内容 START (替换这里) ========== -->
@@ -148,14 +145,12 @@
             ========== 正文段落。正文段落。 ==========
           </p>
 
-          <!-- 列表 (ul) -->
           <ul>
             <li>========== 列表项 1 ==========</li>
             <li>========== 列表项 2 ==========</li>
             <li>========== 列表项 3 ==========</li>
           </ul>
 
-          <!-- 有序列表 (ol) -->
           <ol>
             <li>========== 步骤 1 ==========</li>
             <li>========== 步骤 2 ==========</li>
@@ -167,7 +162,6 @@
             ========== 正文段落。 ==========
           </p>
 
-          <!-- 表格 (必须用标准 table 结构) -->
           <table>
             <thead>
               <tr>
@@ -187,7 +181,6 @@
             </tbody>
           </table>
 
-          <!-- 图片 (必须用 figure 结构) -->
           <figure>
             <img src="/Upload/========== 分类/slug/图片名.jpg ==========" alt="========== 图片描述 ==========" loading="lazy">
             <figcaption class="figure-caption">========== 图片说明 ==========</figcaption>
@@ -198,7 +191,7 @@
           </blockquote>
 
           <p>
-            <strong>免责声明：</strong>========== 免责声明内容 ==========
+            <strong>Disclaimer:</strong> ========== 免责声明内容 ==========
           </p>
 
           <!-- ========== 正文内容 END (替换到这里) ========== -->
