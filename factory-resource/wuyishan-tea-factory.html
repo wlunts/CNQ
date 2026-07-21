@@ -43,31 +43,58 @@
   <a href="#main-content" class="skip-link" data-zh="跳转到主内容">Skip to main content</a>
 
   <header class="header">
-    <div class="container">
-      <button class="lang-btn" id="langToggle" aria-label="Switch Language" data-zh="EN / 中文">EN / 中文</button>
-      <div class="header-inner">
-        <a href="/" class="logo" aria-label="China Quality Service">
-          <img src="favicon.svg" alt="CQS Logo" class="logo-icon" width="60" height="60">
-          <div class="logo-text">
-            <span class="logo-name">China Quality Service</span>
-          </div>
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="/">
+          <img src="Upload/logo.png" alt="China Quality Service - product inspection in China" onerror="this.style.display='none'">
+          <span>China Quality Service</span>
         </a>
-        <nav class="nav" id="main-nav">
-          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-          <ul class="nav-menu" id="nav-menu">
-            <li><a href="/" data-zh="首页">Home</a></li>
-            <li><a href="/services" data-zh="服务项目">Services</a></li>
-            <li><a href="/insights" data-zh="行业洞察">Insights</a></li>
-            <li><a href="/download" data-zh="资料下载">Downloads</a></li>
-            <li><a href="/about" data-zh="关于我们">About</a></li>
-            <li><a href="/contact" class="nav-cta" data-zh="联系我们">Contact</a></li>
-          </ul>
-        </nav>
       </div>
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <nav class="nav">
+        <a href="/" data-zh="首页">Home</a>
+        <div class="nav-dropdown">
+          <a href="about" data-zh="关于我们">About Us</a>
+          <div class="dropdown-menu">
+            <a href="about" data-zh="公司介绍">Company Profile</a>
+            <a href="about" data-zh="资质与荣誉">Credentials &amp; Honors</a>
+            <a href="about" data-zh="企业文化">Culture</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="services" data-zh="服务范围">Services</a>
+          <div class="dropdown-menu">
+            <a href="services" data-zh="产品检验">Product Inspection</a>
+            <a href="services" data-zh="工厂审核">Factory Audit</a>
+            <a href="services" data-zh="实验室测试">Lab Testing</a>
+            <a href="services" data-zh="供应商管理">Supplier Management</a>
+            <a href="services" data-zh="验货方案">Inspection Plans</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="insights" class="active" data-zh="洞察">Insights</a>
+          <div class="dropdown-menu">
+            <a href="/inspection-cases/" data-zh="验货案例">Inspection Cases</a>
+            <a href="/factory-resource/" data-zh="工厂资源">Factory Resource</a>
+            <a href="/industry-updates/" data-zh="行业动态">Industry Updates</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="download" data-zh="资料下载">Downloads</a>
+          <div class="dropdown-menu">
+            <a href="download" data-zh="AQL 计算器">AQL Calculator</a>
+            <a href="download" data-zh="下载中心">Download Center</a>
+          </div>
+        </div>
+        <a href="contact" data-zh="联系我们">Contact</a>
+        <div class="lang-switch">
+          <a href="javascript:void(0)" data-lang="zh" class="active">中</a>
+          <a href="javascript:void(0)" data-lang="en">EN</a>
+        </div>
+      </nav>
     </div>
   </header>
+  <div class="menu-overlay"></div>
 
   <main id="main-content">
     <section class="page-header">
@@ -210,38 +237,37 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
+        <div class="footer-about">
+          <h3>China Quality Service</h3>
+          <p data-zh="专业的第三方品控咨询服务商，致力于为全球客户提供独立、客观的品质检验与咨询服务，确保您的产品符合国际质量标准。">Professional product inspection service in China and factory audit provider — independent, objective quality control and supply chain consulting to ensure your products meet global standards.</p>
+        </div>
         <div class="footer-col">
           <h4 data-zh="快速链接">Quick Links</h4>
-          <ul>
-            <li><a href="/services" data-zh="服务项目">Services</a></li>
-            <li><a href="/insights" data-zh="行业洞察">Insights</a></li>
-            <li><a href="/about" data-zh="关于我们">About</a></li>
-          </ul>
+          <a href="about" data-zh="关于我们">About Us</a>
+          <a href="services" data-zh="服务范围">Services</a>
+          <a href="insights" data-zh="洞察">Insights</a>
+          <a href="download" data-zh="资料下载">Downloads</a>
         </div>
         <div class="footer-col">
-          <h4 data-zh="服务项目">Services</h4>
-          <ul>
-            <li><a href="/services" data-zh="产品检验">Product Inspection</a></li>
-            <li><a href="/services" data-zh="工厂审核">Factory Audit</a></li>
-            <li><a href="/services" data-zh="集装箱监装">Container Loading Supervision</a></li>
-          </ul>
+          <h4 data-zh="核心服务">Core Services</h4>
+          <a href="services" data-zh="产品检验">Product Inspection</a>
+          <a href="services" data-zh="工厂审核">Factory Audit</a>
+          <a href="services" data-zh="实验室测试">Lab Testing</a>
+          <a href="services" data-zh="供应商管理">Supplier Management</a>
         </div>
         <div class="footer-col">
-          <h4 data-zh="联系方式">Contact</h4>
-          <ul>
-            <li><a href="mailto:info@cn-q.com">info@cn-q.com</a></li>
-            <li><a href="/contact" data-zh="在线咨询">Online Inquiry</a></li>
-          </ul>
+          <h4 data-zh="联系我们">Contact Us</h4>
+          <a href="contact" data-zh="在线留言">Online Message</a>
+          <a href="contact" data-zh="联系方式">Contact Info</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 China Quality Service. <span data-zh="保留所有权利。">All rights reserved.</span></p>
+        <p>Copyright &copy; 2026 China Quality Service All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
-  <button class="back-to-top" id="back-to-top" aria-label="Back to top" data-zh="回到顶部">&#8593;</button>
-
+  <button class="back-to-top" aria-label="Back to Top">&#9650;</button>
   <script src="/js/main.js" defer></script>
 </body>
 </html>
