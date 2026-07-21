@@ -1,195 +1,270 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-<head><base href="/">
+<html lang="en" class="js-ready">
+<head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- ========== TITLE: 替换为文章标题 + 分类 + 品牌名 ========== -->
-  <title data-zh="中文标题">English Title | Category - China Quality Service</title>
-  <!-- ========== META DESCRIPTION: 替换为文章描述 ========== -->
-  <meta name="description" data-zh="中文描述" content="English description">
-  <!-- ========== META KEYWORDS: 替换为 SEO 关键词 ========== -->
-  <meta name="keywords" content="keyword1, keyword2, keyword3">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="English Title | Category - China Quality Service">
-  <meta property="og:description" content="English description">
-  <!-- ========== OG URL: 替换为文章完整 URL ========== -->
-  <meta property="og:url" content="https://www.cn-q.com/category/SLUG">
+  <base href="/">
+
+  <!-- ========== 必须替换：标题 & 描述 ========== -->
+  <title>========== 英文文章标题 | China Quality Service ==========</title>
+  <meta name="description" content="========== 英文描述 150-160 字符 ==========">
+  <meta name="keywords" content="========== 关键词1, 关键词2, 关键词3 ==========">
+  <link rel="canonical" href="https://www.chinaqualityservice.com/========== 分类/文件名 ==========">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="========== 英文文章标题 ==========">
+  <meta property="og:description" content="========== 英文描述 ==========">
   <meta property="og:type" content="article">
-  <!-- ========== OG IMAGE: 替换为文章封面图 URL ========== -->
-  <meta property="og:image" content="https://www.cn-q.com/Upload/category/SLUG/1.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="China Quality Service">
-  <meta property="og:locale" content="en_US">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://www.cn-q.com/Upload/category/SLUG/1.jpg">
-  <!-- ========== CANONICAL: 替换为文章 URL ========== -->
-  <link rel="canonical" href="https://www.cn-q.com/category/SLUG">
-  <link rel="alternate" hreflang="en" href="https://www.cn-q.com/category/SLUG">
-  <link rel="alternate" hreflang="x-default" href="https://www.cn-q.com/category/SLUG">
-  <!-- ========== SCHEMA.ORG: 替换标题、描述、图片、日期、URL ========== -->
+  <meta property="og:url" content="https://www.chinaqualityservice.com/========== 分类/文件名 ==========">
+  <meta property="og:image" content="https://www.chinaqualityservice.com/Upload/========== 分类/缩略图.jpg ==========">
+  <meta property="article:published_time" content="========== 2026-07-21 ==========">
+  <meta property="article:section" content="========== Inspection Cases / Factory Resource / Industry Updates ==========">
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Article Headline",
-    "description": "Article description",
-    "image": "https://www.cn-q.com/Upload/category/SLUG/1.jpg",
+    "headline": "========== 英文文章标题 ==========",
+    "description": "========== 英文描述 ==========",
+    "image": "https://www.chinaqualityservice.com/Upload/========== 分类/缩略图.jpg ==========",
+    "datePublished": "========== 2026-07-21 ==========",
     "author": { "@type": "Organization", "name": "China Quality Service" },
-    "publisher": { "@type": "Organization", "name": "China Quality Service", "url": "https://www.cn-q.com" },
-    "datePublished": "2026-07-21",
-    "dateModified": "2026-07-21",
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.cn-q.com/category/SLUG" }
+    "publisher": { "@type": "Organization", "name": "China Quality Service", "logo": { "@type": "ImageObject", "url": "https://www.chinaqualityservice.com/Upload/logo.png" } }
   }
   </script>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" href="/favicon.png">
 </head>
+
 <body>
 
-  <!-- ========== 以下 header 和 footer 是标准模板，请勿修改 ========== -->
+  <!-- 跳过链接 (无障碍) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <a href="#main-content" class="skip-link" data-zh="跳转到主内容">Skip to main content</a>
-
+  <!-- 顶部导航 (DO NOT TOUCH) -->
   <header class="header">
     <div class="container header-inner">
       <div class="logo">
-        <a href="/">
-          <img src="Upload/logo.png" alt="China Quality Service - product inspection in China" onerror="this.style.display='none'">
-          <span>China Quality Service</span>
-        </a>
+        <a href="/"><img src="/Upload/logo.png" alt="China Quality Service Logo"> <span>China Quality Service</span></a>
+      </div>
+      <nav class="nav" id="mainNav">
+        <a href="/">Home</a>
+        <div class="nav-dropdown">
+          <a href="/services.html">Services</a>
+          <div class="dropdown-menu">
+            <a href="/services.html">All Services</a>
+            <a href="/services.html#inspection">Pre-Shipment Inspection</a>
+            <a href="/services.html#factory">Factory Audit</a>
+            <a href="/services.html#testing">Lab Testing</a>
+            <a href="/services.html#consulting">Quality Consulting</a>
+          </div>
+        </div>
+        <a href="/about.html">About</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/contact.html">Contact</a>
+        <div class="nav-dropdown">
+          <a href="/inspection-cases/">Inspection Cases</a>
+          <div class="dropdown-menu">
+            <a href="/inspection-cases/">All Cases</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="/factory-resource/">Factory Resource</a>
+          <div class="dropdown-menu">
+            <a href="/factory-resource/">All Resources</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="/industry-updates/">Industry Updates</a>
+          <div class="dropdown-menu">
+            <a href="/industry-updates/">All Updates</a>
+          </div>
+        </div>
+        <a href="/download.html">Download</a>
+      </nav>
+      <div class="lang-switch">
+        <a href="javascript:void(0)" class="active" onclick="switchLanguage('en')">EN</a>
+        <a href="javascript:void(0)" onclick="switchLanguage('zh')">中文</a>
       </div>
       <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-      <nav class="nav">
-        <a href="/" data-zh="首页">Home</a>
-        <div class="nav-dropdown">
-          <a href="about" data-zh="关于我们">About Us</a>
-          <div class="dropdown-menu">
-            <a href="about" data-zh="公司介绍">Company Profile</a>
-            <a href="about" data-zh="资质与荣誉">Credentials &amp; Honors</a>
-            <a href="about" data-zh="企业文化">Culture</a>
-          </div>
-        </div>
-        <div class="nav-dropdown">
-          <a href="services" data-zh="服务范围">Services</a>
-          <div class="dropdown-menu">
-            <a href="services" data-zh="产品检验">Product Inspection</a>
-            <a href="services" data-zh="工厂审核">Factory Audit</a>
-            <a href="services" data-zh="实验室测试">Lab Testing</a>
-            <a href="services" data-zh="供应商管理">Supplier Management</a>
-            <a href="services" data-zh="验货方案">Inspection Plans</a>
-          </div>
-        </div>
-        <!-- ========== 根据文章分类选择 active 的 Insights 链接 ========== -->
-        <div class="nav-dropdown">
-          <a href="insights" class="active" data-zh="洞察">Insights</a>
-          <div class="dropdown-menu">
-            <a href="/inspection-cases/" data-zh="验货案例">Inspection Cases</a>
-            <a href="/factory-resource/" data-zh="工厂资源">Factory Resource</a>
-            <a href="/industry-updates/" data-zh="行业动态">Industry Updates</a>
-          </div>
-        </div>
-        <div class="nav-dropdown">
-          <a href="download" data-zh="资料下载">Downloads</a>
-          <div class="dropdown-menu">
-            <a href="download" data-zh="AQL 计算器">AQL Calculator</a>
-            <a href="download" data-zh="下载中心">Download Center</a>
-          </div>
-        </div>
-        <a href="contact" data-zh="联系我们">Contact</a>
-        <div class="lang-switch">
-          <a href="javascript:void(0)" data-lang="zh" class="active">中</a>
-          <a href="javascript:void(0)" data-lang="en">EN</a>
-        </div>
-      </nav>
     </div>
   </header>
-  <div class="menu-overlay"></div>
 
-  <!-- ========== 正文区域开始：替换以下所有内容 ========== -->
+  <!-- 移动端遮罩 (DO NOT TOUCH) -->
+  <div class="menu-overlay" id="menuOverlay"></div>
 
+  <!-- ======== 主体内容 START (只修改这部分) ======== -->
   <main id="main-content">
+
+    <!-- ===== 蓝色页眉 (标题 + 面包屑) ===== -->
     <section class="page-header">
       <div class="container">
+        <!-- 面包屑 (必须替换) -->
         <div class="breadcrumb fade-in">
-          <a href="/" data-zh="首页">Home</a> &rsaquo; <a href="insights" data-zh="洞察">Insights</a> &rsaquo; <a href="/CATEGORY/" data-zh="分类名">Category Name</a> &rsaquo; <span data-zh="文章标题">Article Title</span>
+          <a href="/">Home</a> ›
+          <a href="/========== 分类列表页/ ==========">========== Category Name ==========</a> ›
+          <span>========== Article Title ==========</span>
         </div>
-        <h1 class="fade-in" data-zh="中文标题">English Title</h1>
+        <!-- 文章标题 (必须替换) -->
+        <h1 class="fade-in" data-zh="========== 中文标题 ==========">
+          ========== 英文标题 ==========
+        </h1>
+        <!-- 元信息 (必须替换) -->
         <div class="page-header-meta fade-in">
-          <span data-zh="2026-07-21">July 21, 2026</span> · <span data-zh="分类名">Category Name</span> · <span data-zh="地点">Location</span>
+          <span>========== 日期 ==========</span> ·
+          <span>========== 分类 ==========</span> ·
+          <span>========== 其他信息 ==========</span>
         </div>
       </div>
     </section>
 
+    <!-- ===== 文章正文区域 (核心：所有内容必须放在 .article-body 内) ===== -->
     <section class="section">
       <div class="container" style="max-width: 860px;">
+
+        <!-- 字体大小控制 (DO NOT TOUCH) -->
         <div class="font-size-controls fade-in">
-          <button class="font-size-btn" data-size="small" aria-label="Small text" data-zh="小">A</button>
-          <button class="font-size-btn active" data-size="medium" aria-label="Medium text" data-zh="中">A</button>
-          <button class="font-size-btn" data-size="large" aria-label="Large text" data-zh="大">A</button>
+          <span data-zh="字号：">Font: </span>
+          <button data-size="small" aria-label="Small text" data-zh="小">A</button>
+          <button data-size="medium" aria-label="Medium text" data-zh="中">A</button>
+          <button data-size="large" aria-label="Large text" data-zh="大">A</button>
         </div>
 
-        <!-- ========== 文章正文从这里开始 ========== -->
+        <!-- 所有内容必须包裹在 .article-body 内，否则 CSS 表格、列表、图片、段落样式全部失效！ -->
+        <div class="article-body fade-in" id="articleContent">
 
-        <h2 data-zh="第一节标题">Section 1 Title</h2>
-        <p data-zh="中文段落">English paragraph.</p>
+          <!-- ========== 正文内容 START (替换这里) ========== -->
 
-        <h2 data-zh="第二节标题">Section 2 Title</h2>
-        <p data-zh="中文段落">English paragraph.</p>
+          <p>
+            ========== 第一段导言。替换此段落为文章正文。 ==========
+          </p>
 
-        <!-- ========== 文章正文结束 ========== -->
+          <h2>========== 章节标题 2 (h2) ==========</h2>
 
-      </div>
+          <p>
+            ========== 正文段落。正文段落。 ==========
+          </p>
 
-      <!-- ========== 文章导航：更新 prev/next 链接 ========== -->
-      <div class="article-nav fade-in" style="max-width: 860px; margin: 0 auto; padding: 0 20px;">
-        <div class="prev">
-          <span data-zh="上一篇：">Previous: </span><a href="/CATEGORY/" data-zh="返回列表">Back to Category</a>
+          <!-- 列表 (ul) -->
+          <ul>
+            <li>========== 列表项 1 ==========</li>
+            <li>========== 列表项 2 ==========</li>
+            <li>========== 列表项 3 ==========</li>
+          </ul>
+
+          <!-- 有序列表 (ol) -->
+          <ol>
+            <li>========== 步骤 1 ==========</li>
+            <li>========== 步骤 2 ==========</li>
+          </ol>
+
+          <h3>========== 小标题 (h3) ==========</h3>
+
+          <p>
+            ========== 正文段落。 ==========
+          </p>
+
+          <!-- 表格 (必须用标准 table 结构) -->
+          <table>
+            <thead>
+              <tr>
+                <th>Attribute</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Item 1</strong></td>
+                <td>Description</td>
+              </tr>
+              <tr>
+                <td><strong>Item 2</strong></td>
+                <td>Description</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- 图片 (必须用 figure 结构) -->
+          <figure>
+            <img src="/Upload/========== 分类/slug/图片名.jpg ==========" alt="========== 图片描述 ==========" loading="lazy">
+            <figcaption class="figure-caption">========== 图片说明 ==========</figcaption>
+          </figure>
+
+          <blockquote>
+            ========== 引用文字。引用文字。 ==========
+          </blockquote>
+
+          <p>
+            <strong>免责声明：</strong>========== 免责声明内容 ==========
+          </p>
+
+          <!-- ========== 正文内容 END (替换到这里) ========== -->
+
         </div>
-        <div class="next">
-          <span data-zh="下一篇：">Next: </span><a href="/CATEGORY/SLUG-next" data-zh="下一篇文章">Next Article</a>
+        <!-- /.article-body -->
+
+        <!-- 底部导航 (必须替换链接) -->
+        <div class="article-nav fade-in">
+          <div class="prev">
+            <span data-zh="上一篇：">Previous:</span>
+            <a href="/========== 上一篇路径 ==========" data-zh="========== 中文标题 ==========">
+              ========== 英文标题 ==========
+            </a>
+          </div>
+          <div class="next">
+            <span data-zh="下一篇：">Next:</span>
+            <a href="/========== 下一篇路径 ==========" data-zh="========== 中文标题 ==========">
+              ========== 英文标题 ==========
+            </a>
+          </div>
         </div>
+
       </div>
     </section>
+
   </main>
+  <!-- ======== 主体内容 END ======== -->
 
-  <!-- ========== 标准 footer：请勿修改 ========== -->
-
+  <!-- 底部 (DO NOT TOUCH) -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-about">
           <h3>China Quality Service</h3>
-          <p data-zh="专业的第三方品控咨询服务商，致力于为全球客户提供独立、客观的品质检验与咨询服务，确保您的产品符合国际质量标准。">Professional product inspection service in China and factory audit provider — independent, objective quality control and supply chain consulting to ensure your products meet global standards.</p>
+          <p>Professional third-party inspection and quality control services since 2008. Protecting your sourcing investment in China.</p>
         </div>
         <div class="footer-col">
-          <h4 data-zh="快速链接">Quick Links</h4>
-          <a href="about" data-zh="关于我们">About Us</a>
-          <a href="services" data-zh="服务范围">Services</a>
-          <a href="insights" data-zh="洞察">Insights</a>
-          <a href="download" data-zh="资料下载">Downloads</a>
+          <h4>Quick Links</h4>
+          <a href="/">Home</a>
+          <a href="/about.html">About Us</a>
+          <a href="/services.html">Services</a>
+          <a href="/contact.html">Contact</a>
         </div>
         <div class="footer-col">
-          <h4 data-zh="核心服务">Core Services</h4>
-          <a href="services" data-zh="产品检验">Product Inspection</a>
-          <a href="services" data-zh="工厂审核">Factory Audit</a>
-          <a href="services" data-zh="实验室测试">Lab Testing</a>
-          <a href="services" data-zh="供应商管理">Supplier Management</a>
+          <h4>Core Services</h4>
+          <a href="/services.html#inspection">Pre-Shipment Inspection</a>
+          <a href="/services.html#factory">Factory Audit</a>
+          <a href="/services.html#testing">Lab Testing</a>
+          <a href="/services.html#consulting">Quality Consulting</a>
         </div>
         <div class="footer-col">
-          <h4 data-zh="联系我们">Contact Us</h4>
-          <a href="contact" data-zh="在线留言">Online Message</a>
-          <a href="contact" data-zh="联系方式">Contact Info</a>
+          <h4>Contact Us</h4>
+          <a href="mailto:info@chinaqualityservice.com">info@chinaqualityservice.com</a>
+          <a href="tel:+8675582828588">+86 755 8282 8588</a>
+          <a href="/contact.html">Online Inquiry</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>Copyright &copy; 2026 China Quality Service All Rights Reserved.</p>
+        <p>© 2008-2026 China Quality Service. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <button class="back-to-top" aria-label="Back to Top">&#9650;</button>
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
   <script src="/js/main.js" defer></script>
 </body>
 </html>
