@@ -40,10 +40,20 @@ body {
   overflow-x: hidden;
 }
 
-img { height: auto; }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--primary); text-decoration: none; transition: color var(--transition); }
 a:hover { color: var(--primary-light); }
+
+/* ---------- Accessibility: Skip Link ---------- */
+.skip-link {
+  position: absolute; top: -100px; left: 20px;
+  background: var(--primary); color: #fff;
+  padding: 8px 16px; border-radius: var(--radius-sm);
+  z-index: 10000; font-size: 0.9rem;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 10px; }
+
 ul, ol { list-style: none; }
 .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
 .section { padding: 80px 0; }
@@ -195,7 +205,7 @@ ul, ol { list-style: none; }
 .case-card-body h2 a { color: var(--text-dark); }
 .case-card-body h2 a:hover { color: var(--primary); }
 .case-card-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
-.case-card-body p { font-size: 0.9rem; color: var(--text-body); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.case-card-body p { font-size: 0.95rem; color: var(--text-body); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.7; }
 
 /* ---------- News List (Industry Updates List) ---------- */
 .news-list-item { display: flex; gap: 24px; margin-bottom: 30px; padding: 20px; border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); transition: all var(--transition); }
@@ -209,8 +219,6 @@ ul, ol { list-style: none; }
 .news-list-info h2 a:hover { color: var(--primary); }
 .news-list-meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
 .news-list-info p { font-size: 0.9rem; color: var(--text-body); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.case-card-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
-.case-card-body p { font-size: 0.95rem; color: var(--text-body); line-height: 1.7; }
 
 /* ---------- Sub-list pages (Inspection Cases / Factory Resource / Industry Updates) ---------- */
 .list-header { text-align: center; padding: 40px 0 20px; }
@@ -225,6 +233,21 @@ ul, ol { list-style: none; }
 .sidebar-nav a:hover, .sidebar-nav a.active { background: #fff; color: var(--primary); padding-left: 28px; border-left: 3px solid var(--primary); }
 .sidebar-contact { padding: 20px; }
 .sidebar-contact h4 { font-size: 1rem; color: var(--primary); margin-bottom: 12px; }
+
+/* Sidebar Helpers */
+.sidebar-spacer { height: 20px; }
+.sidebar-rate-box {
+  margin-top: 15px; padding: 10px;
+  background: rgba(230, 126, 34, 0.08);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+.sidebar-rate-box strong { color: var(--accent); }
+.sidebar-heading { font-size: 0.95rem; font-weight: 700; margin-bottom: 5px; }
+.sidebar-contact ul { margin-bottom: 10px; }
+.sidebar-contact ul:last-child { margin-bottom: 15px; }
+.grid-2.mt-20 { margin-top: 20px; }
 .sidebar-contact li { font-size: 0.9rem; color: var(--text-body); padding: 4px 0; }
 .main-content h2 { font-size: 1.6rem; color: var(--primary); padding-bottom: 12px; border-bottom: 2px solid var(--primary); margin-bottom: 24px; }
 .main-content h3 { font-size: 1.2rem; color: var(--primary-dark); margin: 28px 0 14px; }
