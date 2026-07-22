@@ -105,6 +105,8 @@ ul, ol { list-style: none; }
 .page-header .breadcrumb a { color: rgba(255,255,255,0.8); }
 .page-header .breadcrumb a:hover { color: #fff; }
 .page-header .page-title { font-size: 2.2rem; margin-bottom: 12px; }
+.page-header .page-header-meta { font-size: 0.9rem; opacity: 0.75; margin-top: 12px; }
+.page-header .page-header-meta .meta-category { color: #fff; font-weight: 700; }
 
 /* Section Title */
 .section-title { text-align: center; margin-bottom: 50px; }

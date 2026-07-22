@@ -90,23 +90,27 @@
 
   <section class="page-header">
     <div class="container">
-      <h1 data-zh="魔术贴错位 — 安全背心验货案例" class="page-title">Misaligned Velcro Strips — Safety Vest</h1>
-      <div class="breadcrumb">
+      <div class="breadcrumb fade-in">
         <a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="insights" data-zh="洞察">Insights</a> <span>&rsaquo;</span> <a href="/inspection-cases/" data-zh="验货案例">Inspection Cases</a> <span>&rsaquo;</span> <span data-zh="魔术贴错位 — 安全背心">Safety Vest — Velcro Misalignment</span>
+      </div>
+      <h1 class="fade-in" data-zh="魔术贴错位 — 安全背心验货案例">Misaligned Velcro Strips — Safety Vest</h1>
+      <div class="page-header-meta fade-in">
+        <span data-zh="发布时间：2026-07-18">Published: 2026-07-18</span> · <span data-zh="分类：验货案例" class="meta-category">Inspection Cases</span> · <span data-zh="来源：厦门亚商">Source: China Quality Service</span>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
-      <article>
-        <header class="article-header">
-          <div class="article-meta">
-            <span data-zh="分类：验货案例">Category: Inspection Cases</span><span data-zh="发布时间：2026-07-18">Date: 2026-07-18</span>
-          </div>
-        </header>
+    <div class="container" style="max-width: 860px;">
 
-        <div class="article-body">
+      <div class="font-size-controls">
+        <span style="font-size:0.85rem;color:var(--text-muted)" data-zh="字体：">Font: </span>
+        <button onclick="changeFontSize('small')" data-zh="小">S</button>
+        <button onclick="changeFontSize('medium')" data-zh="中">M</button>
+        <button onclick="changeFontSize('large')" data-zh="大">L</button>
+      </div>
+
+      <div class="article-body fade-in" id="articleContent">
 
           <h2>Product Inspection Finding</h2>
 
@@ -257,7 +261,6 @@
             <span data-zh="下一篇：">Next: </span><a href="/inspection-cases/tpr-flow-mark" data-zh="金色TPR包子 — 明显流痕缺陷">Gold TPR Steamed Stuffed Bun — Obvious Flow Mark</a>
           </div>
         </div>
-      </article>
     </div>
   </section>
 
@@ -299,6 +302,19 @@
 
   <button class="back-to-top" aria-label="Back to Top">&#9650;</button>
   <script src="/js/main.js" defer></script>
+
+<script>
+function changeFontSize(size) {
+  var body = document.querySelector('.article-body');
+  if (!body) return;
+  var sizes = { small: '0.95rem', medium: '1.05rem', large: '1.2rem' };
+  body.style.fontSize = sizes[size] || sizes.medium;
+  document.querySelectorAll('.font-size-controls button').forEach(function(btn) {
+    btn.classList.remove('active');
+  });
+  event.target.classList.add('active');
+}
+</script>
 
 </body>
 </html>
