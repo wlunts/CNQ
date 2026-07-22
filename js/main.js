@@ -232,6 +232,34 @@ document.addEventListener('DOMContentLoaded', function () {
     else if (size === 'large') article.style.fontSize = '1.2rem';
   };
 
+  // ========== Sidebar Active State on Scroll (About page) ==========
+  var sidebarNav = document.querySelector('.sidebar-nav');
+  if (sidebarNav) {
+    var sidebarLinks = sidebarNav.querySelectorAll('a[href^="#"]');
+    var sections = [];
+    sidebarLinks.forEach(function(link) {
+      var id = link.getAttribute('href');
+      var section = document.querySelector(id);
+      if (section) sections.push({ id: id, el: section, link: link });
+    });
+    function updateSidebarActive() {
+      var scrollPos = window.pageYOffset + (header ? header.offsetHeight : 0) + 100;
+      var activeId = null;
+      for (var i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].el.offsetTop <= scrollPos) {
+          activeId = sections[i].id;
+          break;
+        }
+      }
+      if (!activeId && sections.length) activeId = sections[0].id;
+      sidebarLinks.forEach(function(link) {
+        link.classList.toggle('active', link.getAttribute('href') === activeId);
+      });
+    }
+    window.addEventListener('scroll', updateSidebarActive);
+    updateSidebarActive();
+  }
+
   // ========== Hero Particle Network Canvas (Home page) ==========
   var canvas = document.getElementById('heroCanvas');
   if (canvas) {
