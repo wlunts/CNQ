@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else if (el.tagName === 'META') {
       el.setAttribute('data-en', el.content);
     } else {
-      el.setAttribute('data-en', el.textContent);
+      el.setAttribute('data-en', el.innerHTML);
     }
   });
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (el.tagName === 'META') {
           el.content = el.getAttribute('data-zh');
         } else {
-          el.textContent = el.getAttribute('data-zh');
+          el.innerHTML = el.getAttribute('data-zh');
         }
       } else {
         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (el.tagName === 'META') {
           el.content = el.getAttribute('data-en') || '';
         } else {
-          el.textContent = el.getAttribute('data-en') || '';
+          el.innerHTML = el.getAttribute('data-en') || '';
         }
       }
     });
