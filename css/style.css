@@ -99,7 +99,7 @@ ul, ol { list-style: none; }
 .menu-toggle span { display: block; width: 26px; height: 2.5px; background: var(--primary); border-radius: 2px; transition: all 0.3s; }
 
 /* ---------- Page Header ---------- */
-.page-header { background: linear-gradient(135deg, rgba(13,47,69,0.9), rgba(26,82,118,0.88)), url('../images/about-banner.jpg') center/cover no-repeat; color: #fff; padding: 120px 0 50px; text-align: center; }
+.page-header { background: linear-gradient(135deg, rgba(13,47,69,0.97), rgba(26,82,118,0.95)), url('../images/about-banner.jpg') center/cover no-repeat; color: #fff; padding: 120px 0 50px; text-align: center; }
 .page-header h1 { font-size: 2.4rem; margin-bottom: 12px; }
 .page-header .breadcrumb { font-size: 0.9rem; opacity: 0.75; }
 .page-header .breadcrumb a { color: rgba(255,255,255,0.8); }
