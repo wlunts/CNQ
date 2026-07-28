@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /js/
 Disallow: /downloads/
 
 Sitemap: https://www.cn-q.com/sitemap.xml
