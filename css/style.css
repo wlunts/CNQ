@@ -443,10 +443,11 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
 
 /* ===== Testimonials & Aggregate Rating ===== */
 .testimonials-section { padding: 40px 0; }
+.testimonials-section .section-title { margin-bottom: 15px; }
 
 .aggregate-rating {
   text-align: center;
-  padding: 20px 0 10px;
+  padding: 10px 0 10px;
   display: flex;
   align-items: center;
   justify-content: center;
