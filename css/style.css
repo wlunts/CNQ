@@ -162,7 +162,7 @@ ul, ol { list-style: none; }
 .stat-item p { font-size: 0.95rem; opacity: 0.8; }
 
 /* ---------- About Preview (Home) ---------- */
-.about-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
+.about-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: center; }
 .about-preview img { border-radius: var(--radius); box-shadow: var(--shadow); }
 .about-preview h2 { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
 .about-preview p { color: var(--text-body); margin-bottom: 16px; }
