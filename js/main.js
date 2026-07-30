@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
     });
-    document.querySelectorAll('.lang-switch a').forEach(function (btn) {
+    document.querySelectorAll('.lang-switch button').forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
     localStorage.setItem('cnq-lang', lang);
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  document.querySelectorAll('.lang-switch a').forEach(function (btn) {
+  document.querySelectorAll('.lang-switch button').forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       var lang = this.getAttribute('data-lang');
