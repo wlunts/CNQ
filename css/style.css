@@ -328,6 +328,9 @@ ul, ol { list-style: none; }
 .article-body blockquote { margin: 24px 0; padding: 16px 24px; background: var(--bg-light); border-left: 4px solid var(--primary); color: var(--text-body); font-style: italic; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
 .article-body strong { color: var(--primary-dark); }
 .article-body .figure-caption { font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 8px; margin-bottom: 24px; }
+.content-figure { margin: 28px 0 32px; text-align: center; }
+.content-figure img { width: 100%; max-width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); }
+.content-figure figcaption { font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; line-height: 1.5; }
 .article-body img { border-radius: var(--radius); box-shadow: var(--shadow); margin: 20px auto; }
 .article-body ul, .article-body ol { list-style: revert; padding-left: 24px; margin-bottom: 20px; }
 .article-body ul li, .article-body ol li { margin-bottom: 8px; }
