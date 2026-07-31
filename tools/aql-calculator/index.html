@@ -316,7 +316,7 @@
           </div>
           <div class="knowledge-block">
             <h4 data-zh="为什么仍需要现场验货？">Why On-Site Inspection Matters</h4>
-            <p data-zh="AQL抽样方案可以告诉你“抽多少、判多少”，但抽样位置、随机性、测试方法、缺陷分类仍依赖专业验货员在现场执行。<a href=&quot;/services/#inspection&quot;>第三方产品检验</a>能确保抽样真正随机、判定标准统一、报告可追溯。">AQL tells you <em>how many</em> to inspect and <em>how to decide</em>, but random sampling, testing methods and defect classification still require a trained inspector on site. <a href="/services#inspection">Third-party product inspection</a> ensures true randomness and consistent standards.</p>
+            <p data-zh="AQL抽样方案可以告诉你“抽多少、判多少”，但抽样位置、随机性、测试方法、缺陷分类仍依赖专业验货员在现场执行。<a href=&quot;/services#inspection&quot;>第三方产品检验</a>能确保抽样真正随机、判定标准统一、报告可追溯。">AQL tells you <em>how many</em> to inspect and <em>how to decide</em>, but random sampling, testing methods and defect classification still require a trained inspector on site. <a href="/services#inspection">Third-party product inspection</a> ensures true randomness and consistent standards.</p>
           </div>
         </div>
 
@@ -466,36 +466,88 @@
       fullInspect = true;
     }
 
-    // 更新字码显示（箭头提示）
-    let arrowNote = '';
+    // 更新字码显示（DOM 构建）
+    const badge = document.getElementById('codeLetterBadge');
+    badge.replaceChildren();
+    badge.appendChild(document.createTextNode(codeLetter));
     if (major && major.arrowIdx !== letterIdx) {
-      arrowNote = ' <span style="font-weight:400;font-size:0.85em">(' + t('Ac/Re follows arrow to ','Ac/Re 箭头至 ') + letterNames[major.arrowIdx] + ')</span>';
+      const arrowSpan = document.createElement('span');
+      arrowSpan.style.fontWeight = '400';
+      arrowSpan.style.fontSize = '0.85em';
+      arrowSpan.textContent = ' (' + t('Ac/Re follows arrow to ', 'Ac/Re 箭头至 ') + letterNames[major.arrowIdx] + ')';
+      badge.appendChild(arrowSpan);
     } else if (minor && minor.arrowIdx !== letterIdx) {
-      arrowNote = ' <span style="font-weight:400;font-size:0.85em">(' + t('Ac/Re follows arrow to ','Ac/Re 箭头至 ') + letterNames[minor.arrowIdx] + ')</span>';
+      const arrowSpan = document.createElement('span');
+      arrowSpan.style.fontWeight = '400';
+      arrowSpan.style.fontSize = '0.85em';
+      arrowSpan.textContent = ' (' + t('Ac/Re follows arrow to ', 'Ac/Re 箭头至 ') + letterNames[minor.arrowIdx] + ')';
+      badge.appendChild(arrowSpan);
     }
-    document.getElementById('codeLetterBadge').innerHTML = codeLetter + arrowNote;
 
     // 渲染 Major / Minor 结果
     renderResult('major', major, sampleSize, fullInspect, lotIdx, majorAql);
     renderResult('minor', minor, sampleSize, fullInspect, lotIdx, minorAql);
 
-    // 全检提示
+    // 全检提示（DOM 构建）
     const fiNote = document.getElementById('fullInspectNote');
     if (fullInspect) {
       fiNote.style.display = 'block';
-      fiNote.innerHTML = t(
-        '<strong>ℹ️ Full Inspection Required:</strong> The standard sample size (' + sampleSize + ') exceeds the lot size range. Inspect the entire lot. Ac/Re criteria still apply.',
-        '<strong>ℹ️ 需要全检：</strong>标准样本量（' + sampleSize + '）超过所选批量范围上限。请进行全数检验。Ac/Re 判定数依然适用。'
-      );
+      fiNote.replaceChildren();
+      const fiStrong = document.createElement('strong');
+      fiStrong.textContent = t('ℹ️ Full Inspection Required: ', 'ℹ️ 需要全检：');
+      fiNote.appendChild(fiStrong);
+      fiNote.appendChild(document.createTextNode(t(
+        'The standard sample size (' + sampleSize + ') exceeds the lot size range. Inspect the entire lot. Ac/Re criteria still apply.',
+        '标准样本量（' + sampleSize + '）超过所选批量范围上限。请进行全数检验。Ac/Re 判定数依然适用。'
+      )));
     } else {
       fiNote.style.display = 'none';
     }
 
-    // 严重缺陷提醒
-    document.getElementById('criticalWarning').innerHTML = t(
-      '<strong>⚠️ Critical Defect Alert:</strong> 1 critical defect (safety/regulatory) → <strong>reject</strong>, regardless of Ac. Our <a href="/services#inspection" style="color:#c53030;text-decoration:underline">inspectors</a> enforce this.',
-      '<strong>⚠️ 严重缺陷提示：</strong>发现1个严重缺陷（安全/法规）即<strong>拒收</strong>，不受Ac限制。我们的<a href="/services#inspection" style="color:#c53030;text-decoration:underline">验货员</a>现场严格执行。'
-    );
+    // 严重缺陷提醒（DOM 构建，含内链）
+    const cw = document.getElementById('criticalWarning');
+    cw.replaceChildren();
+    if (document.documentElement.lang === 'zh') {
+      const s1 = document.createElement('strong');
+      s1.textContent = '⚠️ 严重缺陷提示：';
+      cw.appendChild(s1);
+      cw.appendChild(document.createTextNode('若发现 '));
+      const s2 = document.createElement('strong');
+      s2.textContent = '1个严重缺陷';
+      cw.appendChild(s2);
+      cw.appendChild(document.createTextNode('（安全隐患或法规违规），即使总缺陷数未超过Ac，也应'));
+      const s3 = document.createElement('strong');
+      s3.textContent = '判为不合格';
+      cw.appendChild(s3);
+      cw.appendChild(document.createTextNode('。我们的现场验货员在每次'));
+      const linkZh = document.createElement('a');
+      linkZh.href = '/services#inspection';
+      linkZh.style.color = '#c53030';
+      linkZh.style.textDecoration = 'underline';
+      linkZh.textContent = '产品检验';
+      cw.appendChild(linkZh);
+      cw.appendChild(document.createTextNode('中都会严格执行这一标准。'));
+    } else {
+      const s1 = document.createElement('strong');
+      s1.textContent = '⚠️ Critical Defect Alert: ';
+      cw.appendChild(s1);
+      cw.appendChild(document.createTextNode('If even '));
+      const s2 = document.createElement('strong');
+      s2.textContent = '1 critical defect';
+      cw.appendChild(s2);
+      cw.appendChild(document.createTextNode(' (safety hazard or regulatory violation) is found, the lot should be '));
+      const s3 = document.createElement('strong');
+      s3.textContent = 'rejected';
+      cw.appendChild(s3);
+      cw.appendChild(document.createTextNode(' regardless of the Ac number. Our on-site inspectors enforce this during every '));
+      const linkEn = document.createElement('a');
+      linkEn.href = '/services#inspection';
+      linkEn.style.color = '#c53030';
+      linkEn.style.textDecoration = 'underline';
+      linkEn.textContent = 'product inspection';
+      cw.appendChild(linkEn);
+      cw.appendChild(document.createTextNode('.'));
+    }
 
     // 显示结果区
     const area = document.getElementById('resultsArea');
@@ -517,7 +569,8 @@
       elSample.textContent = '—';
       elAc.textContent = '—';
       elRe.textContent = '—';
-      elExplain.innerHTML = t('No sampling plan for this AQL.', '该 AQL 无适用方案。');
+      elExplain.replaceChildren();
+      elExplain.appendChild(document.createTextNode(t('No sampling plan for this AQL.', '该 AQL 无适用方案。')));
       return;
     }
 
@@ -529,10 +582,43 @@
     elRe.textContent = result.re;
 
     const typeName = type === 'major' ? 'Major' : 'Minor';
-    elExplain.innerHTML = t(
-      'Randomly draw <strong>' + displaySample + ' units</strong> from lot ' + lotLabel + '. <br>If ' + typeName.toLowerCase() + ' defects ≤ <strong>' + result.ac + '</strong> → accept; ≥ <strong>' + result.re + '</strong> → reject. (AQL ' + aqlVal + '%)',
-      '从批次（' + lotLabel + '）随机抽取 <strong>' + displaySample + ' 件</strong>。<br>若' + typeName + '缺陷数 ≤ <strong>' + result.ac + '</strong> → 接收；≥ <strong>' + result.re + '</strong> → 拒收。（AQL ' + aqlVal + '%）'
-    );
+
+    // DOM 构建解释文本（含 strong 标签）
+    elExplain.replaceChildren();
+
+    if (document.documentElement.lang === 'zh') {
+      elExplain.appendChild(document.createTextNode('从批次（' + lotLabel + '）随机抽取 '));
+      const ss = document.createElement('strong');
+      ss.textContent = displaySample + ' 件';
+      elExplain.appendChild(ss);
+      elExplain.appendChild(document.createTextNode('。'));
+      elExplain.appendChild(document.createElement('br'));
+      elExplain.appendChild(document.createTextNode('若' + typeName + '缺陷数 ≤ '));
+      const sAc = document.createElement('strong');
+      sAc.textContent = result.ac;
+      elExplain.appendChild(sAc);
+      elExplain.appendChild(document.createTextNode(' → 接收；≥ '));
+      const sRe = document.createElement('strong');
+      sRe.textContent = result.re;
+      elExplain.appendChild(sRe);
+      elExplain.appendChild(document.createTextNode(' → 拒收。（AQL ' + aqlVal + '%）'));
+    } else {
+      elExplain.appendChild(document.createTextNode('Randomly draw '));
+      const ss = document.createElement('strong');
+      ss.textContent = displaySample + ' units';
+      elExplain.appendChild(ss);
+      elExplain.appendChild(document.createTextNode(' from lot ' + lotLabel + '. '));
+      elExplain.appendChild(document.createElement('br'));
+      elExplain.appendChild(document.createTextNode('If ' + typeName.toLowerCase() + ' defects ≤ '));
+      const sAc = document.createElement('strong');
+      sAc.textContent = result.ac;
+      elExplain.appendChild(sAc);
+      elExplain.appendChild(document.createTextNode(' → accept; ≥ '));
+      const sRe = document.createElement('strong');
+      sRe.textContent = result.re;
+      elExplain.appendChild(sRe);
+      elExplain.appendChild(document.createTextNode(' → reject. (AQL ' + aqlVal + '%)'));
+    }
   }
 
   // ======== 嵌入代码更新 ========
