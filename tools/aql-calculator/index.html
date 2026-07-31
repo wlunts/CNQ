@@ -266,21 +266,23 @@
   <section class="aql-section alt">
     <div class="container">
       <div class="trust-grid">
-          <div class="trust-card">
-            <div class="icon">📋</div>
-            <h4 data-zh="脱敏报告样例">Sample Reports</h4>
-            <p data-zh="查看真实<a href="/download#brochure">验货报告</a>节选，了解缺陷分类与现场记录。">Review anonymized <a href="/download#brochure">product inspection report</a> excerpts with defect classifications and on-site photos.</p>
-          </div>
-          <div class="trust-card">
-            <div class="icon">🏅</div>
-            <h4 data-zh="17年行业经验">17+ Years Experience</h4>
-            <p data-zh="自2007年起服务全球采购商，累计完成5,000+批次检验。">Serving global buyers since 2007 with 5,000+ <a href="/about">inspections</a> completed across 50+ countries.</p>
-          </div>
-          <div class="trust-card">
-            <div class="icon">🌏</div>
-            <h4 data-zh="覆盖中国主要产业带">Covering China &amp; Asain Manufacturing Hubs</h4>
-            <p data-zh="厦门、深圳、东莞、宁波、义乌等产业带驻点<a href="/services/#inspection">验货员</a>，24小时内响应。"><a href="/services/#inspection">Inspectors</a> stationed in Xiamen, Shenzhen, Dongguan, Ningbo, Yiwu, Veitnam, Indonesia — deployment within 24 hours.</p>
-          </div>
+<div class="trust-card">
+  <div class="icon">📋</div>
+  <h4 data-zh="脱敏报告样例">Sample Reports</h4>
+  <p data-zh="查看真实验货报告节选，了解缺陷分类与现场记录。">Review anonymized <a href="/download#brochure">product inspection report</a> excerpts with defect classifications and on-site photos.</p>
+</div>
+
+<div class="trust-card">
+  <div class="icon">🏅</div>
+  <h4 data-zh="17年行业经验">17+ Years Experience</h4>
+  <p data-zh="自2007年起服务全球采购商，累计完成5,000+批次检验。">Serving global buyers since 2007 with 5,000+ <a href="/about">inspections</a> completed across 50+ countries.</p>
+</div>
+
+<div class="trust-card">
+  <div class="icon">🌏</div>
+  <h4 data-zh="覆盖中国及亚洲主要产业带">Covering China &amp; Asian Manufacturing Hubs</h4>
+  <p data-zh="厦门、深圳、东莞、宁波、义乌、越南、印尼等产业带驻点验货员，24小时内响应。"><a href="/services/#inspection">Inspectors</a> stationed in Xiamen, Shenzhen, Dongguan, Ningbo, Yiwu, Vietnam, Indonesia — deployment within 24 hours.</p>
+</div>
         </div>
       </div>
     </section>
@@ -325,7 +327,7 @@
           <li data-zh="分别设置Major AQL和Minor AQL：Major通常比Minor更严格。">Set the <strong>Major AQL</strong> and <strong>Minor AQL</strong> separately; Major is usually stricter.</li>
           <li data-zh="点击“计算”，查看样本量、Ac、Re及人话解释。">Click <strong>Calculate</strong> to see sample size, Ac, Re and a plain-language explanation.</li>
         </ul>
-        <p data-zh="提示：你可以通过URL参数直接分享特定计算结果，例如 <code>?lot=1201-3200&level=II&major=2.5&minor=4.0</code>。">Tip: Share a specific result via URL parameters, e.g. <code>?lot=1201-3200&amp;level=II&amp;major=2.5&amp;minor=4.0</code>.</p>
+        <p data-zh="提示：你可以通过URL参数直接分享特定计算结果，例如 <code>?lot=1201-3200&level=II&major=2.5&minor=4.0</code>。">Tip: Share a specific result via URL parameters, e.g. <code>?lot=1201-3200  &amp;  level=II  &amp;  major=2.5  &amp;  minor=4.0</code>.</p>
       </div>
     </section>
 
@@ -381,7 +383,12 @@
 (function() {
   'use strict';
 
-  // ======== ANSI/ASQ Z1.4 Data ========
+  // ======== 语言辅助 ========
+  function t(en, zh) {
+    return (document.documentElement.lang || 'en') === 'zh' ? zh : en;
+  }
+
+  // ======== ANSI/ASQ Z1.4 数据 ========
   const lotLabels = [
     '2 – 8', '9 – 15', '16 – 25', '26 – 50', '51 – 90', '91 – 150',
     '151 – 280', '281 – 500', '501 – 1,200', '1,201 – 3,200',
@@ -390,147 +397,109 @@
   ];
   const lotMaxValues = [8, 15, 25, 50, 90, 150, 280, 500, 1200, 3200, 10000, 35000, 150000, 500000, Infinity];
 
-  // Table I: Sample size code letters [level][lotIdx]
-  // Levels: S-1=0, S-2=1, S-3=2, S-4=3, General I=4, General II=5, General III=6
+  // Table I: 字码索引 (0=A, 1=B, ... 15=R)
+  // 行: S-1, S-2, S-3, S-4, G-I, G-II, G-III
   const table1 = [
-    [1,1,1,1,2,2,2,2,3,3,3,3,4,4,4],       // S-1
-    [1,1,1,2,2,2,3,3,3,4,4,4,5,5,5],       // S-2
-    [1,1,2,2,3,3,4,5,5,7,7,9,11,12,13],    // S-3
-    [1,1,2,3,3,4,5,6,7,8,9,10,11,12,13],   // S-4
-    [1,1,2,3,3,4,5,6,7,8,9,9,10,11,12],    // General I
-    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], // General II
-    [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16] // General III
+    [0,0,0,0,1,1,1,1,2,2,2,2,3,3,3],       // S-1
+    [0,0,0,1,1,1,2,2,2,3,3,3,4,4,4],       // S-2
+    [0,0,1,1,2,2,3,4,4,5,5,6,6,7,7],       // S-3
+    [0,0,1,2,2,3,4,5,6,7,7,8,9,10,11],     // S-4
+    [0,0,1,2,2,3,4,5,6,7,8,8,9,10,11],     // G-I
+    [0,1,2,3,4,5,6,7,8,9,10,11,12,13,13],  // G-II (500001+ → Q)
+    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,14]  // G-III (500001+ → R)
   ];
-
   const letterNames = ['A','B','C','D','E','F','G','H','J','K','L','M','N','P','Q','R'];
   const sampleSizes = [2,3,5,8,13,20,32,50,80,125,200,315,500,800,1250,2000];
+
   const aqlList = [0.1, 0.25, 0.4, 0.65, 1.0, 1.5, 2.5, 4.0, 6.5, 10];
 
-  // Table II-A: Single normal sampling [letterIdx][aqlIdx] -> [Ac, Re, effLetterIdx]
-  // Based on MIL-STD-105E / ANSI/ASQ Z1.4 Table II-A with arrow-resolution applied.
+  // Table II-A: [letterIdx][aqlIdx] -> [Ac, Re, arrowLetterIdx]
+  // arrowLetterIdx 是箭头指向的字母索引，若无需箭头则等于 letterIdx
   const acRe = [
-    [[0,1,8], [0,1,6], [0,1,5], [0,1,4], [0,1,3], [0,1,2], [0,1,1], [0,1,0], [0,1,2], [0,1,0]], // A
-    [[0,1,8], [0,1,6], [0,1,5], [0,1,4], [0,1,3], [0,1,2], [0,1,1], [0,1,0], [0,1,2], [1,2,1]], // B
-    [[0,1,8], [0,1,6], [0,1,5], [0,1,4], [0,1,3], [0,1,2], [0,1,1], [0,1,3], [0,1,2], [1,2,2]], // C
-    [[0,1,8], [0,1,6], [0,1,5], [0,1,4], [0,1,3], [0,1,2], [0,1,4], [0,1,3], [1,2,3], [2,3,3]], // D
-    [[0,1,8], [0,1,6], [0,1,5], [0,1,4], [0,1,3], [0,1,5], [0,1,4], [1,2,4], [2,3,4], [3,4,4]], // E
-    [[0,1,8], [0,1,6], [0,1,5], [0,1,4], [0,1,6], [0,1,5], [1,2,5], [2,3,5], [3,4,5], [5,6,5]], // F
-    [[0,1,8], [0,1,6], [0,1,5], [0,1,7], [0,1,6], [1,2,6], [2,3,6], [3,4,6], [5,6,6], [7,8,6]], // G
-    [[0,1,8], [0,1,6], [0,1,8], [0,1,7], [1,2,7], [2,3,7], [3,4,7], [5,6,7], [7,8,7], [10,11,7]], // H
-    [[0,1,8], [0,1,9], [0,1,8], [1,2,8], [2,3,8], [3,4,8], [5,6,8], [7,8,8], [10,11,8], [14,15,8]], // J
-    [[0,1,8], [0,1,9], [1,2,9], [2,3,9], [3,4,9], [5,6,9], [7,8,9], [10,11,9], [14,15,9], [21,22,9]], // K
-    [[0,1,11], [1,2,10], [2,3,10], [3,4,10], [5,6,10], [7,8,10], [10,11,10], [14,15,10], [21,22,10], [21,22,9]], // L
-    [[0,1,11], [2,3,11], [3,4,11], [5,6,11], [7,8,11], [10,11,11], [14,15,11], [21,22,11], [21,22,10], [21,22,9]], // M
-    [[1,2,12], [3,4,12], [5,6,12], [7,8,12], [10,11,12], [14,15,12], [21,22,12], [21,22,11], [21,22,10], [21,22,9]], // N
-    [[2,3,13], [5,6,13], [7,8,13], [10,11,13], [14,15,13], [21,22,13], [21,22,12], [21,22,11], [21,22,10], [21,22,9]], // P
-    [[3,4,14], [7,8,14], [10,11,14], [14,15,14], [21,22,14], [21,22,13], [21,22,12], [21,22,11], [21,22,10], [21,22,9]], // Q
-    [[5,6,15], [10,11,15], [14,15,15], [21,22,15], [21,22,14], [21,22,13], [21,22,12], [21,22,11], [21,22,10], [21,22,9]] // R
+    [[0,1,7],[0,1,5],[0,1,4],[0,1,3],[0,1,2],[0,1,1],[0,1,0],[0,1,0],[0,1,1],[0,1,0]], // A
+    [[0,1,7],[0,1,5],[0,1,4],[0,1,3],[0,1,2],[0,1,1],[0,1,0],[0,1,0],[0,1,1],[1,2,1]], // B
+    [[0,1,7],[0,1,5],[0,1,4],[0,1,3],[0,1,2],[0,1,1],[0,1,0],[0,1,2],[0,1,1],[1,2,2]], // C
+    [[0,1,7],[0,1,5],[0,1,4],[0,1,3],[0,1,2],[0,1,1],[0,1,3],[0,1,2],[1,2,2],[2,3,3]], // D
+    [[0,1,7],[0,1,5],[0,1,4],[0,1,3],[0,1,2],[0,1,4],[0,1,3],[1,2,3],[2,3,3],[3,4,4]], // E
+    [[0,1,7],[0,1,5],[0,1,4],[0,1,3],[0,1,5],[0,1,4],[1,2,4],[2,3,4],[3,4,5],[5,6,5]], // F
+    [[0,1,7],[0,1,5],[0,1,4],[0,1,6],[0,1,5],[1,2,5],[2,3,6],[3,4,6],[5,6,6],[7,8,6]], // G
+    [[0,1,7],[0,1,5],[0,1,7],[0,1,6],[1,2,6],[2,3,7],[3,4,7],[5,6,7],[7,8,7],[10,11,7]], // H
+    [[0,1,7],[0,1,8],[0,1,7],[1,2,7],[2,3,8],[3,4,8],[5,6,8],[7,8,8],[10,11,8],[14,15,8]], // J
+    [[0,1,7],[0,1,8],[1,2,8],[2,3,9],[3,4,9],[5,6,9],[7,8,9],[10,11,9],[14,15,9],[21,22,9]], // K
+    [[0,1,10],[1,2,9],[2,3,10],[3,4,10],[5,6,10],[7,8,10],[10,11,10],[14,15,10],[21,22,10],[21,22,9]], // L
+    [[0,1,10],[2,3,10],[3,4,11],[5,6,11],[7,8,11],[10,11,11],[14,15,11],[21,22,11],[21,22,10],[21,22,9]], // M
+    [[1,2,11],[3,4,12],[5,6,12],[7,8,12],[10,11,12],[14,15,12],[21,22,12],[21,22,11],[21,22,10],[21,22,9]], // N
+    [[2,3,12],[5,6,13],[7,8,13],[10,11,13],[14,15,13],[21,22,13],[21,22,12],[21,22,11],[21,22,10],[21,22,9]], // P
+    [[3,4,13],[7,8,14],[10,11,14],[14,15,14],[21,22,14],[21,22,13],[21,22,12],[21,22,11],[21,22,10],[21,22,9]], // Q
+    [[5,6,14],[10,11,15],[14,15,15],[21,22,15],[21,22,14],[21,22,13],[21,22,12],[21,22,11],[21,22,10],[21,22,9]] // R
   ];
 
-  // ======== Helpers ========
-  function getLang() { return document.documentElement.lang || 'en'; }
-
-  function t(en, zh) { return getLang() === 'zh' ? zh : en; }
-
-  function fmtAql(v) { return parseFloat(v).toString(); }
-
-  function getLetterIdx(lotIdx, levelIdx) {
-    const row = table1[levelIdx];
-    return row ? (row[lotIdx] - 1) : 0;
-  }
-
-  function getAqlIndex(aqlVal) {
-    const v = parseFloat(aqlVal);
-    const idx = aqlList.indexOf(v);
-    if (idx >= 0) return idx;
-    // Fallback to nearest
-    let best = 0, bestDist = Infinity;
-    aqlList.forEach((a, i) => {
-      const d = Math.abs(a - v);
-      if (d < bestDist) { bestDist = d; best = i; }
-    });
-    return best;
-  }
-
-  function resolveAcRe(letterIdx, aqlIdx) {
-    const val = acRe[letterIdx] && acRe[letterIdx][aqlIdx];
-    if (val) {
-      return { ac: val[0], re: val[1], effLetterIdx: val[2] };
+  // ======== 查询 Ac/Re ========
+  function getAcRe(letterIdx, aqlIdx) {
+    const row = acRe[letterIdx];
+    if (row && row[aqlIdx]) {
+      return { ac: row[aqlIdx][0], re: row[aqlIdx][1], arrowIdx: row[aqlIdx][2] };
     }
     return null;
   }
 
-  // ======== Calculation ========
+  // ======== 核心计算 ========
   function calculate() {
     const lotIdx = parseInt(document.getElementById('lotSize').value, 10);
     const levelIdx = parseInt(document.getElementById('inspectionLevel').value, 10);
     const majorAql = document.getElementById('majorAql').value;
     const minorAql = document.getElementById('minorAql').value;
 
-    const letterIdx = getLetterIdx(lotIdx, levelIdx);
+    // 原始字码索引
+    const letterIdx = table1[levelIdx][lotIdx];
     const codeLetter = letterNames[letterIdx];
-    const baseSampleSize = sampleSizes[letterIdx];
+    const sampleSize = sampleSizes[letterIdx];  // 固定样本量
 
-    const majorAqlIdx = getAqlIndex(majorAql);
-    const minorAqlIdx = getAqlIndex(minorAql);
+    const majorAqlIdx = aqlList.indexOf(parseFloat(majorAql));
+    const minorAqlIdx = aqlList.indexOf(parseFloat(minorAql));
 
-    const majorRes = resolveAcRe(letterIdx, majorAqlIdx);
-    const minorRes = resolveAcRe(letterIdx, minorAqlIdx);
+    const major = getAcRe(letterIdx, majorAqlIdx);
+    const minor = getAcRe(letterIdx, minorAqlIdx);
 
-    // Use the largest effective sample size if arrows were followed
-    const effLetterIdx = Math.max(
-      majorRes ? majorRes.effLetterIdx : letterIdx,
-      minorRes ? minorRes.effLetterIdx : letterIdx
-    );
-    const effCodeLetter = letterNames[effLetterIdx];
-    const effSampleSize = sampleSizes[effLetterIdx];
-
+    // 判断是否需要全检（样本量超过批次最大值）
     const lotMax = lotMaxValues[lotIdx];
-    const actualLotMax = lotIdx === 14 ? effSampleSize : lotMax;
-
-    // Determine if full inspection is needed (sample size larger than lot max)
     let fullInspect = false;
-    let sampleSize = effSampleSize;
-    if (effSampleSize > actualLotMax) {
+    if (sampleSize > lotMax) {
       fullInspect = true;
-      sampleSize = actualLotMax;
     }
 
-    // Render common code letter
-    const codeBadge = document.getElementById('codeLetterBadge');
-    let badgeHtml = effCodeLetter;
-    if (effLetterIdx !== letterIdx) {
-      badgeHtml += ' <span style="font-weight:400;font-size:0.85em">(' + t('arrow from ','箭头自') + codeLetter + ')</span>';
+    // 更新字码显示（箭头提示）
+    let arrowNote = '';
+    if (major && major.arrowIdx !== letterIdx) {
+      arrowNote = ' <span style="font-weight:400;font-size:0.85em">(' + t('Ac/Re follows arrow to ','Ac/Re 箭头至 ') + letterNames[major.arrowIdx] + ')</span>';
+    } else if (minor && minor.arrowIdx !== letterIdx) {
+      arrowNote = ' <span style="font-weight:400;font-size:0.85em">(' + t('Ac/Re follows arrow to ','Ac/Re 箭头至 ') + letterNames[minor.arrowIdx] + ')</span>';
     }
-    if (fullInspect) {
-      badgeHtml += ' <span style="font-weight:400;font-size:0.85em">(' + t('Full Inspection','全检') + ')</span>';
-    }
-    codeBadge.innerHTML = badgeHtml;
+    document.getElementById('codeLetterBadge').innerHTML = codeLetter + arrowNote;
 
-    // Render Major
-    renderResult('major', majorRes, sampleSize, fullInspect, lotIdx, majorAql);
-    // Render Minor
-    renderResult('minor', minorRes, sampleSize, fullInspect, lotIdx, minorAql);
+    // 渲染 Major / Minor 结果
+    renderResult('major', major, sampleSize, fullInspect, lotIdx, majorAql);
+    renderResult('minor', minor, sampleSize, fullInspect, lotIdx, minorAql);
 
-    // Full inspection note
+    // 全检提示
     const fiNote = document.getElementById('fullInspectNote');
     if (fullInspect) {
       fiNote.style.display = 'block';
       fiNote.innerHTML = t(
-        '<strong>ℹ️ Full Inspection Note:</strong> The standard sample size for this lot/AQL combination is larger than the selected lot-size range. In practice, inspect the entire lot (or use your actual lot quantity). The Ac/Re criteria from the table still apply.',
-        '<strong>ℹ️ 全检说明：</strong>按当前批量/AQL组合，标准样本量已超过所选批量范围上限。实际操作中应进行全数检验（或使用您的实际批量）。表中的Ac/Re判定数仍然适用。'
+        '<strong>ℹ️ Full Inspection Required:</strong> The standard sample size (' + sampleSize + ') exceeds the lot size range. Inspect the entire lot. Ac/Re criteria still apply.',
+        '<strong>ℹ️ 需要全检：</strong>标准样本量（' + sampleSize + '）超过所选批量范围上限。请进行全数检验。Ac/Re 判定数依然适用。'
       );
     } else {
       fiNote.style.display = 'none';
     }
 
-    // Critical defect warning
+    // 严重缺陷提醒
     document.getElementById('criticalWarning').innerHTML = t(
-      '<strong>⚠️ Critical Defect Alert:</strong> If even <strong>1 critical defect</strong> (safety hazard or regulatory violation) is found, the lot should be <strong>rejected</strong> regardless of the Ac number. Our on-site inspectors enforce this during every <a href="/services/#inspection" style="color:#c53030;text-decoration:underline">product inspection</a>.',
-      '<strong>⚠️ 严重缺陷提示：</strong>若发现 <strong>1个严重缺陷</strong>（安全隐患或法规违规），即使总缺陷数未超过Ac，也应<strong>判为不合格</strong>。我们的现场验货员在每次<a href="/services/#inspection" style="color:#c53030;text-decoration:underline">产品检验</a>中都会严格执行这一标准。'
+      '<strong>⚠️ Critical Defect Alert:</strong> 1 critical defect (safety/regulatory) → <strong>reject</strong>, regardless of Ac. Our <a href="/services/#inspection" style="color:#c53030;text-decoration:underline">inspectors</a> enforce this.',
+      '<strong>⚠️ 严重缺陷提示：</strong>发现1个严重缺陷（安全/法规）即<strong>拒收</strong>，不受Ac限制。我们的<a href="/services/#inspection" style="color:#c53030;text-decoration:underline">验货员</a>现场严格执行。'
     );
 
-    // Show results
+    // 显示结果区
     const area = document.getElementById('resultsArea');
     area.style.display = 'block';
     area.classList.remove('visible');
@@ -540,39 +509,39 @@
     updateEmbedCode();
   }
 
-  function renderResult(type, res, sampleSize, fullInspect, lotIdx, aqlVal) {
-    const suffix = type === 'major' ? 'Major' : 'Minor';
-    const sampleEl = document.getElementById(type + 'SampleSize');
-    const acEl = document.getElementById(type + 'Ac');
-    const reEl = document.getElementById(type + 'Re');
-    const explainEl = document.getElementById(type + 'Explain');
+  function renderResult(type, result, sampleSize, fullInspect, lotIdx, aqlVal) {
+    const elSample = document.getElementById(type + 'SampleSize');
+    const elAc = document.getElementById(type + 'Ac');
+    const elRe = document.getElementById(type + 'Re');
+    const elExplain = document.getElementById(type + 'Explain');
 
-    if (!res) {
-      sampleEl.textContent = '—';
-      acEl.textContent = '—';
-      reEl.textContent = '—';
-      explainEl.innerHTML = t('No applicable sampling plan found for this AQL.', '该AQL下无适用的抽样方案。');
+    if (!result) {
+      elSample.textContent = '—';
+      elAc.textContent = '—';
+      elRe.textContent = '—';
+      elExplain.innerHTML = t('No sampling plan for this AQL.', '该 AQL 无适用方案。');
       return;
     }
 
-    const { ac, re } = res;
+    const displaySample = fullInspect ? (lotMaxValues[lotIdx] === Infinity ? sampleSize : lotMaxValues[lotIdx]) : sampleSize;
     const lotLabel = lotLabels[lotIdx];
-    const aqlLabel = fmtAql(aqlVal);
 
-    sampleEl.textContent = fullInspect ? sampleSize + ' (' + t('full lot','整批') + ')' : sampleSize;
-    acEl.textContent = ac;
-    reEl.textContent = re;
+    elSample.textContent = fullInspect ? displaySample + ' (' + t('full lot','整批') + ')' : displaySample;
+    elAc.textContent = result.ac;
+    elRe.textContent = result.re;
 
-    explainEl.innerHTML = t(
-      'Randomly draw <strong>' + sampleSize + ' units</strong> from this lot (' + lotLabel + '). If the number of ' + suffix.toLowerCase() + ' defective units found is <strong>≤ ' + ac + '</strong>, accept the lot. If <strong>≥ ' + re + '</strong>, reject the lot. ' + suffix + ' AQL = ' + aqlLabel + '%.',
-      '从这批产品（' + lotLabel + '）中随机抽取 <strong>' + sampleSize + ' 件</strong>进行检验。若发现' + (type === 'major' ? '严重' : '轻微') + '不合格品数 <strong>≤ ' + ac + '</strong>，则接收该批；若 <strong>≥ ' + re + '</strong>，则拒收。' + (type === 'major' ? 'Major' : 'Minor') + ' AQL = ' + aqlLabel + '%。'
+    const typeName = type === 'major' ? 'Major' : 'Minor';
+    elExplain.innerHTML = t(
+      'Randomly draw <strong>' + displaySample + ' units</strong> from lot ' + lotLabel + '. <br>If ' + typeName.toLowerCase() + ' defects ≤ <strong>' + result.ac + '</strong> → accept; ≥ <strong>' + result.re + '</strong> → reject. (AQL ' + aqlVal + '%)',
+      '从批次（' + lotLabel + '）随机抽取 <strong>' + displaySample + ' 件</strong>。<br>若' + typeName + '缺陷数 ≤ <strong>' + result.ac + '</strong> → 接收；≥ <strong>' + result.re + '</strong> → 拒收。（AQL ' + aqlVal + '%）'
     );
   }
 
+  // ======== 嵌入代码更新 ========
   function updateEmbedCode() {
-    const lotIdx = parseInt(document.getElementById('lotSize').value, 10);
-    const levelIdx = parseInt(document.getElementById('inspectionLevel').value, 10);
-    const levelMap = { '0':'S-1','1':'S-2','2':'S-3','3':'S-4','4':'I','5':'II','6':'III' };
+    const lotIdx = document.getElementById('lotSize').value;
+    const levelIdx = document.getElementById('inspectionLevel').value;
+    const levelMap = {0:'S-1',1:'S-2',2:'S-3',3:'S-4',4:'I',5:'II',6:'III'};
     const major = document.getElementById('majorAql').value;
     const minor = document.getElementById('minorAql').value;
     const url = 'https://www.cn-q.com/tools/aql-calculator/?lot=' + encodeURIComponent(lotLabels[lotIdx]) +
@@ -594,7 +563,7 @@
     setTimeout(() => { btn.textContent = orig; }, 1500);
   }
 
-  // ======== URL Parameters ========
+  // URL 参数解析
   function applyUrlParams() {
     const params = new URLSearchParams(window.location.search);
     const lot = params.get('lot');
@@ -604,40 +573,17 @@
     const legacyAql = params.get('aql');
 
     if (lot) {
-      const lotSelect = document.getElementById('lotSize');
-      const normalizedLot = lot.replace(/[\s,]/g, '').toLowerCase();
-      let matched = false;
-      for (let i = 0; i < lotSelect.options.length; i++) {
-        const optText = lotSelect.options[i].text.replace(/[\s,]/g, '').toLowerCase();
-        if (optText === normalizedLot) {
-          lotSelect.value = String(i);
-          matched = true;
-          break;
-        }
-      }
-      // Fallback: match by range boundaries (e.g. "1201-3200" -> "1,201 – 3,200")
-      if (!matched) {
-        const m = lot.match(/(\d+)\s*-\s*(\d+|\+)/i);
-        if (m) {
-          const lotMin = parseInt(m[1], 10);
-          for (let i = 0; i < lotLabels.length; i++) {
-            const label = lotLabels[i];
-            const bounds = label.match(/(\d+)\s*[–-]\s*(\d+|\+)/);
-            if (bounds) {
-              const labelMin = parseInt(bounds[1].replace(/,/g, ''), 10);
-              if (lotMin === labelMin) {
-                lotSelect.value = String(i);
-                break;
-              }
-            }
-          }
+      const sel = document.getElementById('lotSize');
+      const normLot = lot.replace(/[\s,]/g, '').toLowerCase();
+      for (let i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].text.replace(/[\s,]/g, '').toLowerCase() === normLot) {
+          sel.value = i; break;
         }
       }
     }
     if (level) {
       const levelMap = { 'I':'4', 'II':'5', 'III':'6', 'S-1':'0', 'S-2':'1', 'S-3':'2', 'S-4':'3',
-        'S1':'0', 'S2':'1', 'S3':'2', 'S4':'3', 'G-I':'4', 'G-II':'5', 'G-III':'6',
-        'G1':'4', 'G2':'5', 'G3':'6' };
+        'S1':'0', 'S2':'1', 'S3':'2', 'S4':'3', 'G-I':'4', 'G-II':'5', 'G-III':'6' };
       const val = levelMap[level.toUpperCase()];
       if (val !== undefined) document.getElementById('inspectionLevel').value = val;
     }
@@ -657,7 +603,7 @@
     if (legacyAql && !major) setAql('majorAql', legacyAql);
   }
 
-  // ======== Events ========
+  // 事件绑定
   document.getElementById('calcBtn').addEventListener('click', function(e) {
     this.disabled = true;
     calculate();
@@ -665,26 +611,14 @@
   });
   document.getElementById('copyEmbedBtn').addEventListener('click', copyEmbed);
 
-  // Re-calculate when language is switched via main.js
+  // 语言切换后重新渲染
   document.querySelectorAll('.lang-switch button').forEach(btn => {
     btn.addEventListener('click', () => setTimeout(() => {
       if (document.getElementById('resultsArea').classList.contains('visible')) calculate();
-    }, 60));
+    }, 50));
   });
 
-  // Also observe programmatic lang changes (e.g. from main.js on load)
-  if (typeof MutationObserver !== 'undefined') {
-    const langObserver = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.attributeName === 'lang' && document.getElementById('resultsArea').classList.contains('visible')) {
-          calculate();
-        }
-      });
-    });
-    langObserver.observe(document.documentElement, { attributes: true });
-  }
-
-  // ======== Init ========
+  // 初始化
   applyUrlParams();
   calculate();
 })();
