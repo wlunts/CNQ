@@ -50,16 +50,15 @@
   </script>
   <style>
     /* AQL Calculator specific styles */
-    .aql-hero { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 60px 0 40px; text-align: center; }
-    .aql-hero h1 { font-size: 2.2rem; margin-bottom: 12px; color: var(--text-dark, #1a202c); }
-    .aql-hero .lead { font-size: 1.1rem; color: var(--text-body, #4a5568); max-width: 720px; margin: 0 auto; }
     .aql-section { padding: 40px 0; }
     .aql-section.alt { background: var(--bg-light, #f8fafc); }
     .aql-card { background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); padding: 28px; }
-    .aql-form-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: end; }
+    .aql-form-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: stretch; }
     @media (max-width: 900px) { .aql-form-grid { grid-template-columns: 1fr; } }
-    .aql-field { display: flex; flex-direction: column; gap: 8px; }
-    .aql-field label { font-weight: 600; color: var(--text-dark, #1a202c); font-size: 0.95rem; }
+    .aql-field { display: grid; grid-template-rows: auto 1fr auto; gap: 8px; }
+    .aql-field label { font-weight: 600; color: var(--text-dark, #1a202c); font-size: 0.95rem; align-self: start; }
+    .aql-field select { align-self: start; }
+    .aql-field small { color: #718096; font-size: 0.8rem; align-self: start; }
     .aql-field select, .aql-field input { padding: 12px 14px; border: 1px solid #cbd5e0; border-radius: 10px; font-size: 1rem; background: #fff; color: #1a202c; }
     .aql-field select:focus { outline: none; border-color: var(--primary, #2563eb); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
     .aql-aql-group { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -112,7 +111,6 @@
     .popular-aql { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
     .popular-aql button { padding: 4px 10px; background: #edf2f7; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.8rem; cursor: pointer; color: #4a5568; }
     .popular-aql button:hover { background: #e2e8f0; }
-    .aql-field small { color: #718096; font-size: 0.8rem; }
     .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
   </style>
 </head>
@@ -155,15 +153,18 @@
   <div class="menu-overlay"></div>
 
   <main>
-    <section class="aql-hero">
+    <section class="page-header" style="background: linear-gradient(135deg, rgba(13,47,69,0.92), rgba(26,82,118,0.9)), url('/images/service-banner.jpg') center/cover no-repeat;">
       <div class="container">
-        <h1 data-zh="免费AQL抽样计算器 - ANSI/ASQ Z1.4">Free AQL Sampling Calculator - ANSI/ASQ Z1.4</h1>
-        <p class="lead" data-zh="基于ANSI/ASQ Z1.4单次正常抽样方案，分别计算Major（严重）与Minor（轻微）缺陷的样本量、接收数（Ac）和拒收数（Re）。">Calculate Major and Minor defect sample sizes, acceptance (Ac) and rejection (Re) numbers based on the ANSI/ASQ Z1.4 single normal sampling plan.</p>
+        <div class="breadcrumb fade-in">
+          <a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="/download" data-zh="资源中心">Resources</a> <span>&rsaquo;</span> <span data-zh="AQL 抽样计算器">AQL Sampling Calculator</span>
+        </div>
+        <h1 class="fade-in" data-zh="免费AQL抽样计算器 - ANSI/ASQ Z1.4">Free AQL Sampling Calculator - ANSI/ASQ Z1.4</h1>
+        <p class="page-header-meta fade-in" data-zh="基于ANSI/ASQ Z1.4单次正常抽样方案，分别计算Major（严重）与Minor（轻微）缺陷的样本量、接收数（Ac）和拒收数（Re）。">Calculate Major and Minor defect sample sizes, acceptance (Ac) and rejection (Re) numbers based on the ANSI/ASQ Z1.4 single normal sampling plan.</p>
       </div>
     </section>
 
     <section class="aql-section">
-      <div class="container">
+      <div class="container" style="max-width: 860px;">
         <div class="aql-card">
           <div class="aql-form-grid">
             <div class="aql-field">
@@ -484,15 +485,15 @@
       minorRes ? minorRes.effLetterIdx : letterIdx
     );
     const effCodeLetter = letterNames[effLetterIdx];
-    const baseSampleSize = sampleSizes[effLetterIdx];
+    const effSampleSize = sampleSizes[effLetterIdx];
 
     const lotMax = lotMaxValues[lotIdx];
-    const actualLotMax = lotIdx === 14 ? baseSampleSize : lotMax;
+    const actualLotMax = lotIdx === 14 ? effSampleSize : lotMax;
 
     // Determine if full inspection is needed (sample size larger than lot max)
     let fullInspect = false;
-    let sampleSize = baseSampleSize;
-    if (baseSampleSize > actualLotMax) {
+    let sampleSize = effSampleSize;
+    if (effSampleSize > actualLotMax) {
       fullInspect = true;
       sampleSize = actualLotMax;
     }
