@@ -91,6 +91,8 @@
     .trust-card .icon { font-size: 2rem; margin-bottom: 10px; }
     .trust-card h4 { margin: 0 0 8px; font-size: 1rem; color: #2d3748; }
     .trust-card p { margin: 0; font-size: 0.88rem; color: #718096; }
+    .trust-card p a { color: var(--primary, #2563eb); text-decoration: underline; }
+    .trust-card p a:hover { color: #1d4ed8; }
     .embed-wrap { display: flex; gap: 10px; margin-top: 12px; }
     .embed-wrap input { flex: 1; padding: 12px; border: 1px solid #cbd5e0; border-radius: 8px; font-family: monospace; font-size: 0.85rem; background: #f7fafc; }
     .embed-wrap button { padding: 12px 18px; background: #edf2f7; border: 1px solid #cbd5e0; border-radius: 8px; cursor: pointer; font-weight: 600; color: #2d3748; }
@@ -242,7 +244,8 @@
                 <div class="metric-row">
                   <div class="metric"><span class="num" id="majorSampleSize">—</span><span class="label" data-zh="样本量">Sample Size</span></div>
                   <div class="metric"><span class="num" id="majorAc">—</span><span class="label" data-zh="接收数 Ac">Ac (Accept)</span></div>
-                  <div class="metric"><span class="num" id="majorRe">—</span><span class="label" data-zh="拒收数 Re">Re (Reject)</span></div>
+                  <div class="metric"><span class="num" id="majorRe">—</span><span class="label" data-zh="拒收数 Re">Re 
+(Reject)</span></div>
                 </div>
                 <div class="result-explain" id="majorExplain"></div>
               </div>
@@ -251,7 +254,8 @@
                 <div class="metric-row">
                   <div class="metric"><span class="num" id="minorSampleSize">—</span><span class="label" data-zh="样本量">Sample Size</span></div>
                   <div class="metric"><span class="num" id="minorAc">—</span><span class="label" data-zh="接收数 Ac">Ac (Accept)</span></div>
-                  <div class="metric"><span class="num" id="minorRe">—</span><span class="label" data-zh="拒收数 Re">Re (Reject)</span></div>
+                  <div class="metric"><span class="num" id="minorRe">—</span><span class="label" data-zh="拒收数 Re">Re
+ (Reject)</span></div>
                 </div>
                 <div class="result-explain" id="minorExplain"></div>
               </div>
@@ -269,19 +273,19 @@
 <div class="trust-card">
   <div class="icon">📋</div>
   <h4 data-zh="脱敏报告样例">Sample Reports</h4>
-  <p data-zh="查看真实验货报告节选，了解缺陷分类与现场记录。">Review anonymized <a href="/services#inspection">inspection report</a> excerpts with defect classifications and on-site photos.</p>
+  <p><span data-zh="查看匿名">Review anonymized </span><a href="/download#brochure"><span data-zh="验货报告">inspection report</span></a><span data-zh="节选，了解缺陷分类与现场记录。"> excerpts with defect classifications and on-site photos.</span></p>
 </div>
 
 <div class="trust-card">
   <div class="icon">🏅</div>
   <h4 data-zh="17年行业经验">17+ Years Experience</h4>
-  <p data-zh="自2007年起服务全球采购商，累计完成5,000+批次检验。">Serving global buyers since 2007 with 5,000+ <a href="/services#inspection">inspections</a> completed across 50+ countries.</p>
+  <p><span data-zh="自2007年起服务全球采购商，累计完成">Serving global buyers since 2007 with </span><span data-zh="5,000+">5,000+</span><a href="/about"><span data-zh="批次检验"> inspections</span></a><span data-zh="，覆盖全球50+国家。"> completed across 50+ countries.</span></p>
 </div>
 
 <div class="trust-card">
   <div class="icon">🌏</div>
   <h4 data-zh="覆盖中国及亚洲主要产业带">Covering China &amp; Asian Manufacturing Hubs</h4>
-  <p data-zh="厦门、深圳、东莞、宁波、义乌、越南、印尼等产业带驻点验货员，24小时内响应。"><a href="/services#inspection">Inspectors</a> stationed in Xiamen, Shenzhen, Dongguan, Ningbo, Yiwu, Vietnam, Indonesia — deployment within 24 hours.</p>
+  <p><a href="/services#faq"><span data-zh="验货员">Inspectors</span></a><span data-zh="常驻厦门、深圳、东莞、宁波、义乌、越南、印尼等产业带，24小时内响应。"> stationed in Xiamen, Shenzhen, Dongguan, Ningbo, Yiwu, Vietnam, Indonesia — deployment within 24 hours.</span></p>
 </div>
         </div>
       </div>
@@ -328,6 +332,7 @@
           <li data-zh="点击“计算”，查看样本量、Ac、Re及人话解释。">Click <strong>Calculate</strong> to see sample size, Ac, Re and a plain-language explanation.</li>
         </ul>
         <p data-zh="提示：你可以通过URL参数直接分享特定计算结果，例如 <code>?lot=1201-3200&level=II&major=2.5&minor=4.0</code>。">Tip: Share a specific result via URL parameters, e.g. <code>?lot=1201-3200&amp;level=II&amp;major=2.5&amp;minor=4.0</code>.</p>
+        <p><span data-zh="想深入了解AQL抽样的标准和原理？阅读我们完整的">For a deeper understanding of the standard behind AQL sampling, read our complete </span><a href="/industry-updates/ansi-asq-z1-4-guide"><span data-zh="ANSI/ASQ Z1.4 抽样标准完全指南">ANSI/ASQ Z1.4 guide</span></a><span data-zh="，涵盖检验水平、抽样方案、AQL值选择及实操建议。">, covering inspection levels, sampling plans, AQL value selection, and practical tips.</span></p>
       </div>
     </section>
 
@@ -527,6 +532,7 @@
       linkZh.textContent = '产品检验';
       cw.appendChild(linkZh);
       cw.appendChild(document.createTextNode('中都会严格执行这一标准。'));
+      cw.appendChild(document.createTextNode('因为与常规质量缺陷——如包装与包装方式、标签与唛头、款式与颜色、工艺、外观、功能、结构、尺寸与测量、装配或搭配——不同，致命缺陷直接对用户构成安全隐患。'));
     } else {
       const s1 = document.createElement('strong');
       s1.textContent = '⚠️ Critical Defect Alert: ';
@@ -547,6 +553,7 @@
       linkEn.textContent = 'product inspection';
       cw.appendChild(linkEn);
       cw.appendChild(document.createTextNode('.'));
+      cw.appendChild(document.createTextNode(' Because unlike routine quality defects \u2014 such as packaging and packing methods, label and marking, style and color, workmanship, appearance, function, construction, size and measurement, assembling or assortment \u2014 a critical defect is unique which poses a direct safety hazard to users.'));
     }
 
     // 显示结果区
