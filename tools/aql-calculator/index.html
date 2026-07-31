@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-zh="免费AQL验货抽样计算器 | ANSI/ASQ Z1.4 | 厦门亚商">Free AQL Sampling Calculator — ANSI/ASQ Z1.4 | China Quality Service</title>
+<meta name="description" data-zh="免费在线AQL抽样计算器，基于ANSI/ASQ Z1.4标准。选择批量、检验水平和AQL值，即时获取样本量、Ac/Re判定数。无需注册。" content="Free online AQL sampling calculator based on ANSI/ASQ Z1.4. Select lot size, inspection level, and AQL to instantly get sample size, Ac/Re criteria. No registration required.">
+<meta name="keywords" content="AQL calculator, AQL sampling, ANSI ASQ Z1.4, product inspection, sampling plan, QC inspection, AQL table">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.cn-q.com/tools/aql-calculator/">
+<meta property="og:title" data-zh="免费AQL验货抽样计算器 — ANSI/ASQ Z1.4" content="Free AQL Sampling Calculator — ANSI/ASQ Z1.4 | China Quality Service">
+<meta property="og:description" data-zh="免费在线AQL抽样计算器，基于ANSI/ASQ Z1.4标准。即时获取样本量、Ac/Re结果。" content="Free online AQL sampling calculator based on ANSI/ASQ Z1.4. Get instant sample size, Ac/Re results.">
+<meta property="og:url" content="https://www.cn-q.com/tools/aql-calculator/">
+<meta property="og:image" content="https://www.cn-q.com/images/og-image.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free AQL Sampling Calculator — ANSI/ASQ Z1.4">
+<meta name="twitter:description" content="Free online AQL sampling calculator based on ANSI/ASQ Z1.4. Instant results.">
+<meta name="twitter:image" content="https://www.cn-q.com/images/og-image.png">
+<link rel="preconnect" href="https://www.cn-q.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": "https://www.cn-q.com/tools/aql-calculator/#app",
+  "name": "Free AQL Sampling Calculator",
+  "url": "https://www.cn-q.com/tools/aql-calculator/",
+  "description": "Free online AQL sampling calculator based on ANSI/ASQ Z1.4 standard. Instantly determine sample size, acceptance (Ac) and rejection (Re) criteria for product quality inspections.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "China Quality Service", "url": "https://www.cn-q.com/" },
+  "browserRequirements": "Requires JavaScript",
+  "featureList": "Lot size selection, inspection level choice, AQL value selection, sample size code letter, acceptance number, rejection number, critical defect warnings"
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;line-height:1.6;color:#2d3748;background:#f7fafc}
+.aql-container{max-width:800px;margin:0 auto;padding:24px 16px 48px}
+.aql-header{text-align:center;padding:32px 0 24px}
+.aql-header h1{font-size:1.75rem;font-weight:700;color:#1a202c;margin-bottom:8px}
+.aql-header p{color:#718096;font-size:1rem;max-width:600px;margin:0 auto}
+.lang-bar{display:flex;justify-content:flex-end;gap:6px;margin-bottom:16px}
+.lang-bar button{padding:4px 14px;font-size:0.82rem;border:1px solid #cbd5e0;border-radius:6px;background:#fff;color:#4a5568;cursor:pointer;transition:all .15s}
+.lang-bar button:hover{background:#ebf4ff;border-color:#3182ce}
+.lang-bar button.active{background:#2b6cb0;color:#fff;border-color:#2b6cb0}
+
+/* Input card */
+.input-card{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.04);padding:28px 24px;margin-bottom:20px}
+.input-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.input-group{flex:1;min-width:180px}
+.input-group label{display:block;font-size:0.85rem;font-weight:600;color:#4a5568;margin-bottom:6px}
+.input-group select{width:100%;padding:10px 12px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.95rem;color:#2d3748;background:#fff;cursor:pointer;transition:border-color .15s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23718096' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+.input-group select:focus{border-color:#3182ce;outline:none;box-shadow:0 0 0 3px rgba(49,130,206,.15)}
+.input-group select.highlight-aql{font-weight:600}
+.primary-values{display:flex;gap:4px;margin-top:4px}
+.primary-values span{font-size:0.72rem;background:#ebf8ff;color:#2b6cb0;padding:2px 6px;border-radius:4px;cursor:pointer;transition:background .15s}
+.primary-values span:hover{background:#bee3f8}
+.calc-btn-row{text-align:center}
+.calc-btn{padding:12px 48px;background:#2b6cb0;color:#fff;border:none;border-radius:8px;font-size:1.05rem;font-weight:600;cursor:pointer;transition:all .15s;letter-spacing:.02em}
+.calc-btn:hover{background:#2c5282;transform:translateY(-1px);box-shadow:0 4px 12px rgba(43,108,176,.3)}
+.calc-btn:active{transform:translateY(0)}
+.calc-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* Results */
+.results-area{display:none}
+.results-area.visible{display:block;animation:fadeInUp .35s ease-out}
+.result-cards{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.result-card{flex:1;min-width:120px;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.06);padding:20px 16px;text-align:center;border-top:3px solid transparent}
+.result-card.highlight{border-top-color:#38a169}
+.result-card.warn{border-top-color:#e53e3e}
+.result-card .rc-value{font-size:2rem;font-weight:700;color:#1a202c;line-height:1.2}
+.result-card .rc-label{font-size:0.8rem;color:#718096;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+.code-letter-badge{display:inline-block;background:#edf2f7;color:#4a5568;font-size:0.8rem;padding:4px 10px;border-radius:20px;margin-bottom:16px;font-weight:600}
+.explanation{background:#fffbeb;border-left:4px solid #d69e2e;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:12px;font-size:0.92rem;color:#744210;line-height:1.65}
+.critical-warning{background:#fff5f5;border-left:4px solid #e53e3e;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:12px;font-size:0.92rem;color:#c53030;line-height:1.65}
+.full-inspect-note{background:#ebf8ff;border-left:4px solid #3182ce;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:12px;font-size:0.92rem;color:#2a4365;line-height:1.65}
+
+/* CTA */
+.cta-strip{background:linear-gradient(135deg,#2b6cb0,#2c5282);border-radius:12px;padding:24px;text-align:center;color:#fff;margin-bottom:20px}
+.cta-strip h3{font-size:1.15rem;font-weight:600;margin-bottom:8px}
+.cta-strip p{font-size:0.92rem;opacity:.9;margin-bottom:16px}
+.cta-strip a{display:inline-block;padding:10px 28px;background:#fff;color:#2b6cb0;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.95rem;transition:all .15s}
+.cta-strip a:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.2)}
+
+/* Trust bar */
+.trust-bar{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.trust-item{flex:1;min-width:180px;background:#fff;border-radius:10px;padding:20px 16px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.06);text-decoration:none;color:inherit;transition:box-shadow .15s}
+.trust-item:hover{box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.trust-item .trust-icon{font-size:1.8rem;margin-bottom:8px}
+.trust-item h4{font-size:0.9rem;color:#2d3748;margin-bottom:4px}
+.trust-item p{font-size:0.78rem;color:#718096}
+
+/* Embed box */
+.embed-box{background:#fff;border-radius:10px;padding:20px 24px;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-bottom:20px}
+.embed-box h3{font-size:1rem;font-weight:600;margin-bottom:6px;color:#2d3748}
+.embed-box p{font-size:0.85rem;color:#718096;margin-bottom:10px}
+.embed-code-wrap{display:flex;gap:8px;align-items:stretch}
+.embed-code-wrap input{flex:1;padding:10px 12px;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.82rem;font-family:monospace;background:#f7fafc;color:#2d3748}
+.embed-code-wrap button{padding:10px 16px;background:#2b6cb0;color:#fff;border:none;border-radius:8px;font-size:0.85rem;cursor:pointer;font-weight:600;white-space:nowrap;transition:background .15s}
+.embed-code-wrap button:hover{background:#2c5282}
+
+/* Knowledge */
+.knowledge{background:#fff;border-radius:10px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.knowledge h2{font-size:1.3rem;font-weight:700;color:#1a202c;margin-bottom:16px}
+.knowledge h3{font-size:1.05rem;font-weight:600;color:#2d3748;margin:18px 0 8px}
+.knowledge p,.knowledge li{font-size:0.9rem;color:#4a5568;line-height:1.7;margin-bottom:10px}
+.knowledge ul{padding-left:20px;margin-bottom:12px}
+
+/* Footer */
+.aql-footer{text-align:center;padding:32px 0 16px;font-size:0.82rem;color:#a0aec0;border-top:1px solid #e2e8f0;margin-top:32px}
+.aql-footer a{color:#4a5568}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:640px){
+  .aql-header h1{font-size:1.35rem}
+  .input-row{flex-direction:column;gap:12px}
+  .result-cards{flex-direction:column}
+  .trust-bar{flex-direction:column}
+  .calc-btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<div class="aql-container">
+  <!-- Lang switch -->
+  <div class="lang-bar">
+    <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
+    <button id="btn-zh" onclick="switchLang('zh')">中文</button>
+  </div>
+
+  <!-- Header -->
+  <div class="aql-header">
+    <h1 data-zh="免费AQL验货抽样计算器">Free AQL Sampling Calculator</h1>
+    <p data-zh="基于 ANSI/ASQ Z1.4 标准 — 单次正常抽样方案。选择批量、检验水平和AQL值，立即获取样本量及判定准则。">Based on ANSI/ASQ Z1.4 — Single Normal Sampling Plan. Select lot size, inspection level &amp; AQL to instantly get sample size and acceptance criteria.</p>
+  </div>
+
+  <!-- Input Card -->
+  <div class="input-card" id="inputCard">
+    <div class="input-row">
+      <div class="input-group">
+        <label data-zh="批量范围 (Lot Size)">Lot Size</label>
+        <select id="lotSize">
+          <option value="0">2 to 8</option>
+          <option value="1">9 to 15</option>
+          <option value="2">16 to 25</option>
+          <option value="3">26 to 50</option>
+          <option value="4">51 to 90</option>
+          <option value="5">91 to 150</option>
+          <option value="6">151 to 280</option>
+          <option value="7">281 to 500</option>
+          <option value="8">501 to 1,200</option>
+          <option value="9">1,201 to 3,200</option>
+          <option value="10">3,201 to 10,000</option>
+          <option value="11">10,001 to 35,000</option>
+          <option value="12">35,001 to 150,000</option>
+          <option value="13">150,001 to 500,000</option>
+          <option value="14">500,001 and over</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label data-zh="检验水平 (Inspection Level)">Inspection Level</label>
+        <select id="inspectionLevel">
+          <option value="4">General I</option>
+          <option value="5" selected>General II</option>
+          <option value="6">General III</option>
+          <option value="0">Special S-1</option>
+          <option value="1">Special S-2</option>
+          <option value="2">Special S-3</option>
+          <option value="3">Special S-4</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label data-zh="AQL 值">AQL (%)</label>
+        <select id="aqlValue">
+          <option value="0">0.010</option>
+          <option value="1">0.015</option>
+          <option value="2">0.025</option>
+          <option value="3">0.040</option>
+          <option value="4">0.065</option>
+          <option value="5">0.10</option>
+          <option value="6">0.15</option>
+          <option value="7">0.25</option>
+          <option value="8">0.40</option>
+          <option value="9" data-popular="true">0.65</option>
+          <option value="10" data-popular="true">1.0</option>
+          <option value="11">1.5</option>
+          <option value="12" data-popular="true" selected>2.5</option>
+          <option value="13" data-popular="true">4.0</option>
+          <option value="14">6.5</option>
+          <option value="15">10</option>
+          <option value="16">15</option>
+          <option value="17">25</option>
+          <option value="18">40</option>
+          <option value="19">65</option>
+          <option value="20">100</option>
+          <option value="21">150</option>
+          <option value="22">250</option>
+          <option value="23">400</option>
+          <option value="24">650</option>
+          <option value="25">1000</option>
+        </select>
+        <div class="primary-values">
+          <span onclick="document.getElementById('aqlValue').value='9';calculate()" data-zh="常用">Popular</span>
+          <span onclick="document.getElementById('aqlValue').value='10';calculate()">1.0</span>
+          <span onclick="document.getElementById('aqlValue').value='12';calculate()">2.5</span>
+          <span onclick="document.getElementById('aqlValue').value='13';calculate()">4.0</span>
+        </div>
+      </div>
+    </div>
+    <div class="calc-btn-row">
+      <button class="calc-btn" id="calcBtn" onclick="calculate()" data-zh="计算抽样方案">Calculate Sampling Plan</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="results-area" id="resultsArea">
+    <div class="code-letter-badge" id="codeLetterBadge">Sample Size Code Letter: <strong>—</strong></div>
+    <div class="result-cards">
+      <div class="result-card highlight">
+        <div class="rc-value" id="sampleSize">—</div>
+        <div class="rc-label" data-zh="样本量">Sample Size</div>
+      </div>
+      <div class="result-card highlight">
+        <div class="rc-value" id="acValue">—</div>
+        <div class="rc-label">Ac (Accept)</div>
+      </div>
+      <div class="result-card warn">
+        <div class="rc-value" id="reValue">—</div>
+        <div class="rc-label">Re (Reject)</div>
+      </div>
+    </div>
+    <div class="full-inspect-note" id="fullInspectNote" style="display:none"></div>
+    <div class="explanation" id="plainExplanation"></div>
+    <div class="critical-warning" id="criticalWarning"></div>
+  </div>
+
+  <!-- CTA Strip -->
+  <div class="cta-strip" style="margin-top:20px">
+    <h3 data-zh="需要验货员到现场执行这个AQL抽样方案吗？">Need a professional inspector to execute this AQL plan at the factory?</h3>
+    <p data-zh="我们的验货员熟知ANSI/ASQ Z1.4标准，能在工厂现场严格执行您的抽样方案，确保每一件货物经得起检验。">Our inspectors apply this standard on the factory floor daily — ensuring your sampling plan is executed correctly, every time.</p>
+    <a href="/contact" data-zh="获取报价">Get a Quote</a>
+  </div>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <a class="trust-item" href="/insights">
+      <div class="trust-icon">&#128196;</div>
+      <h4 data-zh="脱敏报告样例">Sample Reports</h4>
+      <p data-zh="查看真实验货案例">Real inspection case studies</p>
+    </a>
+    <a class="trust-item" href="/contact">
+      <div class="trust-icon">&#128269;</div>
+      <h4 data-zh="现场验货服务">On-Site Inspection</h4>
+      <p data-zh="17年+工厂现场经验">17+ years factory experience</p>
+    </a>
+    <a class="trust-item" href="/services">
+      <div class="trust-icon">&#11088;</div>
+      <h4 data-zh="品质控制服务">QC Services</h4>
+      <p data-zh="产品检验与工厂审核">Inspection &amp; factory audit</p>
+    </a>
+  </div>
+
+  <!-- Embed Box -->
+  <div class="embed-box">
+    <h3 data-zh="嵌入此工具">Embed This Tool</h3>
+    <p data-zh="将免费AQL计算器嵌入您的网站（免费使用）：">Add this free AQL calculator to your website:</p>
+    <div class="embed-code-wrap">
+      <input type="text" readonly id="embedCode" value='&lt;iframe src="https://www.cn-q.com/tools/aql-calculator/" width="100%" height="600" style="border:none;border-radius:8px" title="Free AQL Sampling Calculator"&gt;&lt;/iframe&gt;' onclick="this.select()">
+      <button onclick="copyEmbed()" data-zh="一键复制">Copy</button>
+    </div>
+  </div>
+
+  <!-- Knowledge Section -->
+  <div class="knowledge">
+    <h2 data-zh="关于 AQL 抽样检验">About AQL Sampling</h2>
+    <h3 data-zh="什么是 AQL？">What is AQL?</h3>
+    <p data-zh="AQL（可接受质量水平）是产品检验中允许的最大缺陷百分比。ANSI/ASQ Z1.4 是使用最广泛的抽样标准，也是ISO 2859-1的国际对应标准。所有AQL产品检验的核心原则可归结为一句话：从整批产品中随机抽取一定数量的样品。样品中的不合格品数决定了该批次整体是合格还是被拒收。">AQL (Acceptable Quality Level) is the maximum percentage of defective units allowed in a product inspection. ANSI/ASQ Z1.4 is the most widely used sampling standard — the international counterpart of ISO 2859-1. The core principle of all AQL product inspection comes down to a single idea: a random sample is drawn from the entire batch. The number of defective units in that sample determines whether the full production lot is accepted or rejected.</p>
+    <h3 data-zh="正常检验 vs 加严检验">Normal vs Tightened Inspection</h3>
+    <p data-zh="本计算器使用单次正常抽样方案。当历史质量记录不佳时，应切换至加严检验（更低的Ac值）。当质量记录持续优秀时，可放宽至减量检验。完整的切换规则参见 ANSI/ASQ Z1.4 第九章。">This calculator uses the single normal sampling plan. Switch to tightened inspection (lower Ac) when quality history is poor, or reduced inspection when history is consistently excellent. Full switching rules are in ANSI/ASQ Z1.4 Section 9.</p>
+    <h3 data-zh="为什么现场验货不可替代？">Why On-Site Inspection Is Irreplaceable</h3>
+    <p data-zh="AQL计算器给出统计学上的判定标准，但只有经验丰富的验货员才能正确识别缺陷并对现场条件做出判断。CNQ的验货员在抽样时还会关注：产品与确认样的差异、包装质量、工艺一致性，以及工厂最可能偷工减料的环节。">An AQL calculator provides statistical acceptance criteria, but only an experienced inspector can correctly identify defects and judge real factory conditions. CNQ inspectors additionally watch for: deviations from approval samples, packaging quality, workmanship consistency, and the production stages where factories are most likely to cut corners.</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="aql-footer">
+    <p>Powered by <a href="https://www.cn-q.com/">China Quality Service</a> — Third-Party <a href="/services/#inspection">Product Inspection Service in China</a></p>
+    <p style="margin-top:4px">Calculations based on ANSI/ASQ Z1.4 (ISO 2859-1) Table I &amp; II-A — Single Normal Sampling.</p>
+  </div>
+</div>
+
+<script>
+// ======== ANSI/ASQ Z1.4 完整查表数据 ========
+
+// Table I: Sample Size Code Letters
+// table1[lotSizeIdx][levelIdx] → letter index (0=no letter, 1=A, 2=B, ..., 17=Q)
+// levels: S-1, S-2, S-3, S-4, I, II, III
+const table1 = [
+// LS: 2-8      9-15   16-25  26-50  51-90  91-150 151-280 281-500 501-1200 1201-3200 3201-10000 10001-35000 35001-150000 150001-500000 500001+
+  /*S-1*/ [ 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4],
+  /*S-2*/ [ 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5],
+  /*S-3*/ [ 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8],
+  /*S-4*/ [ 1, 1, 2, 3, 3, 4, 5, 5, 6, 7, 7, 8, 10,10,11],
+  /* I */ [ 1, 1, 2, 3, 3, 4, 5, 6, 7, 8, 10,10,11,13,14],
+  /* II*/ [ 1, 2, 3, 4, 5, 6, 7, 8, 10,11,13,14,15,16,17],
+  /*III*/ [ 2, 3, 4, 5, 6, 7, 8, 10,11,13,14,15,17,17,17]
+];
+
+// Letter names (index 1-17 = A-Q)
+const letterNames = ['-','A','B','C','D','E','F','G','H','J','K','L','M','N','P','Q','Q','Q'];
+
+// Sample size per letter index
+const sampleSizes = [0, 2, 3, 5, 8, 13, 20, 32, 50, 80, 125, 200, 315, 500, 800, 1250, 2000, 3150];
+
+// AQL values (26 values)
+const aqlVals = [0.010,0.015,0.025,0.040,0.065,0.10,0.15,0.25,0.40,0.65,1.0,1.5,2.5,4.0,6.5,10,15,25,40,65,100,150,250,400,650,1000];
+
+// Table II-A: acRe[letterIdx][aqlIdx] = [ac, re] or null (arrow needed)
+// Letter indices 1-17 (A-Q)
+// AQL indices 0-25
+
+const acRe = {};
+
+// Build empty structure
+for (let li = 1; li <= 17; li++) acRe[li] = new Array(26).fill(null);
+
+// A (idx 1, ss=2)
+acRe[1] = [
+  null,null,null,null,null,null,null,null,null,null,null,null,null,null,null, [0,1], [0,1], [0,1], [0,1], [0,1], [0,1], [0,2], [0,3], [0,4], [1,6], [2,7] //AQL 10-650
+];
+// AQL 0.010-6.5: all null (arrow ↓)
+
+// B (idx 2, ss=3)
+acRe[2] = [
+  null,null,null,null,null,null,null,null,null,null,null,null,null,null,null, [0,1], [0,1], [0,1], [0,2], [0,3], [0,4], [1,6], [2,7], [3,8], [5,10],[7,12] //AQL 10-650
+];
+
+// C (idx 3, ss=5)
+acRe[3] = [
+  null,null,null,null,null,null,null,null,null,null,null,null,[0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[0,4],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19]
+];
+
+// D (idx 4, ss=8)
+acRe[4] = [
+  null,null,null,null,null,null,null,null,null,null,null,null,[0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26]
+];
+
+// E (idx 5, ss=13)
+acRe[5] = [
+  null,null,null,null,null,null,null,null,null,null,[0,1],[0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26],null
+];
+
+// F (idx 6, ss=20)
+acRe[6] = [
+  null,null,null,null,null,null,null,null,null,null,[0,1],[0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26],null
+];
+
+// G (idx 7, ss=32)
+acRe[7] = [
+  null,null,null,null,null,null,null,null,null,[0,1],[0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26],null
+];
+
+// H (idx 8, ss=50)
+acRe[8] = [
+  null,null,null,null,null,null,null,[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26],null
+];
+
+// J (idx 9, ss=80)
+acRe[9] = [
+  null,null,null,null,null,[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26],null
+];
+
+// K (idx 10, ss=125)
+acRe[10] = [
+  null,null,null,null,[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26],null,null
+];
+
+// L (idx 11, ss=200)
+acRe[11] = [
+  null,null,null,[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26],null,null,null
+];
+
+// M (idx 12, ss=315)
+acRe[12] = [
+  null,null,[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26],null,null,null,null
+];
+
+// N (idx 13, ss=500)
+acRe[13] = [
+  null,[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26],null,null,null,null,null
+];
+
+// P (idx 14, ss=800)
+acRe[14] = [
+  [0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26],null,null,null,null,null,null
+];
+
+// Q (idx 15, ss=1250)
+acRe[15] = [
+  [0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26],null,null,null,null,null,null,null
+];
+
+// idx 16 (ss=2000) - same as Q for extended range
+acRe[16] = [
+  [0,1],[0,1],[0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26],null,null,null,null,null,null,null,null,null
+];
+
+// idx 17 (ss=3150) - same as Q for extended range
+acRe[17] = [
+  [0,1],[0,1],[0,2],[0,3],[1,6],[2,7],[3,8],[5,10],[7,12],[10,15],[14,19],[21,26],null,null,null,null,null,null,null,null,null,null,null
+];
+
+// Format AQL values for display
+function fmtAql(val) { return val % 1 === 0 ? val.toFixed(0) : val.toFixed(3).replace(/0+$/,'').replace(/\.$/,''); }
+
+// Arrow following: get effective letter for (letterIdx, aqlIdx)
+function resolveLetter(letterIdx, aqlIdx) {
+  if (acRe[letterIdx][aqlIdx] !== null) return letterIdx;
+
+  // Search down (higher sample sizes)
+  let downIdx = null;
+  for (let li = letterIdx + 1; li <= 17; li++) {
+    if (acRe[li][aqlIdx] !== null) { downIdx = li; break; }
+  }
+  // Search up (lower sample sizes)
+  let upIdx = null;
+  for (let li = letterIdx - 1; li >= 1; li--) {
+    if (acRe[li][aqlIdx] !== null) { upIdx = li; break; }
+  }
+
+  // Standard rule: when both directions exist, ↓ takes priority (follow the printed arrow)
+  if (downIdx !== null) return downIdx;
+  if (upIdx !== null) return upIdx;
+  return letterIdx; // fallback (shouldn't happen)
+}
+
+// Main calculation
+function calculate() {
+  const lotIdx = parseInt(document.getElementById('lotSize').value);
+  const levelIdx = parseInt(document.getElementById('inspectionLevel').value);
+  const aqlIdx = parseInt(document.getElementById('aqlValue').value);
+
+  // Table I: lot size + level → code letter index
+  let letterIdx = table1[levelIdx][lotIdx];
+  if (letterIdx < 1) letterIdx = 1;
+
+  // Table II-A: resolve arrow to get effective letter
+  let effLetterIdx = resolveLetter(letterIdx, aqlIdx);
+  let sampleSize = sampleSizes[effLetterIdx];
+  let ac, re;
+
+  const result = acRe[effLetterIdx][aqlIdx];
+  if (result) {
+    ac = result[0];
+    re = result[1];
+  } else {
+    // Failsafe: try resolving again
+    effLetterIdx = letterIdx;
+    for (let li = effLetterIdx; li <= 17; li++) {
+      if (acRe[li][aqlIdx]) { effLetterIdx = li; break; }
+    }
+    const r2 = acRe[effLetterIdx][aqlIdx];
+    if (r2) { ac = r2[0]; re = r2[1]; sampleSize = sampleSizes[effLetterIdx]; }
+    else { ac = 0; re = 1; }
+  }
+
+  // Full inspection check: sample size > lot size range max
+  const lotMins = [2,9,16,26,51,91,151,281,501,1201,3201,10001,35001,150001,500001];
+  const lotMax  = lotIdx === 14 ? Infinity : [8,15,25,50,90,150,280,500,1200,3200,10000,35000,150000,500000,Infinity][lotIdx];
+  let fullInspect = false;
+  if (sampleSize > lotMax) { // even using max lot, sample > lot → full inspection
+    fullInspect = true;
+    sampleSize = (lotIdx === 14) ? sampleSize : lotMax; // use actual lot max as sample
+    // For full inspection, ac is still from the table but sample=lot
+    // Actually for full inspection, the standard says to inspect the entire lot
+    // Ac/Re still apply as calculated, just sample size = lot size
+  }
+
+  // Display results
+  document.getElementById('codeLetterBadge').innerHTML = 
+    (lang==='en' ? 'Sample Size Code Letter: <strong>' : '样本量字码：<strong>') + letterNames[effLetterIdx] + '</strong>';
+
+  document.getElementById('sampleSize').textContent = fullInspect ? lotMax : sampleSize;
+  document.getElementById('acValue').textContent = ac;
+  document.getElementById('reValue').textContent = re;
+
+  // Full inspect note
+  const fiNote = document.getElementById('fullInspectNote');
+  if (fullInspect) {
+    fiNote.style.display = 'block';
+    fiNote.innerHTML = lang === 'en'
+      ? '<strong>&#8505;&#65039; Full Inspection Required:</strong> The calculated sample size exceeds the lot size range — the entire lot must be inspected. Ac/Re criteria from the table still apply to the full inspection result.'
+      : '<strong>&#8505;&#65039; 需要全检：</strong>计算出的样本量超过了该批量范围的最大值 — 需要对整批产品进行全数检验。表中的Ac/Re判定数仍然适用于全检结果。';
+  } else {
+    fiNote.style.display = 'none';
+  }
+
+  // Plain explanation
+  const lotLabel = document.getElementById('lotSize').options[lotIdx].text;
+  const aqlLabel = fmtAql(aqlVals[aqlIdx]);
+  document.getElementById('plainExplanation').innerHTML = lang === 'en'
+    ? 'Randomly draw <strong>' + sampleSize + ' units</strong> from this lot (' + lotLabel + '). If the number of defective units found is <strong>&le; ' + ac + '</strong>, accept the lot. If <strong>&ge; ' + re + '</strong>, reject the lot. AQL = ' + aqlLabel + '%.'
+    : '从这批产品（' + lotLabel + '）中随机抽取 <strong>' + sampleSize + ' 件</strong>进行检验。如果发现的不合格品数 <strong>&le; ' + ac + '</strong>，则接收该批；如果 <strong>&ge; ' + re + '</strong>，则拒收。AQL = ' + aqlLabel + '%。';
+
+  // Critical defect warning
+  document.getElementById('criticalWarning').innerHTML = lang === 'en'
+    ? '<strong>&#9888;&#65039; Critical Defect Alert:</strong> If even <strong>1 critical defect</strong> (safety hazard, regulatory violation) is found, the lot should be <strong>rejected</strong> regardless of the Ac number. Our on-site inspectors rigorously enforce this standard during every <a href="/services/#inspection" style="color:#c53030;text-decoration:underline">product inspection</a>.'
+    : '<strong>&#9888;&#65039; 严重缺陷提示：</strong>如果发现 <strong>1个严重缺陷</strong>（安全隐患、法规违规），即使总缺陷数未超过Ac，也应<strong>判为不合格</strong>。我们的现场验货员在每次<a href="/services/#inspection" style="color:#c53030;text-decoration:underline">产品检验</a>中都会严格执行这一标准。';
+
+  // Show results with animation
+  const area = document.getElementById('resultsArea');
+  area.classList.remove('visible');
+  void area.offsetWidth; // trigger reflow
+  area.classList.add('visible');
+  area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Embed copy
+function copyEmbed() {
+  const input = document.getElementById('embedCode');
+  input.select();
+  document.execCommand('copy');
+  const btn = input.nextElementSibling;
+  const orig = btn.textContent;
+  btn.textContent = lang === 'en' ? 'Copied!' : '已复制！';
+  setTimeout(() => { btn.textContent = orig; }, 1500);
+}
+
+// Debounce
+let calcTimer;
+function debouncedCalc() {
+  clearTimeout(calcTimer);
+  calcTimer = setTimeout(calculate, 300);
+}
+document.getElementById('calcBtn').addEventListener('click', function(e) {
+  this.disabled = true;
+  calculate();
+  setTimeout(() => { this.disabled = false; }, 300);
+});
+
+// ======== Bilingual Support ========
+let lang = 'en';
+window.switchLang = function(l) {
+  lang = l;
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+  document.getElementById('btn-zh').classList.toggle('active', l === 'zh');
+  document.querySelectorAll('[data-zh]').forEach(el => {
+    if (l === 'zh' && el.getAttribute('data-zh')) {
+      // Only update text-only elements or specific attributes
+      if (el.tagName === 'OPTION') return; // skip option data-zh
+      const zh = el.getAttribute('data-zh');
+      const tag = el.tagName;
+      if (tag === 'META' && el.name === 'description') { el.content = zh; }
+      else if (tag === 'META' && el.getAttribute('property') === 'og:title') { el.content = zh; }
+      else if (tag === 'META' && el.getAttribute('property') === 'og:description') { el.content = zh; }
+      else if (tag === 'TITLE') { document.title = zh; }
+      else if (tag === 'BUTTON' && el.id === 'calcBtn') { el.textContent = zh; }
+      else if (tag === 'BUTTON') { /* language switch buttons - skip */ }
+      else {
+        // Save original English text if not saved
+        if (!el._enText && el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+          el._enText = el.textContent.trim();
+        }
+        if (tag === 'SPAN' || tag === 'P' || tag === 'H1' || tag === 'H2' || tag === 'H3' || tag === 'H4' || tag === 'LABEL' || tag === 'A' || tag === 'STRONG' || tag === 'LI' || tag === 'DIV' || tag === 'TD' || tag === 'TH') {
+          el.textContent = zh;
+        }
+      }
+    } else if (l === 'en' && el._enText) {
+      if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+        el.textContent = el._enText;
+      }
+    }
+  });
+  // Update button text
+  document.getElementById('calcBtn').textContent = l === 'en' ? 'Calculate Sampling Plan' : '计算抽样方案';
+  // Update embed copy button
+  const embedBtns = document.querySelectorAll('.embed-code-wrap button');
+  // Re-calculate display text if results are visible
+  if (document.getElementById('resultsArea').classList.contains('visible')) calculate();
+};
+
+// ======== URL Parameter Support ========
+function applyUrlParams() {
+  const params = new URLSearchParams(window.location.search);
+  const lot = params.get('lot');
+  const level = params.get('level');
+  const aql = params.get('aql');
+
+  if (lot) {
+    const lotOpts = document.getElementById('lotSize').options;
+    for (let i = 0; i < lotOpts.length; i++) {
+      if (lotOpts[i].text.replace(/\s/g,'') === lot.replace(/\s/g,'') || lotOpts[i].text === lot) {
+        document.getElementById('lotSize').value = i; break;
+      }
+    }
+  }
+  if (level) {
+    const levelMap = { 'I': '4', 'II': '5', 'III': '6', 'S-1': '0', 'S-2': '1', 'S-3': '2', 'S-4': '3',
+      'S1': '0', 'S2': '1', 'S3': '2', 'S4': '3', 'G-I': '4', 'G-II': '5', 'G-III': '6',
+      'G1': '4', 'G2': '5', 'G3': '6' };
+    const val = levelMap[level.toUpperCase()] || levelMap[level];
+    if (val !== undefined) document.getElementById('inspectionLevel').value = val;
+  }
+  if (aql) {
+    const aqlVal = parseFloat(aql);
+    const aqlOpts = document.getElementById('aqlValue').options;
+    let best = -1, bestDist = Infinity;
+    for (let i = 0; i < aqlOpts.length; i++) {
+      const dist = Math.abs(parseFloat(aqlOpts[i].text) - aqlVal);
+      if (dist < bestDist) { bestDist = dist; best = i; }
+    }
+    if (best >= 0) document.getElementById('aqlValue').value = best;
+  }
+}
+
+// ======== Init ========
+applyUrlParams();
+calculate(); // auto-calculate on load
+</script>
+</body>
+</html>
