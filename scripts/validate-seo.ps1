@@ -29,8 +29,9 @@ Check-Pattern 'href="services"\s+data-zh="工厂审核"'   'Footer missing #audi
 Check-Pattern 'href="services"\s+data-zh="实验室测试"'  'Footer missing #lab anchor'
 Check-Pattern 'href="services"\s+data-zh="供应商管理"'  'Footer missing #supplier anchor'
 
-# 2. Bad slash format /services/#xxx → should be /services#xxx
+# 2. Bad slash format: /page/#anchor → should be /page#anchor
 Check-Pattern '/services/#[a-z]' 'Bad format /services/# (should be /services#)'
+Check-Pattern 'href="/\w[a-zA-Z0-9\-\/]+/#[a-z]' 'Bad format /page/#anchor (extra slash before #)'
 
 # 3. Dead link: services#factory
 Check-Pattern 'services#factory' 'Dead link: services#factory (should be #audit)'
