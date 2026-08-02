@@ -329,6 +329,7 @@ ul, ol { list-style: none; }
 .article-header h1 { font-size: 2rem; color: var(--primary); line-height: 1.4; margin-bottom: 12px; }
 .article-meta { display: flex; gap: 20px; flex-wrap: wrap; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 30px; }
 .article-meta .meta-category { color: var(--accent); font-weight: 600; }
+.article-meta .meta-source { color: var(--text-body); font-style: italic; }
 .article-body { font-size: 1.05rem; line-height: 2; color: var(--text-dark); }
 .article-body p { margin-bottom: 20px; }
 .article-body h2 { font-size: 1.5rem; color: var(--primary); margin: 36px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
@@ -374,7 +375,7 @@ ul, ol { list-style: none; }
 .font-size-controls button:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
 
 /* ---------- CTA Section ---------- */
-.cta { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; text-align: center; padding: 55px 0; }
+.cta { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #fff; text-align: center; padding: 45px 0; }
 .cta h2 { font-size: 2rem; margin-bottom: 16px; }
 .cta p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
 
