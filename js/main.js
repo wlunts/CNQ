@@ -224,12 +224,16 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ========== Font Size Controls (Article pages) ==========
-  window.changeFontSize = function (size) {
-    var article = document.getElementById('articleContent');
+  window.changeFontSize = function (size, btn) {
+    var article = document.querySelector('.article-body');
     if (!article) return;
     if (size === 'small') article.style.fontSize = '0.95rem';
     else if (size === 'medium') article.style.fontSize = '1.05rem';
     else if (size === 'large') article.style.fontSize = '1.2rem';
+    document.querySelectorAll('.font-size-controls button').forEach(function (b) {
+      b.classList.remove('active');
+    });
+    if (btn) btn.classList.add('active');
   };
 
   // ========== Sidebar Active State on Scroll (About page) ==========

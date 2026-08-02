@@ -116,7 +116,7 @@
 
 
 <!-- ========================= HERO BANNER ========================= -->
-<section class="page-header" style="background: linear-gradient(135deg, rgba(13,47,69,0.92), rgba(26,82,118,0.88)), url('/Upload/services/pre-shipment-inspection/hero-banner.jpg') center/cover no-repeat;">
+<section class="page-header" style="background: linear-gradient(135deg, rgba(13,47,69,0.92), rgba(26,82,118,0.88)), url('/images/service-banner.jpg') center/cover no-repeat;">
   <div class="container">
     <div class="breadcrumb fade-in">
       <a href="/" data-zh="首页">Home</a> <span>›</span>
@@ -139,9 +139,9 @@
       <!-- Font Size Controls -->
       <div class="font-size-controls">
         <span data-zh="字号: ">Font: </span>
-        <button onclick="changeFontSize('small')" data-zh="小">S</button>
-        <button onclick="changeFontSize('medium')" class="active">M</button>
-        <button onclick="changeFontSize('large')" data-zh="大">L</button>
+        <button onclick="changeFontSize('small',this)" data-zh="小">S</button>
+        <button onclick="changeFontSize('medium',this)" class="active">M</button>
+        <button onclick="changeFontSize('large',this)" data-zh="大">L</button>
       </div>
 
       <!-- Article Body -->
@@ -191,7 +191,7 @@
             <div class="step-number">3</div>
             <div class="step-content">
               <h3 data-zh="随机抽样 — AQL 标准执行">Random Sampling — AQL Standard Execution</h3>
-              <p data-zh="按 ANSI/ASQ Z1.4 标准从成品批次中随机抽取规定数量样本。抽样过程由验货员全程控制—不允许工厂提前准备"特供"样品。用我们的 <a href='/tools/aql-calculator/'>在线 AQL 计算器</a> 你可以提前算出你的订单需要抽多少件。">Randomly select the specified number of samples from finished cartons according to <strong>ANSI/ASQ Z1.4</strong>. The inspector controls the entire sampling process — no factory-prepped "special samples" allowed. Use our <a href="/tools/aql-calculator/">free AQL sampling calculator</a> to determine your required sample size before the inspection even starts.</p>
+              <p data-zh="按 ANSI/ASQ Z1.4 标准从成品批次中随机抽取规定数量样本。抽样过程由验货员全程控制—不允许工厂提前准备"特供"样品。用我们的在线 AQL 计算器 你可以提前算出你的订单需要抽多少件。">Randomly select the specified number of samples from finished cartons according to ANSI/ASQ Z1.4. The inspector controls the entire sampling process — no factory-prepped "special samples" allowed. Use our <a href="/tools/aql-calculator/">online AQL sampling calculator</a> to determine your required sample size before the inspection even starts.</p>
             </div>
           </div>
 
@@ -252,7 +252,7 @@
         </p>
 
         <p data-zh="不了解 AQL 怎么工作？我们写了一篇深入浅出的 AQL 入门指南 →">
-          New to AQL? Read our plain-English introduction: <a href="/industry-updates/ansi-asq-z1-4-guide.html"><strong>ANSI/ASQ Z1.4 Sampling Guide for Importers</strong></a>. Then use our <a href="/tools/aql-calculator/">free AQL sampling calculator</a> to find your exact sample size in seconds.
+          New to AQL? Read our plain-English introduction: <a href="/industry-updates/ansi-asq-z1-4-guide.html"><strong>ANSI/ASQ Z1.4 Sampling Guide for Importers</strong></a>. Then use our <a href="/tools/aql-calculator/">Online AQL sampling calculator</a> to find your exact sample size in seconds.
         </p>
 
         <h3 data-zh="缺陷分类标准">How We Classify Defects</h3>
@@ -294,7 +294,7 @@
 
 
         <!-- ========== SECTION 5: Real Case — Furniture Defects ========== -->
-        <h2 data-zh="真实案例：家具验货中发现组装致命缺陷">Real Case: Pre-Shipment Inspection Catches Fatal Assembly Defects in Furniture</h2>
+        <h2 data-zh="真实案例：家具验货中发现组装致命缺陷">A Real Case: Pre-Shipment Inspection Catches Fatal Assembly Defects in Furniture</h2>
 
         <p data-zh="这是一个真实发生的验货案例——客户是欧洲家具品牌，订单量 2,800 件板式家具，包括电视柜、书架和储物柜。工厂声称"全部通过自检，可以发货"。我们的检验员到厂后，随机抽取了 125 件样品（按 AQL Level II 标准）进行检验。">
           This is a real inspection case — a European furniture brand with an order of 2,800 units of flat-pack furniture, including TV stands, bookshelves, and storage cabinets. The factory claimed "all passed self-inspection, ready to ship." Our inspector arrived on site and randomly pulled <strong>125 samples</strong> (per AQL Level II standard) for inspection.
@@ -378,32 +378,31 @@
         </p>
 
         <div class="pricing-box">
-          <div class="pricing-amount" data-zh="起">From</div>
           <div class="pricing-amount">$179</div>
           <div class="pricing-unit" data-zh="/人天">/ man-day</div>
         </div>
 
         <p data-zh="大多数中小批量订单（1-3 万件以内）只需 1-2 个人天即可完成检验。相比你为一批问题货物付出的代价——运输费、关税、仓储费、退货处理费、品牌声誉损失——这个成本可以忽略不计。">
-          Most small-to-medium orders (under 30,000 units) require only <strong>1–2 man-days</strong> to complete the inspection. Compare that to the cost of shipping a defective batch — freight, duties, warehousing, return handling, and brand reputation damage — and this cost becomes negligible.
+          Most small-to-medium orders (under 35,000 units) require only <strong>1–2 man-days</strong> to complete the inspection. Compare that to the cost of shipping a defective batch — freight, duties, warehousing, return handling, and brand reputation damage — and this cost becomes negligible.
         </p>
 
-        <p data-zh="需要为你的具体订单报价？"><a href="/contact"><strong>Contact us for a custom quote</strong></a> <span data-zh="— 告诉我们你的产品类型、订单数量和工厂地址，我们通常在 2 小时内给出报价。"> — tell us your product type, order quantity, and factory location, and we typically respond with a quote within 2 hours.</span></p>
+        <p data-zh="需要为你的具体订单报价？"><a href="/contact"><strong>Contact us for a custom quality solutions</strong></a> <span data-zh="— 告诉我们你的产品类型、订单数量和工厂地址，我们通常在 12 小时内给出报价。"> — tell us your product type, order quantity, and factory location, and we typically respond with a quote within 12 hours.</span></p>
 
 
         <!-- ========== SECTION 8: Why CNQ ========== -->
         <h2 data-zh="为什么选择 CNQ 的出货前检验？">Why Choose CNQ for Pre-Shipment Inspection?</h2>
 
         <p data-zh="你的供应商可能不会如实告诉你货物的真实质量状况。我们的 PSI 服务帮你解决这个问题：">
-          Your vendor or factory may not give you an honest picture of your goods' quality. Our PSI service changes that:
+          Your supplier or factory may not give you an honest picture of your goods' quality. Our PSI service changes that:
         </p>
 
         <div class="benefit-cards">
           <div class="benefit-card">
             <h3 data-zh="17年实地经验">17+ Years on the Ground</h3>
-            <p data-zh="自 2007 年起在中国从事第三方质检。我们见过几乎所有的工厂"技巧" — 从"特供样品"到"临时换货"，我们的检验员不会被蒙蔽。">Operating in China since 2007. We've seen almost every factory "trick" — from pre-prepped samples to last-minute swaps. Our inspectors don't fall for them.</p>
+            <p data-zh="自 2007 年起在中国从事第三方质检。我们见过几乎所有的工厂"技巧" — 从"特供样品"到"临时换货"，我们的检验员不会被蒙蔽。">Operating in China since 2009. We've seen almost every factory "trick" — from pre-prepped samples to last-minute swaps. Our inspectors don't fall for them.</p>
           </div>
           <div class="benefit-card">
-            <h3 data-zh="当天出具英文报告">Same-Day English Report</h3>
+            <h3 data-zh="当天出具英文报告">24 hous English Report</h3>
             <p data-zh="检验完成后当天出具完整的英文检验报告，包括缺陷照片、检验数据和 PASS / FAIL 结论。不需要等两天才能做出发货决策。">Full English inspection report delivered the same day the inspection finishes — including defect photos, test data, and PASS / FAIL conclusion. No waiting two days to make a shipping decision.</p>
           </div>
           <div class="benefit-card">
@@ -430,15 +429,9 @@
         </ul>
 
         <p><span data-zh="准备好为你的下一批订单安排检验了吗？">
-          Ready to arrange an inspection for your next order? </span><a href="/contact"><strong>Get in touch</strong></a><span data-zh=" 告诉我们你的需求，我们通常在 2 小时内给出方案和报价。"> — tell us what you need, and we'll respond with a plan and quote within 2 hours.</span></p>
+          Ready to arrange an inspection for your next order? </span><a href="/contact"><strong>Get your CNQ experts</strong></a><span data-zh=" 告诉我们你的需求，我们通常在 12 小时内给出方案和报价。"> — tell them what you need, and you will be responded with a plan within 12 hours.</span></p>
 
-        <p style="margin-top:12px;"><span data-zh="还没准备好找我们？先试试免费的">Not ready to reach out yet? Try our free </span><a href="/tools/aql-calculator/"><strong>AQL sampling calculator</strong></a><span data-zh="，算一下你的订单应该抽多少件。"> — find out how many units you should be testing for your order size.</span></p>
-
-
-        <!-- ========== Disclaimer ========== -->
-        <blockquote data-zh="免责声明：本文案例基于 CNQ 实际验货报告，已作脱敏处理。图片和数据仅用于说明目的。每批产品质量可能有所不同，建议通过 <a href='/services#inspection'>专业第三方检验</a> 评估您的具体订单。">
-          <strong>Disclaimer:</strong> This case study is based on actual CNQ <strong>pre-shipment inspection</strong> reports with anonymized details. Images and data are for illustrative purposes. Product quality may vary between batches; we recommend a <a href="/services#inspection">professional third-party inspection</a> for your specific orders.
-        </blockquote>
+        <p style="margin-top:12px;"><span data-zh="还没准备好找我们？先试试免费的">Not ready to reach out yet? Try our online </span><a href="/tools/aql-calculator/"><strong>AQL sampling calculator</strong></a><span data-zh="，算一下你的订单应该抽多少件。"> — find out how many units you should be testing for your order size.</span></p>
 
       </div><!-- /.article-body -->
 
@@ -447,7 +440,7 @@
         <h3 data-zh="相关资源">Related Resources</h3>
         <div class="related-grid">
           <div class="related-card">
-            <h4><a href="/tools/aql-calculator/">Free AQL Sampling Calculator</a></h4>
+            <h4><a href="/tools/aql-calculator/"> AQL Sampling Calculator</a></h4>
             <p>Find your exact sample size in seconds — select your lot size and AQL level, get the sampling plan instantly. Free, no sign-up required.</p>
           </div>
           <div class="related-card">
@@ -463,6 +456,15 @@
 
     </div>
   </section>
+
+  <section class="cta">
+    <div class="container" style="max-width: 860px;">
+      <h2 data-zh="发货前最后一道防线">Your Last Stop Before Shipping</h2>
+      <p data-zh="不要在收到退货时才后悔。在工厂现场验货，发货前拦住缺陷。">Don't wait for your customer to find the defects. Our inspectors catch quality failures at the factory — before your goods leave China.</p>
+      <a href="/contact" class="btn btn-white" data-zh="预约检验">Schedule Your Inspection</a>
+    </div>
+  </section>
+
 </main>
 
 
@@ -504,20 +506,6 @@
 
 <!-- Scripts -->
 <script src="/js/main.js" defer></script>
-
-<!-- Font Size Script -->
-<script>
-function changeFontSize(size) {
-  const body = document.querySelector('.article-body');
-  if (!body) return;
-  const sizes = { small: '0.95rem', medium: '1.05rem', large: '1.2rem' };
-  body.style.fontSize = sizes[size] || sizes.medium;
-  document.querySelectorAll('.font-size-controls button').forEach(function(btn) {
-    btn.classList.remove('active');
-  });
-  event.target.classList.add('active');
-}
-</script>
 
 </body>
 </html>
