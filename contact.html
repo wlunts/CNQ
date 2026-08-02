@@ -28,118 +28,27 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact China Quality Service",
-    "url": "https://www.cn-q.com/contact",
-    "about": {
-      "@type": "Organization",
-      "name": "China Quality Service",
-      "url": "https://www.cn-q.com",
-      "logo": "https://www.cn-q.com/Upload/logo.png",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Unit 232, No.120 Xifu Rd, TongAn District",
-        "addressLocality": "Xiamen",
-        "addressRegion": "Fujian",
-        "addressCountry": "CN"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.cn-q.com/#organization",
+        "name": "China Quality Service",
+        "url": "https://www.cn-q.com"
       },
-"contactPoint": [
-  {
-    "@type": "ContactPoint",
-    "telephone": "+86-136-6607-1299",
-    "contactType": "customer service",
-    "email": "info@cn-q.com",
-    "availableLanguage": ["English", "Chinese"]
-  },
-  {
-    "@type": "ContactPoint",
-    "email": "dave@cn-q.com",
-    "contactType": "sales"
-  },
-  {
-    "@type": "ContactPoint",
-    "email": "halery@cn-q.com",
-    "contactType": "sales"
-  },
-  {
-    "@type": "ContactPoint",
-    "email": "technical@cn-q.com",
-    "contactType": "technical support"
-  },
-  {
-    "@type": "ContactPoint",
-    "email": "compliance@cn-q.com",
-    "contactType": "compliance"
-  }
-]
-    },
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cn-q.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.cn-q.com/contact" }
-      ]
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": "https://www.cn-q.com/#professional-service",
-    "name": "China Quality Service",
-    "alternateName": "CNQ",
-    "url": "https://www.cn-q.com",
-    "logo": "https://www.cn-q.com/Upload/logo.png",
-    "image": "https://www.cn-q.com/Upload/logo.png",
-    "telephone": "+86-136-6607-1299",
-    "email": "info@cn-q.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Unit 232, No.120 Xifu Rd, TongAn District",
-      "addressLocality": "Xiamen",
-      "addressRegion": "Fujian",
-      "postalCode": "361100",
-      "addressCountry": "CN"
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    "priceRange": "$179 - $268 USD",
-    "areaServed": ["China", "Southeast Asia", "Europe", "North America"],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Quality Inspection Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Product Inspection",
-            "url": "https://www.cn-q.com/services"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Factory Audit",
-            "url": "https://www.cn-q.com/services"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Laboratory Testing",
-            "url": "https://www.cn-q.com/services"
-          }
+      {
+        "@type": "ContactPage",
+        "name": "Contact China Quality Service",
+        "url": "https://www.cn-q.com/contact",
+        "about": { "@id": "https://www.cn-q.com/#organization" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cn-q.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.cn-q.com/contact" }
+          ]
         }
-      ]
-    }
+      }
+    ]
   }
   </script>
 </head>
@@ -223,7 +132,7 @@ Secure your global supply chains with 17+ years of expert inspection and factory
 
           <div style="margin-top:40px">
             <h3 style="font-size:1.3rem;color:var(--primary);margin-bottom:16px" data-zh="全球分支机构">Global Offices</h3>
-            <p style="color:var(--text-body);line-height:1.9"><span data-zh="我们在厦门、广州、宁波、义乌、深圳、青岛等中国主要制造业城市设有检验团队，同时在香港和台北设有联络处，能够在最短时间内响应您的产品检验与工厂审核需求。服务覆盖电子、玩具、纺织、机械等主要出口品类。">While our main technical evaluation and project management office is located in Xiamen, our inspection teams are stationed across China's key manufacturing hubs — Xiamen, Guangzhou, Ningbo, Yiwu, Shenzhen, Suzhou,Qingdao and Vietnam, Cambodia, Thailand, Indonesia, India, Pakistan, Sri Lanka, and Bangladesh, enabling rapid on-site response for </span><a href="/services#inspection">product inspection</a><span> and </span><a href="/services#audit">factory audit</a><span> across electronics, toys, textiles, and machinery sectors.</span></p>
+            <p style="color:var(--text-body);line-height:1.9"><span data-zh="我们在厦门、广州、宁波、义乌、深圳、青岛等中国主要制造业城市设有检验团队，同时在香港和台北设有联络处，能够在最短时间内响应您的产品检验与工厂审核需求。服务覆盖电子、玩具、纺织、机械等主要出口品类。">While our main technical evaluation and project management office is located in Xiamen, our inspection teams are stationed across China's key manufacturing hubs — Xiamen, Guangzhou, Ningbo, Yiwu, Shenzhen, Suzhou, Qingdao and Vietnam, Cambodia, Thailand, Indonesia, India, Pakistan, Sri Lanka, and Bangladesh, enabling rapid on-site response for </span><a href="/services#inspection">product inspection</a><span> and </span><a href="/services#audit">factory audit</a><span> across electronics, toys, textiles, and machinery sectors.</span></p>
           </div>
         </div>
 
