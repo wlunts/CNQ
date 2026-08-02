@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-zh="免费验货人天估算器 - 按品类与批量计算检验工时与费用 | 厦门亚商">Free Inspection Man-Day Estimator — Calculate Inspection Time &amp; Cost by Category &amp; Lot Size | China Quality Service</title>
+  <meta name="description" data-zh="使用CNQ的免费验货人天估算器，根据产品品类、型号数量、批量和AQL检验水平快速计算所需人天数与预估费用。支持双语切换。" content="Use CNQ's free inspection man-day estimator to quickly calculate required man-days and estimated cost based on product category, item count, lot size and AQL inspection level. Bilingual support.">
+  <meta name="keywords" content="inspection man-day estimator, inspection cost calculator, product inspection time, QC man-day, pre-shipment inspection cost, inspection workload, China inspection pricing">
+  <link rel="canonical" href="https://www.cn-q.com/tools/manday-estimator">
+  <meta property="og:title" content="Free Inspection Man-Day Estimator — Calculate Time &amp; Cost | China Quality Service">
+  <meta property="og:description" content="Estimate inspection man-days and cost based on product category, model count, lot size and AQL level. Built on real QC productivity data.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cn-q.com/tools/manday-estimator">
+  <meta property="og:image" content="https://www.cn-q.com/images/og-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Inspection Man-Day Estimator",
+    "url": "https://www.cn-q.com/tools/manday-estimator",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Free online inspection man-day estimator based on standard QC productivity data. Calculates required man-days and estimated cost by product category, item types, lot size and AQL level.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "China Quality Service",
+      "alternateName": "CNQ",
+      "url": "https://www.cn-q.com"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cn-q.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.cn-q.com/download" },
+      { "@type": "ListItem", "position": 3, "name": "Man-Day Estimator", "item": "https://www.cn-q.com/tools/manday-estimator" }
+    ]
+  }
+  </script>
+  <style>
+    /* Man-Day Estimator specific styles */
+    .manday-section { padding: 40px 0; }
+    .manday-section .container { max-width: 860px; }
+    .manday-section.alt { background: var(--bg-light, #f8fafc); }
+    .manday-card { background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); padding: 28px; }
+    .manday-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 600px) { .manday-form-grid { grid-template-columns: 1fr; } }
+    .manday-field { display: flex; flex-direction: column; gap: 6px; }
+    .manday-field label { font-weight: 600; color: var(--text-dark, #1a202c); font-size: 0.95rem; }
+    .manday-field select, .manday-field input { padding: 12px 14px; border: 1px solid #cbd5e0; border-radius: 10px; font-size: 1rem; background: #fff; color: #1a202c; }
+    .manday-field select:focus, .manday-field input:focus { outline: none; border-color: var(--primary, #2563eb); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
+    .btn-manday { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; background: var(--primary, #2563eb); color: #fff; border: none; border-radius: 10px; font-size: 1.05rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.1s; width: 100%; margin-top: 28px; }
+    .btn-manday:hover { background: var(--primary-dark, #1d4ed8); }
+    .btn-manday:active { transform: scale(0.98); }
+    .manday-results { margin-top: 32px; opacity: 0; transform: translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; display: none; }
+    .manday-results.visible { opacity: 1; transform: translateY(0); display: block; }
+    .manday-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+    @media (max-width: 600px) { .manday-metrics { grid-template-columns: 1fr; } }
+    .manday-metric { background: #f7fafc; border-radius: 10px; padding: 24px; text-align: center; border: 1px solid #e2e8f0; }
+    .manday-metric .value { font-size: 2rem; font-weight: 700; color: var(--text-dark, #1a202c); }
+    .manday-metric .label { font-size: 0.8rem; color: #718096; text-transform: uppercase; margin-top: 6px; letter-spacing: 0.03em; }
+    .manday-note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; font-size: 0.95rem; color: #744210; margin-bottom: 16px; line-height: 1.6; }
+    .manday-static-note { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 14px 18px; font-size: 0.92rem; color: #1e40af; margin-bottom: 16px; line-height: 1.7; }
+    .manday-disclaimer { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 18px; font-size: 0.9rem; color: #4a5568; line-height: 1.7; margin-bottom: 16px; }
+    .manday-cta-soft { text-align: center; padding: 20px; background: linear-gradient(135deg, var(--primary, #2563eb), var(--primary-light, #2980b9)); color: #fff; border-radius: 12px; }
+    .manday-cta-soft span { display: block; font-size: 1rem; margin-bottom: 12px; opacity: 0.95; }
+    .manday-cta-soft a { display: inline-block; padding: 10px 28px; background: #fff; color: var(--primary, #1d4ed8); border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+    .manday-cta-soft a:hover { background: #f0f4ff; transform: translateY(-1px); }
+    .manday-seo-text { font-size: 0.95rem; color: #4a5568; line-height: 1.8; }
+    .manday-seo-text h2 { font-size: 1.4rem; margin-bottom: 14px; color: #1a202c; }
+    .manday-seo-text ul { padding-left: 20px; margin: 12px 0; }
+    .manday-seo-text li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="/">
+        <img src="/Upload/logo.png" alt="China Quality Service" width="103" height="48" onerror="this.style.display='none'" loading="lazy">
+        <span>China Quality Service</span>
+      </a>
+    </div>
+    <button class="menu-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/" data-zh="首页">Home</a>
+      <div class="nav-dropdown"><a href="/about" data-zh="关于我们">About Us</a><div class="dropdown-menu"><a href="/about#company-intro" data-zh="公司简介">Company Profile</a><a href="/about#credentials" data-zh="资质与认证">Credentials &amp; Accreditations</a><a href="/about#mission" data-zh="使命与愿景">Mission &amp; Vision</a><a href="/about#team" data-zh="专业团队">Professional Team</a><a href="/about#advantage" data-zh="核心优势">Core Advantages</a></div></div>
+      <div class="nav-dropdown"><a href="/services" data-zh="服务范围">Services</a><div class="dropdown-menu"><a href="/services#inspection" data-zh="产品检验">Product Inspection</a><a href="/services#audit" data-zh="工厂审核">Factory Audit</a><a href="/services#lab" data-zh="实验室测试">Laboratory Testing</a><a href="/services#supplier" data-zh="供应商管理">Supplier Management</a><a href="/services#consulting" data-zh="技术咨询">Technical Consulting</a><a href="/services#compliance" data-zh="国际合规">International Compliance</a><a href="/services#faq" data-zh="常见问题">Frequently Asked Questions</a></div></div>
+      <div class="nav-dropdown"><a href="/insights" data-zh="洞察">Insights</a><div class="dropdown-menu"><a href="/inspection-cases/" data-zh="验货案例">Inspection Cases</a><a href="/factory-resource/" data-zh="工厂资源">Factory Resource</a><a href="/industry-updates/" data-zh="行业动态">Industry Updates</a></div></div>
+      <div class="nav-dropdown">
+        <a href="/download" class="active" data-zh="资源中心">Resources</a>
+        <div class="dropdown-menu">
+          <a href="/tools/aql-calculator/" data-zh="📐 AQL 抽样计算器">📐 AQL Sampling Calculator</a>
+          <a href="/tools/manday-estimator" data-zh="⏱️ 验货人天估算器">⏱️ Man-Day Estimator</a>
+          <a href="/download#standards" data-zh="行业标准">Industry Standards</a>
+          <a href="/download#regulations" data-zh="法规汇编">Regulatory Compilations</a>
+          <a href="/download#whitepaper" data-zh="白皮书">Whitepapers</a>
+          <a href="/download#templates" data-zh="工厂评估">Factory Assessment</a>
+          <a href="/download#brochure" data-zh="检验模板">Inspection Template</a>
+        </div>
+      </div>
+      <a href="/contact" data-zh="联系我们">Contact</a>
+      <div class="lang-switch">
+        <button data-lang="zh" class="active">中</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="menu-overlay"></div>
+
+<main>
+  <section class="page-header" style="background: linear-gradient(135deg, rgba(13,47,69,0.92), rgba(26,82,118,0.9)), url('/images/download-banner.jpg') center/cover no-repeat;">
+    <div class="container">
+      <h1 class="fade-in" data-zh="免费验货人天估算器 — 按品类与批量计算检验工时">Inspection Man-Day Estimator — Calculate Time &amp; Cost by Category</h1>
+      <p class="page-header-meta fade-in" data-zh="根据产品品类、型号数量、批量和AQL检验水平，基于CNQ标准产能数据快速估算所需人天与费用。">Estimate required man-days and inspection cost based on product category, item count, lot size and AQL level — powered by CNQ's standard productivity data.</p>
+      <div class="breadcrumb fade-in">
+        <a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="/download" data-zh="资源中心">Resources</a> <span>&rsaquo;</span> <span data-zh="验货人天估算器">Man-Day Estimator</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="manday-section">
+    <div class="container">
+      <div class="manday-card">
+        <div class="manday-form-grid">
+          <div class="manday-field">
+            <label for="productCategory" data-zh="产品品类">Product Category</label>
+            <select id="productCategory" aria-label="Product category">
+              <option value="0" data-zh="普通杂货（无电气）">General hardgoods (no electric)</option>
+              <option value="1" data-zh="简单纺织品">Simple Softlines</option>
+              <option value="2" data-zh="简单电气/其他杂货">Simple electric / other hardgoods</option>
+              <option value="3" data-zh="纺织品">Softlines</option>
+              <option value="4" data-zh="电器产品">Electrical appliance</option>
+              <option value="5" data-zh="复杂电气产品">Complex electrical</option>
+            </select>
+          </div>
+          <div class="manday-field">
+            <label for="modelCount" data-zh="型号数量（Item Types）">Number of Item Types (models)</label>
+            <input type="number" id="modelCount" min="1" value="1" placeholder="e.g. 3" aria-label="Number of item types">
+          </div>
+          <div class="manday-field">
+            <label for="lotSize" data-zh="总批量（件）">Total Lot Size (pieces)</label>
+            <input type="number" id="lotSize" min="1" value="1000" placeholder="e.g. 2000" aria-label="Total lot size">
+          </div>
+          <div class="manday-field">
+            <label for="inspectionLevel" data-zh="检验水平">Inspection Level</label>
+            <select id="inspectionLevel" aria-label="Inspection level">
+              <option value="0">Special S-1</option>
+              <option value="1">Special S-2</option>
+              <option value="2">Special S-3</option>
+              <option value="3">Special S-4</option>
+              <option value="4">General I</option>
+              <option value="5" selected>General II</option>
+              <option value="6">General III</option>
+            </select>
+          </div>
+        </div>
+        <button id="calcBtn" class="btn-manday" type="button" data-zh="计算人天与费用">Calculate Man-Days &amp; Cost</button>
+
+        <div class="manday-results" id="results">
+          <div class="manday-metrics">
+            <div class="manday-metric"><div class="value" id="sampleSize">—</div><div class="label" data-zh="AQL 样本量">AQL Sample Size</div></div>
+            <div class="manday-metric"><div class="value" id="manDays">—</div><div class="label" data-zh="预估人天">Est. Man-Days</div></div>
+            <div class="manday-metric"><div class="value" id="totalCost">—</div><div class="label" data-zh="预估费用 (USD)">Est. Cost (USD)</div></div>
+          </div>
+          <div class="manday-note" id="explainNote"></div>
+          <div class="manday-static-note">
+            <strong data-zh="监柜服务：">Container Loading Supervision:</strong> <span data-zh="每柜 1 人天。">1 man-day per container.</span><br>
+            <strong data-zh="最大拣货量：">Max picking items:</strong> <span data-zh="每人天 8 款，每超出 1 款加收 $50 USD。">8 items per man-day; +$50 USD per additional item.</span><br>
+            <strong data-zh="全检服务：">Full Inspection:</strong> <span data-zh="定制服务 — 请联系我们获取报价。">customised service — contact us for a quote.</span>
+          </div>
+          <div class="manday-disclaimer">
+            <p data-zh="<strong>以上为基于标准产能数据的估算。</strong>实际所需人天可能因产品复杂度、工厂地点、特殊测试要求等因素有所不同，最终费用可能低于或高于此估算，请在检验前与我们确认。">
+              <strong>This is an estimate based on standard productivity data.</strong> Actual man-days may vary depending on product complexity, factory location, special testing requirements, etc. Final cost may be lower or higher — please confirm with us before inspection.
+            </p>
+          </div>
+          <div class="manday-cta-soft">
+            <span data-zh="让 CNQ 免费为您的货物提供精确的人天与费用预估。">Let CNQ give you a precise man-day and cost estimate for your shipments — free.</span>
+            <a href="/contact" data-zh="联系 CNQ 专家">Talk to Your CNQ Experts</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="manday-section alt">
+    <div class="container">
+      <div class="related-articles" style="margin-top: 0; padding-top: 0;">
+        <h3 data-zh="相关资源">Related Resources</h3>
+        <div class="related-grid">
+          <div class="related-card">
+            <h4><a href="/tools/aql-calculator/">AQL Sampling Calculator</a></h4>
+            <p data-zh="先算样本量 — 确定需要抽检多少件。基于 ANSI/ASQ Z1.4 单品检方案。">Calculate your sample size first — know how many units to inspect. Based on ANSI/ASQ Z1.4 single normal sampling.</p>
+          </div>
+          <div class="related-card">
+            <h4><a href="/services/pre-shipment-inspection">Pre-Shipment Inspection Services</a></h4>
+            <p data-zh="算好人天和样本量 — 下一步让 CNQ 验货员在工厂现场执行，出货前拦截缺陷。">You've estimated your man-days and sample size — now let CNQ inspectors execute on the factory floor. Catch defects before they ship.</p>
+          </div>
+          <div class="related-card">
+            <h4><a href="/industry-updates/ansi-asq-z1-4-guide">ANSI/ASQ Z1.4 Sampling Guide</a></h4>
+            <p data-zh="理解人天估算背后的AQL标准逻辑 — 检验水平、AQL值、产品品类差异全解析。">Understand the AQL logic behind every man-day estimate — inspection levels, AQL values, and product category differences fully explained.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="manday-section alt">
+    <div class="container manday-seo-text">
+      <h2 data-zh="什么是验货人天估算？">What Is Inspection Man-Day Estimation?</h2>
+      <p data-zh="人天（Man-Day）是第三方产品检验的核心计费单位。1 人天 = 1 名专业验货员在工厂现场工作 1 天（通常 8 小时）。检验所需人天数取决于三个关键因素：产品品类（决定了验货员的日产能）、型号数量（款数越多，切换耗时越长）和 AQL 样本量（抽得越多，需要的时间越多）。">A man-day is the core billing unit for third-party <a href="/services#inspection">product inspection</a>. 1 man-day = 1 professional inspector working on-site for 1 day (typically 8 hours). The number of man-days required depends on three key factors: product category (which determines daily inspection throughput), number of item types (more models mean more setup time), and AQL sample size (more units to inspect means more time).</p>
+
+      <h2 data-zh="如何使用这个估算器">How to Use This Estimator</h2>
+      <ul>
+        <li data-zh="选择产品品类：不同品类对应不同的检验速度。例如，普通杂货每人天最多可检验315件，而复杂电气产品仅50件。">Select the <strong>Product Category</strong> — each category has a different inspection pace, from 315 pcs/day for general hardgoods to 50 pcs/day for complex electrical.</li>
+        <li data-zh="输入型号数量：如果订单包含多个不同SKU，检验员需要在不同产品之间切换，这会增加时间。">Enter the <strong>Number of Item Types</strong> — multiple SKUs require switching between products, which increases total inspection time.</li>
+        <li data-zh="输入总批量：即本次检验的订单总数量。">Enter the <strong>Total Lot Size</strong> — the total order quantity for this inspection.</li>
+        <li data-zh="选择检验水平：默认 General II 适用于大多数消费品。如需极小样本，可选择 Special 等级。">Choose the <strong>Inspection Level</strong> — General II is the default for most consumer goods. Special levels are available for very small samples.</li>
+      </ul>
+
+      <h2 data-zh="为什么提前估算人天很重要？">Why Estimate Man-Days Upfront?</h2>
+      <p data-zh="许多进口商在收到检验报价时才第一次了解人天概念。提前估算可以帮你：（1）在预算阶段就准确预估品控成本；（2）与供应商协商时了解检验的时间需求；（3）避免因低估工作量导致检验不充分。CNQ 的人天估算基于17年实际工厂检验数据 — 不是理论值，而是真实产能。">Many importers first encounter the man-day concept when they receive an inspection quote. Estimating upfront helps you: (1) budget QC costs accurately at the planning stage; (2) understand inspection time requirements when negotiating with suppliers; (3) avoid under-inspection due to underestimated workload. CNQ's estimates are based on 17 years of actual factory-floor inspection data — not theoretical values, but real productivity benchmarks.</p>
+
+      <p><span data-zh="有特殊检验需求或需要精确报价？">Have special inspection requirements or need a precise quote? </span><a href="/contact"><strong data-zh="联系 CNQ 获取定制方案">Contact CNQ for a tailored plan</strong></a><span data-zh="。">.</span></p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container fade-in">
+      <h2 data-zh="让 CNQ 为您精准规划检验工作量">Let CNQ Plan Your Inspection Workload</h2>
+      <p><span data-zh="人天估算器给你一个起点，但每个订单都有独特的变量。CNQ 验货员在工厂现场评估实际工作量，确保检验覆盖所有关键检查点 — 从产品外观到功能测试，从包装到标识。">
+        The estimator gives you a starting point, but every order has unique variables. <a href="/services#inspection">CNQ inspectors</a> assess real workload on the factory floor, ensuring every critical checkpoint — from visual inspection to functional testing, from packaging to labeling — is covered.
+      </span></p>
+      <a href="/contact" class="btn btn-white" data-zh="获取您的 CNQ 专家">Get Your CNQ Experts</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <div class="footer-title">China Quality Service</div>
+        <p data-zh="专业的第三方品控咨询服务商，致力于为全球客户提供独立、客观的品质检验与咨询服务，确保您的产品符合国际质量标准。">Expert quality control services in China — independent, objective third-party inspection, factory audit, and supply chain consulting to safeguard your imports from factory floor to destination port.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading" data-zh="快速链接">Quick Links</div>
+        <a href="/about" data-zh="关于我们">About Us</a>
+        <a href="/services" data-zh="服务范围">Services</a>
+        <a href="/insights" data-zh="洞察">Insights</a>
+        <a href="/download" data-zh="资源中心">Resources</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading" data-zh="核心服务">Core Services</div>
+        <a href="/services#inspection" data-zh="产品检验">Product Inspection</a>
+        <a href="/services#audit" data-zh="工厂审核">Factory Audit</a>
+        <a href="/services#lab" data-zh="实验室测试">Lab Testing</a>
+        <a href="/services#supplier" data-zh="供应商管理">Supplier Management</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading" data-zh="联系我们">Contact Us</div>
+        <a href="/contact" data-zh="在线留言">Online Message</a>
+        <a href="/contact" data-zh="联系方式">Contact Info</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 China Quality Service All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to Top" title="Back to Top">&#9650;</button>
+<script src="/js/main.js" defer></script>
+<script>
+(function() {
+  'use strict';
+
+  // AQL 数据表
+  const lotRanges = [
+    [2,8],[9,15],[16,25],[26,50],[51,90],[91,150],[151,280],[281,500],[501,1200],[1201,3200],[3201,10000],[10001,35000],[35001,150000],[150001,500000],[500001,Infinity]
+  ];
+  const table1 = [
+    [0,0,0,0,1,1,1,1,2,2,2,2,3,3,3],
+    [0,0,0,1,1,1,2,2,2,3,3,3,4,4,4],
+    [0,0,1,1,2,2,3,4,4,5,5,6,6,7,7],
+    [0,0,1,2,2,3,4,5,6,7,7,8,9,10,11],
+    [0,0,1,2,2,3,4,5,6,7,8,8,9,10,11],
+    [0,1,2,3,4,5,6,7,8,9,10,11,12,13,13],
+    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,14]
+  ];
+  const sampleSizes = [2,3,5,8,13,20,32,50,80,125,200,315,500,800,1250,2000];
+  const capacity = [
+    [4, 315], // 0: General hardgoods
+    [4, 200], // 1: Simple Softlines
+    [4, 125], // 2: Simple electric/other
+    [3, 125], // 3: Softlines
+    [3, 80],  // 4: Electrical appliance
+    [3, 50]   // 5: Complex electrical
+  ];
+
+  function getLetterIndex(lotSize, levelIdx) {
+    let lotIdx = 0;
+    for (let i = 0; i < lotRanges.length; i++) {
+      if (lotSize >= lotRanges[i][0] && lotSize <= lotRanges[i][1]) {
+        lotIdx = i;
+        break;
+      }
+    }
+    return table1[levelIdx][lotIdx];
+  }
+
+  function calculate() {
+    const cat = parseInt(document.getElementById('productCategory').value);
+    const models = parseInt(document.getElementById('modelCount').value) || 1;
+    const lot = parseInt(document.getElementById('lotSize').value) || 1;
+    const level = parseInt(document.getElementById('inspectionLevel').value);
+
+    const letterIdx = getLetterIndex(lot, level);
+    const sampleSize = sampleSizes[letterIdx];
+    const [maxModels, maxPcs] = capacity[cat];
+
+    const modelDays = Math.ceil(models / maxModels);
+    const qtyDays = Math.ceil(sampleSize / maxPcs);
+    const totalDays = Math.max(modelDays, qtyDays, 1);
+    const cost = totalDays * 179;
+
+    document.getElementById('sampleSize').textContent = sampleSize;
+    document.getElementById('manDays').textContent = totalDays;
+    document.getElementById('totalCost').textContent = '$' + cost;
+
+    var isZh = (document.documentElement.lang || 'en') === 'zh';
+    document.getElementById('explainNote').textContent = isZh
+      ? '基于 ' + models + ' 个型号，批量 ' + lot + ' 件 → AQL 样本量 ' + sampleSize + ' 件。该品类每日最多处理 ' + maxModels + ' 个型号、' + maxPcs + ' 件。'
+      : 'Based on ' + models + ' model(s), lot size ' + lot + ' pcs \u2192 AQL sample ' + sampleSize + ' pcs. This category allows max ' + maxModels + ' models and ' + maxPcs + ' pcs/day.';
+
+    var area = document.getElementById('results');
+    area.style.display = 'block';
+    area.classList.remove('visible');
+    void area.offsetWidth;
+    area.classList.add('visible');
+  }
+
+  document.getElementById('calcBtn').addEventListener('click', function() {
+    this.disabled = true;
+    calculate();
+    setTimeout(function() { this.disabled = false; }.bind(this), 300);
+  });
+
+  // Initial calculation
+  calculate();
+})();
+</script>
+</body>
+</html>

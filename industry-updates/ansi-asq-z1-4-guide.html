@@ -56,19 +56,24 @@
   <header class="header">
     <div class="container header-inner">
       <div class="logo">
-        <a href="/"><img src="/Upload/logo.png" alt="China Quality Service - product inspection in China" onerror="this.style.display='none'" width="103" height="48" loading="lazy"><span>China Quality Service</span></a>
+        <a href="/">
+          <img src="/Upload/logo.png" alt="China Quality Service" width="103" height="48" onerror="this.style.display='none'" loading="lazy">
+          <span>China Quality Service</span>
+        </a>
       </div>
-      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
       <nav class="nav">
         <a href="/" data-zh="首页">Home</a>
-        <div class="nav-dropdown"><a href="about" data-zh="关于我们">About Us</a><div class="dropdown-menu"><a href="about#company-intro" data-zh="公司简介">Company Profile</a><a href="about#credentials" data-zh="资质与认证">Credentials &amp; Accreditations</a><a href="about#mission" data-zh="使命与愿景">Mission &amp; Vision</a><a href="about#team" data-zh="专业团队">Professional Team</a><a href="about#advantage" data-zh="核心优势">Core Advantages</a></div></div>
-        <div class="nav-dropdown"><a href="services" data-zh="服务范围">Services</a><div class="dropdown-menu"><a href="services#inspection" data-zh="产品检验">Product Inspection</a><a href="services#audit" data-zh="工厂审核">Factory Audit</a><a href="services#lab" data-zh="实验室测试">Laboratory Testing</a><a href="services#supplier" data-zh="供应商管理">Supplier Management</a><a href="services#consulting" data-zh="技术咨询">Technical Consulting</a><a href="services#compliance" data-zh="国际合规">International Compliance</a><a href="services#faq" data-zh="常见问题">Frequently Asked Questions</a></div></div>
-        <div class="nav-dropdown"><a href="insights" class="active" data-zh="洞察">Insights</a><div class="dropdown-menu"><a href="/inspection-cases/" data-zh="验货案例">Inspection Cases</a><a href="/factory-resource/" data-zh="工厂资源">Factory Resource</a><a href="/industry-updates/" data-zh="行业动态">Industry Updates</a></div></div>
-        <div class="nav-dropdown"><a href="/download" data-zh="资源中心">Resources</a><div class="dropdown-menu"><a href="/tools/aql-calculator/" data-zh="📐 AQL 抽样计算器">📐 AQL Sampling Calculator</a><a href="/download#standards" data-zh="行业标准">Industry Standards</a><a href="/download#regulations" data-zh="法规汇编">Regulatory Compilations</a><a href="/download#whitepaper" data-zh="白皮书">Whitepapers</a><a href="/download#templates" data-zh="工厂评估">Factory Assessment</a><a href="/download#brochure" data-zh="检验模板">Inspection Template</a></div></div>
-        <a href="contact" data-zh="联系我们">Contact</a>
+        <div class="nav-dropdown"><a href="/about" data-zh="关于我们">About Us</a><div class="dropdown-menu"><a href="/about#company-intro" data-zh="公司简介">Company Profile</a><a href="/about#credentials" data-zh="资质与认证">Credentials &amp; Accreditations</a><a href="/about#mission" data-zh="使命与愿景">Mission &amp; Vision</a><a href="/about#team" data-zh="专业团队">Professional Team</a><a href="/about#advantage" data-zh="核心优势">Core Advantages</a></div></div>
+        <div class="nav-dropdown"><a href="/services" data-zh="服务范围">Services</a><div class="dropdown-menu"><a href="/services#inspection" data-zh="产品检验">Product Inspection</a><a href="/services#audit" data-zh="工厂审核">Factory Audit</a><a href="/services#lab" data-zh="实验室测试">Laboratory Testing</a><a href="/services#supplier" data-zh="供应商管理">Supplier Management</a><a href="/services#consulting" data-zh="技术咨询">Technical Consulting</a><a href="/services#compliance" data-zh="国际合规">International Compliance</a><a href="/services#faq" data-zh="常见问题">Frequently Asked Questions</a></div></div>
+        <div class="nav-dropdown"><a href="/insights" class="active" data-zh="洞察">Insights</a><div class="dropdown-menu"><a href="/inspection-cases/" data-zh="验货案例">Inspection Cases</a><a href="/factory-resource/" data-zh="工厂资源">Factory Resource</a><a href="/industry-updates/" data-zh="行业动态">Industry Updates</a></div></div>
+        <div class="nav-dropdown"><a href="/download" data-zh="资源中心">Resources</a><div class="dropdown-menu"><a href="/tools/aql-calculator/" data-zh="📐 AQL 抽样计算器">📐 AQL Sampling Calculator</a><a href="/tools/manday-estimator" data-zh="⏱️ 验货人天估算器">⏱️ Man-Day Estimator</a><a href="/download#standards" data-zh="行业标准">Industry Standards</a><a href="/download#regulations" data-zh="法规汇编">Regulatory Compilations</a><a href="/download#whitepaper" data-zh="白皮书">Whitepapers</a><a href="/download#templates" data-zh="工厂评估">Factory Assessment</a><a href="/download#brochure" data-zh="检验模板">Inspection Template</a></div></div>
+        <a href="/contact" data-zh="联系我们">Contact</a>
         <div class="lang-switch">
-          <a data-lang="en" class="active">EN</a>
-          <a data-lang="zh">中文</a>
+          <button data-lang="zh" class="active">中</button>
+          <button data-lang="en">EN</button>
         </div>
       </nav>
     </div>
@@ -77,7 +82,19 @@
 
   <main>
 
-  <section class="section" style="padding-top: 110px;">
+  <section class="page-header" style="background: linear-gradient(135deg, rgba(13,47,69,0.92), rgba(26,82,118,0.9)), url('/images/download-banner.jpg') center/cover no-repeat;">
+    <div class="container">
+      <h1 class="fade-in" data-zh="ANSI/ASQ Z1.4 (ISO 2859-1) AQL抽样检验标准详解：不同产品类目应用与实操指南">ANSI/ASQ Z1.4 (ISO 2859-1) AQL Sampling Inspection Standard Guide: Product Category Applications &amp; Practical Implementation</h1>
+      <p class="page-header-meta fade-in">
+        <span>2026-07-28</span> &nbsp;|&nbsp; <span data-zh="行业动态">Industry Updates</span>
+      </p>
+      <div class="breadcrumb fade-in">
+        <a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="/industry-updates/" data-zh="行业动态">Industry Updates</a> <span>&rsaquo;</span> <span data-zh="ANSI/ASQ Z1.4 抽样标准指南">ANSI/ASQ Z1.4 Sampling Guide</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container" style="max-width: 860px;">
 
       <div class="article-header fade-in">
@@ -89,13 +106,13 @@
       </div>
 
       <div class="font-size-controls" style="margin-bottom: 20px; display: flex; gap: 8px; justify-content: flex-end;">
-        <button onclick="changeFontSize('small',this)" data-zh="小" style="padding: 6px 14px; font-size: 0.85rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: #fff; cursor: pointer; transition: all 0.3s; color: var(--text-body);">S</button>
-        <button onclick="changeFontSize('medium',this)" data-zh="中" style="padding: 6px 14px; font-size: 0.85rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: #fff; cursor: pointer; transition: all 0.3s; color: var(--text-body);">M</button>
-        <button onclick="changeFontSize('large',this)" data-zh="大" style="padding: 6px 14px; font-size: 0.85rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: #fff; cursor: pointer; transition: all 0.3s; color: var(--text-body);">L</button>
+        <button onclick="changeFontSize('S',this)" data-zh="小" style="padding: 6px 14px; font-size: 0.85rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: #fff; cursor: pointer; transition: all 0.3s; color: var(--text-body);">S</button>
+        <button onclick="changeFontSize('M',this)" data-zh="中" style="padding: 6px 14px; font-size: 0.85rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: #fff; cursor: pointer; transition: all 0.3s; color: var(--text-body);">M</button>
+        <button onclick="changeFontSize('L',this)" data-zh="大" style="padding: 6px 14px; font-size: 0.85rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: #fff; cursor: pointer; transition: all 0.3s; color: var(--text-body);">L</button>
       </div>
 
       <div class="article-body fade-in" id="articleContent">
-        <p data-zh="如果你从中国采购产品，你一定听过验货员提到AQL 2.5或Level II。但ANSI/ASQ Z1.4到底是什么？为什么它如此重要？本文将用通俗易懂的语言，全面解读这一全球应用最广泛的计数抽样检验标准。">If you source products from China, you&rsquo;ve probably heard an inspector mention &ldquo;AQL 2.5&rdquo; or &ldquo;Level II.&rdquo; But what exactly is ANSI/ASQ Z1.4, and why does it matter so much? This article breaks down the world&rsquo;s most widely used acceptance sampling standard in plain, practical language.</p>
+        <p data-zh="如果你从中国采购产品，你一定听过验货员提到AQL 2.5或Level II。但ANSI/ASQ Z1.4到底是什么？为什么它如此重要？本文将用通俗易懂的语言，全面解读这一全球应用最广泛的计数抽样检验标准。">If you <a href="/services#inspection">source products from China</a>, you&rsquo;ve probably heard an inspector mention &ldquo;AQL 2.5&rdquo; or &ldquo;Level II.&rdquo; But what exactly is ANSI/ASQ Z1.4, and why does it matter so much? This article breaks down the world&rsquo;s most widely used acceptance sampling standard in plain, practical language.</p>
 
         <img src="/Upload/aql-guide/aql-table.jpg" alt="ANSI/ASQ Z1.4 AQL Sampling Inspection Standard Table" loading="lazy" onerror="this.style.display='none'" width="800" height="600">
         <p class="figure-caption" data-zh="ANSI/ASQ Z1.4 AQL抽样检验标准表（图）">Figure: ANSI/ASQ Z1.4 AQL Sampling Inspection Standard Reference Table</p>
@@ -149,7 +166,7 @@
             <tr><td data-zh="放松检验">Reduced</td><td data-zh="连续10批以上合格且质量稳定">10+ consecutive passes, stable quality</td><td data-zh="样本量减少（如100→50）">Decreases (~half)</td></tr>
           </tbody>
         </table>
-        <p data-zh="这种机制通过经济和质量的双重压力，激励供应商持续维持良好的过程质量。一旦切换至加严检验，供应商的货物被拒收的概率大幅上升——没有人愿意冒这个风险。">This mechanism creates both an economic and quality-based incentive for suppliers to maintain consistent process quality. Once switched to tightened inspection, the probability of lot rejection increases significantly — and no supplier wants to risk that.</p>
+        <p data-zh="这种机制通过经济和质量的双重压力，激励供应商持续维持良好的过程质量。一旦切换至加严检验，供应商的货物被拒收的概率大幅上升——没有人愿意冒这个风险。">This mechanism creates both an economic and quality-based incentive for <a href="/services#audit">suppliers</a> to maintain consistent process quality. Once switched to tightened inspection, the probability of lot rejection increases significantly — and no supplier wants to risk that.</p>
 
         <img src="/Upload/aql-guide/aql-flow.jpg" alt="ANSI/ASQ Z1.4 Five-Step AQL Sampling Inspection Process Flowchart" loading="lazy" onerror="this.style.display='none'" width="800" height="600">
         <p class="figure-caption" data-zh="ANSI/ASQ Z1.4 AQL抽样检验五步操作流程">Figure: ANSI/ASQ Z1.4 Sampling Inspection — The 5-Step Process</p>
@@ -194,7 +211,7 @@
             <tr><td data-zh="包装与标识">Packaging &amp; Labeling</td><td>Level I</td><td>4.0</td></tr>
           </tbody>
         </table>
-        <p data-zh="实操要点：电子产品检验通常在生产初期、中期和终期分三个阶段进行。电气安全测试（耐压、接地、绝缘等）属于100%全检项目，不适用AQL抽样——这一点常被新手忽视。">Practical note: Electronics inspections are typically conducted in three stages — pre-production, during-production (DUPRO), and pre-shipment (PSI). Electrical safety tests (hipot, grounding, insulation) require 100% testing and are <strong>not</strong> subject to AQL sampling — a point often overlooked by first-time importers.</p>
+        <p data-zh="实操要点：电子产品检验通常在生产初期、中期和终期分三个阶段进行。电气安全测试（耐压、接地、绝缘等）属于100%全检项目，不适用AQL抽样——这一点常被新手忽视。">Practical note: Electronics inspections are typically conducted in three stages — pre-production, during-production (DUPRO), and <a href="/services/pre-shipment-inspection">pre-shipment</a> (PSI). Electrical safety tests (hipot, grounding, insulation) require 100% testing and are <strong>not</strong> subject to AQL sampling — a point often overlooked by first-time importers.</p>
 
         <h3 data-zh="4.3 玩具与婴童用品">4.3 Toys &amp; Children&rsquo;s Products</h3>
         <table>
@@ -206,7 +223,7 @@
             <tr><td data-zh="外观与包装">Appearance &amp; Packaging</td><td>Level II</td><td>Minor 4.0</td></tr>
           </tbody>
         </table>
-        <p data-zh="实操要点：玩具安全测试需遵循EN71、ASTM F963等国际标准。AQL抽样仅适用于外观和一般性能检验。安全相关的化学和物理测试需要实验室专项检测——不能仅依赖AQL抽样来"验收"安全性。">Practical note: Toy safety testing must follow EN71, ASTM F963, and other international standards. AQL sampling applies only to visual and general performance checks. Safety-related chemical and physical testing requires dedicated lab analysis — you cannot rely solely on AQL sampling to &ldquo;accept&rdquo; safety compliance.</p>
+        <p data-zh="实操要点：玩具安全测试需遵循EN71、ASTM F963等国际标准。AQL抽样仅适用于外观和一般性能检验。安全相关的化学和物理测试需要实验室专项检测——不能仅依赖AQL抽样来"验收"安全性。">Practical note: Toy safety testing must follow EN71, ASTM F963, and other international standards. AQL sampling applies only to visual and general performance checks. Safety-related chemical and physical testing requires dedicated <a href="/services#lab">lab analysis</a> — you cannot rely solely on AQL sampling to &ldquo;accept&rdquo; safety compliance.</p>
 
         <h3 data-zh="4.4 五金与机械零部件">4.4 Hardware &amp; Mechanical Parts</h3>
         <table>
@@ -256,7 +273,7 @@
 
         <h2 data-zh="总结">Conclusion</h2>
         <p data-zh="ANSI/ASQ Z1.4（ISO 2859-1）是全球最成熟、应用最广泛的计数抽样检验标准。它通过科学的样本量设计、灵活的严格度切换机制和清晰的AQL体系，帮助全球买家以合理的成本控制产品质量风险。">ANSI/ASQ Z1.4 (ISO 2859-1) is the most mature and widely applied acceptance sampling standard in the world. Through scientifically designed sample sizes, flexible severity switching, and a clear AQL framework, it helps global buyers control product quality risks at a reasonable cost.</p>
-        <p><span data-zh="对于从中国采购的进口商而言，掌握这一标准的核心逻辑——在合同中明确AQL要求、在验货中准确判定结果、在与供应商博弈中占据主动——不是可选项，而是基本功。">For importers sourcing from China, understanding the core logic of this standard — defining AQL in contracts, making accurate acceptance decisions during </span><a href="/services/">inspection</a><span>, and maintaining leverage in supplier negotiations — is not optional; it&rsquo;s fundamental.</span></p>
+        <p><span data-zh="对于从中国采购的进口商而言，掌握这一标准的核心逻辑——在合同中明确AQL要求、在验货中准确判定结果、在与供应商博弈中占据主动——不是可选项，而是基本功。">For importers </span><a href="/services#inspection"><span data-zh="从中国采购">sourcing from China</span></a><span>, understanding the core logic of this standard — defining AQL in contracts, making accurate acceptance decisions during </span><a href="/services/">inspection</a><span>, and maintaining leverage in supplier negotiations — is not optional; it&rsquo;s fundamental.</span></p>
         <p><span data-zh="有关于AQL抽样标准的具体问题？欢迎联系CNQ的技术团队——我们处理过数千批不同产品的AQL抽样检验，乐于分享实际经验。">Have specific questions about AQL sampling standards? Feel free to contact our technical team at </span><a href="/contact/">CNQ</a><span> — we&rsquo;ve conducted thousands of AQL-based sampling inspections across virtually every product category.</span></p>
       </div>
 
@@ -281,7 +298,14 @@
     </div>
   </section>
 
-  
+  <section class="cta">
+    <div class="container fade-in">
+      <h2 data-zh="让 CNQ 把标准变成行动">Let CNQ Turn Standards Into Action</h2>
+      <p><span data-zh="掌握 AQL 抽样标准是一回事，在工厂现场执行——用正确的检验水平、正确的样本量、正确的缺陷分类——是另一回事。CNQ 验货员每天运用 ANSI/ASQ Z1.4，确保您的检验结果统计上有效、合同上可执行。">Knowing AQL sampling standards is one thing. Executing them on the factory floor — with the right level, right sample size, and right defect classification — is another. </span><a href="/services#inspection"><span data-zh="CNQ 验货员">CNQ inspectors</span></a><span data-zh=" 每天运用 ANSI/ASQ Z1.4，确保您的检验结果统计上有效、合同上可执行。"> apply ANSI/ASQ Z1.4 every day, ensuring your inspection results are statistically valid and contractually enforceable.</span></p>
+      <a href="/contact" class="btn btn-white" data-zh="获取您的 CNQ 专家">Get Your CNQ Experts</a>
+    </div>
+  </section>
+
   </main>
 
   <footer class="footer">
@@ -293,22 +317,22 @@
         </div>
         <div class="footer-col">
           <div class="footer-heading" data-zh="快速链接">Quick Links</div>
-          <a href="about" data-zh="关于我们">About Us</a>
-          <a href="services" data-zh="服务范围">Services</a>
-          <a href="insights" data-zh="洞察">Insights</a>
-          <a href="download" data-zh="资源中心">Resources</a>
+          <a href="/about" data-zh="关于我们">About Us</a>
+          <a href="/services" data-zh="服务范围">Services</a>
+          <a href="/insights" data-zh="洞察">Insights</a>
+          <a href="/download" data-zh="资源中心">Resources</a>
         </div>
         <div class="footer-col">
           <div class="footer-heading" data-zh="核心服务">Core Services</div>
-          <a href="services#inspection" data-zh="产品检验">Product Inspection</a>
-          <a href="services#audit" data-zh="工厂审核">Factory Audit</a>
-          <a href="services#lab" data-zh="实验室测试">Lab Testing</a>
-          <a href="services#supplier" data-zh="供应商管理">Supplier Management</a>
+          <a href="/services#inspection" data-zh="产品检验">Product Inspection</a>
+          <a href="/services#audit" data-zh="工厂审核">Factory Audit</a>
+          <a href="/services#lab" data-zh="实验室测试">Lab Testing</a>
+          <a href="/services#supplier" data-zh="供应商管理">Supplier Management</a>
         </div>
         <div class="footer-col">
           <div class="footer-heading" data-zh="联系我们">Contact Us</div>
-          <a href="contact" data-zh="在线留言">Online Message</a>
-          <a href="contact" data-zh="联系方式">Contact Info</a>
+          <a href="/contact" data-zh="在线留言">Online Message</a>
+          <a href="/contact" data-zh="联系方式">Contact Info</a>
         </div>
       </div>
       <div class="footer-bottom">
