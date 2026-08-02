@@ -50,7 +50,6 @@
   }
   </script>
   <style>
-    /* Man-Day Estimator specific styles */
     .manday-section { padding: 40px 0; }
     .manday-section .container { max-width: 860px; }
     .manday-section.alt { background: var(--bg-light, #f8fafc); }
@@ -292,7 +291,6 @@
 (function() {
   'use strict';
 
-  // AQL 数据表
   const lotRanges = [
     [2,8],[9,15],[16,25],[26,50],[51,90],[91,150],[151,280],[281,500],[501,1200],[1201,3200],[3201,10000],[10001,35000],[35001,150000],[150001,500000],[500001,Infinity]
   ];
@@ -301,18 +299,18 @@
     [0,0,0,1,1,1,2,2,2,3,3,3,4,4,4],
     [0,0,1,1,2,2,3,4,4,5,5,6,6,7,7],
     [0,0,1,2,2,3,4,5,6,7,7,8,9,10,11],
-    [0,0,1,2,2,3,4,5,6,7,8,8,9,10,11],
-    [0,1,2,3,4,5,6,7,8,9,10,11,12,13,13],
-    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,14]
+    [0,0,1,2,2,3,4,5,6,7,8,9,10,11,12],
+    [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+    [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
   ];
   const sampleSizes = [2,3,5,8,13,20,32,50,80,125,200,315,500,800,1250,2000];
   const capacity = [
-    [4, 315], // 0: General hardgoods
-    [4, 200], // 1: Simple Softlines
-    [4, 125], // 2: Simple electric/other
-    [3, 125], // 3: Softlines
-    [3, 80],  // 4: Electrical appliance
-    [3, 50]   // 5: Complex electrical
+    [4, 315],
+    [4, 200],
+    [4, 125],
+    [3, 125],
+    [3, 80],
+    [3, 50]
   ];
 
   function getLetterIndex(lotSize, levelIdx) {
@@ -363,7 +361,6 @@
     setTimeout(function() { this.disabled = false; }.bind(this), 300);
   });
 
-  // Initial calculation
   calculate();
 })();
 </script>
