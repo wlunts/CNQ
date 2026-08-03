@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /downloads/
 
 Sitemap: https://www.chinaqualityservice.com/sitemap.xml
