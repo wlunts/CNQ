@@ -46,7 +46,7 @@ Write-Host "`n  [CHECK] Sitemap vs actual files:" -ForegroundColor Cyan
 $sitemap = [xml](Get-Content "$Root\sitemap.xml" -Raw)
 $sitemapMap = @{}  # normalized -> { orig, lastmod }
 foreach ($url in $sitemap.urlset.url) {
-    $orig = $url.loc -replace 'https://www\.chinaqualityservice\.com/', ''
+    $orig = $url.loc -replace 'https://www\.cn-q\.com/', ''
     if ($orig -eq '') { $orig = '/' }
     $norm = $orig.TrimEnd('/')
     if ($norm -eq '') { $norm = '/' }
