@@ -6,12 +6,12 @@
   <title data-zh="免费AQL抽样计算器 - ANSI/ASQ Z1.4 验货抽样标准 | 厦门亚商">Online AQL Sampling Calculator - ANSI/ASQ Z1.4 Inspection | China Quality Service</title>
   <meta name="description" data-zh="使用CNQ的免费AQL抽样计算器，按ANSI/ASQ Z1.4标准快速计算Major/Minor AQL的样本量、Ac和Re。支持URL参数预设与双语切换。" content="Use CNQ's online AQL sampling calculator to quickly compute Major/Minor AQL sample sizes, acceptance (Ac) and rejection (Re) numbers under ANSI/ASQ Z1.4. URL presets and bilingual.">
   <meta name="keywords" content="AQL calculator, AQL sampling plan, ANSI ASQ Z1.4, product inspection China, quality control sampling, acceptance sampling, major AQL, minor AQL, factory inspection">
-  <link rel="canonical" href="https://www.cn-q.com/tools/aql-calculator/">
+  <link rel="canonical" href="https://www.chinaqualityservice.com/tools/aql-calculator/">
   <meta property="og:title" content="Online AQL Sampling Calculator - ANSI/ASQ Z1.4 | China Quality Service">
   <meta property="og:description" content="Compute Major/Minor AQL sample sizes, acceptance and rejection numbers in seconds. Based on ANSI/ASQ Z1.4 single normal sampling.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.cn-q.com/tools/aql-calculator/">
-  <meta property="og:image" content="https://www.cn-q.com/images/og-default.jpg">
+  <meta property="og:url" content="https://www.chinaqualityservice.com/tools/aql-calculator/">
+  <meta property="og:image" content="https://www.chinaqualityservice.com/images/og-default.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="alternate icon" href="/favicon.png">
@@ -21,7 +21,7 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "AQL Sampling Calculator",
-    "url": "https://www.cn-q.com/tools/aql-calculator/",
+    "url": "https://www.chinaqualityservice.com/tools/aql-calculator/",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Any",
     "offers": {
@@ -34,7 +34,7 @@
       "@type": "Organization",
       "name": "China Quality Service",
       "alternateName": "CNQ",
-      "url": "https://www.cn-q.com"
+      "url": "https://www.chinaqualityservice.com"
     }
   }
   </script>
@@ -43,9 +43,9 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cn-q.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.cn-q.com/download" },
-      { "@type": "ListItem", "position": 3, "name": "AQL Calculator", "item": "https://www.cn-q.com/tools/aql-calculator/" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.chinaqualityservice.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.chinaqualityservice.com/download" },
+      { "@type": "ListItem", "position": 3, "name": "AQL Calculator", "item": "https://www.chinaqualityservice.com/tools/aql-calculator/" }
     ]
   }
   </script>
@@ -114,7 +114,7 @@
   </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.cn-q.com/#website","name":"China Quality Service","url":"https://www.cn-q.com"},{"@type":"Organization","@id":"https://www.cn-q.com/#organization","name":"China Quality Service","url":"https://www.cn-q.com"}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.chinaqualityservice.com/#website","name":"China Quality Service","url":"https://www.chinaqualityservice.com"},{"@type":"Organization","@id":"https://www.chinaqualityservice.com/#organization","name":"China Quality Service","url":"https://www.chinaqualityservice.com"}]}
 </script>
 </head>
 <body>
@@ -301,7 +301,7 @@
           <h2 data-zh="嵌入此工具">Embed This Tool</h2>
           <p data-zh="将以下代码复制到你的网页或博客中，访客即可直接计算AQL抽样方案。">Copy the code below to embed this AQL calculator directly on your website or blog.</p>
           <div class="embed-wrap">
-            <input id="embedCode" type="text" readonly value="&lt;iframe src=&quot;https://www.cn-q.com/tools/aql-calculator/?lot=1201-3200&amp;level=II&amp;major=2.5&amp;minor=4.0&quot; width=&quot;100%&quot; height=&quot;720&quot; frameborder=&quot;0&quot; title=&quot;AQL Sampling Calculator&quot;&gt;&lt;/iframe&gt;">
+            <input id="embedCode" type="text" readonly value="&lt;iframe src=&quot;https://www.chinaqualityservice.com/tools/aql-calculator/?lot=1201-3200&amp;level=II&amp;major=2.5&amp;minor=4.0&quot; width=&quot;100%&quot; height=&quot;720&quot; frameborder=&quot;0&quot; title=&quot;AQL Sampling Calculator&quot;&gt;&lt;/iframe&gt;">
             <button id="copyEmbedBtn" type="button" data-zh="复制">Copy</button>
           </div>
         </div>
@@ -685,7 +685,7 @@ const acRe = [
     const levelMap = {0:'S-1',1:'S-2',2:'S-3',3:'S-4',4:'I',5:'II',6:'III'};
     const major = document.getElementById('majorAql').value;
     const minor = document.getElementById('minorAql').value;
-    const url = 'https://www.cn-q.com/tools/aql-calculator/?lot=' + encodeURIComponent(lotLabels[lotIdx]) +
+    const url = 'https://www.chinaqualityservice.com/tools/aql-calculator/?lot=' + encodeURIComponent(lotLabels[lotIdx]) +
                 '&level=' + levelMap[levelIdx] + '&major=' + major + '&minor=' + minor;
     document.getElementById('embedCode').value = '<iframe src="' + url + '" width="100%" height="720" frameborder="0" title="AQL Sampling Calculator"></iframe>';
   }
