@@ -1,15 +1,7 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "qualityservice",
   "compatibility_date": "2026-08-04",
   "assets": {
-    "directory": ".",
-    "ignore": [
-      ".git/**",
-      "node_modules/**",
-      ".*",
-      "wrangler.jsonc",
-      "README.md"
-    ]
+    "directory": "."
   }
 }
