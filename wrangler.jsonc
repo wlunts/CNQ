@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "qualityservice",
+  "compatibility_date": "2026-08-04",
+  "assets": {
+    "directory": ".",
+    "not_found": "404.html"
+  },
+  "upload": {
+    "exclude": [
+      ".git/**",
+      "node_modules/**"
+    ]
+  }
+}
