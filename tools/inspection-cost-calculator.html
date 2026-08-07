@@ -37,7 +37,8 @@
       "name": "China Quality Service",
       "alternateName": "CNQ",
       "url": "https://www.chinaqualityservice.com"
-    }
+    },
+    "isPartOf": { "@id": "https://www.chinaqualityservice.com/#website" }
   }
   </script>
   <script type="application/ld+json">
@@ -147,12 +148,14 @@
           <div class="manday-field">
             <label for="productCategory" data-zh="产品品类">Product Category</label>
             <select id="productCategory" aria-label="Product category">
-              <option value="0" data-zh="普通杂货（无电气）">General hardgoods (no electric)</option>
-              <option value="1" data-zh="简单纺织品">Simple Softlines</option>
-              <option value="2" data-zh="简单电气/其他杂货">Simple electric / other hardgoods</option>
-              <option value="3" data-zh="纺织品">Softlines</option>
-              <option value="4" data-zh="电器产品">Electrical appliance</option>
-              <option value="5" data-zh="复杂电气产品">Complex electrical</option>
+              <option value="0" data-zh="日用杂货及硬货">General Merchandise &amp; Hardgoods</option>
+              <option value="1" data-zh="玩具及游戏">Toys &amp; Games</option>
+              <option value="2" data-zh="简单纺织品">Simple Softlines</option>
+              <option value="3" data-zh="家具">Furniture</option>
+              <option value="4" data-zh="小电器及其他硬货">Small Electrical / other hardgoods</option>
+              <option value="5" data-zh="服装及纺织品">Garments &amp; Softlines</option>
+              <option value="6" data-zh="电器产品">Electrical appliance</option>
+              <option value="7" data-zh="复杂电器">Complex electricals</option>
             </select>
           </div>
           <div class="manday-field">
@@ -225,18 +228,18 @@
   <section class="manday-section alt">
     <div class="container manday-seo-text">
       <h2 data-zh="中国产品检验费用是多少？">How Much Does Product Inspection Cost in China?</h2>
-      <p><span data-zh="中国产品检验的费用通常按人天（Man-Day）计算。1 人天 = 1 名专业验货员在工厂现场工作 1 天（通常 8 小时），CNQ 标准费率为 $179 USD/人天。检验所需人天数取决于三个关键因素：产品品类（决定了">The cost of product inspection in China is typically calculated in man-days — 1 man-day = 1 professional inspector working on-site for 1 day (typically 8 hours) at CNQ's standard rate of $179 USD/man-day. The number of man-days — and therefore your total inspection cost — depends on three key factors: product category (which determines </span><a href="/services#inspection"><span data-zh="验货员的日产能">daily inspection throughput</span></a><span data-zh="），型号数量（款数越多，切换耗时越长）和">), number of item types (more models mean more setup time), and </span><span data-zh="AQL 样本量（抽得越多，所需时间越多）。简单杂货每人天 $179 可检验 315 件，而复杂电气产品仅 50 件 — 品类选择直接影响总成本。"> (more units to inspect means more time and higher cost). A simple hardgoods order costs as little as $179/man-day for 315 pcs, while complex electrical items may require multiple man-days — your product category directly drives the total inspection cost.</span></p>
+      <p><span data-zh="中国产品检验的费用通常按人天（Man-Day）计算。1 人天 = 1 名专业验货员在工厂现场工作 1 天（通常 8 小时），CNQ 标准费率为 $188 USD/人天。检验所需人天数取决于三个关键因素：产品品类（决定了">The cost of product inspection in China is typically calculated in man-days — 1 man-day = 1 professional inspector working on-site for 1 day (typically 8 hours) at CNQ's standard rate of $188 USD/man-day. The number of man-days — and therefore your total inspection cost — depends on three key factors: product category (which determines </span><a href="/services#inspection"><span data-zh="验货员的日产能">daily inspection throughput</span></a><span data-zh="），型号数量（款数越多，切换耗时越长）和">), number of item types (more models mean more setup time), and </span><span data-zh="AQL 样本量（抽得越多，所需时间越多）。简单杂货每人天 $188 可检验 315 件，而复杂电气产品仅 50 件 — 品类选择直接影响总成本。"> (more units to inspect means more time and higher cost). A simple hardgoods order costs as little as $188/man-day for 315 pcs, while complex electrical items may require multiple man-days — your product category directly drives the total inspection cost.</span></p>
 
       <h2 data-zh="如何使用这个检验成本计算器">How to Calculate Your China Inspection Cost</h2>
       <ul>
-        <li data-zh="选择产品品类：不同品类对应不同检验速度与成本。普通杂货 $179/天 可检 315 件，复杂电气 $179/天 仅检 50 件。">Select the <strong>Product Category</strong> — each category has a different inspection pace and cost. General hardgoods: $179/day for up to 315 pcs. Complex electrical: $179/day for only 50 pcs.</li>
+        <li data-zh="选择产品品类：不同品类对应不同检验速度与成本。普通杂货 $188/天 可检 315 件，复杂电气 $188/天 仅检 50 件。">Select the <strong>Product Category</strong> — each category has a different inspection pace and cost. General hardgoods: $188/day for up to 315 pcs. Complex electrical: $188/day for only 50 pcs.</li>
         <li data-zh="输入型号数量：多个SKU需要检验员在不同产品间切换，增加检验时间，从而增加成本。">Enter the <strong>Number of Item Types</strong> — multiple SKUs require switching between products, which increases inspection time and total cost.</li>
         <li data-zh="输入总批量：即本次检验的订单总数量。批量越大，AQL样本量越大，检验成本越高。">Enter the <strong>Total Lot Size</strong> — larger lots increase your AQL sample size and inspection cost.</li>
         <li><span data-zh="选择检验水平：默认 General II 适用于大多数消费品。特殊等级用于极小样本场景，可降低样本量和检验成本。">Choose the <strong>Inspection Level</strong> — General II is the default for most consumer goods. Special levels reduce sample sizes and lower inspection cost for low-risk scenarios.</span></li>
       </ul>
 
       <h2 data-zh="为什么下单前要提前算清检验成本？">Why Know Your Inspection Cost Before You Order?</h2>
-      <p><span data-zh="多数进口商在收到第三方检验公司报价时才第一次了解检验费用。提前计算检验成本可以帮你：（1）在预算阶段准确锁定品控支出，避免超支；（2）与供应商谈判时将检验成本纳入总成本考量；（3）避免因低估费用导致检验不充分。CNQ 的成本估算基于17年实际">Most importers only discover their true product inspection cost when the quote arrives from a third-party inspection company. Calculating your inspection cost upfront helps you: (1) lock in QC budget before production starts; (2) factor inspection pricing into supplier negotiations; (3) avoid cutting corners due to surprise costs. CNQ's cost estimates are built on 17 years of actual </span><span data-zh="工厂检验数据 — 不是理论模型，而是真实产能基准。$179/人天的费率直接映射到各类产品的实际检验速度，算出的成本可真实反映市场行情。"> — not theoretical models, but real productivity benchmarks. The $179/man-day rate maps directly to actual inspection speeds across product categories, giving you a true market-based cost estimate.</span></p>
+      <p><span data-zh="多数进口商在收到第三方检验公司报价时才第一次了解检验费用。提前计算检验成本可以帮你：（1）在预算阶段准确锁定品控支出，避免超支；（2）与供应商谈判时将检验成本纳入总成本考量；（3）避免因低估费用导致检验不充分。CNQ 的成本估算基于17年实际">Most importers only discover their true product inspection cost when the quote arrives from a third-party inspection company. Calculating your inspection cost upfront helps you: (1) lock in QC budget before production starts; (2) factor inspection pricing into supplier negotiations; (3) avoid cutting corners due to surprise costs. CNQ's cost estimates are built on 17 years of actual </span><span data-zh="工厂检验数据 — 不是理论模型，而是真实产能基准。$188/人天的费率直接映射到各类产品的实际检验速度，算出的成本可真实反映市场行情。"> — not theoretical models, but real productivity benchmarks. The $188/man-day rate maps directly to actual inspection speeds across product categories, giving you a true market-based cost estimate.</span></p>
 
 <h2 data-zh="影响中国产品检验费用的关键因素">What Drives Your Product Inspection Cost in China?</h2>
 
@@ -252,10 +255,10 @@
   <li><strong>Special Testing</strong> — chemical analysis, functional tests, or safety checks add inspection time and cost. <span data-zh="特殊测试（化学分析、功能测试等）增加时间和费用。">Special testing adds time and cost.</span></li>
 </ul>
 
-<h2 data-zh="不同品类检验费用对比（$179/人天基准）">Product Inspection Cost by Category — Real Numbers</h2>
+<h2 data-zh="不同品类检验费用对比（$188/人天基准）">Product Inspection Cost by Category — Real Numbers</h2>
 
-<p data-zh="以下数据基于CNQ 17年现场检验的实际产能统计，以 $179/人天的费率计算。你的具体费用请使用上方计算器自动生成。">
-  Based on CNQ's 17-year on-site productivity data at <strong>$179/man-day</strong>. Your exact cost will be calculated by the tool above.
+<p data-zh="以下数据基于CNQ 17年现场检验的实际产能统计，以 $188/人天的费率计算。你的具体费用请使用上方计算器自动生成。">
+  Based on CNQ's 17-year on-site productivity data at <strong>$188/man-day</strong>. Your exact cost will be calculated by the tool above.
 </p>
 
 <table>
@@ -268,24 +271,34 @@
   </thead>
   <tbody>
     <tr>
-      <td data-zh="普通杂货（无电气）">General hardgoods (no electric)</td>
+      <td data-zh="日用杂货及硬货">General Merchandise &amp; Hardgoods</td>
       <td>315</td>
-      <td>$179 (1 man-day)</td>
+      <td>$188 (1 man-day)</td>
+    </tr>
+    <tr>
+      <td data-zh="玩具及游戏">Toys &amp; Games</td>
+      <td>315</td>
+      <td>$188 (1 man-day)</td>
     </tr>
     <tr>
       <td data-zh="简单纺织品">Simple Softlines</td>
       <td>200</td>
-      <td>$179 (1 man-day)</td>
+      <td>$188 (1 man-day)</td>
     </tr>
     <tr>
-      <td data-zh="简单电气/其他杂货">Simple electric / other hardgoods</td>
+      <td data-zh="家具">Furniture</td>
       <td>125</td>
-      <td>$179 (1 man-day)</td>
+      <td>$188 (1 man-day)</td>
     </tr>
     <tr>
-      <td data-zh="纺织品">Softlines</td>
+      <td data-zh="小电器及其他硬货">Small Electrical / other hardgoods</td>
       <td>125</td>
-      <td>$179 (1 man-day)</td>
+      <td>$188 (1 man-day)</td>
+    </tr>
+    <tr>
+      <td data-zh="服装及纺织品">Garments &amp; Softlines</td>
+      <td>125</td>
+      <td>$188 (1 man-day)</td>
     </tr>
     <tr>
       <td data-zh="电器产品">Electrical appliance</td>
@@ -293,7 +306,7 @@
       <td>$358 (2 man-days)</td>
     </tr>
     <tr>
-      <td data-zh="复杂电气产品">Complex electrical</td>
+      <td data-zh="复杂电器">Complex electricals</td>
       <td>50</td>
       <td>$358 (2 man-days)</td>
     </tr>
@@ -371,12 +384,14 @@
   ];
   const sampleSizes = [2,3,5,8,13,20,32,50,80,125,200,315,500,800,1250,2000];
   const capacity = [
-    [4, 315],
-    [4, 200],
-    [4, 125],
-    [3, 125],
-    [3, 80],
-    [3, 50]
+    [4, 315],  // 0: General Merchandise & Hardgoods
+    [4, 315],  // 1: Toys & Games
+    [4, 200],  // 2: Simple Softlines
+    [3, 125],  // 3: Furniture
+    [4, 125],  // 4: Small Electrical / other hardgoods
+    [3, 125],  // 5: Garments & Softlines
+    [3, 80],   // 6: Electrical appliance
+    [3, 50]    // 7: Complex electricals
   ];
 
   function getLetterIndex(lotSize, levelIdx) {
@@ -403,7 +418,7 @@
     const modelDays = Math.ceil(models / maxModels);
     const qtyDays = Math.ceil(sampleSize / maxPcs);
     const totalDays = Math.max(modelDays, qtyDays, 1);
-    const cost = totalDays * 179;
+    const cost = totalDays * 188;
 
     document.getElementById('sampleSize').textContent = sampleSize;
     document.getElementById('manDays').textContent = totalDays;
