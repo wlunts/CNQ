@@ -52,30 +52,40 @@
     </nav>
   </div>
 </header>
+<div class="menu-overlay"></div>
 
-<main>
 
-<!-- ========================= BREADCRUMB ========================= -->
-<div class="container" style="max-width: 860px; padding-top: 12px; padding-bottom: 0;">
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <a href="/" data-zh="首页">Home</a> <span>›</span>
-    <a href="/services" data-zh="服务">Services</a> <span>›</span>
-    <span data-zh="中国工厂审核">China Factory Audit</span>
-  </nav>
-</div>
-
-<!-- ========================= ARTICLE BODY ========================= -->
-<section class="section">
-  <div class="container" style="max-width: 860px;">
-    <div class="font-size-controls" style="display:flex;gap:8px;justify-content:flex-end;margin-bottom:12px;">
-      <button onclick="document.querySelector('.article-body').style.fontSize='16px'" style="font-size:14px;padding:4px 10px;border:1px solid #ccc;background:#fff;cursor:pointer;" data-zh="小">A</button>
-      <button onclick="document.querySelector('.article-body').style.fontSize='18px'" style="font-size:16px;padding:4px 10px;border:1px solid #ccc;background:#fff;cursor:pointer;" data-zh="中">A</button>
-      <button onclick="document.querySelector('.article-body').style.fontSize='20px'" style="font-size:18px;padding:4px 10px;border:1px solid #ccc;background:#fff;cursor:pointer;" data-zh="大">A</button>
+<!-- ========================= HERO BANNER ========================= -->
+<section class="page-header" style="background: linear-gradient(135deg, rgba(13,47,69,0.92), rgba(26,82,118,0.88)), url('/images/service-banner.jpg') center/cover no-repeat;">
+  <div class="container">
+    <div class="breadcrumb fade-in">
+      <a href="/" data-zh="首页">Home</a> <span>›</span>
+      <a href="/services" data-zh="服务范围">Services</a> <span>›</span>
+      <span data-zh="工厂审核">China Factory Audit</span>
     </div>
+    <h1 class="fade-in" data-zh="中国工厂审核：超越宣传册的实地验证">China Factory Audit — Go Beyond the Factory Brochure</h1>
+    <p class="fade-in" style="max-width:720px;margin:12px auto 0;font-size:1.15rem;color:rgba(255,255,255,0.85);line-height:1.8;" data-zh="一次实地审核不是走马观花。我们按14项加权标准评估供应商——涵盖质量、交付、价格、服务和合规——让你签合同之前就知道在和谁打交道。">
+    A factory visit disguised as an audit won't protect your supply chain. Our on-site assessments evaluate 14 weighted criteria across Quality, Delivery, Price, Service, and Compliance — so you know exactly who you're working with before you sign the contract.
+    </p>
+  </div>
+</section>
 
-    <div class="article-body">
 
-    <h1 data-zh="中国工厂审核：超越宣传册的实地验证">China Factory Audit — Go Beyond the Factory Brochure</h1>
+<!-- ========================= CONTENT ========================= -->
+<main id="main-content">
+  <section class="section">
+    <div class="container" style="max-width: 860px;">
+
+      <!-- Font Size Controls -->
+      <div class="font-size-controls">
+        <span data-zh="字号: ">Font: </span>
+        <button onclick="changeFontSize('small',this)" data-zh="小">S</button>
+        <button onclick="changeFontSize('medium',this)" class="active">M</button>
+        <button onclick="changeFontSize('large',this)" data-zh="大">L</button>
+      </div>
+
+      <!-- Article Body -->
+      <div class="article-body">
 
     <!-- ========== OPENING: PPT vs REALITY ========== -->
     <h2 data-zh="工厂PPT里看不到的真相">What the Factory Brochure Won't Show You</h2>
@@ -274,7 +284,7 @@
     </ul>
 
     <!-- ========== SCORING ========== -->
-    <h2 data-zh="工厂审核评分体系">Factory Audit Scoring Framework</h2>
+    <h2 data-zh="工厂审核评分体系">Factory Audit Checklist/Scoring Framework</h2>
 
     <p data-zh="我们的审核对每个维度进行加权评分，汇总为总分100分的整体评估：">Each dimension is scored with a weighted value, producing a comprehensive evaluation out of a total 100 points:</p>
 
@@ -377,7 +387,7 @@
 
     <p data-zh="我们提供合理且经济高效的解决方案来规避社会责任合规风险。启动主动的可持续采购策略对您和您的客户都具有长期价值。我们的审核员深入现场，通过多维度调查方法——包括保密员工访谈、记录分析、以及对照全球公认合规基准的全方位审核——帮助客户了解他们即将合作的工厂类型，以及该工厂在社会责任方面是否值得信赖。这一切都是为了保护您的品牌形象。">We provide a rational, cost-effective solution to avoid social compliance issues. Starting a proactive sustainable procurement approach is valuable for both you and your clients. Our native-language auditors use a multi-pronged investigative approach — confidential staff interviews, records analysis, and comprehensive on-site evaluation against globally recognized benchmarks — to determine what kind of factory you are about to do business with, and whether it is socially accountable. All of this protects your brand and company image.</p>
 
-    <p data-zh="社会责任审核根据SA8000标准重点检查以下领域：">Social compliance audits focus on the following areas per SA8000 standards:</p>
+    <p data-zh="社会责任审核根据SA8000标准重点检查以下领域：">Social compliance audits focus on the following checklist per SA8000 standards:</p>
 
     <ul>
       <li data-zh="健康与安全">Health and Safety</li>
@@ -423,9 +433,9 @@
 <!-- ========== CTA SECTION ========== -->
 <section class="cta">
   <div class="container" style="max-width: 860px;">
-    <h2 data-zh="在您下订单之前，先看清工厂的底牌">See the Factory Behind the Brochure — Before You Commit</h2>
-    <p data-zh="CNQ在中国主要制造中心驻有经验丰富的审核员。一次工厂审核从$199起——远低于一个不合格供应商可能带给您的损失。无论是QMS质量体系审核、社会责任审核还是C-TPAT安全审核，我们帮您在签约前做出明智决策。">CNQ stations experienced auditors across China's major manufacturing hubs. A factory audit starts at $199 — a fraction of what one unqualified supplier can cost you in defects, delays, and brand damage. Whether you need a QMS audit, social compliance assessment, or C-TPAT security verification, we help you make informed decisions before you sign the contract. <a href="/tools/inspection-cost-calculator">Estimate your project cost</a> or reach out directly.</p>
-    <a href="/contact" class="btn btn-primary" data-zh="预约一次工厂审核">Book a Factory Audit</a>
+    <h2 data-zh="在您下订单之前，先看清工厂的底牌">Your Factory Audit, Experts Handle</h2>
+    <p data-zh="CNQ在中国主要制造中心驻有经验丰富的审核员。一次工厂审核从$199起——远低于一个不合格供应商可能带给您的损失。无论是QMS质量体系审核、社会责任审核还是C-TPAT安全审核，我们帮您在签约前做出明智决策。">Whether QMS audit, social compliance assessment, or C-TPAT security verification, CNQ experts help you make informed decisions.</p>
+    <a href="/contact" class="btn btn-primary" data-zh="预约一次工厂审核">Get Your Experts</a>
   </div>
 </section>
 
@@ -433,41 +443,37 @@
 
 <!-- ========================= FOOTER ========================= -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4 data-zh="快速链接">Quick Links</h4>
-        <a href="/about" data-zh="关于我们">About Us</a>
-        <a href="/services" data-zh="服务范围">Services</a>
-        <a href="/insights" data-zh="洞察">Insights</a>
-        <a href="/download" data-zh="资源中心">Resources</a>
-        <a href="/contact" data-zh="联系我们">Contact</a>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-title">China Quality Service</div>
+          <p data-zh="专业的第三方品控咨询服务商，致力于为全球客户提供独立、客观的品质检验与咨询服务，确保您的产品符合国际质量标准。">Expert quality control services in China — independent, objective product inspection, factory audit, and supply chain consulting to safeguard your imports.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading" data-zh="快速链接">Quick Links</div>
+          <a href="/about" data-zh="关于我们">About Us</a>
+          <a href="/services" data-zh="服务范围">Services</a>
+          <a href="/insights" data-zh="洞察">Insights</a>
+          <a href="/download" data-zh="资源中心">Resources</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading" data-zh="核心服务">Core Services</div>
+              <a href="/services#inspection" data-zh="产品检验">Product Inspection</a>
+              <a href="/services#audit" data-zh="工厂审核">Factory Audit</a>
+              <a href="/services#lab" data-zh="实验室测试">Lab Testing</a>
+              <a href="/services#supplier" data-zh="供应商管理">Supplier Management</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading" data-zh="联系我们">Contact Us</div>
+          <a href="/contact" data-zh="在线留言">Online Message</a>
+          <a href="/contact" data-zh="联系方式">Contact Info</a>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4 data-zh="核心服务">Core Services</h4>
-        <a href="/services#inspection" data-zh="产品检验">Product Inspection</a>
-        <a href="/services#audit" data-zh="工厂审核">Factory Audit</a>
-        <a href="/services#lab" data-zh="实验室测试">Lab Testing</a>
-        <a href="/services#supplier" data-zh="供应商管理">Supplier Management</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-zh="资源">Resources</h4>
-        <a href="/tools/aql-calculator/" data-zh="AQL抽样计算器">AQL Sampling Calculator</a>
-        <a href="/tools/inspection-cost-calculator" data-zh="验货成本估算器">⏱️ Inspection Cost Calculator</a>
-        <a href="/download#standards" data-zh="行业标准">Industry Standards</a>
-        <a href="/download#regulations" data-zh="法规汇编">Regulatory Compilations</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-zh="联系我们">Contact</h4>
-        <a href="/contact" data-zh="在线留言">Online Message</a>
-        <a href="/contact" data-zh="联系方式">Contact Info</a>
+      <div class="footer-bottom">
+        <p>Copyright &copy; 2026 China Quality Service All Rights Reserved.</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 China Quality Service. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 <!-- ========================= JSON-LD ========================= -->
 <script type="application/ld+json">
