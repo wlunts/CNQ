@@ -31,52 +31,56 @@
 
   <!-- Schema.org: Service + BreadcrumbList -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Initial Production Check Services in China",
-    "description": "Initial Production Check (IPC) in China — verify raw materials and first-piece quality before mass production begins. From $188/man-day. Catch wrong colors, bad materials, and process flaws before they become entire-batch disasters.",
-    "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
-    "serviceType": "Initial Production Check",
-    "areaServed": {"@type": "Country", "name": "China"},
-    "offers": {
-      "@type": "Offer",
-      "price": "188.00",
-      "priceCurrency": "USD",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.chinaqualityservice.com/#website",
+      "name": "China Quality Service",
+      "url": "https://www.chinaqualityservice.com/"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.chinaqualityservice.com/#organization",
+      "name": "China Quality Service",
+      "url": "https://www.chinaqualityservice.com/"
+    },
+    {
+      "@type": "Service",
+      "name": "Initial Production Check Services in China",
+      "description": "Initial Production Check (IPC) in China — verify raw materials and first-piece quality before mass production begins. From $188/man-day. Catch wrong colors, bad materials, and process flaws before they become entire-batch disasters.",
+      "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
+      "serviceType": "Initial Production Check",
+      "areaServed": {"@type": "Country", "name": "China"},
+      "offers": {
+        "@type": "Offer",
         "price": "188.00",
         "priceCurrency": "USD",
-        "unitText": "man-day"
-      }
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "188.00",
+          "priceCurrency": "USD",
+          "unitText": "man-day"
+        }
+      },
+      "isRelatedTo": [
+        {"@type": "Service", "name": "Pre-Shipment Inspection", "url": "https://www.chinaqualityservice.com/services/pre-shipment-inspection"},
+        {"@type": "Service", "name": "AQL Sampling Calculator", "url": "https://www.chinaqualityservice.com/tools/aql-calculator/"},
+        {"@type": "Service", "name": "Factory Audit Services", "url": "https://www.chinaqualityservice.com/services#audit"}
+      ],
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.chinaqualityservice.com/services/initial-production-check"}
     },
-    "isRelatedTo": [
-      {"@type": "Service", "name": "Pre-Shipment Inspection", "url": "https://www.chinaqualityservice.com/services/pre-shipment-inspection"},
-      {"@type": "Service", "name": "AQL Sampling Calculator", "url": "https://www.chinaqualityservice.com/tools/aql-calculator/"},
-      {"@type": "Service", "name": "Factory Audit Services", "url": "https://www.chinaqualityservice.com/services#audit"}
-    ],
-    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.chinaqualityservice.com/services/initial-production-check"}
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.chinaqualityservice.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.chinaqualityservice.com/services" },
-      { "@type": "ListItem", "position": 3, "name": "Initial Production Check" }
-    ]
-  }
-  </script>
-
-  <base href="/">
-  <link rel="stylesheet" href="/css/style.css?v=1.0">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/png" href="favicon.png">
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.chinaqualityservice.com/#website","name":"China Quality Service","url":"https://www.chinaqualityservice.com"},{"@type":"Organization","@id":"https://www.chinaqualityservice.com/#organization","name":"China Quality Service","url":"https://www.chinaqualityservice.com"}]}
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.chinaqualityservice.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.chinaqualityservice.com/services" },
+        { "@type": "ListItem", "position": 3, "name": "Initial Production Check" }
+      ]
+    }
+  ]
+}
 </script>
 </head>
 <body>
