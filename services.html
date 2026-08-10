@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -27,123 +27,220 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    "@id": "https://www.chinaqualityservice.com/services#itemlist",
-    "numberOfItems": 6,
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "Service",
-          "name": "Product Inspection Services",
-          "url": "https://www.chinaqualityservice.com/services#inspection",
-          "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
-          "serviceType": "Product Inspection",
-          "areaServed": ["China", "Southeast Asia", "Europe", "North America"],
-          "description": "Initial Production Check, During Production Inspection, Pre-Shipment Inspection, Full Inspection, and Container Loading Supervision for products manufactured in China."
-        }
+        "@type": "WebSite",
+        "@id": "https://www.chinaqualityservice.com/#website",
+        "name": "China Quality Service",
+        "url": "https://www.chinaqualityservice.com/",
+        "publisher": {"@id": "https://www.chinaqualityservice.com/#organization"},
+        "inLanguage": "en"
+        },
+        {
+        "@type": "Organization",
+        "@id": "https://www.chinaqualityservice.com/#organization",
+        "name": "China Quality Service",
+        "alternateName": ["CNQ", "China Quality Service Co., Ltd."],
+        "url": "https://www.chinaqualityservice.com/",
+        "logo": "https://www.chinaqualityservice.com/Upload/logo.png",
+        "sameAs": ["https://www.linkedin.com/company/cnq"],
+        "description": "China Quality Service provides independent third-party inspection and export quality control in China \u2013 trusted by 500+ global clients for pre-shipment inspection, factory audit, supplier quality assurance and lab testing.",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+86-136-6607-1299",
+            "contactType": "customer service",
+            "email": "info@cn-q.com",
+            "availableLanguage": ["English", "Chinese"]
+          },
+          {
+            "@type": "ContactPoint",
+            "email": "dave@cn-q.com",
+            "contactType": "sales"
+          },
+          {
+            "@type": "ContactPoint",
+            "email": "halery@cn-q.com",
+            "contactType": "sales"
+          },
+          {
+            "@type": "ContactPoint",
+            "email": "compliance@cn-q.com",
+            "contactType": "compliance"
+          }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Unit 232, No.120 Xifu Rd, TongAn District",
+          "addressLocality": "Xiamen",
+          "addressRegion": "Fujian",
+          "postalCode": "361100",
+          "addressCountry": "CN"
+        },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "ISO 9001:2015 Compliant Quality Management System",
+            "credentialCategory": "Quality Management",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "International Organization for Standardization (ISO)"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Partnership with CNAS-Accredited Testing Laboratory",
+            "credentialCategory": "Testing & Calibration",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "China National Accreditation Service for Conformity Assessment (CNAS)"
+            }
+          }
+        ],
+        "knowsAbout": [
+          {
+            "@type": "Thing",
+            "name": "ANSI/ASQ Z1.4 AQL Sampling Standards",
+            "description": "International standard for acceptance sampling in product quality inspection",
+            "sameAs": "https://en.wikipedia.org/wiki/Acceptable_quality_limit"
+          },
+          {
+            "@type": "Thing",
+            "name": "Third-Party Product Inspection",
+            "description": "Pre-shipment inspection, Product inspection service, and container loading supervision",
+            "sameAs": "https://en.wikipedia.org/wiki/Pre-shipment_inspection"
+          },
+          {
+            "@type": "Thing",
+            "name": "Factory Audit & Supplier Assessment",
+            "description": "Quality management system audits, social compliance audits, and supplier capability evaluations",
+            "sameAs": "https://en.wikipedia.org/wiki/Quality_management_system"
+          },
+          {
+            "@type": "Thing",
+            "name": "International Regulatory Compliance",
+            "description": "CE, FDA, RoHS, REACH and other global market access requirements",
+            "sameAs": "https://en.wikipedia.org/wiki/Regulatory_compliance"
+          }
+        ]
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "Service",
-          "name": "Factory Audit Services",
-          "url": "https://www.chinaqualityservice.com/services#audit",
-          "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
-          "serviceType": "Factory Audit",
-          "areaServed": ["China", "Southeast Asia"],
-          "description": "Quality Management System Audit, Social Compliance Audit, Production Capacity Assessment, and C-TPAT Security Audit."
-        }
+        "@type": "WebPage",
+        "@id": "https://www.chinaqualityservice.com/services",
+        "url": "https://www.chinaqualityservice.com/services",
+        "isPartOf": { "@id": "https://www.chinaqualityservice.com/#website" },
+        "mainEntity": { "@id": "https://www.chinaqualityservice.com/services#itemlist" }
       },
       {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "Service",
-          "name": "Laboratory Testing",
-          "url": "https://www.chinaqualityservice.com/services#lab",
-          "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
-          "serviceType": "Laboratory Testing",
-          "areaServed": ["China"],
-          "description": "Physical performance testing, chemical analysis, safety testing, food contact material testing, textile testing, and toy safety testing through CNAS-accredited lab partnerships."
-        }
+        "@type": "ItemList",
+        "@id": "https://www.chinaqualityservice.com/services#itemlist",
+        "numberOfItems": 6,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Service",
+              "name": "Product Inspection Services",
+              "url": "https://www.chinaqualityservice.com/services#inspection",
+              "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
+              "serviceType": "Product Inspection",
+              "areaServed": ["China", "Southeast Asia", "Europe", "North America"],
+              "description": "Initial Production Check, During Production Inspection, Pre-Shipment Inspection, Full Inspection, and Container Loading Supervision for products manufactured in China."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Service",
+              "name": "Factory Audit Services",
+              "url": "https://www.chinaqualityservice.com/services#audit",
+              "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
+              "serviceType": "Factory Audit",
+              "areaServed": ["China", "Southeast Asia"],
+              "description": "Quality Management System Audit, Social Compliance Audit, Production Capacity Assessment, and C-TPAT Security Audit."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Service",
+              "name": "Laboratory Testing",
+              "url": "https://www.chinaqualityservice.com/services#lab",
+              "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
+              "serviceType": "Laboratory Testing",
+              "areaServed": ["China"],
+              "description": "Physical performance testing, chemical analysis, safety testing, food contact material testing, textile testing, and toy safety testing through CNAS-accredited lab partnerships."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Service",
+              "name": "Supplier Management",
+              "url": "https://www.chinaqualityservice.com/services#supplier",
+              "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
+              "serviceType": "Supplier Management",
+              "areaServed": ["China", "Southeast Asia"],
+              "description": "Supplier qualification assessment, performance evaluation, tiered management, capability improvement, and supply chain risk control."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Service",
+              "name": "Technical Consulting",
+              "url": "https://www.chinaqualityservice.com/services#consulting",
+              "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
+              "serviceType": "Technical Consulting",
+              "areaServed": ["China"],
+              "description": "Product standard interpretation, quality management system establishment, inspection plan design, and corrective/preventive action consulting."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "Service",
+              "name": "International Compliance Services",
+              "url": "https://www.chinaqualityservice.com/services#compliance",
+              "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
+              "serviceType": "International Compliance",
+              "areaServed": ["Europe", "North America", "China", "Japan", "Australia", "Middle East"],
+              "description": "EU CE, US FDA/FCC/UL, RoHS, REACH, CCC, PSE, RCM, GCC certification and regulatory tracking for global market access."
+            }
+          }
+        ]
       },
       {
-        "@type": "ListItem",
-        "position": 4,
-        "item": {
-          "@type": "Service",
-          "name": "Supplier Management",
-          "url": "https://www.chinaqualityservice.com/services#supplier",
-          "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
-          "serviceType": "Supplier Management",
-          "areaServed": ["China", "Southeast Asia"],
-          "description": "Supplier qualification assessment, performance evaluation, tiered management, capability improvement, and supply chain risk control."
-        }
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.chinaqualityservice.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.chinaqualityservice.com/services" }
+        ]
       },
       {
-        "@type": "ListItem",
-        "position": 5,
-        "item": {
-          "@type": "Service",
-          "name": "Technical Consulting",
-          "url": "https://www.chinaqualityservice.com/services#consulting",
-          "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
-          "serviceType": "Technical Consulting",
-          "areaServed": ["China"],
-          "description": "Product standard interpretation, quality management system establishment, inspection plan design, and corrective/preventive action consulting."
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 6,
-        "item": {
-          "@type": "Service",
-          "name": "International Compliance Services",
-          "url": "https://www.chinaqualityservice.com/services#compliance",
-          "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
-          "serviceType": "International Compliance",
-          "areaServed": ["Europe", "North America", "China", "Japan", "Australia", "Middle East"],
-          "description": "EU CE, US FDA/FCC/UL, RoHS, REACH, CCC, PSE, RCM, GCC certification and regulatory tracking for global market access."
-        }
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How much does your inspection service charge?", "acceptedAnswer": { "@type": "Answer", "text": "Product Inspection: $188/man-day. Factory Assessment: Swift Audit: $199/factory. Comprehensive Evaluation: $288/factory." } },
+          { "@type": "Question", "name": "Which Product Categories You Cover?", "acceptedAnswer": { "@type": "Answer", "text": "We provide specialized product inspection and quality control support for: Textile & Garments, KD Furniture, Garden & Outdoor, Consumer Electronics, Gifts & Premiums, Bags & Storage, Toys, Seasonal Decor, Kitchenware, and many more consumer products." } },
+          { "@type": "Question", "name": "What sampling standard do you use for product inspections? (What is AQL?)", "acceptedAnswer": { "@type": "Answer", "text": "We strictly conduct our product inspections in China based on the international AQL (Acceptable Quality Limit) standard, specifically utilizing the ANSI/ASQ Z1.4 (or ISO 2859-1) sampling plans." } },
+          { "@type": "Question", "name": "How do you classify product defects during an inspection?", "acceptedAnswer": { "@type": "Answer", "text": "We follow standard international QA protocols to classify findings into three distinct levels: Critical Defects, Major Defects, and Minor Defects." } },
+          { "@type": "Question", "name": "Which regions in China do your product inspection services cover?", "acceptedAnswer": { "@type": "Answer", "text": "We provide nationwide on-site inspection coverage across all major manufacturing hubs in Mainland China, including Guangdong, Zhejiang, Fujian, Jiangsu, and Shandong provinces." } },
+          { "@type": "Question", "name": "How do you ensure inspector integrity and prevent factory bribery?", "acceptedAnswer": { "@type": "Answer", "text": "Integrity is our absolute bottom line. We enforce a strict Zero-Tolerance Anti-Bribery and Code of Ethics Policy. Every technician signs a binding integrity agreement." } },
+          { "@type": "Question", "name": "What range of inspection services do you provide?", "acceptedAnswer": { "@type": "Answer", "text": "We offer full end-to-end China Inspection Services: Pre-Shipment Inspection (PSI), During Production Inspection (DPI), Pre-Production Inspection (PPI), Production Monitoring (PMR), Sample Picking Up (SPK), Container Loading Supervision (CLS), and Sorting Service & Full Inspection." } },
+          { "@type": "Question", "name": "What range of factory audits services do you provide?", "acceptedAnswer": { "@type": "Answer", "text": "We offer two levels of factory assessment services to verify supplier legitimacy, production capacity, and infrastructure quality before you place your order." } },
+          { "@type": "Question", "name": "What kind of report do you provide?", "acceptedAnswer": { "@type": "Answer", "text": "You receive a detailed, photo-rich inspection report within 24 hours of the on-site inspection. The report includes defect identification, classification, and clear pass/fail decisions based on AQL standards." } },
+          { "@type": "Question", "name": "What is your inspection workflow?", "acceptedAnswer": { "@type": "Answer", "text": "1. Just send us a simple Inspection booking form (download from here, or contact us to get it). 2. Our planning team will manage the schedule with your manufacturer. 3. Our technical team will create a custom checklist based on AQL (ANSI/ASQ Z1.4) standards, and assign correlative professional technicians to execute the inspection on-site. 4. You receive a detailed, photo-rich technical report within 24 hours. 5. Payment is processed only when you are fully satisfied with the inspection service." } }
+        ]
       }
     ]
   }
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.chinaqualityservice.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.chinaqualityservice.com/services" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "How much does your inspection service charge?", "acceptedAnswer": { "@type": "Answer", "text": "Product Inspection: $188/man-day. Factory Assessment: Swift Audit: $199/factory. Comprehensive Evaluation: $288/factory." } },
-      { "@type": "Question", "name": "Which Product Categories You Cover?", "acceptedAnswer": { "@type": "Answer", "text": "We provide specialized product inspection and quality control support for: Textile & Garments, KD Furniture, Garden & Outdoor, Consumer Electronics, Gifts & Premiums, Bags & Storage, Toys, Seasonal Decor, Kitchenware, and many more consumer products." } },
-      { "@type": "Question", "name": "What sampling standard do you use for product inspections? (What is AQL?)", "acceptedAnswer": { "@type": "Answer", "text": "We strictly conduct our product inspections in China based on the international AQL (Acceptable Quality Limit) standard, specifically utilizing the ANSI/ASQ Z1.4 (or ISO 2859-1) sampling plans." } },
-      { "@type": "Question", "name": "How do you classify product defects during an inspection?", "acceptedAnswer": { "@type": "Answer", "text": "We follow standard international QA protocols to classify findings into three distinct levels: Critical Defects, Major Defects, and Minor Defects." } },
-      { "@type": "Question", "name": "Which regions in China do your product inspection services cover?", "acceptedAnswer": { "@type": "Answer", "text": "We provide nationwide on-site inspection coverage across all major manufacturing hubs in Mainland China, including Guangdong, Zhejiang, Fujian, Jiangsu, and Shandong provinces." } },
-      { "@type": "Question", "name": "How do you ensure inspector integrity and prevent factory bribery?", "acceptedAnswer": { "@type": "Answer", "text": "Integrity is our absolute bottom line. We enforce a strict Zero-Tolerance Anti-Bribery and Code of Ethics Policy. Every technician signs a binding integrity agreement." } },
-      { "@type": "Question", "name": "What range of inspection services do you provide?", "acceptedAnswer": { "@type": "Answer", "text": "We offer full end-to-end China Inspection Services: Pre-Shipment Inspection (PSI), During Production Inspection (DPI), Pre-Production Inspection (PPI), Production Monitoring (PMR), Sample Picking Up (SPK), Container Loading Supervision (CLS), and Sorting Service & Full Inspection." } },
-      { "@type": "Question", "name": "What range of factory audits services do you provide?", "acceptedAnswer": { "@type": "Answer", "text": "We offer two levels of factory assessment services to verify supplier legitimacy, production capacity, and infrastructure quality before you place your order." } },
-      { "@type": "Question", "name": "What kind of report do you provide?", "acceptedAnswer": { "@type": "Answer", "text": "You receive a detailed, photo-rich inspection report within 24 hours of the on-site inspection. The report includes defect identification, classification, and clear pass/fail decisions based on AQL standards." } },
-      { "@type": "Question", "name": "What is your inspection workflow?", "acceptedAnswer": { "@type": "Answer", "text": "1. Just send us a simple Inspection booking form (download from here, or contact us to get it). 2. Our planning team will manage the schedule with your manufacturer. 3. Our technical team will create a custom checklist based on AQL (ANSI/ASQ Z1.4) standards, and assign correlative professional technicians to execute the inspection on-site. 4. You receive a detailed, photo-rich technical report within 24 hours. 5. Payment is processed only when you are fully satisfied with the inspection service." } }
-    ]
-  }
-  </script>
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.chinaqualityservice.com/#website","name":"China Quality Service","url":"https://www.chinaqualityservice.com"},{"@type":"Organization","@id":"https://www.chinaqualityservice.com/#organization","name":"China Quality Service","url":"https://www.chinaqualityservice.com"},{"@type":"WebPage","@id":"https://www.chinaqualityservice.com/services","url":"https://www.chinaqualityservice.com/services","isPartOf":{"@id":"https://www.chinaqualityservice.com/#website"},"mainEntity":{"@id":"https://www.chinaqualityservice.com/services#itemlist"}}]}
-</script>
 </head>
 <body>
 
