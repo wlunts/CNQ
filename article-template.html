@@ -109,17 +109,18 @@
 <main id="main-content">
   <section class="section">
     <div class="container" style="max-width: 860px;">
+      <article>
 
-      <!-- Font Size Controls -->
-      <div class="font-size-controls">
-        <span data-zh="字号: ">Font: </span>
-        <button onclick="changeFontSize('small',this)" data-zh="小">S</button>
-        <button onclick="changeFontSize('medium',this)" class="active">M</button>
-        <button onclick="changeFontSize('large',this)" data-zh="大">L</button>
-      </div>
+        <!-- Font Size Controls -->
+        <div class="font-size-controls">
+          <span style="font-size:0.85rem;color:var(--text-muted)" data-zh="字体：">Font: </span>
+          <button onclick="changeFontSize('small',this)" data-zh="小">S</button>
+          <button onclick="changeFontSize('medium',this)" class="active" data-zh="中">M</button>
+          <button onclick="changeFontSize('large',this)" data-zh="大">L</button>
+        </div>
 
-      <!-- Article Body -->
-      <div class="article-body">
+        <!-- Article Body -->
+        <div class="article-body">
 
         <!-- ========== ARTICLE CONTENT GOES HERE ========== -->
 
@@ -189,6 +190,8 @@
 
         <!-- ========== END OF CONTENT ========== -->
       </div><!-- /.article-body -->
+
+      </article>
 
       <!-- Related Articles -->
       <div class="related-articles">
