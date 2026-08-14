@@ -90,16 +90,16 @@
   <div class="menu-overlay"></div>
 
 
-<!-- ========================= PAGE BANNER (h1 inside = SEO optimal) ========================= -->
-<section class="page-header" style="background: linear-gradient(135deg, rgba(13,47,69,0.92), rgba(26,82,118,0.9)), url('images/service-banner.jpg') center/cover no-repeat;">
+<!-- ========================= PAGE BANNER (breadcrumb → H1 → page-header-meta, same as children-tent-zhejiang) ========================= -->
+<section class="page-header" style="background: linear-gradient(135deg, rgba(13,47,69,0.92), rgba(26,82,118,0.9)), url('../images/service-banner.jpg') center/cover no-repeat;">
   <div class="container">
-<div class="breadcrumb fade-in">
-      <a href="/" data-zh="首页">Home</a> <span>›</span>
-========== Breadcrumb: <a href="/insights">Insights</a> <span>›</span> <a href="========== folder / ==========">========== List label ==========</a> <span>›</span> <span data-zh="========== 中文标题缩略语 ==========">========== Title abbreviation (e.g. "Safety Vest — Velcro Misalignment", never "Article") ==========</span> ==========
+    <div class="breadcrumb fade-in">
+      <a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span>
+========== <a href="/insights" data-zh="洞察">Insights</a> <span>&rsaquo;</span> <a href="========== folder / (with trailing slash) ==========" data-zh="========== 列表中文名 ==========">========== List label ==========</a> <span>&rsaquo;</span> <span data-zh="========== 中文标题缩略语 ==========">========== Title abbreviation (e.g. "Pencil Factory — 26-Day Audit Delay", never "Article") ==========</span> ==========
     </div>
-    <h1 class="fade-in" data-zh="========== 中文标题 ==========">========== English Article Title ==========</h1>
+    <h1 class="fade-in" data-zh="========== 中文标题 | CNQ ==========">========== English Article Title (keyword-first) ==========</h1>
     <div class="page-header-meta fade-in">
-========== <span class="meta-date">Published: YYYY-MM-DD</span> · <span class="meta-category">Category Name</span> · By CNQ Inspection Team ==========
+      <span data-zh="发布时间：YYYY-MM-DD">Published: YYYY-MM-DD</span> · <span data-zh="分类：========== 分类名 ==========" class="meta-category">========== Category Name ==========</span> · <span data-zh="来源：厦门亚商">By CNQ Inspection Team</span>
     </div>
   </div>
 </section>
@@ -138,10 +138,14 @@
         │  ★ H3 heading:  <h3 data-zh="中文标题3">    │
         │                  English H3</h3>             │
         │                                             │
-        │  ★ Image:       <img src="Upload/.../N.jpg" │
-        │                      alt="Descriptive alt"  │
-        │                      loading="lazy">         │
-        │                  <div class="figure-caption" │
+        │  ★ Image:       <img src="/Upload/.../N.jpg" │
+        │                      alt="Keyword-rich alt" │
+        │                      loading="lazy"         │
+        │                      onerror="this.style.   │
+        │                        display='none'"     │
+        │                      width="800"            │
+        │                      height="600">          │
+        │                  <div class="figure-caption"│
         │                    data-zh="中文说明">       │
         │                    English caption</div>     │
         │                                             │
@@ -153,13 +157,20 @@
         │  ★ Blockquote:  <blockquote data-zh="中文"> │
         │                  English quote</blockquote>  │
         │                                             │
-        │  ★ Keywords → Contextual In-links:          │
-        │    "supply chain" → /services#inspection   │
-        │    "quality control" → /services#inspection│
-        │    "factory audit" → /services#audit     │
-        │    "product inspection" → /services#inspection│
-        │    "sourcing" → /services#consulting        │
-        │    Minimum 3-5 contextual in-links          │
+        │  ★ Keywords → Contextual In-links (max 4,  │
+        │    no repeats, position > quantity):        │
+        │    "factory audit" → /services/china-factory-audit (factory articles) │
+        │    "product inspection"/"PSI" → /  (home)    │
+        │    "pre-shipment inspection" → /services#inspection │
+        │    Inspection Cost Calculator → /tools/inspection-cost-calculator (case end CTA) │
+        │    "China factory audit" → /services/china-factory-audit │
+        │                                             │
+        │  ★ DOM separation for any element with an   │
+        │    internal link: data-zh goes on <span>    │
+        │    only; <a> stays standalone:              │
+        │    <p><span data-zh="前半">EN before </span>│
+        │    <a href="...">anchor</a>                 │
+        │    <span data-zh="后半">EN after</span></p> │
         │                                             │
         └─────────────────────────────────────────────┘
 
