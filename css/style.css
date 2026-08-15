@@ -387,6 +387,9 @@ ul, ol { list-style: none; }
 .footer-col .footer-heading { color: #fff; font-size: 1rem; margin-bottom: 16px; font-weight: 700; }
 .footer-col a { display: block; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; padding: 5px 0; transition: all var(--transition); }
 .footer-col a:hover { color: #fff; padding-left: 6px; }
+.footer-col .footer-contact-link { display: inline-flex; align-items: center; gap: 8px; color: #fff; font-size: 0.95rem; }
+.footer-col .footer-contact-link:hover { color: #fff; padding-left: 0; }
+.footer-col .footer-contact-link svg { flex-shrink: 0; }
 .footer-bottom { text-align: center; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
 
 /* ---------- Back to Top ---------- */
