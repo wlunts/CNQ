@@ -155,6 +155,22 @@
             <div class="manday-metric"><div class="value" id="totalCost">—</div><div class="label" data-zh="预估费用 (USD)">Est. Cost (USD)</div></div>
           </div>
           <div class="manday-note" id="explainNote"></div>
+          <div class="multi-currency-box" style="margin-top:16px; padding:16px; background:#f8fafc; border-radius:10px; border:1px solid #e2e8f0;">
+            <div style="font-weight:600; font-size:0.95rem; color:#1a202c; margin-bottom:8px;">Estimated Cost (Multi-Currency Reference)</div>
+            <div style="font-size:1.5rem; font-weight:700; color:#1a202c; margin-bottom:4px;" id="usdDisplay">&mdash;</div>
+            <div style="font-size:1.1rem; color:#4a5568; margin-bottom:12px;" id="referenceDisplay">&mdash;</div>
+            <div style="display:flex; flex-wrap:wrap; gap:6px;" id="currencyButtons">
+              <button onclick="setReferenceCurrency('EUR')" style="padding:4px 12px; border:1px solid #cbd5e0; border-radius:6px; background:#fff; cursor:pointer; font-size:0.8rem;">EUR</button>
+              <button onclick="setReferenceCurrency('GBP')" style="padding:4px 12px; border:1px solid #cbd5e0; border-radius:6px; background:#fff; cursor:pointer; font-size:0.8rem;">GBP</button>
+              <button onclick="setReferenceCurrency('CAD')" style="padding:4px 12px; border:1px solid #cbd5e0; border-radius:6px; background:#fff; cursor:pointer; font-size:0.8rem;">CAD</button>
+              <button onclick="setReferenceCurrency('AUD')" style="padding:4px 12px; border:1px solid #cbd5e0; border-radius:6px; background:#fff; cursor:pointer; font-size:0.8rem;">AUD</button>
+              <button onclick="setReferenceCurrency('BRL')" style="padding:4px 12px; border:1px solid #cbd5e0; border-radius:6px; background:#fff; cursor:pointer; font-size:0.8rem;">BRL</button>
+            </div>
+            <div style="margin-top:10px; font-size:0.75rem; color:#718096; line-height:1.7;">
+              <div id="rateDate">Rates per European Central Bank</div>
+              <div>Settlement is in USD; reference currencies are indicative only.</div>
+            </div>
+          </div>
           <div class="manday-static-note">
             <strong data-zh="监柜服务：">Container Loading Supervision:</strong> <span data-zh="每柜 1 人天。">1 man-day per container.</span><br>
             <strong data-zh="最大拣货量：">Max picking items:</strong> <span data-zh="每人天 8 款，每超出 1 款加收 $50 USD。">8 items per man-day; +$50 USD per additional item.</span><br>
@@ -347,6 +363,88 @@
 <script>
 (function() {
   'use strict';
+  let currentUsdAmount = 0;
+  let currentRates = null;
+  let currentRefCurrency = 'EUR';
+
+  var currencyNames = { 'EUR': '\u20ac', 'GBP': '\u00a3', 'CAD': 'CA$', 'AUD': 'A$', 'BRL': 'R$' };
+
+  function updateRateDate(dateStr) {
+    document.getElementById('rateDate').textContent = 'Rates per European Central Bank as of ' + dateStr;
+  }
+
+  async function fetchExchangeRates() {
+    try {
+      var cached = null;
+      try { cached = localStorage.getItem('cnq_exchange_rates'); } catch (e) {}
+      if (cached) {
+        var parsed = JSON.parse(cached);
+        if (Date.now() - parsed.timestamp < 24 * 60 * 60 * 1000) {
+          currentRates = parsed.rates;
+          updateRateDate(parsed.date || new Date(parsed.timestamp).toISOString().slice(0, 10));
+          return;
+        }
+      }
+      var res = await fetch('https://open.er-api.com/v6/latest/USD');
+      var data = await res.json();
+      if (data && data.rates) {
+        currentRates = data.rates;
+        var rateDate = data.time_last_update_utc
+          ? new Date(data.time_last_update_utc).toISOString().slice(0, 10)
+          : new Date().toISOString().slice(0, 10);
+        try {
+          localStorage.setItem('cnq_exchange_rates', JSON.stringify({ timestamp: Date.now(), rates: data.rates, date: rateDate }));
+        } catch (e) {}
+        updateRateDate(rateDate);
+      }
+    } catch (e) { /* silently fail; USD display still works */ }
+  }
+
+  window.setReferenceCurrency = function(code) {
+    currentRefCurrency = code;
+    updateReferenceDisplay();
+    document.querySelectorAll('#currencyButtons button').forEach(function(btn) {
+      if (btn.textContent === code) {
+        btn.style.backgroundColor = '#2563eb';
+        btn.style.color = '#fff';
+        btn.style.borderColor = '#2563eb';
+      } else {
+        btn.style.backgroundColor = '#fff';
+        btn.style.color = '#4a5568';
+        btn.style.borderColor = '#cbd5e0';
+      }
+    });
+  };
+
+  function updateReferenceDisplay() {
+    if (!currentUsdAmount || !currentRates) return;
+    var usd = currentUsdAmount;
+    document.getElementById('usdDisplay').textContent = '$' + usd + ' USD';
+    var rate = currentRates[currentRefCurrency];
+    if (rate) {
+      var converted = usd * rate;
+      var symbol = currencyNames[currentRefCurrency] || currentRefCurrency + ' ';
+      document.getElementById('referenceDisplay').textContent =
+        '\u2248 ' + symbol + converted.toLocaleString('en-US', {
+          minimumFractionDigits: converted >= 100 ? 0 : 2,
+          maximumFractionDigits: 2
+        }) + ' ' + currentRefCurrency;
+    }
+  }
+
+  window.updateMultiCurrency = function(usdAmount) {
+    currentUsdAmount = usdAmount;
+    updateReferenceDisplay();
+  };
+
+  fetchExchangeRates().then(function() {
+    setReferenceCurrency('EUR');
+  });
+})();
+</script>
+<script>
+(function() {
+  'use strict';
 
   const lotRanges = [
     [2,8],[9,15],[16,25],[26,50],[51,90],[91,150],[151,280],[281,500],[501,1200],[1201,3200],[3201,10000],[10001,35000],[35001,150000],[150001,500000],[500001,Infinity]
@@ -401,6 +499,11 @@
     document.getElementById('sampleSize').textContent = sampleSize;
     document.getElementById('manDays').textContent = totalDays;
     document.getElementById('totalCost').textContent = '$' + cost;
+
+    // Update multi-currency reference display
+    if (typeof window.updateMultiCurrency === 'function') {
+      window.updateMultiCurrency(cost);
+    }
 
     var isZh = (document.documentElement.lang || 'en') === 'zh';
     document.getElementById('explainNote').textContent = isZh
