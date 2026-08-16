@@ -428,7 +428,7 @@
     var china = now.toLocaleString('en-US', {
       timeZone: 'Asia/Shanghai',
       year: 'numeric', month: 'short', day: 'numeric', weekday: 'long',
-      hour: '2-digit', minute: '2-digit', second: '2-digit',
+      hour: '2-digit', minute: '2-digit',
       hour12: false, hourCycle: 'h23'
     });
     document.getElementById('chinaTime').textContent = china;
@@ -446,7 +446,7 @@
         : 'Outside China business hours \u2014 suppliers may reply on the next working day';
     }
 
-    var local = now.toLocaleTimeString('en-US', { hour12: false, hourCycle: 'h23' });
+    var local = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false, hourCycle: 'h23' });
     document.getElementById('localTime').textContent = lang === 'zh'
       ? '\u60a8\u672c\u5730\u65f6\u95f4\uff1a' + local
       : 'Your local time: ' + local;
