@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-zh="中国工厂交期计算器 - 预计交货日期与中国当前时间 | 厦门亚商">Lead Time Calculator: Factory Delivery Date | China Quality Service</title>
+  <meta name="description" data-zh="输入下单日期、生产时间、运输时间与缓冲时间，计算中国工厂交货日期，并实时显示中国当前时间，方便安排验货与货代。免费无需注册。" content="Calculate China factory lead time from order to delivery. Plan inspection and freight. Free, no signup.">
+  <link rel="canonical" href="https://www.chinaqualityservice.com/tools/lead-time-calculator">
+  <link rel="alternate" hreflang="en" href="https://www.chinaqualityservice.com/tools/lead-time-calculator" />
+  <link rel="alternate" hreflang="x-default" href="https://www.chinaqualityservice.com/tools/lead-time-calculator" />
+  <meta property="og:title" content="Lead Time Calculator: Factory Delivery Date | China Quality Service">
+  <meta property="og:description" content="Calculate China factory lead time from order to delivery. Plan inspection and freight. Free, no signup.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.chinaqualityservice.com/tools/lead-time-calculator">
+  <meta property="og:image" content="https://www.chinaqualityservice.com/images/og-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lead Time Calculator: Factory Delivery Date | China Quality Service">
+  <meta name="twitter:description" content="Calculate China factory lead time from order to delivery. Plan inspection and freight. Free, no signup.">
+  <meta name="twitter:image" content="https://www.chinaqualityservice.com/images/og-default.jpg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" href="/favicon.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.chinaqualityservice.com/#website","name":"China Quality Service","url":"https://www.chinaqualityservice.com/","publisher":{"@id":"https://www.chinaqualityservice.com/#organization"},"inLanguage":"en"},{"@type":"Organization","@id":"https://www.chinaqualityservice.com/#organization","name":"China Quality Service","alternateName":["CNQ","China Quality Service Co., Ltd."],"url":"https://www.chinaqualityservice.com/","logo":"https://www.chinaqualityservice.com/Upload/logo.png","sameAs":["https://www.linkedin.com/company/cnq"],"description":"China Quality Service provides independent third-party inspection and export quality control in China \u2013 trusted by 500+ global clients for pre-shipment inspection, factory audit, supplier quality assurance and lab testing.","contactPoint":[{"@type":"ContactPoint","telephone":"+86-136-6607-1299","contactType":"customer service","email":"info@cn-q.com","availableLanguage":["English","Chinese"]},{"@type":"ContactPoint","email":"dave@cn-q.com","contactType":"sales"},{"@type":"ContactPoint","email":"halery@cn-q.com","contactType":"sales"},{"@type":"ContactPoint","email":"compliance@cn-q.com","contactType":"compliance"}],"address":{"@type":"PostalAddress","streetAddress":"Unit 232, No.120 Xifu Rd, TongAn District","addressLocality":"Xiamen","addressRegion":"Fujian","postalCode":"361100","addressCountry":"CN"},"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"ISO 9001:2015 Compliant Quality Management System","credentialCategory":"Quality Management","recognizedBy":{"@type":"Organization","name":"International Organization for Standardization (ISO)"}},{"@type":"EducationalOccupationalCredential","name":"Partnership with CNAS-Accredited Testing Laboratory","credentialCategory":"Testing & Calibration","recognizedBy":{"@type":"Organization","name":"China National Accreditation Service for Conformity Assessment (CNAS)"}}],"knowsAbout":[{"@type":"Thing","name":"ANSI/ASQ Z1.4 AQL Sampling Standards","description":"International standard for acceptance sampling in product quality inspection","sameAs":"https://en.wikipedia.org/wiki/Acceptable_quality_limit"},{"@type":"Thing","name":"Third-Party Product Inspection","description":"Pre-shipment inspection, Product inspection service, and container loading supervision","sameAs":"https://en.wikipedia.org/wiki/Pre-shipment_inspection"},{"@type":"Thing","name":"Factory Audit & Supplier Assessment","description":"Quality management system audits, social compliance audits, and supplier capability evaluations","sameAs":"https://en.wikipedia.org/wiki/Quality_management_system"},{"@type":"Thing","name":"International Regulatory Compliance","description":"CE, FDA, RoHS, REACH and other global market access requirements","sameAs":"https://en.wikipedia.org/wiki/Regulatory_compliance"}]},{"@type":"WebApplication","name":"China Factory Lead Time Calculator","url":"https://www.chinaqualityservice.com/tools/lead-time-calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free lead time calculator for China factory orders. Estimate production completion and arrival dates from order date, production time, transit time and buffer. No signup required.","publisher":{"@type":"Organization","name":"China Quality Service","alternateName":"CNQ","url":"https://www.chinaqualityservice.com"},"isPartOf":{"@id":"https://www.chinaqualityservice.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.chinaqualityservice.com/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://www.chinaqualityservice.com/download"},{"@type":"ListItem","position":3,"name":"Lead Time Calculator","item":"https://www.chinaqualityservice.com/tools/lead-time-calculator"}]}]}
+</script>
+
+  <style>
+    .leadtime-section { padding: 40px 0; }
+    .leadtime-section .container { max-width: 860px; }
+    .leadtime-section.alt { background: var(--bg-light, #f8fafc); }
+    .leadtime-card { background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); padding: 28px; }
+    .leadtime-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 600px) { .leadtime-form-grid { grid-template-columns: 1fr; } }
+    .leadtime-field { display: flex; flex-direction: column; gap: 6px; }
+    .leadtime-field label { font-weight: 600; color: var(--text-dark, #1a202c); font-size: 0.95rem; }
+    .leadtime-field input { padding: 12px 14px; border: 1px solid #cbd5e0; border-radius: 10px; font-size: 1rem; background: #fff; color: #1a202c; }
+    .leadtime-field input:focus { outline: none; border-color: var(--primary, #2563eb); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
+    .btn-leadtime { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; background: var(--primary, #2563eb); color: #fff; border: none; border-radius: 10px; font-size: 1.05rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.1s; width: 100%; margin-top: 28px; }
+    .btn-leadtime:hover { background: var(--primary-dark, #1d4ed8); }
+    .btn-leadtime:active { transform: scale(0.98); }
+    .leadtime-results { margin-top: 28px; opacity: 0; transform: translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; display: none; }
+    .leadtime-results.visible { opacity: 1; transform: translateY(0); display: block; }
+    .leadtime-results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 600px) { .leadtime-results-grid { grid-template-columns: 1fr; } }
+    .leadtime-metric { background: #f7fafc; border-radius: 10px; padding: 20px; text-align: center; border: 1px solid #e2e8f0; }
+    .leadtime-metric .label { font-size: 0.8rem; color: #718096; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 8px; }
+    .leadtime-metric .value { font-size: 1.4rem; font-weight: 700; color: #1a202c; }
+    .china-time-box { margin-top: 24px; padding: 16px 20px; background: #f0f4ff; border: 1px solid #c3dafe; border-radius: 10px; }
+    .china-time-box .label { font-size: 0.85rem; color: #4a5568; margin-bottom: 4px; }
+    .china-time-box .time { font-size: 1.4rem; font-weight: 700; color: #1a202c; }
+    .china-time-box .status { display: inline-block; margin-top: 8px; padding: 3px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+    .china-time-box .status.open { background: #d1fae5; color: #065f46; }
+    .china-time-box .status.closed { background: #fef3c7; color: #92400e; }
+    .china-time-box .sub { font-size: 0.85rem; color: #4a5568; margin-top: 8px; }
+    .leadtime-note { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 14px 18px; font-size: 0.92rem; color: #1e40af; margin-top: 16px; line-height: 1.7; }
+    .leadtime-seo-text { font-size: 0.95rem; color: #4a5568; line-height: 1.8; }
+    .leadtime-seo-text h2 { font-size: 1.4rem; margin-bottom: 14px; color: #1a202c; }
+    .leadtime-seo-text h3 { font-size: 1.05rem; margin: 20px 0 8px; color: #2d3748; }
+    .leadtime-seo-text ul { padding-left: 20px; margin: 10px 0; }
+    .leadtime-seo-text li { margin-bottom: 6px; }
+    .leadtime-seo-text table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
+    .leadtime-seo-text th, .leadtime-seo-text td { padding: 10px 12px; border: 1px solid #e2e8f0; text-align: left; }
+    .leadtime-seo-text th { background: #1a3a5c; color: #fff; font-weight: 600; }
+    .leadtime-seo-text tr:nth-child(even) { background: #f8fafc; }
+  </style>
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="/">
+        <img src="/Upload/logo.png" alt="China Quality Service" width="103" height="48" onerror="this.style.display='none'" loading="lazy">
+        <span>China Quality Service</span>
+      </a>
+    </div>
+    <button class="menu-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/" data-zh="首页">Home</a>
+      <div class="nav-dropdown"><a href="/about" data-zh="关于我们">About Us</a><div class="dropdown-menu"><a href="/about#company-intro" data-zh="公司简介">Company Profile</a><a href="/about#credentials" data-zh="资质与认证">Credentials &amp; Accreditations</a><a href="/about#mission" data-zh="使命与愿景">Mission &amp; Vision</a><a href="/about#team" data-zh="专业团队">Professional Team</a><a href="/about#advantage" data-zh="核心优势">Core Advantages</a></div></div>
+      <div class="nav-dropdown"><a href="/services" data-zh="服务范围">Services</a><div class="dropdown-menu"><a href="/services#inspection" data-zh="产品检验">Product Inspection</a><a href="/services#audit" data-zh="工厂审核">Factory Audit</a><a href="/services#lab" data-zh="实验室测试">Laboratory Testing</a><a href="/services#supplier" data-zh="供应商管理">Supplier Management</a><a href="/services#consulting" data-zh="技术咨询">Technical Consulting</a><a href="/services#compliance" data-zh="国际合规">International Compliance</a><a href="/services#faq" data-zh="常见问题">Frequently Asked Questions</a></div></div>
+      <div class="nav-dropdown"><a href="/insights" data-zh="洞察">Insights</a><div class="dropdown-menu"><a href="/inspection-cases/" data-zh="验货案例">Inspection Cases</a><a href="/factory-resource/" data-zh="工厂资源">Factory Resource</a><a href="/industry-updates/" data-zh="行业动态">Industry Updates</a></div></div>
+      <div class="nav-dropdown">
+        <a href="/download" class="active" data-zh="资源中心">Resources</a>
+        <div class="dropdown-menu">
+          <a href="/tools/aql-calculator/" data-zh="AQL 抽样计算器">AQL Sampling Calculator</a>
+          <a href="/tools/inspection-cost-calculator" data-zh="检验成本计算器">Inspection Cost Calculator</a><a href="/tools/lead-time-calculator" data-zh="交期计算器">Lead Time Calculator</a>
+          <a href="/download#standards" data-zh="行业标准">Industry Standards</a>
+          <a href="/download#regulations" data-zh="法规汇编">Regulatory Compilations</a>
+          <a href="/download#whitepaper" data-zh="白皮书">Whitepapers</a>
+          <a href="/download#templates" data-zh="工厂评估">Factory Assessment</a>
+          <a href="/download#brochure" data-zh="检验模板">Inspection Template</a>
+        </div>
+      </div>
+      <a href="/contact" data-zh="联系我们">Contact</a>
+      <div class="lang-switch">
+        <button data-lang="zh" class="active">中</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="menu-overlay"></div>
+
+<main>
+  <section class="page-header" style="background: linear-gradient(135deg, rgba(13,47,69,0.92), rgba(26,82,118,0.9)), url('/images/download-banner.jpg') center/cover no-repeat;">
+    <div class="container">
+      <div class="breadcrumb fade-in">
+        <a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="/download" data-zh="资源中心">Resources</a> <span>&rsaquo;</span> <span data-zh="交期计算器">Lead Time Calculator</span>
+      </div>
+      <h1 class="fade-in" data-zh="中国工厂交期计算器 — 预计交货日期与中国当前时间">Lead Time Calculator: Factory Delivery Date</h1>
+      <p class="page-header-meta fade-in" data-zh="输入下单日期、生产时间、运输时间与缓冲时间，一键得到货好日期、到货日期与全程总天数，并实时显示中国当前时间，方便您安排验货、货代与供应商沟通。">Enter your order date, production time, transit time and buffer — get production completion, arrival date and total lead time in one click, so you can plan inspection and freight.</p>
+    </div>
+  </section>
+
+  <section class="leadtime-section">
+    <div class="container">
+      <div class="leadtime-card">
+        <div class="leadtime-form-grid">
+          <div class="leadtime-field">
+            <label for="orderDate" data-zh="下单日期">Order Date</label>
+            <input type="date" id="orderDate" aria-label="Order date">
+          </div>
+          <div class="leadtime-field">
+            <label for="productionDays" data-zh="生产时间（天）">Production Time (days)</label>
+            <input type="number" id="productionDays" min="0" value="30" placeholder="e.g. 30" aria-label="Production time in days">
+          </div>
+          <div class="leadtime-field">
+            <label for="transitDays" data-zh="运输时间（天）">Transit Time (days)</label>
+            <input type="number" id="transitDays" min="0" value="25" placeholder="e.g. 25" aria-label="Transit time in days">
+          </div>
+          <div class="leadtime-field">
+            <label for="bufferDays" data-zh="缓冲时间（天）">Buffer Time (days)</label>
+            <input type="number" id="bufferDays" min="0" value="5" placeholder="e.g. 5" aria-label="Buffer time in days">
+          </div>
+        </div>
+        <button id="calcLeadTimeBtn" class="btn-leadtime" type="button" data-zh="计算交期">Calculate Lead Time</button>
+
+        <div class="leadtime-results" id="leadTimeResults">
+          <div class="leadtime-results-grid">
+            <div class="leadtime-metric">
+              <div class="label" data-zh="预计货好日期">Est. Production Completion</div>
+              <div class="value" id="completionDate">—</div>
+            </div>
+            <div class="leadtime-metric">
+              <div class="label" data-zh="预计到货日期（含缓冲）">Est. Arrival with Buffer</div>
+              <div class="value" id="arrivalDate">—</div>
+            </div>
+            <div class="leadtime-metric">
+              <div class="label" data-zh="全程总天数">Total Lead Time</div>
+              <div class="value" id="totalDays">—</div>
+            </div>
+          </div>
+          <div class="leadtime-note" data-zh="所有日期均按自然日计算，已包含周末与节假日。实际日期可能因工厂生产波动、物流变化而调整，请定期与工厂和货代确认最新进度。">All dates are calculated in calendar days, weekends and holidays included. Actual dates may shift with factory production and logistics changes — confirm progress with your factory and forwarder regularly.</div>
+        </div>
+      </div>
+
+      <div class="china-time-box">
+        <div class="label" data-zh="中国当前时间（GMT+8）">Current Time in China (GMT+8)</div>
+        <div class="time" id="chinaTime">—</div>
+        <div><span class="status" id="chinaStatus">—</span></div>
+        <div class="sub" id="localTime">—</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="leadtime-section alt">
+    <div class="container leadtime-seo-text">
+      <h2 data-zh="如何使用这个交期计算器？">How to Use This Lead Time Calculator?</h2>
+      <p data-zh="输入四个数字，就能得到一条完整的交期时间线。这个工具的计算逻辑很简单，但能帮你快速建立对供应链节奏的全局认知，规划验货、货代订舱与供应商沟通。">Enter four numbers and get a complete lead time timeline. The logic is simple — but it helps you quickly build a clear picture of your supply chain rhythm and plan inspection, booking and supplier communication.</p>
+
+      <h3 data-zh="什么是生产时间（Production Time）？">What is Production Time?</h3>
+      <p data-zh="生产时间是工厂从收到订单到完成全部生产包装所需的天数。工厂报的交期通常是自然日，已经包含了周末和节假日。如果不确定，可以向工厂确认：「货好日期是哪一天？」，再反推天数。">Production time is the number of days a factory needs from receiving your order to completing production and packaging. Factory lead times are usually quoted in calendar days, weekends and holidays included. If unsure, ask the factory: "What is the exact date the goods will be ready?" — then calculate backwards.</p>
+
+      <h3 data-zh="运输时间怎么填？">How to Choose Transit Time?</h3>
+      <p data-zh="运输时间取决于您选择的运输方式。以下是常见运输方式的大致时间参考。具体天数请向您的货代确认。">Transit time depends on your shipping method. Below are general references. Always confirm exact days with your freight forwarder.</p>
+
+      <ul>
+        <li><strong data-zh="海运：">Sea Freight:</strong> <span data-zh="25-40天（中国主要港口到欧美）">25–40 days from major Chinese ports to Europe/US</span></li>
+        <li><strong data-zh="空运：">Air Freight:</strong> <span data-zh="7-12天">7–12 days</span></li>
+        <li><strong data-zh="国际快递：">Express:</strong> <span data-zh="3-7天">3–7 days</span></li>
+      </ul>
+
+      <h3 data-zh="中国到各主要地区的海运时间参考">Sea Freight Time Reference from China</h3>
+      <p data-zh="以下为中国主要港口（上海、宁波、深圳、厦门等）到各目的地的典型海运时间，供规划时参考。实际时间受港口拥堵、天气、航线调整等因素影响。">Typical sea freight transit times from major Chinese ports (Shanghai, Ningbo, Shenzhen, Xiamen) to key destinations. Actual times vary with port congestion, weather, and routing.</p>
+
+      <table>
+        <thead>
+          <tr><th data-zh="目的地">Destination</th><th data-zh="典型海运时间">Typical Sea Freight Time</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-zh="美国西海岸（洛杉矶/长滩）">US West Coast (LA/Long Beach)</td><td data-zh="18–25 天">18–25 days</td></tr>
+          <tr><td data-zh="美国东海岸（纽约）">US East Coast (New York)</td><td data-zh="30–40 天">30–40 days</td></tr>
+          <tr><td data-zh="英国（费利克斯托/南安普顿）">UK (Felixstowe/Southampton)</td><td data-zh="28–35 天">28–35 days</td></tr>
+          <tr><td data-zh="北欧（鹿特丹/汉堡）">North Europe (Rotterdam/Hamburg)</td><td data-zh="30–38 天">30–38 days</td></tr>
+          <tr><td data-zh="地中海（巴塞罗那/热那亚）">Mediterranean (Barcelona/Genoa)</td><td data-zh="25–35 天">25–35 days</td></tr>
+          <tr><td data-zh="中东（迪拜/杰贝阿里）">Middle East (Dubai/Jebel Ali)</td><td data-zh="18–25 天">18–25 days</td></tr>
+          <tr><td data-zh="东南亚（新加坡）">Southeast Asia (Singapore)</td><td data-zh="5–10 天">5–10 days</td></tr>
+          <tr><td data-zh="澳大利亚（悉尼/墨尔本）">Australia (Sydney/Melbourne)</td><td data-zh="15–20 天">15–20 days</td></tr>
+          <tr><td data-zh="南美西海岸（圣安东尼奥）">South America West Coast (San Antonio)</td><td data-zh="30–40 天">30–40 days</td></tr>
+          <tr><td data-zh="非洲（德班/拉各斯）">Africa (Durban/Lagos)</td><td data-zh="30–45 天">30–45 days</td></tr>
+        </tbody>
+      </table>
+
+      <h3 data-zh="Lead Time 和 Delivery Time 有什么区别？">Lead Time vs. Delivery Time: What's the Difference?</h3>
+      <p data-zh="很多人把这两个词混用，但它们衡量的其实是两段不同的事。">Many buyers use these two terms interchangeably — but they measure different parts of your supply chain.</p>
+      <ul>
+        <li><strong data-zh="Lead Time（交期）：">Lead Time:</strong> <span data-zh="从下单到货好，是工厂端的事。">from order to goods ready at the factory — the factory's job.</span></li>
+        <li><strong data-zh="Delivery Time（交付时间）：">Delivery Time:</strong> <span data-zh="从下单到客户收到货，涵盖生产和物流，是客户的视角。">from order to goods in your hands, covering both production and shipping — your perspective.</span></li>
+      </ul>
+      <p data-zh="一句话总结：Lead time 是工厂的，delivery time 是客户的。分清两者，您才能对销售日历设定现实的预期。">In short: lead time belongs to the factory, delivery time belongs to you. Knowing the difference helps you set realistic expectations against your sales calendar.</p>
+
+      <h3 data-zh="中国春节（CNY）对交期的影响">How Chinese New Year (CNY) Affects Lead Time</h3>
+      <p data-zh="春节是中国供应链一年中最大的一次中断，提前规划能省下几周的等待。">Chinese New Year is the single biggest disruption in the China supply chain — plan around it and you save weeks of waiting.</p>
+      <ul>
+        <li><span data-zh="春节前 4–6 周：工厂排单紧张，交期开始延长。">4–6 weeks before CNY: factories fill order books fast and lead times stretch.</span></li>
+        <li><span data-zh="春节前 2 周：工人陆续返乡，产能明显下降。">2 weeks before: workers start heading home; output drops sharply.</span></li>
+        <li><span data-zh="春节后 1–2 周：工人返岗不稳定，产能爬坡。">1–2 weeks after: workers return gradually; production ramps up slowly.</span></li>
+        <li><span data-zh="建议：春节前至少留 3–4 周缓冲，并尽早锁定工厂排产。">Rule of thumb: place orders at least 3–4 weeks before CNY and lock in factory capacity early.</span></li>
+      </ul>
+      <table>
+        <thead>
+          <tr><th data-zh="下单时间">Order Time</th><th data-zh="风险">Risk</th><th data-zh="发生了什么">What Happens</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-zh="春节前 4–6 周">4–6 weeks before CNY</td><td data-zh="中">Medium</td><td data-zh="订单排满，工厂可能推迟您的开工日期">Order books fill; factory may push your start date back</td></tr>
+          <tr><td data-zh="春节前 2–3 周">2–3 weeks before CNY</td><td data-zh="高">High</td><td data-zh="工人提前返乡，产能骤降">Workers leave early; capacity drops sharply</td></tr>
+          <tr><td data-zh="春节后 1–2 周">1–2 weeks after CNY</td><td data-zh="高">High</td><td data-zh="返岗缓慢，产能爬坡">Slow return to work; output ramps gradually</td></tr>
+          <tr><td data-zh="春节后 3–4 周">3–4 weeks after CNY</td><td data-zh="中">Medium</td><td data-zh="产能基本恢复，可按正常交期安排">Capacity mostly restored; normal lead times resume</td></tr>
+        </tbody>
+      </table>
+
+      <h3 data-zh="不同产品类别的典型生产时间">Typical Production Time by Product Category</h3>
+      <p data-zh="以下范围基于 CNQ 在中国工厂 17 年现场验货经验，供下单前估算参考。">Based on 17+ years of on-site inspection experience across Chinese factories — use as a rough guide before ordering.</p>
+      <table>
+        <thead>
+          <tr><th data-zh="产品类别">Product Category</th><th data-zh="典型生产时间">Typical Production Time</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-zh="日用杂货">General Merchandise</td><td data-zh="15–30 天">15–30 days</td></tr>
+          <tr><td data-zh="玩具">Toys</td><td data-zh="20–40 天">20–40 days</td></tr>
+          <tr><td data-zh="服装">Apparel</td><td data-zh="25–45 天">25–45 days</td></tr>
+          <tr><td data-zh="家具">Furniture</td><td data-zh="30–60 天">30–60 days</td></tr>
+          <tr><td data-zh="电器">Electrical Appliances</td><td data-zh="30–60 天">30–60 days</td></tr>
+          <tr><td data-zh="复杂电器">Complex Electronics</td><td data-zh="45–90 天">45–90 days</td></tr>
+        </tbody>
+      </table>
+
+      <h3 data-zh="工厂交期延误的常见原因">Common Reasons for Factory Delays</h3>
+      <p data-zh="提前知道哪些环节容易延误，就能提前准备。">Know the bottlenecks before they hit your schedule:</p>
+      <ul>
+        <li><strong data-zh="原材料没到齐">Raw materials not ready</strong> <span data-zh="— 一个缺件就能让整条产线停摆。">— one missing component stalls the whole line.</span></li>
+        <li><strong data-zh="模具或设备出问题">Tooling or equipment issues</strong> <span data-zh="— 修模、机器故障动辄多出几天。">— mold repairs and breakdowns add days.</span></li>
+        <li><strong data-zh="工人短缺">Labor shortages</strong> <span data-zh="— 春节后最明显。">— most visible right after Chinese New Year.</span></li>
+        <li><strong data-zh="工厂接单过多、产能被挤占">Overbooked factories</strong> <span data-zh="— 热门供应商常同时服务多个买家。">— popular suppliers split capacity across many buyers.</span></li>
+        <li><strong data-zh="验货发现缺陷需要返工">Rework after inspection</strong> <span data-zh="— 问题在出货前被发现，返工也意味着延期。">— defects found on-site must be fixed before the goods can ship.</span></li>
+      </ul>
+
+      <h3 data-zh="完整示例：一组真实数字">Worked Example: A Real Order Timeline</h3>
+      <p data-zh="假设您 9 月 1 日下单：生产 30 天、海运 25 天、缓冲 5 天。">Say you place an order on September 1: 30 days production, 25 days sea freight, 5 days buffer.</p>
+      <ul>
+        <li><strong data-zh="货好日期：">Production completion:</strong> <span data-zh="10 月 1 日">October 1</span></li>
+        <li><strong data-zh="到货日期（含缓冲）：">Arrival with buffer:</strong> <span data-zh="10 月 31 日">October 31</span></li>
+        <li><strong data-zh="全程总天数：">Total lead time:</strong> <span data-zh="60 天">60 days</span></li>
+      </ul>
+      <p data-zh="这意味着如果您要赶圣诞销售，最晚 8 月中旬就得下单。用上面的计算器，输入您自己的日期试试。">That means to hit Christmas sales, you would need to place your order by mid-August at the latest. Enter your own dates in the calculator above and see where you land.</p>
+
+      <h3 data-zh="为什么需要缓冲时间？">Why Buffer Time Matters?</h3>
+      <p><span data-zh="缓冲时间是给整个生产-物流链条预留的弹性天数。工厂小幅延期、">Buffer time is the cushion you add to the entire production-logistics chain. Minor factory delays, </span><a href="/services#inspection"><span data-zh="产品检验">inspection in China</span></a><span data-zh="，港口拥堵、清关延误都可能导致实际到货晚于计划。一般建议留 5-10 天。缓冲不是浪费，是保护您的销售节奏不受供应链波动影响。">, port congestion, and customs holdups can all push actual arrival later than planned. 5–10 days is a common recommendation. Buffer isn't waste — it protects your sales rhythm from supply chain uncertainty.</span></p>
+
+      <h3 data-zh="这个工具的计算逻辑">How Does This Tool Calculate Dates?</h3>
+      <p data-zh="货好日期 = 下单日期 + 生产时间；到货日期 = 货好日期 + 运输时间 + 缓冲时间。所有计算均按自然日，不排除周末或节假日。此工具仅作规划参考，建议定期与工厂和货代确认最新进度。">Production completion = order date + production time. Arrival with buffer = completion + transit + buffer. All calculations use calendar days. Use this as a planning reference and check regularly with your factory and forwarder.</p>
+    </div>
+  </section>
+
+  <section class="leadtime-section" style="padding-top: 0;">
+    <div class="container">
+      <div class="related-articles" style="margin-top: 0; padding-top: 0;">
+        <h3 data-zh="相关资源">Related Resources</h3>
+        <div class="related-grid">
+          <div class="related-card">
+            <h4><a href="/services/pre-shipment-inspection">Pre-Shipment Inspection Process</a></h4>
+            <p data-zh="货好日期定了 — 下一步在工厂出货前安排验货，拦截缺陷再发货。">Your completion date is set — now book an inspection before the goods ship. Catch defects on the factory floor.</p>
+          </div>
+          <div class="related-card">
+            <h4><a href="/tools/inspection-cost-calculator">Inspection Cost Calculator</a></h4>
+            <p data-zh="把验货成本也一起算清楚 — 按品类、批量与AQL水平估算人天与美元费用。">Estimate your inspection man-days and USD cost by category, lot size and AQL level.</p>
+          </div>
+          <div class="related-card">
+            <h4><a href="/tools/aql-calculator/">AQL Sampling Calculator - ANSI/ASQ Z1.4</a></h4>
+            <p data-zh="确认订单需要抽多少件 — 用免费的 AQL 计算器计算样本量。">Confirm how many units to inspect — use the free AQL calculator for your sample size.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container fade-in">
+      <h2 data-zh="交期清楚了，品控也要跟上">Know Your Lead Time, Keep Quality on Schedule</h2>
+      <p><span data-zh="交期计算只是第一步。CNQ 的验货专家按你的生产节点安排到厂检验，确保货好即合格、到港无退运。无论首次下单还是长期合作，我们帮你把每批货的质量风险挡在出货前。">Knowing your lead time is only the first step. CNQ inspection experts schedule on-site checks around your production milestones — so goods are ready and compliant when they ship. We keep quality risk off your freight bill, order after order.</span></p>
+      <a href="/contact" class="btn btn-primary" data-zh="联系 CNQ 安排验货">Get Your CNQ Experts</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <div class="footer-title">China Quality Service</div>
+        <p data-zh="专业的第三方品控咨询服务商，致力于为全球客户提供独立、客观的品质检验与咨询服务，确保您的产品符合国际质量标准。">Expert China Inspection Services — independent product inspection, factory audit &amp; supply chain consulting.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading" data-zh="快速链接">Quick Links</div>
+        <a href="/about" data-zh="关于我们">About Us</a>
+        <a href="/services" data-zh="服务范围">Services</a>
+        <a href="/insights" data-zh="洞察">Insights</a>
+        <a href="/download" data-zh="资源中心">Resources</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading" data-zh="核心服务">Core Services</div>
+        <a href="/services#inspection" data-zh="产品检验">Product Inspection</a>
+        <a href="/services#audit" data-zh="工厂审核">Factory Audit</a>
+        <a href="/services#lab" data-zh="实验室测试">Lab Testing</a>
+        <a href="/services#supplier" data-zh="供应商管理">Supplier Management</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading" data-zh="联系我们">Contact Us</div>
+        <a href="/contact" data-zh="联系方式">Contact Info</a>
+        <a href="mailto:contact@cn-q.com" class="footer-contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
+            <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 6.013-9.518-6.013h19.036zm-19.518 14v-11.765l10 6.321 10-6.321v11.765h-20z"/>
+          </svg>
+          contact@cn-q.com
+        </a>
+        <a href="https://wa.me/+13237766558" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          +1 (323) 776-6558
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 China Quality Service All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to Top" title="Back to Top">&#9650;</button>
+<script src="/js/main.js" defer></script>
+<script>
+(function() {
+  'use strict';
+
+  var today = new Date();
+  var todayStr = today.getFullYear() + '-' +
+    String(today.getMonth() + 1).padStart(2, '0') + '-' +
+    String(today.getDate()).padStart(2, '0');
+  document.getElementById('orderDate').value = todayStr;
+
+  function addDays(date, days) {
+    var result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  }
+
+  function formatDate(date, lang) {
+    if (lang === 'zh') {
+      return date.getFullYear() + '\u5e74' + (date.getMonth() + 1) + '\u6708' + date.getDate() + '\u65e5';
+    }
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+
+  function calculateLeadTime() {
+    var dateVal = document.getElementById('orderDate').value;
+    if (!dateVal) return;
+    var orderDate = new Date(dateVal + 'T00:00:00');
+    var prodDays = parseInt(document.getElementById('productionDays').value, 10) || 0;
+    var transitDays = parseInt(document.getElementById('transitDays').value, 10) || 0;
+    var bufferDays = parseInt(document.getElementById('bufferDays').value, 10) || 0;
+
+    if (isNaN(orderDate.getTime())) return;
+
+    var completionDate = addDays(orderDate, prodDays);
+    var arrivalDate = addDays(completionDate, transitDays + bufferDays);
+    var totalDays = prodDays + transitDays + bufferDays;
+
+    var lang = (document.documentElement.lang || 'en') === 'zh' ? 'zh' : 'en';
+    document.getElementById('completionDate').textContent = formatDate(completionDate, lang);
+    document.getElementById('arrivalDate').textContent = formatDate(arrivalDate, lang);
+    document.getElementById('totalDays').textContent = totalDays + (lang === 'zh' ? ' \u5929' : ' days');
+
+    var area = document.getElementById('leadTimeResults');
+    area.classList.remove('visible');
+    void area.offsetWidth;
+    area.classList.add('visible');
+  }
+
+  document.getElementById('calcLeadTimeBtn').addEventListener('click', calculateLeadTime);
+
+  function isChinaBusinessHours(now) {
+    var parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Shanghai',
+      weekday: 'short',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+      hourCycle: 'h23'
+    }).formatToParts(now);
+    var map = {};
+    parts.forEach(function(p) { map[p.type] = p.value; });
+    var weekday = map.weekday;
+    var hour = parseInt(map.hour, 10);
+    var isWeekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(weekday) !== -1;
+    return isWeekday && hour >= 9 && hour < 18;
+  }
+
+  function updateTimes() {
+    var now = new Date();
+    var lang = (document.documentElement.lang || 'en') === 'zh' ? 'zh' : 'en';
+
+    var china = now.toLocaleString('en-US', {
+      timeZone: 'Asia/Shanghai',
+      year: 'numeric', month: 'short', day: 'numeric', weekday: 'long',
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+      hour12: false, hourCycle: 'h23'
+    });
+    document.getElementById('chinaTime').textContent = china;
+
+    var statusEl = document.getElementById('chinaStatus');
+    if (isChinaBusinessHours(now)) {
+      statusEl.className = 'status open';
+      statusEl.textContent = lang === 'zh'
+        ? '\u4e2d\u56fd\u5de5\u4f5c\u65f6\u95f4\uff08\u5468\u4e00\u81f3\u5468\u4e94 9:00\u201318:00\uff09\u2014 \u4f9b\u5e94\u5546\u73b0\u5728\u5e94\u8be5\u53ef\u4ee5\u8054\u7cfb'
+        : 'China business hours (Mon\u2013Fri 9:00\u201318:00) \u2014 suppliers should be reachable now';
+    } else {
+      statusEl.className = 'status closed';
+      statusEl.textContent = lang === 'zh'
+        ? '\u975e\u4e2d\u56fd\u5de5\u4f5c\u65f6\u95f4 \u2014 \u4f9b\u5e94\u5546\u53ef\u80fd\u76f4\u5230\u4e0b\u4e00\u4e2a\u5de5\u4f5c\u65e5\u624d\u4f1a\u56de\u590d'
+        : 'Outside China business hours \u2014 suppliers may reply on the next working day';
+    }
+
+    var local = now.toLocaleTimeString('en-US', { hour12: false, hourCycle: 'h23' });
+    document.getElementById('localTime').textContent = lang === 'zh'
+      ? '\u60a8\u672c\u5730\u65f6\u95f4\uff1a' + local
+      : 'Your local time: ' + local;
+  }
+  updateTimes();
+  setInterval(updateTimes, 60000);
+
+  calculateLeadTime();
+})();
+</script>
+</body>
+</html>
