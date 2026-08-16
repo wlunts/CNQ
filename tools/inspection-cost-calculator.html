@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-zh="中国产品检验成本计算器 - 免费即时在线估算 | 厦门亚商">Product Inspection Cost in China 2026: Free Calculator &amp; Instant Estimate | China Quality Service</title>
-  <meta name="description" data-zh="输入产品类别与数量，免费即时计算您的中国产品检验成本。无需注册，基于CNQ 17年真实验货产能数据。支持双语切换。" content="Calculate your product inspection cost in China instantly. Enter product details, get real man-day &amp; USD pricing. No signup required. Based on 17 years of QC data.">
+  <title data-zh="中国产品检验成本计算器 - 免费即时在线估算 | 厦门亚商">Product Inspection Cost in China 2026: Free Instant Calculator | China Quality Service</title>
+  <meta name="description" data-zh="输入产品类别与数量，免费即时计算您的中国产品检验成本。无需注册，基于CNQ 17年真实验货产能数据。支持双语切换。" content="Calculate your product inspection cost in China instantly at $188/man-day. Enter product details, get real man-day &amp; USD pricing. No signup required. Based on 17 years of QC data.">
   <link rel="canonical" href="https://www.chinaqualityservice.com/tools/inspection-cost-calculator">
   <link rel="alternate" hreflang="en" href="https://www.chinaqualityservice.com/tools/inspection-cost-calculator" />
   <link rel="alternate" hreflang="x-default" href="https://www.chinaqualityservice.com/tools/inspection-cost-calculator" />
   <meta property="og:title" content="Product Inspection Cost in China 2026: Free Calculator &amp; Instant Estimate | CNQ">
-  <meta property="og:description" content="Calculate your product inspection cost in China instantly — get real man-day &amp; USD pricing. No signup required. Built on 17 years of QC data.">
+  <meta property="og:description" content="Calculate your product inspection cost in China instantly at $188/man-day — get real man-day &amp; USD pricing. No signup required. Built on 17 years of QC data.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.chinaqualityservice.com/tools/inspection-cost-calculator">
   <meta property="og:image" content="https://www.chinaqualityservice.com/images/og-default.jpg">
@@ -195,7 +195,7 @@
       <h2 data-zh="中国产品检验费用是多少？">How Much Does Product Inspection Cost in China?</h2>
       <p><span data-zh="中国产品检验的费用通常按人天（Man-Day）计算。1 人天 = 1 名专业验货员在工厂现场工作 1 天（通常 8 小时），CNQ 标准费率为 $188 USD/人天。检验所需人天数取决于三个关键因素：产品品类（决定了">The cost of product inspection in China is typically calculated in man-days — 1 man-day = 1 professional inspector working on-site for 1 day (typically 8 hours) at CNQ's standard rate of $188 USD/man-day. The number of man-days — and therefore your total inspection cost — depends on three key factors: product category (which determines </span><a href="/services#inspection"><span data-zh="验货员的日产能">daily inspection throughput</span></a><span data-zh="），型号数量（款数越多，切换耗时越长）和">), number of item types (more models mean more setup time), and </span><span data-zh="AQL 样本量（抽得越多，所需时间越多）。简单杂货每人天 $188 可检验 315 件，而复杂电气产品仅 50 件 — 品类选择直接影响总成本。"> (more units to inspect means more time and higher cost). A simple hardgoods order costs as little as $188/man-day for 315 pcs, while complex electrical items may require multiple man-days — your product category directly drives the total inspection cost.</span></p>
 
-      <h2 data-zh="如何使用这个检验成本计算器">How to Calculate Inspection Cost</h2>
+      <h2 data-zh="如何使用这个检验成本计算器">How to Calculate Inspection Cost?</h2>
       <ul>
         <li data-zh="选择产品品类：不同品类对应不同检验速度与成本。普通杂货 $188/天 可检 315 件，复杂电气 $188/天 仅检 50 件。">Select the Product Category — each category has a different inspection pace and cost. General hardgoods: $188/day for up to 315 pcs. Complex electrical: $188/day for only 50 pcs.</li>
         <li data-zh="输入型号数量：多个SKU需要检验员在不同产品间切换，增加检验时间，从而增加成本。">Enter the <strong>Number of Item Types</strong> — multiple SKUs require switching between products, which increases inspection time and total cost.</li>
@@ -268,7 +268,7 @@
     <tr>
       <td data-zh="电器产品">Electrical appliance</td>
       <td>80</td>
-      <td>$376 (2 man-days)</td>
+      <td>$188 (1 man-day)</td>
     </tr>
     <tr>
       <td data-zh="复杂电器">Complex electricals</td>
@@ -298,6 +298,10 @@
           <div class="related-card">
             <h4><a href="/industry-updates/ansi-asq-z1-4-guide">ANSI/ASQ Z1.4 Sampling Guide</a></h4>
             <p data-zh="理解检验成本背后的AQL标准逻辑 — 检验水平、AQL值、产品品类差异全解析。">Understand the AQL logic behind your inspection cost — levels, values, and product category differences fully explained.</p>
+          </div>
+          <div class="related-card">
+            <h4><a href="/tools/aql-calculator/">AQL Sampling Calculator - ANSI/ASQ Z1.4</a></h4>
+            <p data-zh="先算样本量，再估成本 — 用免费的 AQL 计算器确认你的订单需要抽多少件。">Calculate your sample size first — then estimate cost. Use the free AQL calculator to confirm how many units to inspect.</p>
           </div>
         </div>
       </div>
@@ -437,8 +441,9 @@
     updateReferenceDisplay();
   };
 
+  setReferenceCurrency('EUR');
   fetchExchangeRates().then(function() {
-    setReferenceCurrency('EUR');
+    updateReferenceDisplay();
   });
 })();
 </script>
