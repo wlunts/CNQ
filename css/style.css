@@ -390,7 +390,7 @@ ul, ol { list-style: none; }
 .footer-col .footer-contact-link { display: inline-flex; align-items: center; gap: 8px; color: #fff; font-size: 0.95rem; }
 .footer-col .footer-contact-link:hover { color: #fff; padding-left: 6px; }
 .footer-col .footer-contact-link svg { flex-shrink: 0; }
-.footer-bottom { text-align: center; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
+.footer-bottom { text-align: center; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: rgba(255, 255, 255, 0.65); }
 
 /* ---------- Back to Top ---------- */
 .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; background: var(--primary); color: #fff; border: none; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all var(--transition); box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2); z-index: 999; }
