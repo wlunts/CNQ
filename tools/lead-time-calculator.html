@@ -38,6 +38,11 @@
     .btn-leadtime { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; background: var(--primary, #2563eb); color: #fff; border: none; border-radius: 10px; font-size: 1.05rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.1s; width: 100%; margin-top: 28px; }
     .btn-leadtime:hover { background: var(--primary-dark, #1d4ed8); }
     .btn-leadtime:active { transform: scale(0.98); }
+    .leadtime-mode-toggle { display: inline-flex; gap: 6px; background: #f1f5f9; padding: 4px; border-radius: 10px; margin-bottom: 24px; }
+    .leadtime-mode-btn { padding: 8px 20px; border: none; background: transparent; border-radius: 8px; font-size: 0.95rem; font-weight: 600; color: #64748b; cursor: pointer; transition: background 0.2s, color 0.2s; }
+    .leadtime-mode-btn:hover { color: var(--primary, #2563eb); }
+    .leadtime-mode-btn.active { background: #fff; color: var(--primary, #2563eb); box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+    .leadtime-metric .value.overdue { color: #dc2626; }
     .leadtime-results { margin-top: 28px; opacity: 0; transform: translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; display: none; }
     .leadtime-results.visible { opacity: 1; transform: translateY(0); display: block; }
     .leadtime-results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -119,10 +124,18 @@
   <section class="leadtime-section">
     <div class="container">
       <div class="leadtime-card">
+        <div class="leadtime-mode-toggle" role="group" aria-label="Calculation mode">
+          <button type="button" id="modeForwardBtn" class="leadtime-mode-btn active" data-zh="正向计算">Forward</button>
+          <button type="button" id="modeReverseBtn" class="leadtime-mode-btn" data-zh="反向反推">Reverse</button>
+        </div>
         <div class="leadtime-form-grid">
-          <div class="leadtime-field">
+          <div class="leadtime-field" id="orderDateField">
             <label for="orderDate" data-zh="下单日期">Order Date</label>
             <input type="date" id="orderDate" aria-label="Order date">
+          </div>
+          <div class="leadtime-field" id="targetArrivalField" style="display:none;">
+            <label for="targetArrival" data-zh="目标到货日期">Target Arrival Date</label>
+            <input type="date" id="targetArrival" aria-label="Target arrival date">
           </div>
           <div class="leadtime-field">
             <label for="productionDays" data-zh="生产时间（天）">Production Time (days)</label>
@@ -138,9 +151,10 @@
           </div>
         </div>
         <button id="calcLeadTimeBtn" class="btn-leadtime" type="button" data-zh="计算交期">Calculate Lead Time</button>
+        <button id="calcReverseBtn" class="btn-leadtime" type="button" data-zh="反推最晚下单日期" style="display:none;">Calculate Latest Order Date</button>
 
         <div class="leadtime-results" id="leadTimeResults">
-          <div class="leadtime-results-grid">
+          <div class="leadtime-results-grid" id="forwardResultsGrid">
             <div class="leadtime-metric">
               <div class="label" data-zh="预计货好日期">Est. Production Completion</div>
               <div class="value" id="completionDate">—</div>
@@ -152,6 +166,20 @@
             <div class="leadtime-metric">
               <div class="label" data-zh="全程总天数">Total Lead Time</div>
               <div class="value" id="totalDays">—</div>
+            </div>
+          </div>
+          <div class="leadtime-results-grid" id="reverseResultsGrid" style="display:none;">
+            <div class="leadtime-metric">
+              <div class="label" data-zh="最晚下单日期">Latest Order Date</div>
+              <div class="value" id="latestOrderDate">—</div>
+            </div>
+            <div class="leadtime-metric">
+              <div class="label" data-zh="工厂最晚货好日期">Req. Production Completion</div>
+              <div class="value" id="reqCompletionDate">—</div>
+            </div>
+            <div class="leadtime-metric">
+              <div class="label" data-zh="距今日数">Days Left to Order</div>
+              <div class="value" id="daysLeft">—</div>
             </div>
           </div>
       <div class="china-time-box">
@@ -363,6 +391,10 @@
     String(today.getMonth() + 1).padStart(2, '0') + '-' +
     String(today.getDate()).padStart(2, '0');
   document.getElementById('orderDate').value = todayStr;
+  var defaultArrival = addDays(today, 60);
+  document.getElementById('targetArrival').value = defaultArrival.getFullYear() + '-' +
+    String(defaultArrival.getMonth() + 1).padStart(2, '0') + '-' +
+    String(defaultArrival.getDate()).padStart(2, '0');
 
   function addDays(date, days) {
     var result = new Date(date);
@@ -377,24 +409,59 @@
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
   }
 
+  var mode = 'forward';
+
+  function setMode(m) {
+    mode = m;
+    document.getElementById('modeForwardBtn').classList.toggle('active', m === 'forward');
+    document.getElementById('modeReverseBtn').classList.toggle('active', m === 'reverse');
+    document.getElementById('orderDateField').style.display = m === 'forward' ? '' : 'none';
+    document.getElementById('targetArrivalField').style.display = m === 'reverse' ? '' : 'none';
+    document.getElementById('calcLeadTimeBtn').style.display = m === 'forward' ? '' : 'none';
+    document.getElementById('calcReverseBtn').style.display = m === 'reverse' ? '' : 'none';
+    document.getElementById('forwardResultsGrid').style.display = m === 'forward' ? '' : 'none';
+    document.getElementById('reverseResultsGrid').style.display = m === 'reverse' ? '' : 'none';
+    calculateLeadTime();
+  }
+
+  document.getElementById('modeForwardBtn').addEventListener('click', function() { setMode('forward'); });
+  document.getElementById('modeReverseBtn').addEventListener('click', function() { setMode('reverse'); });
+
   function calculateLeadTime() {
-    var dateVal = document.getElementById('orderDate').value;
-    if (!dateVal) return;
-    var orderDate = new Date(dateVal + 'T00:00:00');
     var prodDays = parseInt(document.getElementById('productionDays').value, 10) || 0;
     var transitDays = parseInt(document.getElementById('transitDays').value, 10) || 0;
     var bufferDays = parseInt(document.getElementById('bufferDays').value, 10) || 0;
-
-    if (isNaN(orderDate.getTime())) return;
-
-    var completionDate = addDays(orderDate, prodDays);
-    var arrivalDate = addDays(completionDate, transitDays + bufferDays);
-    var totalDays = prodDays + transitDays + bufferDays;
-
     var lang = (document.documentElement.lang || 'en') === 'zh' ? 'zh' : 'en';
-    document.getElementById('completionDate').textContent = formatDate(completionDate, lang);
-    document.getElementById('arrivalDate').textContent = formatDate(arrivalDate, lang);
-    document.getElementById('totalDays').textContent = totalDays + (lang === 'zh' ? ' \u5929' : ' days');
+
+    if (mode === 'forward') {
+      var dateVal = document.getElementById('orderDate').value;
+      if (!dateVal) return;
+      var orderDate = new Date(dateVal + 'T00:00:00');
+      if (isNaN(orderDate.getTime())) return;
+
+      var completionDate = addDays(orderDate, prodDays);
+      var arrivalDate = addDays(completionDate, transitDays + bufferDays);
+      var totalDays = prodDays + transitDays + bufferDays;
+      document.getElementById('completionDate').textContent = formatDate(completionDate, lang);
+      document.getElementById('arrivalDate').textContent = formatDate(arrivalDate, lang);
+      document.getElementById('totalDays').textContent = totalDays + (lang === 'zh' ? ' \u5929' : ' days');
+    } else {
+      var arrVal = document.getElementById('targetArrival').value;
+      if (!arrVal) return;
+      var targetArrival = new Date(arrVal + 'T00:00:00');
+      if (isNaN(targetArrival.getTime())) return;
+
+      var latestOrder = addDays(targetArrival, -(prodDays + transitDays + bufferDays));
+      var reqCompletion = addDays(targetArrival, -(transitDays + bufferDays));
+      var now = new Date();
+      var todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      var daysLeft = Math.round((latestOrder.getTime() - todayStart.getTime()) / 86400000);
+      document.getElementById('latestOrderDate').textContent = formatDate(latestOrder, lang);
+      document.getElementById('reqCompletionDate').textContent = formatDate(reqCompletion, lang);
+      var daysEl = document.getElementById('daysLeft');
+      daysEl.textContent = daysLeft + (lang === 'zh' ? ' \u5929' : ' days');
+      daysEl.className = 'value' + (daysLeft < 0 ? ' overdue' : '');
+    }
 
     var area = document.getElementById('leadTimeResults');
     area.classList.remove('visible');
@@ -403,6 +470,7 @@
   }
 
   document.getElementById('calcLeadTimeBtn').addEventListener('click', calculateLeadTime);
+  document.getElementById('calcReverseBtn').addEventListener('click', calculateLeadTime);
 
   function isChinaBusinessHours(now) {
     var parts = new Intl.DateTimeFormat('en-US', {
