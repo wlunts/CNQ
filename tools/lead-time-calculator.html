@@ -39,9 +39,9 @@
     .btn-leadtime:hover { background: var(--primary-dark, #1d4ed8); }
     .btn-leadtime:active { transform: scale(0.98); }
     .leadtime-mode-toggle { display: inline-flex; gap: 6px; background: #f1f5f9; padding: 4px; border-radius: 10px; margin-bottom: 24px; }
-    .leadtime-mode-btn { padding: 8px 20px; border: none; background: transparent; border-radius: 8px; font-size: 0.95rem; font-weight: 600; color: #64748b; cursor: pointer; transition: background 0.2s, color 0.2s; }
-    .leadtime-mode-btn:hover { color: var(--primary, #2563eb); }
-    .leadtime-mode-btn.active { background: #fff; color: var(--primary, #2563eb); box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+    .leadtime-mode-btn { padding: 8px 20px; border: 1px solid transparent; background: transparent; border-radius: 8px; font-size: 0.95rem; font-weight: 600; color: #64748b; cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+    .leadtime-mode-btn:hover { color: var(--primary, #2563eb); background: rgba(37, 99, 235, 0.08); }
+    .leadtime-mode-btn.active { background: var(--primary, #2563eb); color: #fff; border-color: var(--primary, #2563eb); box-shadow: 0 1px 4px rgba(0,0,0,0.15); }
     .leadtime-metric .value.overdue { color: #dc2626; }
     .leadtime-results { margin-top: 28px; opacity: 0; transform: translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; display: none; }
     .leadtime-results.visible { opacity: 1; transform: translateY(0); display: block; }
