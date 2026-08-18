@@ -53,6 +53,11 @@
     .manday-seo-text h2 { font-size: 1.4rem; margin-bottom: 14px; color: #1a202c; }
     .manday-seo-text ul { padding-left: 20px; margin: 12px 0; }
     .manday-seo-text li { margin-bottom: 8px; }
+    .embed-wrap { display: flex; gap: 10px; margin-top: 12px; }
+    .embed-wrap input { flex: 1; padding: 12px 14px; border: 1px solid #cbd5e0; border-radius: 10px; font-family: Consolas, Monaco, monospace; font-size: 0.85rem; background: #f7fafc; color: #1a202c; min-width: 0; }
+    .embed-wrap button { padding: 12px 20px; background: #edf2f7; border: 1px solid #cbd5e0; border-radius: 10px; cursor: pointer; font-weight: 600; color: #2d3748; white-space: nowrap; }
+    .embed-wrap button:hover { background: #e2e8f0; }
+    @media (max-width: 600px) { .embed-wrap { flex-direction: column; } .embed-wrap button { width: 100%; } }
   </style>
 
 
@@ -201,6 +206,20 @@
     </div>
   </section>
 
+  <!-- Embed This Tool -->
+  <section class="manday-section">
+    <div class="container">
+      <div class="manday-card">
+        <h2 data-zh="嵌入此工具">Embed This Tool</h2>
+        <p style="font-size:0.95rem; color:#4a5568; margin-bottom:4px;"><span data-zh="把下面的代码复制到你的网页或博客中，访客就能直接使用这个验货费用计算器，无需跳转。">Copy the code below to embed this inspection cost calculator directly on your website or blog, so your visitors can estimate inspection costs without leaving your page.</span></p>
+        <div class="embed-wrap">
+          <input id="embedCode" type="text" readonly aria-label="Embed code">
+          <button id="copyEmbedBtn" type="button" data-zh="复制">Copy</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="manday-section alt">
     <div class="container manday-seo-text">
       <h2 data-zh="中国产品检验费用是多少？">How Much Does Product Inspection Cost in China?</h2>
@@ -296,6 +315,7 @@
       <p data-zh="有特殊检验需求或需要精确报价？请联系 CNQ 获取定制方案。想看真实检验案例的成本分配？浏览验货案例库，查看各品类实检过程与费用明细。">Have special inspection requirements or need a precise quote? Contact CNQ for a tailored plan. Curious how these costs translate to real inspections? Browse our inspection cases for actual execution and cost breakdowns across product categories.</p>
     </div>
   </section>
+
 
   <!-- FAQ -->
   <section class="manday-section alt" id="faq">
@@ -623,6 +643,8 @@ var currencyNames = {
     area.classList.remove('visible');
     void area.offsetWidth;
     area.classList.add('visible');
+
+    updateEmbedCode();
   }
 
   document.getElementById('calcBtn').addEventListener('click', function() {
@@ -641,8 +663,8 @@ var currencyNames = {
     var manDays = document.getElementById('manDays').textContent;
     var costText = document.getElementById('totalCost').textContent;
     var summary = isZh
-      ? '验货成本估算 — 品类：' + catName + ' | 型号数：' + models + ' | 批量：' + lot + ' 件 | AQL 样本量：' + sampleSize + ' | 预估人天：' + manDays + ' | 预估费用：' + costText + ' USD。由 CNQ 检验成本计算器估算 — chinaqualityservice.com/tools/inspection-cost-calculator'
-      : 'Inspection cost estimate — Category: ' + catName + ' | Models: ' + models + ' | Lot size: ' + lot + ' pcs | AQL sample: ' + sampleSize + ' | Est. man-days: ' + manDays + ' | Est. cost: ' + costText + ' USD. Estimated with the CNQ Inspection Cost Calculator — chinaqualityservice.com/tools/inspection-cost-calculator';
+      ? '验货成本估算\n品类：' + catName + '\n型号数：' + models + '\n批量：' + lot + ' 件\nAQL 样本量：' + sampleSize + '\n预估人天：' + manDays + '\n预估费用：' + costText + ' USD'
+      : 'Inspection cost estimate\nCategory: ' + catName + '\nModels: ' + models + '\nLot size: ' + lot + ' pcs\nAQL sample: ' + sampleSize + '\nEst. man-days: ' + manDays + '\nEst. cost: ' + costText + ' USD';
     var btn = this;
     function copied() {
       var orig = btn.textContent;
@@ -667,6 +689,63 @@ var currencyNames = {
     }
   });
 
+  function getEmbedIframeUrl() {
+    var cat = document.getElementById('productCategory').value;
+    var models = document.getElementById('modelCount').value;
+    var lot = document.getElementById('lotSize').value;
+    var level = document.getElementById('inspectionLevel').value;
+    return 'https://www.chinaqualityservice.com/tools/inspection-cost-calculator?cat=' + encodeURIComponent(cat) + '&models=' + encodeURIComponent(models) + '&lot=' + encodeURIComponent(lot) + '&level=' + encodeURIComponent(level);
+  }
+
+  function updateEmbedCode() {
+    var url = getEmbedIframeUrl();
+    document.getElementById('embedCode').value = '<iframe src="' + url + '" width="100%" height="720" style="border:0;" loading="lazy"></iframe>';
+  }
+
+  function copyEmbed() {
+    var input = document.getElementById('embedCode');
+    var btn = document.getElementById('copyEmbedBtn');
+    function copied() {
+      var orig = btn.textContent;
+      btn.textContent = (document.documentElement.lang || 'en') === 'zh' ? '已复制！' : 'Copied!';
+      setTimeout(function() { btn.textContent = orig; }, 1500);
+    }
+    function fallbackCopy() {
+      input.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      copied();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(input.value).then(copied, fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+  }
+
+  function applyUrlParams() {
+    var params = new URLSearchParams(window.location.search);
+    var cat = params.get('cat');
+    var models = params.get('models');
+    var lot = params.get('lot');
+    var level = params.get('level');
+    if (cat !== null) {
+      var catSel = document.getElementById('productCategory');
+      for (var i = 0; i < catSel.options.length; i++) {
+        if (catSel.options[i].value === cat) { catSel.selectedIndex = i; break; }
+      }
+    }
+    if (models !== null && /^\d+$/.test(models)) { document.getElementById('modelCount').value = models; }
+    if (lot !== null && /^\d+$/.test(lot)) { document.getElementById('lotSize').value = lot; }
+    if (level !== null) {
+      var lvSel = document.getElementById('inspectionLevel');
+      for (var j = 0; j < lvSel.options.length; j++) {
+        if (lvSel.options[j].value === level) { lvSel.selectedIndex = j; break; }
+      }
+    }
+  }
+
+  document.getElementById('copyEmbedBtn').addEventListener('click', copyEmbed);
+  applyUrlParams();
   calculate();
 })();
 </script>

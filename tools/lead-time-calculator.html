@@ -67,6 +67,11 @@
     .leadtime-seo-text th, .leadtime-seo-text td { padding: 10px 12px; border: 1px solid #e2e8f0; text-align: left; }
     .leadtime-seo-text th { background: #1a3a5c; color: #fff; font-weight: 600; }
     .leadtime-seo-text tr:nth-child(even) { background: #f8fafc; }
+    .embed-wrap { display: flex; gap: 10px; margin-top: 12px; }
+    .embed-wrap input { flex: 1; padding: 12px 14px; border: 1px solid #cbd5e0; border-radius: 10px; font-family: Consolas, Monaco, monospace; font-size: 0.85rem; background: #f7fafc; color: #1a202c; min-width: 0; }
+    .embed-wrap button { padding: 12px 20px; background: #edf2f7; border: 1px solid #cbd5e0; border-radius: 10px; cursor: pointer; font-weight: 600; color: #2d3748; white-space: nowrap; }
+    .embed-wrap button:hover { background: #e2e8f0; }
+    @media (max-width: 600px) { .embed-wrap { flex-direction: column; } .embed-wrap button { width: 100%; } }
   </style>
 
 </head>
@@ -195,6 +200,20 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- Embed This Tool -->
+  <section class="leadtime-section">
+    <div class="container">
+      <div class="leadtime-card">
+        <h2 data-zh="嵌入此工具">Embed This Tool</h2>
+        <p style="font-size:0.95rem; color:#4a5568; margin-bottom:4px;"><span data-zh="把下面的代码复制到你的网页或博客中，访客就能直接使用这个交期计算器，无需跳转。">Copy the code below to embed this factory lead time calculator directly on your website or blog, so your visitors can plan delivery dates without leaving your page.</span></p>
+        <div class="embed-wrap">
+          <input id="embedCode" type="text" readonly aria-label="Embed code">
+          <button id="copyEmbedBtn" type="button" data-zh="复制">Copy</button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -548,22 +567,70 @@
     // 生成可复制的摘要文本（forward / reverse 双模式）
     if (mode === 'forward') {
       lastSummary = lang === 'zh'
-        ? '中国工厂交期估算 — 下单日期：' + document.getElementById('orderDate').value + ' | 生产：' + prodDays + ' 天 | 运输：' + transitDays + ' 天 | 缓冲：' + bufferDays + ' 天 | 预计货好日期：' + document.getElementById('completionDate').textContent + ' | 预计到货日期：' + document.getElementById('arrivalDate').textContent + ' | 全程：' + document.getElementById('totalDays').textContent + '。由 CNQ 交期计算器估算 — chinaqualityservice.com/tools/lead-time-calculator'
-        : 'China factory lead time estimate — Order date: ' + document.getElementById('orderDate').value + ' | Production: ' + prodDays + ' days | Transit: ' + transitDays + ' days | Buffer: ' + bufferDays + ' days | Est. completion: ' + document.getElementById('completionDate').textContent + ' | Est. arrival: ' + document.getElementById('arrivalDate').textContent + ' | Total: ' + document.getElementById('totalDays').textContent + '. Estimated with the CNQ Lead Time Calculator — chinaqualityservice.com/tools/lead-time-calculator';
+        ? '中国工厂交期估算\n下单日期：' + document.getElementById('orderDate').value + '\n生产：' + prodDays + ' 天\n运输：' + transitDays + ' 天\n缓冲：' + bufferDays + ' 天\n预计货好日期：' + document.getElementById('completionDate').textContent + '\n预计到货日期：' + document.getElementById('arrivalDate').textContent + '\n全程：' + document.getElementById('totalDays').textContent
+        : 'China factory lead time estimate\nOrder date: ' + document.getElementById('orderDate').value + '\nProduction: ' + prodDays + ' days\nTransit: ' + transitDays + ' days\nBuffer: ' + bufferDays + ' days\nEst. completion: ' + document.getElementById('completionDate').textContent + '\nEst. arrival: ' + document.getElementById('arrivalDate').textContent + '\nTotal: ' + document.getElementById('totalDays').textContent;
     } else {
       lastSummary = lang === 'zh'
-        ? '中国工厂交期倒推 — 目标到货日期：' + document.getElementById('targetArrival').value + ' | 生产：' + prodDays + ' 天 | 运输：' + transitDays + ' 天 | 缓冲：' + bufferDays + ' 天 | 最晚下单日期：' + document.getElementById('latestOrderDate').textContent + ' | 工厂最晚货好日期：' + document.getElementById('reqCompletionDate').textContent + ' | 距今日数：' + document.getElementById('daysLeft').textContent + '。由 CNQ 交期计算器估算 — chinaqualityservice.com/tools/lead-time-calculator'
-        : 'China factory lead time (reverse) — Target arrival: ' + document.getElementById('targetArrival').value + ' | Production: ' + prodDays + ' days | Transit: ' + transitDays + ' days | Buffer: ' + bufferDays + ' days | Latest order date: ' + document.getElementById('latestOrderDate').textContent + ' | Required completion: ' + document.getElementById('reqCompletionDate').textContent + ' | Days left: ' + document.getElementById('daysLeft').textContent + '. Estimated with the CNQ Lead Time Calculator — chinaqualityservice.com/tools/lead-time-calculator';
+        ? '中国工厂交期倒推\n目标到货日期：' + document.getElementById('targetArrival').value + '\n生产：' + prodDays + ' 天\n运输：' + transitDays + ' 天\n缓冲：' + bufferDays + ' 天\n最晚下单日期：' + document.getElementById('latestOrderDate').textContent + '\n工厂最晚货好日期：' + document.getElementById('reqCompletionDate').textContent + '\n距今日数：' + document.getElementById('daysLeft').textContent
+        : 'China factory lead time (reverse)\nTarget arrival: ' + document.getElementById('targetArrival').value + '\nProduction: ' + prodDays + ' days\nTransit: ' + transitDays + ' days\nBuffer: ' + bufferDays + ' days\nLatest order date: ' + document.getElementById('latestOrderDate').textContent + '\nRequired completion: ' + document.getElementById('reqCompletionDate').textContent + '\nDays left: ' + document.getElementById('daysLeft').textContent;
     }
 
     var area = document.getElementById('leadTimeResults');
     area.classList.remove('visible');
     void area.offsetWidth;
     area.classList.add('visible');
+
+    updateEmbedCode();
   }
 
   document.getElementById('calcLeadTimeBtn').addEventListener('click', calculateLeadTime);
   document.getElementById('calcReverseBtn').addEventListener('click', calculateLeadTime);
+
+  function getEmbedIframeUrl() {
+    var prod = document.getElementById('productionDays').value;
+    var transit = document.getElementById('transitDays').value;
+    var buffer = document.getElementById('bufferDays').value;
+    return 'https://www.chinaqualityservice.com/tools/lead-time-calculator?prod=' + encodeURIComponent(prod) + '&transit=' + encodeURIComponent(transit) + '&buffer=' + encodeURIComponent(buffer);
+  }
+
+  function updateEmbedCode() {
+    var url = getEmbedIframeUrl();
+    document.getElementById('embedCode').value = '<iframe src="' + url + '" width="100%" height="760" style="border:0;" loading="lazy"></iframe>';
+  }
+
+  function copyEmbed() {
+    var input = document.getElementById('embedCode');
+    var btn = document.getElementById('copyEmbedBtn');
+    function copied() {
+      var orig = btn.textContent;
+      btn.textContent = (document.documentElement.lang || 'en') === 'zh' ? '已复制！' : 'Copied!';
+      setTimeout(function() { btn.textContent = orig; }, 1500);
+    }
+    function fallbackCopy() {
+      input.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      copied();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(input.value).then(copied, fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+  }
+
+  function applyUrlParams() {
+    var params = new URLSearchParams(window.location.search);
+    var prod = params.get('prod');
+    var transit = params.get('transit');
+    var buffer = params.get('buffer');
+    if (prod !== null && /^\d+$/.test(prod)) { document.getElementById('productionDays').value = prod; }
+    if (transit !== null && /^\d+$/.test(transit)) { document.getElementById('transitDays').value = transit; }
+    if (buffer !== null && /^\d+$/.test(buffer)) { document.getElementById('bufferDays').value = buffer; }
+  }
+
+  document.getElementById('copyEmbedBtn').addEventListener('click', copyEmbed);
+  applyUrlParams();
+  updateEmbedCode();
 
   document.getElementById('copySummaryBtn').addEventListener('click', function() {
     var btn = this;
