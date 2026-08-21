@@ -24,6 +24,183 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+<!-- ========================= JSON-LD ========================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.chinaqualityservice.com/#website",
+      "name": "China Quality Service",
+      "url": "https://www.chinaqualityservice.com/",
+      "publisher": {"@id": "https://www.chinaqualityservice.com/#organization"},
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.chinaqualityservice.com/#organization",
+      "name": "China Quality Service",
+      "alternateName": ["CNQ", "China Quality Service Co., Ltd."],
+      "url": "https://www.chinaqualityservice.com/",
+      "logo": "https://www.chinaqualityservice.com/Upload/logo.png",
+      "sameAs": ["https://www.linkedin.com/company/cnq"],
+      "description": "China Quality Service provides independent third-party inspection and export quality control in China \u2013 trusted by 500+ global clients for pre-shipment inspection, factory audit, supplier quality assurance and lab testing.",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+86-136-6607-1299",
+          "contactType": "customer service",
+          "email": "contact@cn-q.com",
+          "availableLanguage": ["English", "Chinese"]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "dave@cn-q.com",
+          "contactType": "sales"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "halery@cn-q.com",
+          "contactType": "sales"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "compliance@cn-q.com",
+          "contactType": "compliance"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Unit 232, No.120 Xifu Rd, TongAn District",
+        "addressLocality": "Xiamen",
+        "addressRegion": "Fujian",
+        "postalCode": "361100",
+        "addressCountry": "CN"
+      },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ISO 9001:2015 Compliant Quality Management System",
+          "credentialCategory": "Quality Management",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "International Organization for Standardization (ISO)"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Partnership with CNAS-Accredited Testing Laboratory",
+          "credentialCategory": "Testing & Calibration",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "China National Accreditation Service for Conformity Assessment (CNAS)"
+          }
+        }
+      ],
+      "knowsAbout": [
+        {
+          "@type": "Thing",
+          "name": "ANSI/ASQ Z1.4 AQL Sampling Standards",
+          "description": "International standard for acceptance sampling in product quality inspection",
+          "sameAs": "https://en.wikipedia.org/wiki/Acceptable_quality_limit"
+        },
+        {
+          "@type": "Thing",
+          "name": "Third-Party Product Inspection",
+          "description": "Pre-shipment inspection, Product inspection service, and container loading supervision",
+          "sameAs": "https://en.wikipedia.org/wiki/Pre-shipment_inspection"
+        },
+        {
+          "@type": "Thing",
+          "name": "Factory Audit & Supplier Assessment",
+          "description": "Quality management system audits, social compliance audits, and supplier capability evaluations",
+          "sameAs": "https://en.wikipedia.org/wiki/Quality_management_system"
+        },
+        {
+          "@type": "Thing",
+          "name": "International Regulatory Compliance",
+          "description": "CE, FDA, RoHS, REACH and other global market access requirements",
+          "sameAs": "https://en.wikipedia.org/wiki/Regulatory_compliance"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "China Factory Audit",
+      "description": "On-site supplier assessment evaluating production capability, quality management systems, and workplace compliance against ISO 9000 standards. Includes QMS audit, social compliance audit, and C-TPAT security verification.",
+      "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
+      "serviceType": "Factory Audit",
+      "areaServed": [
+        {"@type": "Country", "name": "China"},
+        {"@type": "Country", "name": "Vietnam"},
+        {"@type": "Country", "name": "Cambodia"},
+        {"@type": "Country", "name": "Thailand"},
+        {"@type": "Country", "name": "Indonesia"},
+        {"@type": "Country", "name": "India"},
+        {"@type": "Country", "name": "Pakistan"},
+        {"@type": "Country", "name": "Sri Lanka"},
+        {"@type": "Country", "name": "Bangladesh"}
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "199.00",
+        "priceCurrency": "USD",
+        "description": "Starts at $199 per factory",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "199.00",
+          "priceCurrency": "USD",
+          "unitText": "per factory"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.chinaqualityservice.com/services/china-factory-audit#faq",
+      "isPartOf": { "@id": "https://www.chinaqualityservice.com/#website" },
+      "mainEntity": [
+        { "@type": "Question", "name": "How far in advance should I book a factory audit?", "acceptedAnswer": { "@type": "Answer", "text": "We recommend booking 3 to 5 business days before your target audit date. This ensures sufficient time for pre-audit communication, address verification, and schedule confirmation with the facility management." } },
+        { "@type": "Question", "name": "How long does a factory audit take?", "acceptedAnswer": { "@type": "Answer", "text": "Our Swift Audit ($199 per factory) typically takes 1 man-day. The Comprehensive Evaluation ($358 per factory) usually requires 2 man-days. The exact factory floor time (excluding travel time‌) ranges from 4 to 15 hours depending on factory size, number of production lines, and the depth of document review and worker interviews." } },
+        { "@type": "Question", "name": "Is the audit announced or unannounced to the factory?", "acceptedAnswer": { "@type": "Answer", "text": "By default, factory audits are announced to ensure key personnel (QC manager, operations head) and compliance documents are accessible. However, upon request, we can perform semi-announced or unannounced visits to verify actual floor conditions without prior notification." } },
+        { "@type": "Question", "name": "When will I receive the audit report, and in what format?", "acceptedAnswer": { "@type": "Answer", "text": "Your swift audit report will be delivered via email within 24 hours after completing the on-site visit. Your comprehensive audit report will be delivered via email within 24 to 48 hours after completing the on-site visit. It includes weighted scores, high-resolution photographic evidence, defect breakdowns, and an actionable CAPA (Corrective Action Plan) template." } },
+        { "@type": "Question", "name": "Do you cover factory audits outside China?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. In addition to all major manufacturing hubs in China, we provide factory audits in Vietnam, Cambodia, Thailand, Indonesia, India, Pakistan, Sri Lanka, and Bangladesh. Pricing may vary by country — please contact us for a quote." } },
+        { "@type": "Question", "name": "What happens if the factory refuses the audit or conceals information?", "acceptedAnswer": { "@type": "Answer", "text": "If a factory denies access to production lines or essential records, our auditor immediately alerts you while on-site. Uncooperative behavior is documented in the report as a major red flag — saving you from engaging with high-risk or deceptive suppliers." } },
+        { "@type": "Question", "name": "What is the key difference between Swift Audit ($199) and Comprehensive Evaluation ($358)?", "acceptedAnswer": { "@type": "Answer", "text": "Swift Audit ($199) focuses on basic supplier verification, license checks, factory existence, and machinery presence — ideal for initial supplier screening. Comprehensive Evaluation ($358) adds deep-dive QMS, labor rights (with private worker interviews), EHS environmental compliance, business ethics, and bottleneck capacity analysis." } },
+        { "@type": "Question", "name": "How do you ensure auditor integrity and prevent bribery?", "acceptedAnswer": { "@type": "Answer", "text": "We enforce a strict zero-tolerance anti-bribery policy. All auditors sign ethics compliance agreements and undergo regular rotations. Every audit is cross-checked using GPS verification, randomized auditor assignments, and objective high-res photo evidence to eliminate bias or unauthorized side deals with factories." } },
+        { "@type": "Question", "name": "What is your cancellation and rescheduling policy?", "acceptedAnswer": { "@type": "Answer", "text": "Free cancellation or rescheduling is available 3 days before the scheduled audit date. A flat $100 fee applies for late notifications or cancellations after schedule confirmation (special cases excluded)." } },
+        { "@type": "Question", "name": "What are the qualifications of your auditors?", "acceptedAnswer": { "@type": "Answer", "text": "All our auditors are full-time employees with 5–10+ years of factory audit experience and ISO 9001 Lead Auditor and SA8000 Social Compliance Auditor training, and are rigorously trained in 4M1E methodology, AQL standards, and annual integrity re-certification." } },
+        { "@type": "Question", "name": "Do you sign a Non-Disclosure Agreement (NDA) to protect our product and supplier information?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we routinely sign formal NDAs before receiving any audit-related documents such as BOMs, tech packs, product drawings, or factory contacts. All client data is encrypted, stored on secure servers, and accessible only to the assigned audit team. We treat your supplier network and product specifications as strictly confidential." } },
+        { "@type": "Question", "name": "Do you provide follow-up or corrective action verification after the audit?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our Comprehensive Evaluation includes a free structured CAPA (Corrective and Preventive Action) tracking table, where the factory must submit root-cause analysis, corrective actions, and photo evidence by a deadline for your review. To officially verify that the supplier has truly rectified the identified non-conformities, we can also perform a paid swift on-site re-audit. This ensures physical confirmation of the corrective actions, rather than relying solely on factory-submitted documents." } },
+        { "@type": "Question", "name": "Can you customize the audit checklist to meet our brand or platform requirements? (e.g., Amazon, Walmart, Target)", "acceptedAnswer": { "@type": "Answer", "text": "Yes, absolutely. We routinely align our audit checklists with client-specific supplier codes of conduct, as well as platform requirements such as Amazon, Walmart, Target, Disney, Sedex, BSCI, and SMETA. You can provide your own audit template, and our auditors will execute it alongside our standard 4M1E framework. Customized checklists are typically included at no extra charge, though complex multi-standard audits may require a slight schedule adjustment." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.chinaqualityservice.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.chinaqualityservice.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "China Factory Audit",
+          "item": "https://www.chinaqualityservice.com/services/china-factory-audit"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -729,176 +906,7 @@
 
 <button class="back-to-top" aria-label="Back to Top" title="Back to Top">&#9650;</button>
 
-<!-- ========================= JSON-LD ========================= -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://www.chinaqualityservice.com/#website",
-      "name": "China Quality Service",
-      "url": "https://www.chinaqualityservice.com/",
-      "publisher": {"@id": "https://www.chinaqualityservice.com/#organization"},
-      "inLanguage": "en"
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.chinaqualityservice.com/#organization",
-      "name": "China Quality Service",
-      "alternateName": ["CNQ", "China Quality Service Co., Ltd."],
-      "url": "https://www.chinaqualityservice.com/",
-      "logo": "https://www.chinaqualityservice.com/Upload/logo.png",
-      "sameAs": ["https://www.linkedin.com/company/cnq"],
-      "description": "China Quality Service provides independent third-party inspection and export quality control in China \u2013 trusted by 500+ global clients for pre-shipment inspection, factory audit, supplier quality assurance and lab testing.",
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": "+86-136-6607-1299",
-          "contactType": "customer service",
-          "email": "contact@cn-q.com",
-          "availableLanguage": ["English", "Chinese"]
-        },
-        {
-          "@type": "ContactPoint",
-          "email": "dave@cn-q.com",
-          "contactType": "sales"
-        },
-        {
-          "@type": "ContactPoint",
-          "email": "halery@cn-q.com",
-          "contactType": "sales"
-        },
-        {
-          "@type": "ContactPoint",
-          "email": "compliance@cn-q.com",
-          "contactType": "compliance"
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Unit 232, No.120 Xifu Rd, TongAn District",
-        "addressLocality": "Xiamen",
-        "addressRegion": "Fujian",
-        "postalCode": "361100",
-        "addressCountry": "CN"
-      },
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "ISO 9001:2015 Compliant Quality Management System",
-          "credentialCategory": "Quality Management",
-          "recognizedBy": {
-            "@type": "Organization",
-            "name": "International Organization for Standardization (ISO)"
-          }
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "Partnership with CNAS-Accredited Testing Laboratory",
-          "credentialCategory": "Testing & Calibration",
-          "recognizedBy": {
-            "@type": "Organization",
-            "name": "China National Accreditation Service for Conformity Assessment (CNAS)"
-          }
-        }
-      ],
-      "knowsAbout": [
-        {
-          "@type": "Thing",
-          "name": "ANSI/ASQ Z1.4 AQL Sampling Standards",
-          "description": "International standard for acceptance sampling in product quality inspection",
-          "sameAs": "https://en.wikipedia.org/wiki/Acceptable_quality_limit"
-        },
-        {
-          "@type": "Thing",
-          "name": "Third-Party Product Inspection",
-          "description": "Pre-shipment inspection, Product inspection service, and container loading supervision",
-          "sameAs": "https://en.wikipedia.org/wiki/Pre-shipment_inspection"
-        },
-        {
-          "@type": "Thing",
-          "name": "Factory Audit & Supplier Assessment",
-          "description": "Quality management system audits, social compliance audits, and supplier capability evaluations",
-          "sameAs": "https://en.wikipedia.org/wiki/Quality_management_system"
-        },
-        {
-          "@type": "Thing",
-          "name": "International Regulatory Compliance",
-          "description": "CE, FDA, RoHS, REACH and other global market access requirements",
-          "sameAs": "https://en.wikipedia.org/wiki/Regulatory_compliance"
-        }
-      ]
-    },
-    {
-      "@type": "Service",
-      "name": "China Factory Audit",
-      "description": "On-site supplier assessment evaluating production capability, quality management systems, and workplace compliance against ISO 9000 standards. Includes QMS audit, social compliance audit, and C-TPAT security verification.",
-      "provider": {"@id": "https://www.chinaqualityservice.com/#organization"},
-      "serviceType": "Factory Audit",
-      "areaServed": [
-        {"@type": "Country", "name": "China"},
-        {"@type": "Country", "name": "Vietnam"},
-        {"@type": "Country", "name": "Cambodia"},
-        {"@type": "Country", "name": "Thailand"},
-        {"@type": "Country", "name": "Indonesia"},
-        {"@type": "Country", "name": "India"},
-        {"@type": "Country", "name": "Pakistan"},
-        {"@type": "Country", "name": "Sri Lanka"},
-        {"@type": "Country", "name": "Bangladesh"}
-      ],
-      "offers": {
-        "@type": "Offer",
-        "price": "199.00",
-        "priceCurrency": "USD",
-        "description": "Starts at $199 per factory"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "isPartOf": { "@id": "https://www.chinaqualityservice.com/#website" },
-      "mainEntity": [
-        { "@type": "Question", "name": "How far in advance should I book a factory audit?", "acceptedAnswer": { "@type": "Answer", "text": "We recommend booking 3 to 5 business days before your target audit date. This ensures sufficient time for pre-audit communication, address verification, and schedule confirmation with the facility management." } },
-        { "@type": "Question", "name": "How long does a factory audit take?", "acceptedAnswer": { "@type": "Answer", "text": "Our Swift Audit ($199 per factory) typically takes 1 man-day. The Comprehensive Evaluation ($358 per factory) usually requires 2 man-days. The exact factory floor time (excluding travel time‌) ranges from 4 to 15 hours depending on factory size, number of production lines, and the depth of document review and worker interviews." } },
-        { "@type": "Question", "name": "Is the audit announced or unannounced to the factory?", "acceptedAnswer": { "@type": "Answer", "text": "By default, factory audits are announced to ensure key personnel (QC manager, operations head) and compliance documents are accessible. However, upon request, we can perform semi-announced or unannounced visits to verify actual floor conditions without prior notification." } },
-        { "@type": "Question", "name": "When will I receive the audit report, and in what format?", "acceptedAnswer": { "@type": "Answer", "text": "Your swift audit report will be delivered via email within 24 hours after completing the on-site visit. Your comprehensive audit report will be delivered via email within 24 to 48 hours after completing the on-site visit. It includes weighted scores, high-resolution photographic evidence, defect breakdowns, and an actionable CAPA (Corrective Action Plan) template." } },
-        { "@type": "Question", "name": "Do you cover factory audits outside China?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. In addition to all major manufacturing hubs in China, we provide factory audits in Vietnam, Cambodia, Thailand, Indonesia, India, Pakistan, Sri Lanka, and Bangladesh. Pricing may vary by country — please contact us for a quote." } },
-        { "@type": "Question", "name": "What happens if the factory refuses the audit or conceals information?", "acceptedAnswer": { "@type": "Answer", "text": "If a factory denies access to production lines or essential records, our auditor immediately alerts you while on-site. Uncooperative behavior is documented in the report as a major red flag — saving you from engaging with high-risk or deceptive suppliers." } },
-        { "@type": "Question", "name": "What is the key difference between Swift Audit ($199) and Comprehensive Evaluation ($358)?", "acceptedAnswer": { "@type": "Answer", "text": "Swift Audit ($199) focuses on basic supplier verification, license checks, factory existence, and machinery presence — ideal for initial supplier screening. Comprehensive Evaluation ($358) adds deep-dive QMS, labor rights (with private worker interviews), EHS environmental compliance, business ethics, and bottleneck capacity analysis." } },
-        { "@type": "Question", "name": "How do you ensure auditor integrity and prevent bribery?", "acceptedAnswer": { "@type": "Answer", "text": "We enforce a strict zero-tolerance anti-bribery policy. All auditors sign ethics compliance agreements and undergo regular rotations. Every audit is cross-checked using GPS verification, randomized auditor assignments, and objective high-res photo evidence to eliminate bias or unauthorized side deals with factories." } },
-        { "@type": "Question", "name": "What is your cancellation and rescheduling policy?", "acceptedAnswer": { "@type": "Answer", "text": "Free cancellation or rescheduling is available 3 days before the scheduled audit date. A flat $100 fee applies for late notifications or cancellations after schedule confirmation (special cases excluded)." } },
-        { "@type": "Question", "name": "What are the qualifications of your auditors?", "acceptedAnswer": { "@type": "Answer", "text": "All our auditors are full-time employees with 5–10+ years of factory audit experience and ISO 9001 Lead Auditor and SA8000 Social Compliance Auditor training, and are rigorously trained in 4M1E methodology, AQL standards, and annual integrity re-certification." } },
-        { "@type": "Question", "name": "Do you sign a Non-Disclosure Agreement (NDA) to protect our product and supplier information?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we routinely sign formal NDAs before receiving any audit-related documents such as BOMs, tech packs, product drawings, or factory contacts. All client data is encrypted, stored on secure servers, and accessible only to the assigned audit team. We treat your supplier network and product specifications as strictly confidential." } },
-        { "@type": "Question", "name": "Do you provide follow-up or corrective action verification after the audit?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our Comprehensive Evaluation includes a free structured CAPA (Corrective and Preventive Action) tracking table, where the factory must submit root-cause analysis, corrective actions, and photo evidence by a deadline for your review. To officially verify that the supplier has truly rectified the identified non-conformities, we can also perform a paid swift on-site re-audit. This ensures physical confirmation of the corrective actions, rather than relying solely on factory-submitted documents." } },
-        { "@type": "Question", "name": "Can you customize the audit checklist to meet our brand or platform requirements? (e.g., Amazon, Walmart, Target)", "acceptedAnswer": { "@type": "Answer", "text": "Yes, absolutely. We routinely align our audit checklists with client-specific supplier codes of conduct, as well as platform requirements such as Amazon, Walmart, Target, Disney, Sedex, BSCI, and SMETA. You can provide your own audit template, and our auditors will execute it alongside our standard 4M1E framework. Customized checklists are typically included at no extra charge, though complex multi-standard audits may require a slight schedule adjustment." } }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.chinaqualityservice.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services",
-          "item": "https://www.chinaqualityservice.com/services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "China Factory Audit",
-          "item": "https://www.chinaqualityservice.com/services/china-factory-audit"
-        }
-      ]
-    }
-  ]
-}
-</script>
+
 
 <script src="/js/main.js"></script>
 
