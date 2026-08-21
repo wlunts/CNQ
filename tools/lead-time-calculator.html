@@ -72,6 +72,21 @@
     .embed-wrap button { padding: 12px 20px; background: #edf2f7; border: 1px solid #cbd5e0; border-radius: 10px; cursor: pointer; font-weight: 600; color: #2d3748; white-space: nowrap; }
     .embed-wrap button:hover { background: #e2e8f0; }
     @media (max-width: 600px) { .embed-wrap { flex-direction: column; } .embed-wrap button { width: 100%; } }
+
+    /* ======== Embed mode (?embed=1): show only the calculator card ======== */
+    body.embed-mode header,
+    body.embed-mode .menu-overlay,
+    body.embed-mode .page-header,
+    body.embed-mode footer.footer,
+    body.embed-mode .back-to-top {
+      display: none !important;
+    }
+    body.embed-mode main > section:not(#calcWidget) {
+      display: none !important;
+    }
+    body.embed-mode #calcWidget {
+      padding: 20px 0;
+    }
   </style>
 
 </head>
@@ -126,7 +141,7 @@
     </div>
   </section>
 
-  <section class="leadtime-section">
+  <section class="leadtime-section" id="calcWidget">
     <div class="container">
       <div class="leadtime-card">
         <div class="leadtime-mode-toggle" role="group" aria-label="Calculation mode">
@@ -485,6 +500,11 @@
 (function() {
   'use strict';
 
+  // ======== Embed mode (?embed=1): show only the calculator card ========
+  if (new URLSearchParams(window.location.search).get('embed') === '1') {
+    document.body.classList.add('embed-mode');
+  }
+
   var today = new Date();
   var todayStr = today.getFullYear() + '-' +
     String(today.getMonth() + 1).padStart(2, '0') + '-' +
@@ -589,12 +609,12 @@
     var prod = document.getElementById('productionDays').value;
     var transit = document.getElementById('transitDays').value;
     var buffer = document.getElementById('bufferDays').value;
-    return 'https://www.chinaqualityservice.com/tools/lead-time-calculator?prod=' + encodeURIComponent(prod) + '&transit=' + encodeURIComponent(transit) + '&buffer=' + encodeURIComponent(buffer);
+    return 'https://www.chinaqualityservice.com/tools/lead-time-calculator?embed=1&prod=' + encodeURIComponent(prod) + '&transit=' + encodeURIComponent(transit) + '&buffer=' + encodeURIComponent(buffer);
   }
 
   function updateEmbedCode() {
     var url = getEmbedIframeUrl();
-    document.getElementById('embedCode').value = '<iframe src="' + url + '" width="100%" height="760" style="border:0;" loading="lazy"></iframe>';
+    document.getElementById('embedCode').value = '<iframe src="' + url + '" width="100%" height="640" style="border:0;" loading="lazy"></iframe>';
   }
 
   function copyEmbed() {

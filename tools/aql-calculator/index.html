@@ -86,6 +86,21 @@
     .popular-aql button { padding: 4px 10px; background: #edf2f7; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.8rem; cursor: pointer; color: #4a5568; }
     .popular-aql button:hover { background: #e2e8f0; }
     .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    /* ======== Embed mode (?embed=1): show only the calculator card ======== */
+    body.embed-mode header,
+    body.embed-mode .menu-overlay,
+    body.embed-mode .page-header,
+    body.embed-mode footer.footer,
+    body.embed-mode .back-to-top {
+      display: none !important;
+    }
+    body.embed-mode main > section:not(#calcWidget) {
+      display: none !important;
+    }
+    body.embed-mode #calcWidget {
+      padding: 20px 0;
+    }
   </style>
 
 
@@ -140,7 +155,7 @@
       </div>
     </section>
 
-    <section class="aql-section">
+    <section class="aql-section" id="calcWidget">
       <div class="container">
         <div class="aql-card">
           <div class="aql-form-grid">
@@ -278,7 +293,7 @@
           <h2 data-zh="嵌入此工具">Embed This Tool</h2>
           <p data-zh="将以下代码复制到你的网页或博客中，访客即可直接计算AQL抽样方案。">Copy the code below to embed this ANSI ASQ Z1 4 AQL calculator directly on your website or blog.</p>
           <div class="embed-wrap">
-            <input id="embedCode" type="text" readonly value="&lt;iframe src=&quot;https://www.chinaqualityservice.com/tools/aql-calculator/?lot=1201-3200&amp;level=II&amp;major=2.5&amp;minor=4.0&quot; width=&quot;100%&quot; height=&quot;720&quot; frameborder=&quot;0&quot; title=&quot;AQL Sampling Calculator&quot;&gt;&lt;/iframe&gt;">
+            <input id="embedCode" type="text" readonly value="&lt;iframe src=&quot;https://www.chinaqualityservice.com/tools/aql-calculator/?embed=1&amp;lot=1201-3200&amp;level=II&amp;major=2.5&amp;minor=4.0&quot; width=&quot;100%&quot; height=&quot;560&quot; frameborder=&quot;0&quot; title=&quot;AQL Sampling Calculator&quot;&gt;&lt;/iframe&gt;">
             <button id="copyEmbedBtn" type="button" data-zh="复制">Copy</button>
           </div>
         </div>
@@ -484,6 +499,11 @@
   <script>
 (function() {
   'use strict';
+
+  // ======== Embed mode (?embed=1): show only the calculator card ========
+  if (new URLSearchParams(window.location.search).get('embed') === '1') {
+    document.body.classList.add('embed-mode');
+  }
 
   // ======== 语言辅助 ========
   function t(en, zh) {
@@ -750,9 +770,9 @@ const acRe = [
     const levelMap = {0:'S-1',1:'S-2',2:'S-3',3:'S-4',4:'I',5:'II',6:'III'};
     const major = document.getElementById('majorAql').value;
     const minor = document.getElementById('minorAql').value;
-    const url = 'https://www.chinaqualityservice.com/tools/aql-calculator/?lot=' + encodeURIComponent(lotLabels[lotIdx]) +
+    const url = 'https://www.chinaqualityservice.com/tools/aql-calculator/?embed=1&lot=' + encodeURIComponent(lotLabels[lotIdx]) +
                 '&level=' + levelMap[levelIdx] + '&major=' + major + '&minor=' + minor;
-    document.getElementById('embedCode').value = '<iframe src="' + url + '" width="100%" height="720" frameborder="0" title="AQL Sampling Calculator"></iframe>';
+    document.getElementById('embedCode').value = '<iframe src="' + url + '" width="100%" height="560" frameborder="0" title="AQL Sampling Calculator"></iframe>';
   }
 
   function copyEmbed() {

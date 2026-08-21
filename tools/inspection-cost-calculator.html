@@ -61,6 +61,21 @@
     .embed-wrap button { padding: 12px 20px; background: #edf2f7; border: 1px solid #cbd5e0; border-radius: 10px; cursor: pointer; font-weight: 600; color: #2d3748; white-space: nowrap; }
     .embed-wrap button:hover { background: #e2e8f0; }
     @media (max-width: 600px) { .embed-wrap { flex-direction: column; } .embed-wrap button { width: 100%; } }
+
+    /* ======== Embed mode (?embed=1): show only the calculator card ======== */
+    body.embed-mode header,
+    body.embed-mode .menu-overlay,
+    body.embed-mode .page-header,
+    body.embed-mode footer.footer,
+    body.embed-mode .back-to-top {
+      display: none !important;
+    }
+    body.embed-mode main > section:not(#calcWidget) {
+      display: none !important;
+    }
+    body.embed-mode #calcWidget {
+      padding: 20px 0;
+    }
   </style>
 
 
@@ -111,12 +126,12 @@
       <div class="breadcrumb fade-in">
         <a href="/" data-zh="首页">Home</a> <span>&rsaquo;</span> <a href="/download" data-zh="资源中心">Resources</a> <span>&rsaquo;</span> <span data-zh="检验成本计算器">Inspection Cost Calculator</span>
       </div>
-      <h1 class="fade-in" data-zh="中国产品检验成本计算器 — 免费即时估算">Product Inspection Cost in China — Free Instant Calculator</h1>
+      <h1 class="fade-in" data-zh="中国产品检验成本计算器 — 免费即时估算">Product Inspection Cost — Free Instant Calculator</h1>
       <p class="page-header-meta fade-in" data-zh="输入产品类别、型号数量、批量和AQL检验水平，一秒出美元价格。无需注册，无需留邮箱，基于CNQ 17年真实验货产能数据。">Instantly calculate product inspection cost in China. Enter product details — get man-day &amp; USD pricing based on 17 years of QC data. No signup, no email required.</p>
     </div>
   </section>
 
-  <section class="manday-section">
+  <section class="manday-section" id="calcWidget">
     <div class="container">
       <div class="manday-card">
         <div class="manday-form-grid">
@@ -201,8 +216,8 @@
             </p>
           </div>
           <div class="manday-cta-soft">
-            <span data-zh="让 CNQ 免费为您的货物提供精确的检验成本预估。">Let CNQ give you a precise inspection cost estimate for your shipments — free.</span>
-            <a href="/contact" data-zh="联系 CNQ 专家">Free consulting</a>
+            <span data-zh="让 CNQ 免费为您的货物提供精确的检验成本预估。">Let CNQ experts give you a precise inspection cost for your shipment — free.</span>
+            <a href="/contact" data-zh="联系 CNQ 专家">Consulting</a>
           </div>
         </div>
       </div>
@@ -511,6 +526,12 @@
 <script>
 (function() {
   'use strict';
+
+  // ======== Embed mode (?embed=1): show only the calculator card ========
+  if (new URLSearchParams(window.location.search).get('embed') === '1') {
+    document.body.classList.add('embed-mode');
+  }
+
   let currentUsdAmount = 0;
   let currentRates = null;
   let currentRefCurrency = 'EUR';
@@ -749,12 +770,12 @@ var FALLBACK_RATES = {
     var models = document.getElementById('modelCount').value;
     var lot = document.getElementById('lotSize').value;
     var level = document.getElementById('inspectionLevel').value;
-    return 'https://www.chinaqualityservice.com/tools/inspection-cost-calculator?cat=' + encodeURIComponent(cat) + '&models=' + encodeURIComponent(models) + '&lot=' + encodeURIComponent(lot) + '&level=' + encodeURIComponent(level);
+    return 'https://www.chinaqualityservice.com/tools/inspection-cost-calculator?embed=1&cat=' + encodeURIComponent(cat) + '&models=' + encodeURIComponent(models) + '&lot=' + encodeURIComponent(lot) + '&level=' + encodeURIComponent(level);
   }
 
   function updateEmbedCode() {
     var url = getEmbedIframeUrl();
-    document.getElementById('embedCode').value = '<iframe src="' + url + '" width="100%" height="720" style="border:0;" loading="lazy"></iframe>';
+    document.getElementById('embedCode').value = '<iframe src="' + url + '" width="100%" height="780" style="border:0;" loading="lazy"></iframe>';
   }
 
   function copyEmbed() {
