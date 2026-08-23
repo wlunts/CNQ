@@ -73,6 +73,9 @@ foreach ($s in $sitemapMap.Keys) {
     if ($orig.EndsWith('/') -or $orig -eq '/') {
         $testPath = if ($s -eq '/') { Join-Path $Root 'index.html' }
                     else { Join-Path $Root ($s + '/index.html') }
+    } elseif ($s -match '\.[a-zA-Z0-9]+$') {
+        # Non-HTML file (PDF, XLSX, DOCX, etc.) — test the literal path
+        $testPath = Join-Path $Root $s
     } else {
         $testPath = Join-Path $Root ($s + '.html')
     }
