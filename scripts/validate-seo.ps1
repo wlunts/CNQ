@@ -188,6 +188,40 @@ if ($jsonLdIssues -eq 0) {
 }
 $script:Issues += $jsonLdIssues
 
+# 7. Topic-cluster internal links (spoke → pillar hub)
+Write-Host "`n  [CHECK] Topic-cluster internal links:" -ForegroundColor Cyan
+$clusterIssues = 0
+
+# 7a. Every Factory Resource article body must link to the pillar page (/services/china-factory-audit)
+$factoryFiles = Get-ChildItem -Path (Join-Path $Root 'factory-resource') -Filter "*.html" | Where-Object { $_.Name -ne 'index.html' }
+foreach ($file in $factoryFiles) {
+    $c = Get-Content $file.FullName -Raw -Encoding UTF8
+    $main = if ($c -match '(?s)<main.*?</main>') { $Matches[0] } else { '' }
+    if ($main -notmatch 'href="/services/china-factory-audit"') {
+        Write-Host "  [ERROR] Factory article missing pillar link to /services/china-factory-audit in body: $($file.Name)" -ForegroundColor Red
+        $clusterIssues++
+    }
+}
+
+# 7b. Every Inspection Case article body must link to /services#inspection and /about
+$caseFiles = Get-ChildItem -Path (Join-Path $Root 'inspection-cases') -Filter "*.html" | Where-Object { $_.Name -ne 'index.html' }
+foreach ($file in $caseFiles) {
+    $c = Get-Content $file.FullName -Raw -Encoding UTF8
+    $main = if ($c -match '(?s)<main.*?</main>') { $Matches[0] } else { '' }
+    $missing = @()
+    if ($main -notmatch 'href="/services#inspection"') { $missing += '/services#inspection' }
+    if ($main -notmatch 'href="/about"') { $missing += '/about' }
+    if ($missing.Count -gt 0) {
+        Write-Host "  [ERROR] Case article missing body link(s) — $($file.Name): $($missing -join ', ')" -ForegroundColor Red
+        $clusterIssues++
+    }
+}
+
+if ($clusterIssues -eq 0) {
+    Write-Host "  [OK] All factory articles link to pillar page; all case articles link to /services#inspection + /about" -ForegroundColor Green
+}
+$script:Issues += $clusterIssues
+
 # Summary
 Write-Host "`n=== " -NoNewline
 if ($Issues -eq 0) {
