@@ -28,6 +28,12 @@
 | T2 | `/services/china-factory-audit` | factory audit in China 系列 |
 | T3 | 每篇案例/工厂文章 | 长尾词（如 `KD furniture inspection`、`toy factory audit in China`） |
 
+## 2.1 核心页定义（裁决依据，2026-08-26 用户确认）
+
+- **核心页 = 支柱页**，仅限：`/`（主页）、`/about`、`/services`（含 `#inspection` 等服务锚点）及服务子页（`/services/china-factory-audit`、`/services/pre-shipment-inspection`、`/services/initial-production-check`）
+- **非核心页**：工具页（`/tools/aql-calculator` 等）、法律页（`/terms`、`/privacy`）、目录页（`/insights`、`/inspection-cases/`、`/factory-resource/`、`/industry-updates/`）、`/download`、`/contact`
+- **裁决规则**：判断"是否核心页"一律以此为准；工具页/法律页的职责是**向外送权重到核心页**，不作为内链目标
+
 ## 3. 支柱页分工
 
 | 页面 | 职责 | 禁则 |
