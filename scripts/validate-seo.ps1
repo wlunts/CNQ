@@ -65,7 +65,7 @@ $missingFromSitemap = @()
 $missingFromDisk = @()
 
 foreach ($d in $diskPaths) {
-    if ($d -like "article-template*" -or $d -like "scripts/*") { continue }
+    if ($d -like "article-template*" -or $d -like "scripts/*" -or $d -eq '404') { continue }
     if (-not $sitemapMap.ContainsKey($d)) { $missingFromSitemap += $d }
 }
 foreach ($s in $sitemapMap.Keys) {

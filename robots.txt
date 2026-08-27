@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /404
 
 Sitemap: https://www.chinaqualityservice.com/sitemap.xml

@@ -1,7 +1,7 @@
 # CNQ SEO 战略手册（执行版）
 
 > 用途：每篇新文章上线前，先读本手册对照执行。
-> 状态：2026-08-23 定稿，用户已确认核心条款。
+> 状态：2026-08-27 修订（新增 9.2 三类型规则、第 12 节上线 SOP；FAQPage / robots / ANCHOR-LOG 待办落档；E-E-A-T 补充），用户已确认。
 
 ---
 
@@ -123,16 +123,22 @@
 - 标准引用：ISO 2859-1、GB、ANSI
 - 第一视角现场见证叙事
 - `/about` 统一 17 年履历 + 验货员团队
+- Article JSON-LD 全站已含 `author` + `publisher`（Organization 署名，2026-08-27 核查达标）
 
 ## 9. 技术清单
 
 - [x] sitemap.xml 同步
 - [x] JSON-LD（Article/BreadcrumbList/Organization）
 - [x] DOM 分离（2026-08-23 全站排查完成，仅 premium-shirt 两处，已修复）
-- [ ] 案例页补 FAQPage schema（每篇 2-3 个真实问答）
-- [ ] robots.txt 核对
-- [ ] 图片懒加载 + 压缩
-- [ ] 全站锚文本使用跟踪表
+- [x] 案例页 FAQPage schema（2026-08-27 补齐 11 篇案例的 `@id` + `isPartOf`；新案例页必须带 FAQPage 且含此结构，见下方固化规则）
+- [x] robots.txt 核对（2026-08-27：404 处理 = robots `Disallow: /404` + 404 页不进 sitemap + validate-seo.ps1 排除 404）
+- [x] 图片懒加载 + 压缩（2026-08-27 审计确认全站达标：alt 齐全、`loading="lazy"` 齐全、图片已压缩）
+- [x] 全站锚文本使用跟踪表（ANCHOR-LOG.md 已建立并持续维护）
+
+**固化规则（2026-08-27）：**
+- 每次修改任何页面后必须跑 `scripts/validate-seo.ps1` 确认 **0 issues**
+- 新案例页必须带 FAQPage，且含 `"@id": "<canonical>#faq"` + `"isPartOf": {"@id": "#website"}`（格式参照已修复的 11 篇案例）
+- 404 页永远不进 sitemap（错误页不索引）
 
 ## 9.1 图片命名规范（2026-08-27 用户确认）
 
@@ -140,6 +146,13 @@
 - **规则**：全小写 + 连字符；含目标关键词（产品词 + 缺陷/场景词）；描述性、可读、可预测
 - **示例**：`oven-tray-dust-contamination.jpg`（而非 `IMG_001.jpg` / `12.jpg` / 中文名）
 - **禁止**：数字流水号（`12.jpg`）、空格、下划线、中文文件名、无意义缩写
+
+## 9.2 首页 news-grid 三类型规则（2026-08-27 用户确认）
+
+- 首页 news-grid 固定 3 卡 = **验货案例 + 工厂分享 + 行业动态 各 1 篇**
+- 每类取该类型**最新一篇**（按 datePublished 排序）
+- 每篇新文章上线时，必须检查首页 grid 是否符合三类型结构，同类型挤占则替换
+- 卡片素材与文章页一致：og:image 图片、标题（H1/title）、meta description 双语（`data-zh`）同步
 
 ## 10. 执行阶段
 
@@ -155,6 +168,20 @@
 - Google Business Profile
 - B2B 目录：Thomasnet / Kompass / Go4WorldBusiness
 - Quora / Reddit（r/chinabuyers）以 17 年验货员身份回答
+
+## 12. 新页面/文章上线 SOP（2026-08-27 用户确认）
+
+> 创建任何新页面之前，**必须先读本手册对照执行**，顺序不可颠倒。
+
+1. **定词 → 定 URL → 写内容**：先定目标关键词（参考第 2 节关键词地图），再定 URL slug（2-3 个目标词连字符拼接），最后写内容
+2. **内链**：按第 5 节规则放正文内链（1-3 个、同一目标页只链 1 处、锚文本从对应池选、句子不顺不链）
+3. **图片与 head 五件套**：按 9.1 命名图片；title / meta description / og:title / twitter:title / canonical 与 H1、Article headline 同步
+4. **上线当天同步**：
+   - sitemap.xml 增加新 URL + 更新 lastmod
+   - 首页 news-grid 按 9.2 三类型规则检查
+   - 加入 1-2 篇最相关老文章的相关区（第 7 节回链维护）
+   - 更新 ANCHOR-LOG.md 锚文本跟踪表
+5. **收尾**：跑 `scripts/validate-seo.ps1` 确认 0 issues
 
 ---
 
