@@ -384,6 +384,9 @@ ul, ol { list-style: none; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto 40px; }
 .footer-about .footer-title { color: var(--text-dark); font-size: 1.2rem; margin-bottom: 16px; font-weight: 700; }
 .footer-about p { font-size: 0.9rem; line-height: 1.8; }
+.footer-about .footer-social { display: inline-flex; align-items: center; gap: 8px; color: #666; font-size: 0.9rem; margin-top: 14px; transition: color var(--transition); }
+.footer-about .footer-social:hover { color: var(--primary); }
+.footer-about .footer-social svg { flex-shrink: 0; }
 .footer-col .footer-heading { color: var(--text-dark); font-size: 1rem; margin-bottom: 16px; font-weight: 700; }
 .footer-col a { display: block; color: #666; font-size: 0.9rem; padding: 5px 0; transition: all var(--transition); }
 .footer-col a:hover { color: var(--primary); padding-left: 6px; }
