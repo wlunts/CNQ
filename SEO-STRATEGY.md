@@ -134,6 +134,10 @@
 - [x] robots.txt 核对（2026-08-27：404 处理 = robots `Disallow: /404` + 404 页不进 sitemap + validate-seo.ps1 排除 404）
 - [x] 图片懒加载 + 压缩（2026-08-27 审计确认全站达标：alt 齐全、`loading="lazy"` 齐全、图片已压缩）
 - [x] 全站锚文本使用跟踪表（ANCHOR-LOG.md 已建立并持续维护）
+- [x] 全站 `robots` meta `max-image-preview:large`（2026-08-30）
+- [x] sitemap 真实配图 + lastmod 自动同步文件 mtime（2026-08-30，工具 `scripts/seo-enhance.ps1`，48 URL / 214 图片）
+- [x] footer 版权年份自动更新（2026-08-30，`js/main.js`）
+- [x] skip-link + `<main id="main-content">` 全站齐备（2026-08-30，41 页；`article-template.html` 已含，新页面复制继承；样式在 `css/style.css` `.skip-link`）
 
 **固化规则（2026-08-27）：**
 - 每次修改任何页面后必须跑 `scripts/validate-seo.ps1` 确认 **0 issues**

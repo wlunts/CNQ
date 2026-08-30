@@ -151,6 +151,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // ========== Auto Copyright Year (footer) ==========
+  document.querySelectorAll('.footer-bottom p').forEach(function (p) {
+    var walker = document.createTreeWalker(p, NodeFilter.SHOW_TEXT);
+    var node;
+    while ((node = walker.nextNode())) {
+      node.nodeValue = node.nodeValue.replace(/(\u00A9\s*)\d{4}/, '$1' + new Date().getFullYear());
+    }
+  });
+
   // ========== Smooth Scroll for Anchor Links ==========
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
