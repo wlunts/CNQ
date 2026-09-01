@@ -304,6 +304,24 @@ if ($bcIssues -eq 0) {
 }
 $script:Issues += $bcIssues
 
+# 9. Chinese encoding check (UTF-8-safe via Node.js)
+Write-Host "`n  [CHECK] Chinese encoding (data-zh mojibake):" -ForegroundColor Cyan
+$nodeExe = Get-Command node -ErrorAction SilentlyContinue
+if (-not $nodeExe) {
+    Write-Host "  [WARN] node not found - skipping encoding check" -ForegroundColor Yellow
+} else {
+    $encOut = & node (Join-Path $PSScriptRoot 'check-encoding.js') 2>&1
+    $encFail = 0
+    foreach ($line in $encOut) { if ($line -match '^FAIL') { $encFail++ } }
+    if ($encFail -eq 0) {
+        Write-Host "  [OK] No mojibake in data-zh attributes" -ForegroundColor Green
+    } else {
+        Write-Host "  [ERROR] $encFail file(s) contain mojibake:" -ForegroundColor Red
+        foreach ($line in $encOut) { if ($line -match '^FAIL') { Write-Host "    $line" -ForegroundColor Red } }
+        $script:Issues += $encFail
+    }
+}
+
 # Summary
 Write-Host "`n=== " -NoNewline
 if ($Issues -eq 0) {
