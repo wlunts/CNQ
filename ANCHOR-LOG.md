@@ -225,10 +225,10 @@
 | inspection-cases/index.html | 3D Printed Dragon Egg — Sharp Burrs Defect | /inspection-cases/3d-printing-dragon-egg-sharp-burrs | 3D打印龙蛋 — 锐利毛刺 |
 | inspection-cases/index.html | Acacia Wood Tray — Spliced Color Difference | /inspection-cases/acacia-wood-color-difference | 相思木沙拉盘 — 拼板色差 |
 | inspection-cases/index.html | KD Metal Fence — Carton Drop Test Failure | /inspection-cases/kd-fence-drop-test | KD金属围栏 — 摔箱测试失败 |
-| inspection-cases/index.html | Furniture Inspection: Loose Hardware Cracks KD Panels | CNQ | /inspection-cases/kd-furniture-loose-hardware-panel-cracks | KD家具验货：五金配件松动撞裂面板 | CNQ |
+| inspection-cases/index.html | Furniture Inspection: Loose Hardware Cracks KD Panels | /inspection-cases/kd-furniture-loose-hardware-panel-cracks | KD家具验货：五金配件松动撞裂面板 |
 | inspection-cases/index.html | Sharp Exposed Metal Edge — Garden Metal Shed | /inspection-cases/metal-shed-sharp-edge | 花园金属棚锋利金属边 — 验货发现 |
 | inspection-cases/index.html | Milk Warmer — Assembly &amp; Firmware Failure | /inspection-cases/milk-warmer-assembly-deviation-electronics-inspection | 不锈钢牛奶加温杯 — 组装偏差与温度单位混用 |
-| inspection-cases/index.html | Oven Tray — Dust Contamination in "Dust-Free" Paint Coating | /inspection-cases/oven-tray-inspection-painting-contamination | 烤箱烤盘验货：'无尘'喷漆线中的粉尘污染 | CNQ |
+| inspection-cases/index.html | Oven Tray — Dust Contamination in "Dust-Free" Paint Coating | /inspection-cases/oven-tray-inspection-painting-contamination | 烤箱烤盘验货：“无尘”喷漆线中的粉尘污染 |
 | inspection-cases/index.html | Misaligned Velcro Strips — Safety Vest | /inspection-cases/safety-vest-velcro | 魔术贴错位 — 安全背心验货案例 |
 | inspection-cases/index.html | Sticky TPR Koala — Color Bleeding | /inspection-cases/squishy-toy-color-bleeding-inspection | TPR粘粘熊 — 颜料迁移染色 |
 | inspection-cases/index.html | Poor Polishing on Stainless Steel Bottle — PSI Inspection | /inspection-cases/ss-bottle-polishing | 不锈钢瓶抛光不良 — PSI 验货发现 |
@@ -273,7 +273,7 @@
 | inspection-cases/milk-warmer-assembly-deviation-electronics-inspection.html | Get Your CNQ Experts | /contact | 与我们合作 |
 | inspection-cases/milk-warmer-assembly-deviation-electronics-inspection.html | Back to Inspection Cases | /inspection-cases/ | 返回验货案例列表 |
 | inspection-cases/milk-warmer-assembly-deviation-electronics-inspection.html | KD Metal Fence — Drop Test Failure | /inspection-cases/kd-fence-drop-test |  |
-| inspection-cases/milk-warmer-assembly-deviation-electronics-inspection.html | Furniture Inspection: Loose Hardware Cracks KD Panels | CNQ | /inspection-cases/kd-furniture-loose-hardware-panel-cracks | KD家具验货：五金配件松动撞裂面板 | CNQ |
+| inspection-cases/milk-warmer-assembly-deviation-electronics-inspection.html | Furniture Inspection: Loose Hardware Cracks KD Panels | /inspection-cases/kd-furniture-loose-hardware-panel-cracks | KD家具验货：五金配件松动撞裂面板 |
 | inspection-cases/milk-warmer-assembly-deviation-electronics-inspection.html | Hi-Vis Vest Velcro Failure | /inspection-cases/safety-vest-velcro |  |
 | inspection-cases/milk-warmer-assembly-deviation-electronics-inspection.html | SS Bottle Polishing Defect | /inspection-cases/ss-bottle-polishing |  |
 | inspection-cases/milk-warmer-assembly-deviation-electronics-inspection.html | China inspection Service | /services#inspection |  |

@@ -317,7 +317,7 @@ ul, ol { list-style: none; }
 .download-item:hover { border-color: var(--primary-light); box-shadow: var(--shadow); }
 .download-icon { font-size: 2rem; flex-shrink: 0; }
 .download-info { flex: 1; }
-.download-info h4 { font-size: 1rem; margin-bottom: 4px; }
+.download-info h4, .download-info h3 { font-size: 1rem; margin-bottom: 4px; }
 .download-info .download-meta { font-size: 0.85rem; color: var(--text-muted); }
 .download-btn { padding: 8px 20px; background: var(--primary); color: #fff; border-radius: var(--radius-sm); font-size: 0.9rem; white-space: nowrap; transition: all var(--transition); }
 .download-btn:hover { background: var(--primary-dark); color: #fff; }

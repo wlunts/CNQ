@@ -1,0 +1,136 @@
+========== AUDIT SUMMARY ==========
+
+--- ERROR: 12 ---
+  [links] 10 dead internal link(s):
+    article-template.html -> https://www.chinaqualityservice.com/========== folder / slug ========== (expect ========== folder / slug ==========.html)
+    article-template.html -> https://www.chinaqualityservice.com/========== folder / slug ========== (expect ========== folder / slug ==========.html)
+    article-template.html -> https://www.chinaqualityservice.com/========== folder / slug ========== (expect ========== folder / slug ==========.html)
+    article-template.html -> ========== folder / (with trailing slash) ========== (expect ========== folder / (with trailing slash) ==========.html)
+    article-template.html -> ... (expect ....html)
+    article-template.html -> ========== related-slug-1 ========== (expect ========== related-slug-1 ==========.html)
+    article-template.html -> ========== related-slug-2 ========== (expect ========== related-slug-2 ==========.html)
+    article-template.html -> ========== related-slug-3 ========== (expect ========== related-slug-3 ==========.html)
+    article-template.html -> ========== prev-slug ========== (expect ========== prev-slug ==========.html)
+    article-template.html -> ========== next-slug ========== (expect ========== next-slug ==========.html)
+  [refs] 1 missing resource(s): article-template.html -> /Upload/.../N.jpg
+
+--- WARN: 117 ---
+  [404.html] missing hreflang="en"
+  [404.html] missing hreflang="x-default"
+  [404.html] missing twitter:image
+  [article-template.html] title too long (70 chars): ========== 50-60 char English title | China Quality Service ==========
+  [article-template.html] canonical not in sitemap: https://www.chinaqualityservice.com/========== folder / slug ==========
+  [index.html] title too long (70 chars): China Product Inspection &amp; Quality Control | China Quality Service
+  [industries/index.html] title too long (70 chars): Product Inspection Categories &amp; Industries | China Quality Service
+  [services.html] title too long (69 chars): China Inspection Services &amp; Factory Audit | China Quality Service
+  [404.html] no JSON-LD at all
+  [factory-resource/children-tent-zhejiang.html] non-SEO image filename: 2.jpg
+  [factory-resource/children-tent-zhejiang.html] non-SEO image filename: 3.jpg
+  [factory-resource/children-tent-zhejiang.html] non-SEO image filename: 4.jpg
+  [factory-resource/children-tent-zhejiang.html] non-SEO image filename: 5.jpg
+  [factory-resource/children-tent-zhejiang.html] non-SEO image filename: 7.jpg
+  [factory-resource/display-rack-zhejiang.html] non-SEO image filename: 2.jpg
+  [factory-resource/display-rack-zhejiang.html] non-SEO image filename: 3.jpg
+  [factory-resource/index.html] non-SEO image filename: 2.jpg
+  [factory-resource/index.html] non-SEO image filename: 1.jpg
+  [factory-resource/index.html] non-SEO image filename: 1.jpg
+  [factory-resource/index.html] non-SEO image filename: 1.jpg
+  [factory-resource/index.html] non-SEO image filename: 1.jpg
+  [factory-resource/index.html] non-SEO image filename: 1.jpg
+  [factory-resource/pencil-factory-yiwu.html] non-SEO image filename: 2.jpg
+  [factory-resource/pencil-factory-yiwu.html] non-SEO image filename: 3.jpg
+  [factory-resource/pencil-factory-yiwu.html] non-SEO image filename: 4.jpg
+  [factory-resource/pencil-factory-yiwu.html] non-SEO image filename: 5.jpg
+  [factory-resource/printing-card-factory.html] non-SEO image filename: 1.jpg
+  [factory-resource/printing-card-factory.html] non-SEO image filename: 2.jpg
+  [factory-resource/printing-card-factory.html] non-SEO image filename: 3.jpg
+  [factory-resource/printing-card-factory.html] non-SEO image filename: 4.jpg
+  [factory-resource/printing-card-factory.html] non-SEO image filename: 5.jpg
+  [factory-resource/printing-card-factory.html] non-SEO image filename: 6.jpg
+  [factory-resource/qinteng-3d-print.html] non-SEO image filename: 2.jpg
+  [factory-resource/qinteng-3d-print.html] non-SEO image filename: 3.jpg
+  [factory-resource/qinteng-3d-print.html] non-SEO image filename: 4.jpg
+  [factory-resource/qinteng-3d-print.html] non-SEO image filename: 5.jpg
+  [factory-resource/qinteng-3d-print.html] non-SEO image filename: 6.jpg
+  [factory-resource/qinteng-3d-print.html] non-SEO image filename: 7.jpg
+  [factory-resource/qinteng-3d-print.html] non-SEO image filename: 8.jpg
+  [factory-resource/qinteng-3d-print.html] non-SEO image filename: 9.jpg
+  [factory-resource/qinteng-3d-print.html] non-SEO image filename: 10.jpg
+  [factory-resource/wuyishan-tea-factory.html] non-SEO image filename: 2.jpg
+  [factory-resource/wuyishan-tea-factory.html] non-SEO image filename: 3.jpg
+  [factory-resource/wuyishan-tea-factory.html] non-SEO image filename: 4.jpg
+  [factory-resource/wuyishan-tea-factory.html] non-SEO image filename: 5.jpg
+  [factory-resource/wuyishan-tea-factory.html] non-SEO image filename: 6.jpg
+  [factory-resource/wuyishan-tea-factory.html] non-SEO image filename: 7.jpg
+  [insights.html] non-SEO image filename: 1.jpg
+  [insights.html] non-SEO image filename: 1.jpg
+  [insights.html] non-SEO image filename: 1.jpg
+  [insights.html] non-SEO image filename: 1.jpg
+  [inspection-cases/3d-printing-dragon-egg-sharp-burrs.html] non-SEO image filename: 2.jpg
+  [inspection-cases/3d-printing-dragon-egg-sharp-burrs.html] non-SEO image filename: 3.jpg
+  [inspection-cases/3d-printing-dragon-egg-sharp-burrs.html] non-SEO image filename: 4.jpg
+  [inspection-cases/3d-printing-dragon-egg-sharp-burrs.html] non-SEO image filename: 5.jpg
+  [inspection-cases/3d-printing-dragon-egg-sharp-burrs.html] non-SEO image filename: 6.jpg
+  [inspection-cases/3d-printing-dragon-egg-sharp-burrs.html] non-SEO image filename: 7.jpg
+  [inspection-cases/3d-printing-dragon-egg-sharp-burrs.html] non-SEO image filename: 8.jpg
+  [inspection-cases/3d-printing-dragon-egg-sharp-burrs.html] non-SEO image filename: 9.jpg
+  [inspection-cases/3d-printing-dragon-egg-sharp-burrs.html] non-SEO image filename: 10.jpg
+  [inspection-cases/3d-printing-dragon-egg-sharp-burrs.html] non-SEO image filename: 11.jpg
+  [inspection-cases/3d-printing-dragon-egg-sharp-burrs.html] non-SEO image filename: 12.jpg
+  [inspection-cases/acacia-wood-color-difference.html] non-SEO image filename: 2.jpg
+  [inspection-cases/index.html] non-SEO image filename: 2.jpg
+  [inspection-cases/index.html] non-SEO image filename: 1.jpg
+  [inspection-cases/index.html] non-SEO image filename: 1.jpg
+  [inspection-cases/index.html] non-SEO image filename: 1.jpg
+  [inspection-cases/index.html] non-SEO image filename: 1.jpg
+  [inspection-cases/index.html] non-SEO image filename: 1.jpg
+  [inspection-cases/index.html] non-SEO image filename: 1.jpg
+  [inspection-cases/index.html] non-SEO image filename: 1.jpg
+  [inspection-cases/kd-fence-drop-test.html] non-SEO image filename: 2.jpg
+  [inspection-cases/kd-fence-drop-test.html] non-SEO image filename: 3.jpg
+  [inspection-cases/kd-fence-drop-test.html] non-SEO image filename: 4.jpg
+  [inspection-cases/kd-fence-drop-test.html] non-SEO image filename: 5.jpg
+  [inspection-cases/kd-fence-drop-test.html] non-SEO image filename: 6.jpg
+  [inspection-cases/kd-fence-drop-test.html] non-SEO image filename: 7.jpg
+  [inspection-cases/kd-fence-drop-test.html] non-SEO image filename: 8.jpg
+  [inspection-cases/kd-fence-drop-test.html] non-SEO image filename: 9.jpg
+  [inspection-cases/kd-fence-drop-test.html] non-SEO image filename: 10.jpg
+  [inspection-cases/kd-fence-drop-test.html] non-SEO image filename: 11.jpg
+  [inspection-cases/metal-shed-sharp-edge.html] non-SEO image filename: 2.jpg
+  [inspection-cases/metal-shed-sharp-edge.html] non-SEO image filename: 3.jpg
+  [inspection-cases/metal-shed-sharp-edge.html] non-SEO image filename: 4.jpg
+  [inspection-cases/metal-shed-sharp-edge.html] non-SEO image filename: 5.jpg
+  [inspection-cases/metal-shed-sharp-edge.html] non-SEO image filename: 6.jpg
+  [inspection-cases/metal-shed-sharp-edge.html] non-SEO image filename: 7.jpg
+  [inspection-cases/metal-shed-sharp-edge.html] non-SEO image filename: 8.jpg
+  [inspection-cases/safety-vest-velcro.html] non-SEO image filename: 2.jpg
+  [inspection-cases/safety-vest-velcro.html] non-SEO image filename: 3.jpg
+  [inspection-cases/safety-vest-velcro.html] non-SEO image filename: 4.jpg
+  [inspection-cases/safety-vest-velcro.html] non-SEO image filename: 5.jpg
+  [inspection-cases/safety-vest-velcro.html] non-SEO image filename: 6.jpg
+  [inspection-cases/safety-vest-velcro.html] non-SEO image filename: 7.jpg
+  [inspection-cases/squishy-toy-color-bleeding-inspection.html] non-SEO image filename: 2.jpg
+  [inspection-cases/squishy-toy-color-bleeding-inspection.html] non-SEO image filename: 3.jpg
+  [inspection-cases/squishy-toy-color-bleeding-inspection.html] non-SEO image filename: 4.jpg
+  [inspection-cases/squishy-toy-color-bleeding-inspection.html] non-SEO image filename: 5.jpg
+  [inspection-cases/squishy-toy-color-bleeding-inspection.html] non-SEO image filename: 6.jpg
+  [inspection-cases/squishy-toy-color-bleeding-inspection.html] non-SEO image filename: 7.jpg
+  [inspection-cases/squishy-toy-color-bleeding-inspection.html] non-SEO image filename: 8.jpg
+  [inspection-cases/squishy-toy-color-bleeding-inspection.html] non-SEO image filename: 9.jpg
+  [inspection-cases/squishy-toy-color-bleeding-inspection.html] non-SEO image filename: 10.jpg
+  [inspection-cases/squishy-toy-color-bleeding-inspection.html] non-SEO image filename: 11.jpg
+  [inspection-cases/squishy-toy-color-bleeding-inspection.html] non-SEO image filename: 12.jpg
+  [inspection-cases/squishy-toy-color-bleeding-inspection.html] non-SEO image filename: 13.jpg
+  [inspection-cases/ss-bottle-polishing.html] non-SEO image filename: 2.jpg
+  [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 2.jpg
+  [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 3.jpg
+  [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 4.jpg
+  [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 5.jpg
+  [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 6.jpg
+  [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 7.jpg
+  [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 8.jpg
+  [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 9.jpg
+  [home] news-grid case card img != article og:image (card img: oven-tray-defect-marking.jpg,factory-gate.jpg,news-2.jpg vs og:image: /Upload/cases/oven-tray-painting-contamination/oven-tray-inspection-overview.jpg)
+  [home] news-grid update card img != article og:image (card img: oven-tray-defect-marking.jpg,factory-gate.jpg,news-2.jpg vs og:image: /Upload/news-4.jpg)
+
+TOTAL: 12 errors, 117 warnings
