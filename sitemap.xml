@@ -21,6 +21,10 @@
   <url><loc>https://www.chinaqualityservice.com/download</loc>
     <image:image><image:loc>https://www.chinaqualityservice.com/images/og-image.png</image:loc></image:image><lastmod>2026-08-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
+  <!-- Industries -->
+  <url><loc>https://www.chinaqualityservice.com/industries/</loc>
+    <image:image><image:loc>https://www.chinaqualityservice.com/images/og-image.png</image:loc></image:image><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
   <!-- Legal Pages -->
   <url><loc>https://www.chinaqualityservice.com/terms</loc>
     <image:image><image:loc>https://www.chinaqualityservice.com/images/og-image.png</image:loc></image:image><lastmod>2026-08-30</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>

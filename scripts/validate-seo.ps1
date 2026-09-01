@@ -222,6 +222,88 @@ if ($clusterIssues -eq 0) {
 }
 $script:Issues += $clusterIssues
 
+# 8. Breadcrumb item vs canonical consistency
+Write-Host "`n  [CHECK] Breadcrumb vs canonical:" -ForegroundColor Cyan
+$bcIssues = 0
+$bcFiles = Get-ChildItem -Path $Root -Recurse -Filter "*.html" | Where-Object { $_.FullName -notmatch 'article-template' }
+
+# Breadcrumb item can be a plain URL string or an object with "@id" (referenced entity)
+function Get-ItemUrl($it) {
+    if ($it -is [string]) { return $it }
+    if ($null -ne $it -and $it.'@id') { return [string]$it.'@id' }
+    return $null
+}
+
+foreach ($file in $bcFiles) {
+    $content = Get-Content $file.FullName -Raw -Encoding UTF8
+    if ($content -notmatch 'BreadcrumbList') { continue }
+    $rel = $file.FullName.Substring($Root.Length + 1)
+
+    $canonical = ''
+    $cm = [regex]::Match($content, '<link rel="canonical" href="([^"]+)"')
+    if ($cm.Success) { $canonical = $cm.Groups[1].Value }
+
+    $blocks = [regex]::Matches($content, '<script type="application/ld\+json">(.*?)</script>', 'Singleline')
+    foreach ($block in $blocks) {
+        $data = $null
+        try { $data = $block.Groups[1].Value | ConvertFrom-Json -ErrorAction Stop } catch { continue }
+        $bcNode = $null
+        if ($null -ne $data.'@graph') {
+            $bcNode = @($data.'@graph') | Where-Object { $_.'@type' -eq 'BreadcrumbList' } | Select-Object -First 1
+        } elseif ($data.'@type' -eq 'BreadcrumbList') {
+            $bcNode = $data
+        }
+        if ($null -eq $bcNode) { continue }
+        $items = @($bcNode.itemListElement)
+        if ($items.Count -eq 0 -or $null -eq $items[0]) { continue }
+
+        # 8a. Last item (current page) must equal canonical
+        $lastItem = Get-ItemUrl $items[$items.Count - 1].item
+        if ($null -eq $lastItem) {
+            Write-Host "  [WARN] $rel - Breadcrumb last item has no URL/@id" -ForegroundColor Yellow
+        } elseif ($lastItem -ne $canonical) {
+            Write-Host "  [ERROR] $rel - Breadcrumb last item ($lastItem) != canonical ($canonical)" -ForegroundColor Red
+            $bcIssues++
+        }
+
+        # 8b. Parent items must follow trailing-slash rule (dir pages get '/', single pages don't)
+        for ($i = 0; $i -lt $items.Count - 1; $i++) {
+            $url = Get-ItemUrl $items[$i].item
+            if (-not $url) { continue }
+            $path = $url -replace '^https://www\.chinaqualityservice\.com/', ''
+            if ($path -eq '') { $path = '/' }
+            if ($path -eq '/') {
+                $expected = 'https://www.chinaqualityservice.com/'
+            } elseif ($path -match '(.+)/$') {
+                $dirPath = $Matches[1]
+                if (-not (Test-Path (Join-Path $Root ($dirPath + '/index.html')))) {
+                    Write-Host "  [WARN] $rel - Breadcrumb parent item $url has no index.html on disk" -ForegroundColor Yellow
+                    continue
+                }
+                $expected = 'https://www.chinaqualityservice.com/' + $dirPath + '/'
+            } else {
+                if (Test-Path (Join-Path $Root ($path + '.html'))) {
+                    $expected = 'https://www.chinaqualityservice.com/' + $path
+                } elseif (Test-Path (Join-Path $Root ($path + '/index.html'))) {
+                    $expected = 'https://www.chinaqualityservice.com/' + $path + '/'
+                } else {
+                    Write-Host "  [WARN] $rel - Breadcrumb parent item $url maps to no page on disk" -ForegroundColor Yellow
+                    continue
+                }
+            }
+            if ($url -ne $expected) {
+                Write-Host "  [ERROR] $rel - Breadcrumb parent item $url (expect $expected)" -ForegroundColor Red
+                $bcIssues++
+            }
+        }
+    }
+}
+
+if ($bcIssues -eq 0) {
+    Write-Host "  [OK] All Breadcrumb items match canonical and trailing-slash rule" -ForegroundColor Green
+}
+$script:Issues += $bcIssues
+
 # Summary
 Write-Host "`n=== " -NoNewline
 if ($Issues -eq 0) {

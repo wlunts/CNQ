@@ -20,12 +20,10 @@
 | download.html | product inspection | / |  |
 | download.html | China Quality Service | /about |  |
 | download.html | Contact Your Experts | /contact | 联系我们的专家 |
-| download.html | Inspection Template | /download#brochure | 检验模板 |
-| download.html | Regulatory Compilations | /download#regulations | 法规汇编 |
-| download.html | Industry Standards | /download#standards | 行业标准 |
-| download.html | Factory Assessment | /download#templates | 工厂评估 |
 | download.html | Open Tools | /download#tools | 在线工具 |
-| download.html | Whitepapers | /download#whitepaper | 白皮书 |
+| download.html | Standards &amp; Whitepapers | /download#standards-whitepapers | 标准与白皮书 |
+| download.html | QC Forms &amp; Checklists | /download#forms-checklists | QC表格与检查表 |
+| download.html | Sample Inspection Reports | /download#sample-reports | 样板检验报告 |
 | download.html | China Inspection Services | /services#inspection |  |
 | factory-resource/children-tent-zhejiang.html | Home | / | 首页 |
 | factory-resource/children-tent-zhejiang.html | product inspections in China | / |  |
@@ -141,6 +139,7 @@
 | index.html | Product Inspection Cost Estimator
           Estimate Quality Inspection Cost by product category, item count &amp; AQL level for reference. Starting from $188/man-day.
           Open Estimator → | /tools/inspection-cost-calculator | 验货人天估算器 |
+| industries/index.html | inspection services in China | /services#inspection |  |
 | industry-updates/ansi-asq-z1-4-guide.html | Home | / | 首页 |
 | industry-updates/ansi-asq-z1-4-guide.html | product inspections | / |  |
 | industry-updates/ansi-asq-z1-4-guide.html | China Quality Service | /about |  |
@@ -339,7 +338,7 @@
 | privacy.html | Explore Our Services | /services | 探索我们的服务 |
 | privacy.html | Terms &amp; Conditions | /terms |  |
 | services.html | Contact Your Experts | /contact | 免费咨询 |
-| services.html | download from here | /download#brochure |  |
+| services.html | download from here | /download#forms-checklists |  |
 | services.html | Factory Audit | /services#audit | 工厂审核服务 |
 | services.html | International Compliance | /services#compliance | 国际合规 |
 | services.html | Technical Consulting | /services#consulting | 技术咨询 |
@@ -379,7 +378,7 @@
 | tools/aql-calculator/index.html | Serving global buyers since 2009 | /about | 自2009年起服务全球采购商，累计完成 |
 | tools/aql-calculator/index.html | Contact Your Experts | /contact | 联系我们的专家 |
 | tools/aql-calculator/index.html | Resources | /download | 资源中心 |
-| tools/aql-calculator/index.html | inspection report | /download#brochure | 验货报告 |
+| tools/aql-calculator/index.html | inspection report | /download#sample-reports | 验货报告 |
 | tools/aql-calculator/index.html | ANSI ASQ Z1 4 Sampling Guide | /industry-updates/ansi-asq-z1-4-guide |  |
 | tools/aql-calculator/index.html | ANSI ASQ Z1 4 guide | /industry-updates/ansi-asq-z1-4-guide | ANSI/ASQ Z1.4 指南 |
 | tools/aql-calculator/index.html | Pre-Shipment Inspection Process | /services/pre-shipment-inspection |  |

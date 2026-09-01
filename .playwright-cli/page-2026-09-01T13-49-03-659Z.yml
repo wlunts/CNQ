@@ -1,0 +1,150 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "China Quality Service - product inspection in China China Quality Service" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "China Quality Service - product inspection in China" [ref=e7]
+        - generic [ref=e8]: China Quality Service
+      - navigation [ref=e9]:
+        - link "About Us ▾" [ref=e11] [cursor=pointer]:
+          - /url: /about
+        - link "Services ▾" [ref=e13] [cursor=pointer]:
+          - /url: /services
+        - link "Insights ▾" [ref=e15] [cursor=pointer]:
+          - /url: /insights
+        - link "Resources ▾" [ref=e17] [cursor=pointer]:
+          - /url: /download
+        - link "Contact" [ref=e18] [cursor=pointer]:
+          - /url: /contact
+        - generic [ref=e19]:
+          - button "中" [ref=e20] [cursor=pointer]
+          - button "EN" [ref=e21] [cursor=pointer]
+  - main [ref=e22]:
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - link "Home" [ref=e26] [cursor=pointer]:
+          - /url: /
+        - text: › Industries
+      - heading "Product Inspection Categories & Industries" [level=1] [ref=e27]
+      - paragraph [ref=e28]: Six core categories inspected most frequently. Beyond these, we also cover food, steel structures, packaging, and other specialized products on a project basis.
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - heading "Category Experience, Not Category Checklists" [level=2] [ref=e32]
+        - paragraph [ref=e33]:
+          - text: These are the categories where we have the deepest field experience. The actual quality protocol is always tailored to your
+          - generic [ref=e34]:
+            - link "product inspection" [ref=e35] [cursor=pointer]:
+              - /url: /
+            - text: and factory. If your category isn't listed here, that's expected — these are the six categories inspected most often, not an exhaustive list.
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - img "Furniture & home goods inspection in China" [ref=e39]
+          - generic [ref=e40]:
+            - heading "Furniture & Home Goods" [level=3] [ref=e41]
+            - paragraph [ref=e42]: Indoor and outdoor furniture, office furniture, kitchenware, and home decor are categories we've worked with extensively. Our focus often includes structural connection reliability, packaging protection during transit, and surface finish durability. The inspection emphasis varies significantly by product type — KD and flat-pack furniture call for attention to assembly precision and hardware completeness, while upholstered pieces demand closer focus on frame stability and fabric quality.
+        - generic [ref=e43]:
+          - img "Toys & children's products inspection in China" [ref=e45]
+          - generic [ref=e46]:
+            - heading "Toys & Children's Products" [level=3] [ref=e47]
+            - paragraph [ref=e48]: The safety risks in plush toys, plastic toys, and nursery products are the core focus of this category. Small-parts detachment, sharp points, weak seams, and battery compartment security can all become recall triggers. But what we check and how we check it depends on your product design, target market (EN71, ASTM F963, or GB 6675), and your risk tolerance. Two clients in the same toy category can have very different requirements.
+        - generic [ref=e49]:
+          - img "Softlines, apparel & luggage inspection in China" [ref=e51]
+          - generic [ref=e52]:
+            - heading "Softlines, Apparel & Luggage" [level=3] [ref=e53]
+            - paragraph [ref=e54]: In garments, home textiles, footwear, and luggage, the issues we encounter most often are measurement deviations, weak stitching at stress points, zipper malfunctions, and fabric color shading. But these are common occurrences, not a fixed checklist. The actual inspection is adjusted based on your tech pack, target market requirements, and the supplier's performance history. Luggage and apparel also demand very different focus areas — one prioritizes load-bearing and abrasion, the other fit and workmanship.
+        - generic [ref=e55]:
+          - img "Electronics & electricals inspection in China" [ref=e57]
+          - generic [ref=e58]:
+            - heading "Electronics & Electricals" [level=3] [ref=e59]
+            - paragraph [ref=e60]: In consumer electronics, home appliances, and lighting, function and safety are paramount. Dead-on-arrival units, wrong adapter specs, and hi-pot failures are among the issues we catch most often. But the inspection depth varies widely — a simple kitchen appliance may only require basic function tests, while smart products also involve app pairing, controller response, and firmware versions. The specific test items and standards depend on your product definition and certification requirements.
+        - generic [ref=e61]:
+          - img "Hardware, tools & machinery inspection in China" [ref=e63]
+          - generic [ref=e64]:
+            - heading "Hardware, Tools & Machinery" [level=3] [ref=e65]
+            - paragraph [ref=e66]: For hand tools, power tools, and mechanical components, material quality, hardness, and dimensional precision are common risk areas. But the inspection requirements vary enormously across this category — most hand tool tests can be done on-site, while precision mechanical parts may require factory or laboratory equipment. The inspection plan can only be finalized after we've seen the drawings and samples.
+        - generic [ref=e67]:
+          - img "Building materials & outdoor structures inspection in China" [ref=e69]
+          - generic [ref=e70]:
+            - heading "Building Materials & Structures" [level=3] [ref=e71]
+            - paragraph [ref=e72]: For stone, tiles, PVC fencing, and outdoor structures, dimensions, color variation, and packaging protection are common concerns. But building material inspection varies greatly by product type — a batch of marble may require close attention to color consistency and surface cracking, while PVC fencing calls for focus on structural strength and weatherability. Moreover, the size and weight of building materials dictate on-site handling and sampling feasibility — factors that can only be assessed after we've seen the specific products and project requirements.
+    - generic [ref=e74]:
+      - heading "Frequently Asked Questions About Product Inspection" [level=2] [ref=e75]
+      - generic [ref=e76]:
+        - generic [ref=e77] [cursor=pointer]:
+          - generic [ref=e78]: Do you only inspect these six categories?
+          - text: +
+        - paragraph [ref=e80]: No. These six are the categories we work with most often, but our actual service scope is broader. We also handle food-contact materials, steel structures, packaging, and other specialized products. If your product isn't listed here, tell us the specifics — we'll assess whether we can provide a suitable inspection plan.
+      - generic [ref=e81]:
+        - generic [ref=e82] [cursor=pointer]:
+          - generic [ref=e83]: Is the inspection protocol the same for every category?
+          - text: +
+        - paragraph [ref=e85]: Not at all. Even within the same category, different products can vary significantly — KD furniture and upholstered sofas demand very different inspection focuses. Our protocol is always developed based on your product drawings, target market regulations, factory conditions, and risk points.
+      - generic [ref=e86]:
+        - generic [ref=e87] [cursor=pointer]:
+          - generic [ref=e88]: Can you build a custom checklist for our product?
+          - text: +
+        - paragraph [ref=e90]:
+          - text: That's how we work by default. We typically start by reviewing your product specs and drawings, discussing your risk concerns, then developing a targeted checklist and sampling plan
+          - link "inspection services in China" [ref=e91] [cursor=pointer]:
+            - /url: /services#inspection
+          - text: . Your golden sample and internal QC standards can also be incorporated.
+      - generic [ref=e92]:
+        - generic [ref=e93] [cursor=pointer]:
+          - generic [ref=e94]: Can you combine multiple product categories in one inspection?
+          - text: +
+        - paragraph [ref=e96]: In many cases, yes. If the products are in the same factory or nearby locations, we can often combine categories into a single inspection day — but it depends on the product types, quantities, and the level of testing required. Tell us what you're sourcing, and we'll advise whether combining is feasible or if separate inspections make more sense.
+      - generic [ref=e97]:
+        - generic [ref=e98] [cursor=pointer]:
+          - generic [ref=e99]: Do you provide detailed defect photos and measurement reports?
+          - text: +
+        - paragraph [ref=e101]: Yes. Our inspection reports include annotated defect photos and measurement data where relevant. The exact format is tailored to your product and requirements — we can provide a sample report format for your review before the first inspection.
+    - generic [ref=e103]:
+      - heading "Your Category, Our Inspection Experts" [level=2] [ref=e104]
+      - paragraph [ref=e105]: No matter what you source — furniture, toys, electronics, or something in between — our inspection experts tailor the protocol to your product, factory, and risk points, so your shipment meets spec
+      - link "Contact Your Experts" [ref=e106] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=e107]:
+    - generic [ref=e108]:
+      - generic [ref=e109]:
+        - generic [ref=e110]:
+          - generic [ref=e111]: China Quality Service
+          - paragraph [ref=e112]: Third-party product inspection, factory audits, and quality control in China.
+          - link "Follow China Quality Service on LinkedIn" [ref=e113] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/cnq
+            - text: Follow us on LinkedIn
+        - generic [ref=e114]:
+          - generic [ref=e115]: Quick Links
+          - link "About Us" [ref=e116] [cursor=pointer]:
+            - /url: /about
+          - link "Services" [ref=e117] [cursor=pointer]:
+            - /url: /services
+          - link "Insights" [ref=e118] [cursor=pointer]:
+            - /url: /insights
+          - link "Resources" [ref=e119] [cursor=pointer]:
+            - /url: /download
+        - generic [ref=e120]:
+          - generic [ref=e121]: Core Services
+          - link "Product Inspection" [ref=e122] [cursor=pointer]:
+            - /url: /services#inspection
+          - link "Factory Audit" [ref=e123] [cursor=pointer]:
+            - /url: /services#audit
+          - link "Lab Testing" [ref=e124] [cursor=pointer]:
+            - /url: /services#lab
+          - link "Supplier Management" [ref=e125] [cursor=pointer]:
+            - /url: /services#supplier
+        - generic [ref=e126]:
+          - generic [ref=e127]: Contact Us
+          - link "Contact Info" [ref=e128] [cursor=pointer]:
+            - /url: /contact
+          - link "contact@cn-q.com" [ref=e129] [cursor=pointer]:
+            - /url: mailto:contact@cn-q.com
+          - link "+1 (323) 776-6558" [ref=e132] [cursor=pointer]:
+            - /url: https://wa.me/+13237766558
+      - paragraph [ref=e136]:
+        - text: China Quality Service © 2026 |
+        - link "Terms" [ref=e137] [cursor=pointer]:
+          - /url: /terms
+        - link "Privacy" [ref=e138] [cursor=pointer]:
+          - /url: /privacy

@@ -98,11 +98,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ========== Dropdown Menu (Click to toggle) ==========
+  // ========== Dropdown Menu ==========
+  // Desktop (hover-capable, >768px): top-level link navigates normally;
+  // the menu opens via CSS :hover / :focus-within.
+  // Touch / small screens: click toggles the menu instead of navigating.
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   document.querySelectorAll('.nav-dropdown > a').forEach(function (dropdownLink) {
     dropdownLink.addEventListener('click', function (e) {
-      e.preventDefault();
       var dropdown = this.parentElement;
+      if (canHover && window.innerWidth > 768) {
+        return; // desktop: allow default link navigation
+      }
+      e.preventDefault();
       var isOpen = dropdown.classList.contains('open');
       document.querySelectorAll('.nav-dropdown.open').forEach(function (dd) { dd.classList.remove('open'); });
       if (!isOpen) {

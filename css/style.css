@@ -86,6 +86,19 @@ ul, ol { list-style: none; }
 .nav-dropdown.open > a::after { transform: rotate(180deg); }
 .dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 240px; background: #fff; border-radius: var(--radius); box-shadow: 0 8px 30px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transform: translateY(8px); transition: all var(--transition); z-index: 1002; padding: 8px 0; }
 .nav-dropdown.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+/* Desktop (mouse/trackpad, ≥769px): dropdown opens on hover/focus, top-level link stays clickable */
+@media (hover: hover) and (pointer: fine) and (min-width: 769px) {
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav-dropdown:hover > a::after,
+  .nav-dropdown:focus-within > a::after {
+    transform: rotate(180deg);
+  }
+}
 .dropdown-menu a { display: block; padding: 10px 20px; color: var(--text-dark); font-size: 0.9rem; border-radius: 0; white-space: nowrap; transition: all var(--transition); }
 .dropdown-menu a:hover { background: rgba(26,82,118,0.06); color: var(--primary); padding-left: 24px; }
 
@@ -220,6 +233,8 @@ ul, ol { list-style: none; }
 .case-card-body h2 a:hover { color: var(--primary); }
 .case-card-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
 .case-card-body p { font-size: 0.95rem; color: var(--text-body); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.7; }
+/* Industries overview page (industries/index.html) — full category intro text, do not clamp */
+.industries-overview .case-card-body p { display: block; -webkit-line-clamp: unset; -webkit-box-orient: unset; overflow: visible; }
 
 /* ---------- News List (Industry Updates List) ---------- */
 .news-list-item { display: flex; gap: 24px; margin-bottom: 30px; padding: 20px; border-radius: var(--radius); background: #fff; box-shadow: var(--shadow); transition: all var(--transition); }
