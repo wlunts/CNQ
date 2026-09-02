@@ -130,7 +130,7 @@
   [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 7.jpg
   [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 8.jpg
   [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 9.jpg
-  [home] news-grid case card img != article og:image (card img: oven-tray-defect-marking.jpg,factory-gate.jpg,news-2.jpg vs og:image: /Upload/cases/oven-tray-painting-contamination/oven-tray-inspection-overview.jpg)
-  [home] news-grid update card img != article og:image (card img: oven-tray-defect-marking.jpg,factory-gate.jpg,news-2.jpg vs og:image: /Upload/news-4.jpg)
+  [home] news-grid case card img != article og:image (card img: oven-tray-defect-marking.jpg,factory-gate.jpg,news-2.jpg vs og:image: /images/og-image.png)
+  [home] news-grid update card img != article og:image (card img: oven-tray-defect-marking.jpg,factory-gate.jpg,news-2.jpg vs og:image: /images/og-image.png)
 
 TOTAL: 12 errors, 117 warnings

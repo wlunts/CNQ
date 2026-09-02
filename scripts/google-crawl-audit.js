@@ -191,7 +191,8 @@ for (const f of files) {
   const robotsMeta = head.match(/<meta\s+name="robots"[^>]*?content="([^"]*)"/);
   if (r === '404.html') {
     if (!robotsMeta || !/noindex/i.test(robotsMeta[1])) add('ERROR', `[${r}] 404 page missing noindex`);
-  } else {
+  } else if (r !== 'article-template.html') {
+    // article-template.html is an internal draft template — intentionally noindexed
     if (robotsMeta && /noindex/i.test(robotsMeta[1])) add('ERROR', `[${r}] non-404 page has noindex: ${robotsMeta[1]}`);
     if (!robotsMeta || !/max-image-preview:large/i.test(robotsMeta[1] || '')) add('WARN', `[${r}] missing robots max-image-preview:large`);
   }

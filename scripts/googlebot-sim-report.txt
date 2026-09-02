@@ -1,0 +1,92 @@
+================================================================
+GOOGLEBOT SIMULATED CRAWL - local pre-deploy snapshot
+date: 2026-09-02
+html files on disk: 43 | sitemap URLs: 41
+================================================================
+
+===== [1] FILE INVENTORY vs SITEMAP =====
+disk pages not listed in sitemap: 404.html
+
+===== [2] LINK DISCOVERY (BFS from home) =====
+  [ok    ] every page is reachable from home through links
+home outbound page links: 52
+
+===== [3] PER-PAGE INDEX DECISION =====
+
+-- INDEX (41)
+  + about.html
+  + contact.html
+  + download.html
+  + factory-resource/children-tent-zhejiang.html
+  + factory-resource/display-rack-zhejiang.html
+  + factory-resource/index.html
+  + factory-resource/pencil-factory-yiwu.html
+  + factory-resource/premium-shirt-factory-anhui.html
+  + factory-resource/printing-card-factory.html
+  + factory-resource/qinteng-3d-print.html
+  + factory-resource/wuyishan-tea-factory.html
+  + index.html
+  + industries/index.html
+  + industry-updates/ansi-asq-z1-4-guide.html
+  + industry-updates/eu-regulatory-compliance-guide-china-exporters.html
+  + industry-updates/eu-toy-safety-regulation-2025.html
+  + industry-updates/index.html
+  + industry-updates/pre-shipment-inspection-reduce-returns.html
+  + insights.html
+  + inspection-cases/3d-printing-dragon-egg-sharp-burrs.html
+  + inspection-cases/acacia-wood-color-difference.html
+  + inspection-cases/index.html
+  + inspection-cases/kd-fence-drop-test.html
+  + inspection-cases/kd-furniture-loose-hardware-panel-cracks.html
+  + inspection-cases/metal-shed-sharp-edge.html
+  + inspection-cases/milk-warmer-assembly-deviation-electronics-inspection.html
+  + inspection-cases/oven-tray-inspection-painting-contamination.html
+  + inspection-cases/safety-vest-velcro.html
+  + inspection-cases/squishy-toy-color-bleeding-inspection.html
+  + inspection-cases/ss-bottle-polishing.html
+  + inspection-cases/tpr-flow-mark.html
+  + privacy.html
+  + services.html
+  + services/china-factory-audit.html
+  + services/during-production-inspection.html
+  + services/initial-production-check.html
+  + services/pre-shipment-inspection.html
+  + terms.html
+  + tools/aql-calculator/index.html
+  + tools/inspection-cost-calculator.html
+  + tools/lead-time-calculator.html
+
+-- FIX (0)
+
+-- DUP (0)
+
+-- THIN (0)
+
+-- NOT_IDX (1)
+  ? 404.html
+
+===== [4] TITLE UNIQUENESS =====
+  [ok    ] checked 42 distinct titles
+
+===== [5] JSON-LD VALIDITY =====
+ld+json blocks: 41 | types: {"?":41,"WebSite":41,"Organization":41,"AboutPage":1,"ContactPage":1,"WebPage":7,"ItemList":4,"BreadcrumbList":37,"Article":22,"CollectionPage":4,"ProfessionalService":1,"FAQPage":20,"Service":4,"WebApplication":3,"HowTo":1} | issues: 0
+  [ok    ] every indexable page has structured data
+
+===== [6] E-E-A-T / TRUST SIGNALS =====
+home Organization JSON-LD: yes
+  [ok    ] home links to /about
+  [ok    ] home links to /contact
+  [ok    ] home links to /privacy
+  [ok    ] home links to /terms
+article-type pages: 15 | with datePublished: 15 | with author: 15
+
+===== [7] IMAGE INDEX =====
+imgs 288 | alt present 288 | no-alt 0 | descriptive-name 182 | numeric-name 106
+  [ok    ] all indexable pages have og:image
+
+===== [8] MOBILE VIEWPORT =====
+  [ok    ] all indexable pages have viewport
+  [ok    ] all pages html lang="en"
+
+================================================================
+SUMMARY  errors=0 warnings=0 ok=10
