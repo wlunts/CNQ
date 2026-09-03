@@ -1,7 +1,7 @@
 ================================================================
 GOOGLEBOT SIMULATED CRAWL - local pre-deploy snapshot
-date: 2026-09-02
-html files on disk: 43 | sitemap URLs: 41
+date: 2026-09-03
+html files on disk: 44 | sitemap URLs: 42
 ================================================================
 
 ===== [1] FILE INVENTORY vs SITEMAP =====
@@ -13,7 +13,7 @@ home outbound page links: 52
 
 ===== [3] PER-PAGE INDEX DECISION =====
 
--- INDEX (41)
+-- INDEX (42)
   + about.html
   + contact.html
   + download.html
@@ -35,6 +35,7 @@ home outbound page links: 52
   + insights.html
   + inspection-cases/3d-printing-dragon-egg-sharp-burrs.html
   + inspection-cases/acacia-wood-color-difference.html
+  + inspection-cases/cooler-bag-printing-defect.html
   + inspection-cases/index.html
   + inspection-cases/kd-fence-drop-test.html
   + inspection-cases/kd-furniture-loose-hardware-panel-cracks.html
@@ -66,10 +67,10 @@ home outbound page links: 52
   ? 404.html
 
 ===== [4] TITLE UNIQUENESS =====
-  [ok    ] checked 42 distinct titles
+  [ok    ] checked 43 distinct titles
 
 ===== [5] JSON-LD VALIDITY =====
-ld+json blocks: 41 | types: {"?":41,"WebSite":41,"Organization":41,"AboutPage":1,"ContactPage":1,"WebPage":7,"ItemList":4,"BreadcrumbList":37,"Article":22,"CollectionPage":4,"ProfessionalService":1,"FAQPage":20,"Service":4,"WebApplication":3,"HowTo":1} | issues: 0
+ld+json blocks: 42 | types: {"?":42,"WebSite":42,"Organization":42,"AboutPage":1,"ContactPage":1,"WebPage":7,"ItemList":4,"BreadcrumbList":38,"Article":23,"CollectionPage":4,"ProfessionalService":1,"FAQPage":21,"Service":4,"WebApplication":3,"HowTo":1} | issues: 0
   [ok    ] every indexable page has structured data
 
 ===== [6] E-E-A-T / TRUST SIGNALS =====
@@ -78,10 +79,10 @@ home Organization JSON-LD: yes
   [ok    ] home links to /contact
   [ok    ] home links to /privacy
   [ok    ] home links to /terms
-article-type pages: 15 | with datePublished: 15 | with author: 15
+article-type pages: 16 | with datePublished: 16 | with author: 16
 
 ===== [7] IMAGE INDEX =====
-imgs 288 | alt present 288 | no-alt 0 | descriptive-name 182 | numeric-name 106
+imgs 296 | alt present 296 | no-alt 0 | descriptive-name 183 | numeric-name 113
   [ok    ] all indexable pages have og:image
 
 ===== [8] MOBILE VIEWPORT =====

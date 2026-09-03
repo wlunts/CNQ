@@ -14,7 +14,7 @@
     article-template.html -> ========== next-slug ========== (expect ========== next-slug ==========.html)
   [refs] 1 missing resource(s): article-template.html -> /Upload/.../N.jpg
 
---- WARN: 117 ---
+--- WARN: 124 ---
   [404.html] missing hreflang="en"
   [404.html] missing hreflang="x-default"
   [404.html] missing twitter:image
@@ -62,7 +62,7 @@
   [factory-resource/wuyishan-tea-factory.html] non-SEO image filename: 5.jpg
   [factory-resource/wuyishan-tea-factory.html] non-SEO image filename: 6.jpg
   [factory-resource/wuyishan-tea-factory.html] non-SEO image filename: 7.jpg
-  [insights.html] non-SEO image filename: 1.jpg
+  [index.html] non-SEO image filename: 1.jpg
   [insights.html] non-SEO image filename: 1.jpg
   [insights.html] non-SEO image filename: 1.jpg
   [insights.html] non-SEO image filename: 1.jpg
@@ -78,6 +78,13 @@
   [inspection-cases/3d-printing-dragon-egg-sharp-burrs.html] non-SEO image filename: 11.jpg
   [inspection-cases/3d-printing-dragon-egg-sharp-burrs.html] non-SEO image filename: 12.jpg
   [inspection-cases/acacia-wood-color-difference.html] non-SEO image filename: 2.jpg
+  [inspection-cases/cooler-bag-printing-defect.html] non-SEO image filename: 1.jpg
+  [inspection-cases/cooler-bag-printing-defect.html] non-SEO image filename: 2.jpg
+  [inspection-cases/cooler-bag-printing-defect.html] non-SEO image filename: 3.jpg
+  [inspection-cases/cooler-bag-printing-defect.html] non-SEO image filename: 4.jpg
+  [inspection-cases/cooler-bag-printing-defect.html] non-SEO image filename: 5.jpg
+  [inspection-cases/cooler-bag-printing-defect.html] non-SEO image filename: 6.jpg
+  [inspection-cases/index.html] non-SEO image filename: 1.jpg
   [inspection-cases/index.html] non-SEO image filename: 2.jpg
   [inspection-cases/index.html] non-SEO image filename: 1.jpg
   [inspection-cases/index.html] non-SEO image filename: 1.jpg
@@ -130,7 +137,7 @@
   [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 7.jpg
   [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 8.jpg
   [inspection-cases/tpr-flow-mark.html] non-SEO image filename: 9.jpg
-  [home] news-grid case card img != article og:image (card img: oven-tray-defect-marking.jpg,factory-gate.jpg,news-2.jpg vs og:image: /images/og-image.png)
-  [home] news-grid update card img != article og:image (card img: oven-tray-defect-marking.jpg,factory-gate.jpg,news-2.jpg vs og:image: /images/og-image.png)
+  [home] news-grid case card img != article og:image (card img: 1.jpg,factory-gate.jpg,news-2.jpg vs og:image: /images/og-image.png)
+  [home] news-grid update card img != article og:image (card img: 1.jpg,factory-gate.jpg,news-2.jpg vs og:image: /images/og-image.png)
 
-TOTAL: 12 errors, 117 warnings
+TOTAL: 12 errors, 124 warnings

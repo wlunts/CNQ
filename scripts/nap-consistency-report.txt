@@ -1,0 +1,41 @@
+================================================================
+NAP CONSISTENCY CHECK - local pre-deploy snapshot
+date: 2026-09-03
+html files: 44 | own pages: 22 | third-party content pages: 21
+baseline: phone +86 131 2892 5565 | China Quality Service | Building A1, Floor 1, Xuexiang Garden, Zhonghao 2nd Road, Bantian Street, Shenzhen 518129
+================================================================
+
+-- STRUCTURED NAME (Organization.name) --
+  [ok    ] uniform across all pages
+
+-- STRUCTURED TELEPHONE (contactPoint) --
+  [ok    ] uniform across all pages
+
+-- STRUCTURED STREET ADDRESS --
+  [ok    ] uniform across all pages
+
+-- STRUCTURED LOCALITY --
+  [ok    ] uniform across all pages
+
+-- STRUCTURED POSTAL CODE --
+  [ok    ] uniform across all pages
+
+-- ALTERNATE NAME --
+  [ok    ] every Organization has alternateName ["CNQ","China Quality Service Co., Ltd."]
+
+-- VISIBLE PHONE (own pages: about/contact/legal/services/...) --
+  [ok    ] 4 own-page hit(s) match baseline
+  [ok    ] no stray phone on own pages
+
+-- THIRD-PARTY PHONES (factory contacts on factory-resource/ & inspection-cases/, NOT CNQ NAP) --
+  [info  ] "8613858910511" appears on: factory-resource/children-tent-zhejiang.html
+
+-- PAGES WITH NO VISIBLE CNQ PHONE (enhancement note) --
+  [info  ] 18 own page(s) show email/WhatsApp but no CNQ phone in body/footer: article-template.html, download.html, index.html, industries/index.html, industry-updates/ansi-asq-z1-4-guide.html, industry-updates/eu-regulatory-compliance-guide-china-exporters.html, industry-updates/eu-toy-safety-regulation-2025.html, industry-updates/index.html, industry-updates/pre-shipment-inspection-reduce-returns.html, insights.html, services/china-factory-audit.html, services/during-production-inspection.html, services/initial-production-check.html, services/pre-shipment-inspection.html, terms.html, tools/aql-calculator/index.html, tools/inspection-cost-calculator.html, tools/lead-time-calculator.html
+          (Google Local SEO tip: sitewide footer NAP helps, but absence is not a ranking error)
+
+-- OLD-ADDRESS RESIDUE (Shanghai / 上海 in body text) --
+  [info  ] factory-resource/index.html :: ...hting Plastics Yangtze River Delta — Precision Manufacturing &amp; Textiles Hub Shanghai · Suzhou · Ningbo · Hangzhou · Wenzhou Core region for prec...
+  [info  ] tools/lead-time-calculator.html :: ...eference from China Typical sea freight transit times from major Chinese ports (Shanghai, Ningbo, Shenzhen, Xiamen) to key destinations. Actual time...
+
+SUMMARY  warnings=0

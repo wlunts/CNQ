@@ -185,16 +185,16 @@
 | industry-updates/pre-shipment-inspection-reduce-returns.html | pre-shipment inspection | /services/pre-shipment-inspection |  |
 | industry-updates/pre-shipment-inspection-reduce-returns.html | Inspection Cost Calculator — Free &amp; Online Tool | /tools/inspection-cost-calculator |  |
 | industry-updates/pre-shipment-inspection-reduce-returns.html | Use the Inspection Cost Calculator | /tools/inspection-cost-calculator |  |
-| insights.html | product inspection | / |  |
+| insights.html | product inspection in China | / | 在过去十余年的 工作中 |
 | insights.html | Talk to Your Experts | /contact | 联系我们的专家 |
-| insights.html | View Factories | /factory-resource/ | 查看工厂 |
-| insights.html | Vertically Integrated Tea Factory in Wuyishan, China | /factory-resource/wuyishan-tea-factory | 武夷山全产业链茶厂 |
-| insights.html | More Updates | /industry-updates/ | 更多动态 |
-| insights.html | View Updates | /industry-updates/ | 查看动态 |
-| insights.html | ANSI/ASQ Z1.4 (ISO 2859-1) AQL Sampling Guide | /industry-updates/ansi-asq-z1-4-guide | ANSI/ASQ Z1.4 AQL抽样检验标准详解 |
+| insights.html | View Inspection Cases | /inspection-cases/ | 查看验货案例 |
 | insights.html | More Cases | /inspection-cases/ | 更多案例 |
-| insights.html | View Cases | /inspection-cases/ | 查看案例 |
-| insights.html | 3D Printed Dragon Egg — Sharp Burrs Defect | /inspection-cases/3d-printing-dragon-egg-sharp-burrs | 3D打印龙蛋 — 锐利毛刺缺陷 |
+| insights.html | Product Inspection Case Study — Gradient Print Banding on Cooler Bags | /inspection-cases/cooler-bag-printing-defect | 保温冰袋验货案例 — 渐变印刷断层与颗粒感 |
+| insights.html | Browse Factory Profiles | /factory-resource/ | 浏览工厂档案 |
+| insights.html | Factory Audit Resource — Premium Shirt Manufacturer in Anhui | /factory-resource/premium-shirt-factory-anhui | 工厂档案 · 安徽高端衬衫工厂 |
+| insights.html | Explore Industry Updates | /industry-updates/ | 浏览行业动态 |
+| insights.html | More Updates | /industry-updates/ | 更多动态 |
+| insights.html | Industry Updates — EU Compliance: Toy Safety, DPP &amp; CBAM 2026 | /industry-updates/eu-regulatory-compliance-guide-china-exporters | 行业动态 — 欧盟法规合规指南：中国出口商必读 玩具安全、DPP与CBAM 2026 |
 | insights.html | factory audit | /services/china-factory-audit |  |
 | inspection-cases/3d-printing-dragon-egg-sharp-burrs.html | Home | / | 首页 |
 | inspection-cases/3d-printing-dragon-egg-sharp-burrs.html | product inspection in China | / |  |
