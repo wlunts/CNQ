@@ -22,7 +22,9 @@ function walk(dir) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, e.name);
     if (e.isDirectory()) walk(p);
-    else if (e.name.endsWith('.html')) files.push(p);
+    // article-template.html is a copy-master with placeholder hrefs ("=========="),
+    // not a live page — scanning it produces only false-positive errors/warnings.
+    else if (e.name.endsWith('.html') && e.name !== 'article-template.html') files.push(p);
   }
 }
 walk(ROOT);

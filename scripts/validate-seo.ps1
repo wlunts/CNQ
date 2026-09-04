@@ -203,14 +203,19 @@ foreach ($file in $factoryFiles) {
     }
 }
 
-# 7b. Every Inspection Case article body must link to /services#inspection and /about
+# 7b. Every Inspection Case article must link to /services#inspection (mandatory) plus a
+#     second pillar link to /about OR / (home). Breadcrumb chrome is stripped so only
+#     true body links count. The / option follows the linking strategy: when the body
+#     naturally carries the home-target phrase (product inspection in China), linking
+#     home is preferred over forcing an /about mention.
 $caseFiles = Get-ChildItem -Path (Join-Path $Root 'inspection-cases') -Filter "*.html" | Where-Object { $_.Name -ne 'index.html' }
 foreach ($file in $caseFiles) {
     $c = Get-Content $file.FullName -Raw -Encoding UTF8
     $main = if ($c -match '(?s)<main.*?</main>') { $Matches[0] } else { '' }
+    $body = $main -replace '(?s)<div class="breadcrumb[^"]*">.*?</div>', ''
     $missing = @()
-    if ($main -notmatch 'href="/services#inspection"') { $missing += '/services#inspection' }
-    if ($main -notmatch 'href="/about"') { $missing += '/about' }
+    if ($body -notmatch 'href="/services#inspection"') { $missing += '/services#inspection' }
+    if (($body -notmatch 'href="/about"') -and ($body -notmatch 'href="/"')) { $missing += '/about (or /)' }
     if ($missing.Count -gt 0) {
         Write-Host "  [ERROR] Case article missing body link(s) — $($file.Name): $($missing -join ', ')" -ForegroundColor Red
         $clusterIssues++
@@ -218,7 +223,7 @@ foreach ($file in $caseFiles) {
 }
 
 if ($clusterIssues -eq 0) {
-    Write-Host "  [OK] All factory articles link to pillar page; all case articles link to /services#inspection + /about" -ForegroundColor Green
+    Write-Host "  [OK] All factory articles link to pillar page; all case articles link to /services#inspection + (/about or /)" -ForegroundColor Green
 }
 $script:Issues += $clusterIssues
 
