@@ -45,6 +45,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
     });
+    document.querySelectorAll('.en-link').forEach(function (el) {
+      el.style.display = lang === 'zh' ? 'none' : '';
+    });
     document.querySelectorAll('.lang-switch button').forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
