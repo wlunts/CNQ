@@ -140,6 +140,12 @@
           Estimate Quality Inspection Cost by product category, item count &amp; AQL level for reference. Starting from $188/man-day.
           Open Estimator → | /tools/inspection-cost-calculator | 验货人天估算器 |
 | industries/index.html | inspection services in China | /services#inspection |  |
+| industries/furniture-inspection.html | furniture inspection service | /services#inspection |  |
+| industries/furniture-inspection.html | KD furniture inspection case | /inspection-cases/kd-furniture-loose-hardware-panel-cracks |  |
+| industries/furniture-inspection.html | AQL Sampling Calculator — Find Your Furniture Sample Size | /tools/aql-calculator/ |  |
+| industries/furniture-inspection.html | Pre-Shipment Inspection — The Final Check Before Your Container Sails | /services/pre-shipment-inspection |  |
+| industries/furniture-inspection.html | Acacia Wood Tray Inspection — Spliced Color Difference | /inspection-cases/acacia-wood-color-difference |  |
+| industries/furniture-inspection.html | Book a Furniture Inspection | /contact | 预约家具检验 |
 | industry-updates/ansi-asq-z1-4-guide.html | Home | / | 首页 |
 | industry-updates/ansi-asq-z1-4-guide.html | product inspections | / |  |
 | industry-updates/ansi-asq-z1-4-guide.html | China Quality Service | /about |  |

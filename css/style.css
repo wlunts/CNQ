@@ -122,7 +122,7 @@ ul, ol { list-style: none; }
 .page-header .page-title { font-size: 2.2rem; margin-bottom: 12px; }
 .page-header .page-header-meta { font-size: 0.9rem; opacity: 0.75; margin-top: 12px; }
 .page-header .page-header-meta .meta-category { color: #fff; font-weight: 700; }
-.page-header .hero-subtitle { max-width: 1000px; margin: 6px auto 0; font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.9); }
+.page-header .hero-subtitle { max-width: 1100px; margin: 6px auto 0; font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,0.9); }
 
 /* Section Title */
 .section-title { text-align: center; margin-bottom: 50px; }
@@ -581,6 +581,7 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
   padding: 10px 12px; font-size: 0.85rem; color: var(--text-body);
   line-height: 1.5; text-align: center;
 }
+.gallery-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
 
 /* Pricing Box */
 .pricing-box {
@@ -615,4 +616,5 @@ html.js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 480px) {
   .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-grid.cols-2 { grid-template-columns: 1fr; }
 }
