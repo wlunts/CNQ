@@ -76,7 +76,7 @@ ul, ol { list-style: none; }
 .logo img { height: 48px; margin-right: 10px; }
 .logo span { letter-spacing: 1px; }
 .nav { display: flex; align-items: center; gap: 4px; }
-.nav a { display: block; padding: 10px 18px; color: var(--text-dark); font-size: 0.95rem; font-weight: 500; border-radius: var(--radius-sm); transition: all var(--transition); position: relative; }
+.nav a { display: block; padding: 10px 10px; color: var(--text-dark); font-size: 1.0rem; font-weight: 500; border-radius: var(--radius-sm); transition: all var(--transition); position: relative; }
 .nav a:hover, .nav a.active { color: var(--primary); background: rgba(26, 82, 118, 0.06); }
 
 /* Dropdown Menu */
@@ -104,10 +104,11 @@ ul, ol { list-style: none; }
 
 /* Language Switch */
 .lang-switch { margin-left: 16px; display: flex; gap: 4px; align-items: center; }
-.lang-switch a, .lang-switch button { padding: 4px 10px; font-size: 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-muted); cursor: pointer; }
-.lang-switch button { background: transparent; line-height: inherit; }
-.lang-switch a:hover, .lang-switch a.active,
-.lang-switch button:hover, .lang-switch button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.lang-switch a, .lang-switch span { padding: 4px 10px; font-size: 0.8rem; border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-muted); }
+.lang-switch a { cursor: pointer; }
+.lang-switch span { background: transparent; line-height: inherit; cursor: default; }
+.lang-switch a:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.lang-switch span.active { background: var(--primary); color: #fff; border-color: var(--primary); }
 
 /* Mobile Menu Toggle */
 .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; z-index: 1001; }
@@ -339,6 +340,17 @@ ul, ol { list-style: none; }
 .faq-answer-inner ol { list-style: decimal; padding-left: 20px; margin-bottom: 12px; }
 .faq-answer-inner ol li { margin-bottom: 6px; }
 .faq-answer-inner strong { color: var(--primary-dark); }
+
+/* Scope / Limitations Note (industry & service pages) */
+.scope-note {
+  margin: 0 0 40px;
+  padding: 20px 24px;
+  background: var(--bg-light);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.scope-note h3 { font-size: 1.15rem; color: var(--primary-dark); margin: 0 0 10px; }
+.scope-note p { margin: 0; color: var(--text-body); line-height: 1.8; }
 
 /* ---------- Article Styles ---------- */
 .article-header { padding: 20px 0 0; }

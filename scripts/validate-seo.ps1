@@ -23,11 +23,25 @@ function Check-Pattern($pattern, $description, $severity = "ERROR") {
     }
 }
 
-# 1. Footer anchors — must have #inspection, #audit, #lab, #supplier
-Check-Pattern 'href="services"\s+data-zh="产品检验"' 'Footer missing #inspection anchor'
-Check-Pattern 'href="services"\s+data-zh="工厂审核"'   'Footer missing #audit anchor'
-Check-Pattern 'href="services"\s+data-zh="实验室测试"'  'Footer missing #lab anchor'
-Check-Pattern 'href="services"\s+data-zh="供应商管理"'  'Footer missing #supplier anchor'
+# 1. Service anchor targets — footer and cross-page links rely on these ids
+#    existing in services.html (#inspection, #audit, #lab, #supplier)
+Write-Host ""
+Write-Host "  [CHECK] Service anchor targets in services.html:" -ForegroundColor Cyan
+$servicesFile = Join-Path $Root 'services.html'
+if (-not (Test-Path $servicesFile)) {
+    Write-Host "  [ERROR] services.html not found" -ForegroundColor Red
+    $script:Issues++
+} else {
+    $servicesHtml = Get-Content $servicesFile -Raw -Encoding UTF8
+    foreach ($anchor in @('inspection', 'audit', 'lab', 'supplier')) {
+        if ($servicesHtml -match ('id="' + $anchor + '"')) {
+            Write-Host "  [OK] services.html defines #$anchor" -ForegroundColor Green
+        } else {
+            Write-Host "  [ERROR] services.html missing id for #$anchor (footer anchor is dead)" -ForegroundColor Red
+            $script:Issues++
+        }
+    }
+}
 
 # 2. Bad slash format: /page/#anchor → should be /page#anchor
 Check-Pattern '/services/#[a-z]' 'Bad format /services/# (should be /services#)'
@@ -309,8 +323,8 @@ if ($bcIssues -eq 0) {
 }
 $script:Issues += $bcIssues
 
-# 9. Chinese encoding check (UTF-8-safe via Node.js)
-Write-Host "`n  [CHECK] Chinese encoding (data-zh mojibake):" -ForegroundColor Cyan
+# 9. Encoding and Chinese-text purity check (UTF-8-safe via Node.js)
+Write-Host "`n  [CHECK] Encoding and Chinese-text purity:" -ForegroundColor Cyan
 $nodeExe = Get-Command node -ErrorAction SilentlyContinue
 if (-not $nodeExe) {
     Write-Host "  [WARN] node not found - skipping encoding check" -ForegroundColor Yellow
@@ -319,13 +333,64 @@ if (-not $nodeExe) {
     $encFail = 0
     foreach ($line in $encOut) { if ($line -match '^FAIL') { $encFail++ } }
     if ($encFail -eq 0) {
-        Write-Host "  [OK] No mojibake in data-zh attributes" -ForegroundColor Green
+        Write-Host "  [OK] No mojibake and no stray Chinese text" -ForegroundColor Green
     } else {
-        Write-Host "  [ERROR] $encFail file(s) contain mojibake:" -ForegroundColor Red
+        Write-Host "  [ERROR] $encFail file(s) contain mojibake or stray Chinese:" -ForegroundColor Red
         foreach ($line in $encOut) { if ($line -match '^FAIL') { Write-Host "    $line" -ForegroundColor Red } }
         $script:Issues += $encFail
     }
 }
+
+# 10. HTML structure: <footer> must NOT be nested inside <main>.
+#     Rationale: section 7 extracts body links with (?s)<main.*?</main>.
+#     If <footer> sits inside <main>, the footer's /services#inspection and
+#     /about links leak into the "body" sample and mask missing in-body links
+#     (false negative). Semantic correctness and screen-reader order also break.
+Write-Host "`n  [CHECK] HTML structure (main/footer nesting):" -ForegroundColor Cyan
+$structIssues = 0
+$structFiles = Get-ChildItem -Path $Root -Recurse -Filter "*.html" | Where-Object {
+    $_.FullName -notmatch '\\Upload\\' -and $_.FullName -notmatch '\\node_modules\\'
+}
+
+foreach ($file in $structFiles) {
+    $content = Get-Content $file.FullName -Raw -Encoding UTF8
+    $rel = $file.FullName.Substring($Root.Length + 1)
+
+    $openMatch = [regex]::Match($content, '<main\b[^>]*>')
+    $closeMatches = [regex]::Matches($content, '</main>')
+    $footerIdx = $content.IndexOf('<footer')
+
+    if (-not $openMatch.Success) {
+        Write-Host "  [ERROR] $rel - no <main> element" -ForegroundColor Red
+        $structIssues++
+        continue
+    }
+    if ($closeMatches.Count -eq 0) {
+        Write-Host "  [ERROR] $rel - <main> opened but never closed" -ForegroundColor Red
+        $structIssues++
+        continue
+    }
+    if ($closeMatches.Count -gt 1) {
+        Write-Host "  [ERROR] $rel - $($closeMatches.Count) </main> tags found, expected exactly 1" -ForegroundColor Red
+        $structIssues++
+        continue
+    }
+
+    $openIdx = $openMatch.Index
+    $closeIdx = $closeMatches[0].Index
+    if ($footerIdx -ge 0 -and $footerIdx -gt $openIdx -and $footerIdx -lt $closeIdx) {
+        $lineNo = ($content.Substring(0, $footerIdx) -split "`n").Count
+        Write-Host "  [ERROR] $rel - <footer> (line ~$lineNo) is nested inside <main>; move </main> above <footer>" -ForegroundColor Red
+        $structIssues++
+    }
+}
+
+if ($structIssues -eq 0) {
+    Write-Host "  [OK] All pages close <main> before <footer>" -ForegroundColor Green
+} else {
+    Write-Host "  [NOTE] Broken nesting also invalidates section 7: footer links leak into <main> and hide missing in-body links." -ForegroundColor Yellow
+}
+$script:Issues += $structIssues
 
 # Summary
 Write-Host "`n=== " -NoNewline

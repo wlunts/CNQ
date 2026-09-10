@@ -18,10 +18,10 @@ const BASELINE = {
   alt: ['CNQ', 'China Quality Service Co., Ltd.'],
   phone: '+86 131 2892 5565',
   email: 'contact@cn-q.com',
-  street: 'Building A1, Floor 1, Xuexiang Garden, Zhonghao 2nd Road, Bantian Street',
+  street: '5/F, Guangyuan Entrepreneurship Park, No. 5231 Longhua Avenue, Longhua District',
   locality: 'Shenzhen',
   region: 'Guangdong',
-  postal: '518129',
+  postal: '518109',
 };
 
 const files = [];

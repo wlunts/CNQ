@@ -1,75 +1,10 @@
 /* ============================================================
    China Quality Service - Main JavaScript
-   Unified: language, nav, dropdown, scroll, animations,
+   Unified: nav, dropdown, scroll, animations,
    particle canvas, FAQ accordion, font size controls
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
-
-  // ========== Language Switcher ==========
-  // Cache original English values so we can restore them
-  document.querySelectorAll('[data-zh]').forEach(function (el) {
-    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-      el.setAttribute('data-en', el.placeholder);
-    } else if (el.tagName === 'META') {
-      el.setAttribute('data-en', el.content);
-    } else {
-      el.setAttribute('data-en', el.textContent);
-    }
-  });
-
-  var urlParams = new URLSearchParams(window.location.search);
-  var urlLang = urlParams.get('lang');
-  var storedLang = localStorage.getItem('cnq-lang');
-  var currentLang = urlLang || storedLang || 'en';
-  applyLanguage(currentLang);
-
-  function applyLanguage(lang) {
-    document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
-    document.querySelectorAll('[data-zh]').forEach(function (el) {
-      if (lang === 'zh') {
-        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-          el.placeholder = el.getAttribute('data-zh');
-        } else if (el.tagName === 'META') {
-          el.content = el.getAttribute('data-zh');
-        } else {
-          el.textContent = el.getAttribute('data-zh');
-        }
-      } else {
-        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-          el.placeholder = el.getAttribute('data-en') || '';
-        } else if (el.tagName === 'META') {
-          el.content = el.getAttribute('data-en') || '';
-        } else {
-          el.textContent = el.getAttribute('data-en') || '';
-        }
-      }
-    });
-    document.querySelectorAll('.en-link').forEach(function (el) {
-      el.style.display = lang === 'zh' ? 'none' : '';
-    });
-    document.querySelectorAll('.lang-switch button').forEach(function (btn) {
-      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-    });
-    localStorage.setItem('cnq-lang', lang);
-    if (lang === 'zh') {
-      var url = new URL(window.location);
-      url.searchParams.set('lang', 'zh');
-      window.history.replaceState(null, '', url);
-    } else {
-      var urlEn = new URL(window.location);
-      urlEn.searchParams.delete('lang');
-      window.history.replaceState(null, '', urlEn);
-    }
-  }
-
-  document.querySelectorAll('.lang-switch button').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      var lang = this.getAttribute('data-lang');
-      if (lang) applyLanguage(lang);
-    });
-  });
 
   // ========== Mobile Menu Toggle ==========
   var menuToggle = document.querySelector('.menu-toggle');

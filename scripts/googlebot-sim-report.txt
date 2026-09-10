@@ -1,7 +1,7 @@
 ================================================================
 GOOGLEBOT SIMULATED CRAWL - local pre-deploy snapshot
-date: 2026-09-06
-html files on disk: 45 | sitemap URLs: 43
+date: 2026-09-10
+html files on disk: 46 | sitemap URLs: 44
 ================================================================
 
 ===== [1] FILE INVENTORY vs SITEMAP =====
@@ -9,11 +9,11 @@ disk pages not listed in sitemap: 404.html
 
 ===== [2] LINK DISCOVERY (BFS from home) =====
   [ok    ] every page is reachable from home through links
-home outbound page links: 52
+home outbound page links: 53
 
 ===== [3] PER-PAGE INDEX DECISION =====
 
--- INDEX (43)
+-- INDEX (44)
   + about.html
   + contact.html
   + download.html
@@ -28,6 +28,7 @@ home outbound page links: 52
   + index.html
   + industries/furniture-inspection.html
   + industries/index.html
+  + industries/toy-inspection.html
   + industry-updates/ansi-asq-z1-4-guide.html
   + industry-updates/eu-regulatory-compliance-guide-china-exporters.html
   + industry-updates/eu-toy-safety-regulation-2025.html
@@ -68,10 +69,10 @@ home outbound page links: 52
   ? 404.html
 
 ===== [4] TITLE UNIQUENESS =====
-  [ok    ] checked 44 distinct titles
+  [ok    ] checked 45 distinct titles
 
 ===== [5] JSON-LD VALIDITY =====
-ld+json blocks: 43 | types: {"?":43,"WebSite":43,"Organization":43,"AboutPage":1,"ContactPage":1,"WebPage":8,"ItemList":4,"BreadcrumbList":39,"Article":23,"CollectionPage":4,"ProfessionalService":1,"Service":5,"FAQPage":22,"WebApplication":3,"HowTo":1} | issues: 0
+ld+json blocks: 44 | types: {"?":44,"WebSite":44,"Organization":44,"AboutPage":1,"ContactPage":1,"WebPage":13,"ItemList":4,"BreadcrumbList":40,"Article":23,"CollectionPage":4,"ProfessionalService":1,"Service":6,"FAQPage":23,"WebApplication":3,"HowTo":1} | issues: 0
   [ok    ] every indexable page has structured data
 
 ===== [6] E-E-A-T / TRUST SIGNALS =====
@@ -83,7 +84,7 @@ home Organization JSON-LD: yes
 article-type pages: 16 | with datePublished: 16 | with author: 16
 
 ===== [7] IMAGE INDEX =====
-imgs 315 | alt present 315 | no-alt 0 | descriptive-name 202 | numeric-name 113
+imgs 337 | alt present 337 | no-alt 0 | descriptive-name 224 | numeric-name 113
   [ok    ] all indexable pages have og:image
 
 ===== [8] MOBILE VIEWPORT =====

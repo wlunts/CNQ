@@ -2,12 +2,13 @@
 
 > 用途：每篇新文章上线前，先读本手册对照执行。
 > 状态：2026-08-27 修订（新增 9.2 三类型规则、第 12 节上线 SOP；FAQPage / robots / ANCHOR-LOG 待办落档；E-E-A-T 补充），用户已确认。
+> 状态：2026-09-09 增补 12.1 署名核验 SOP；同日决定暂不启用 Person author——试点已回退（tpr-flow-mark / qinteng-3d-print 恢复机构署名），SOP 保留备用，用户已确认。
 
 ---
 
 ## 1. 整站定位
 
-- 保留中文内容（`data-zh` 双语切换），**只做英文 SEO**
+- 纯英文单语站；中文版为独立站点（zh.cn-q.com），站内只保留切换入口，且出站链接加 `rel="nofollow"` 不传权。**只做英文 SEO**
 - 竞争对手：SGS、BV、QIMA 等大厂
 - 核心优势：**17 年真实验货/验厂经验与记录**（每篇案例都有 AQL 报告、缺陷数据、现场见证）
 - 打法：不硬拼大厂头词，用真实记录做 T3 长尾垄断，靠主题簇蜘蛛网把权重包抄到 T1/T2
@@ -30,7 +31,7 @@
 
 ## 2.1 核心页定义（裁决依据，2026-08-26 用户确认）
 
-- **核心页 = 支柱页**，仅限：`/`（主页）、`/about`、`/services`（含 `#inspection` 等服务锚点）及服务子页（`/services/china-factory-audit`、`/services/pre-shipment-inspection`、`/services/initial-production-check`）
+- **核心页 = 支柱页**，仅限：`/`（主页）、`/about`、`/services`（含 `#inspection` 等服务锚点）及服务子页（`/services/china-factory-audit`、`/services/pre-shipment-inspection`、`/services/initial-production-check`）、`/industries/`（品类总览支柱页；2026-09-10 加入主导航）
 - **非核心页**：工具页（`/tools/aql-calculator` 等）、法律页（`/terms`、`/privacy`）、目录页（`/insights`、`/inspection-cases/`、`/factory-resource/`、`/industry-updates/`）、`/download`、`/contact`
 - **裁决规则**：判断"是否核心页"一律以此为准；工具页/法律页的职责是**向外送权重到核心页**，不作为内链目标
 
@@ -41,6 +42,7 @@
 | `/` | 只谈验货：服务类型、流程、AQL 标准 | 不掺工厂审核内容 |
 | `/about` | 17 年履历、验货员团队、资质背书 | — |
 | `/services#inspection` | 服务清单、行业案例入口、FAQ | — |
+| `/industries/` | 品类经验总览（家具/玩具/纺织/电子/五金/建材），承接 "what products do you inspect" | 品类子页就绪前，主导航仅单链接、不做下拉 |
 
 ## 4. 锚文本策略（轮换制）
 
@@ -99,7 +101,6 @@
 - 每链必须句子自然，不顺不链
 - 锚文本从对应目标页的变体池选，避免同目标页连续重复
 - **同一目标页一篇文章只链一处**：多链到同一目标页无额外传权（Google 只计首个锚文本），第二处等同浪费；上表"必选 1 个"即"恰好 1 处"
-- **DOM 分离**：带内链段落 `data-zh` 只放 `<span>`，`<a>` 独立
 
 ## 6. 内容节奏
 
@@ -138,11 +139,15 @@
 - [x] sitemap 真实配图 + lastmod 自动同步文件 mtime（2026-08-30，工具 `scripts/seo-enhance.ps1`，48 URL / 214 图片）
 - [x] footer 版权年份自动更新（2026-08-30，`js/main.js`）
 - [x] skip-link + `<main id="main-content">` 全站齐备（2026-08-30，41 页；`article-template.html` 已含，新页面复制继承；样式在 `css/style.css` `.skip-link`）
+- [x] `<main>` 闭合位置全站正确（2026-09-10：发现并修复 `index.html` 的 `<footer>` 被嵌套在 `<main>` 内；同日加 `validate-seo.ps1` 第 10 节守卫。注：2026-08-30 那次只验了 `<main>` 是否存在，未验闭合位置，是这次漏检的根因）
 
 **固化规则（2026-08-27）：**
 - 每次修改任何页面后必须跑 `scripts/validate-seo.ps1` 确认 **0 issues**
 - 新案例页必须带 FAQPage，且含 `"@id": "<canonical>#faq"` + `"isPartOf": {"@id": "#website"}`（格式参照已修复的 11 篇案例）
 - 404 页永远不进 sitemap（错误页不索引）
+
+**固化规则（2026-09-10）：**
+- `<footer>` 必须在 `</main>` 之后，禁止嵌套在 `<main>` 内。原因：第 7 节内链校验用 `(?s)<main.*?</main>` 截取正文，footer 一旦被包含进来，其自带的 `/services#inspection`、`/about` 链接会被算作正文内链，使「正文缺内链」被误判为通过（假阴性）。已由第 10 节自动拦截。
 
 ## 9.1 图片命名规范（2026-08-27 用户确认）
 
@@ -156,7 +161,7 @@
 - 首页 news-grid 固定 3 卡 = **验货案例 + 工厂分享 + 行业动态 各 1 篇**
 - 每类取该类型**最新一篇**（按 datePublished 排序）
 - 每篇新文章上线时，必须检查首页 grid 是否符合三类型结构，同类型挤占则替换
-- 卡片素材与文章页一致：og:image 图片、标题（H1/title）、meta description 双语（`data-zh`）同步
+- 卡片素材与文章页一致：og:image 图片、标题（H1/title）、meta description 与文章页保持同步
 
 ## 10. 执行阶段
 
@@ -186,6 +191,29 @@
    - 加入 1-2 篇最相关老文章的相关区（第 7 节回链维护）
    - 更新 ANCHOR-LOG.md 锚文本跟踪表
 5. **收尾**：跑 `scripts/validate-seo.ps1` 确认 0 issues
+
+### 12.1 署名文章核验 SOP（2026-09-09 用户确认，备用）
+
+> 适用：将来若启用真实个人署名（`author` = Person）的文章。**当前未启用**——全站文章一律机构署名（China Quality Service）；本文仅存档核验纪律，若某日决定启用 Person（如质控负责人公开背书），按本文执行。
+
+- **署名 = 背书**：文章由编辑执笔，作者对内容真实性负总责、终审后放行署名。**挂名未核 = 禁止**。
+- 发布/更新署名文章前，编辑须填写**事实核验清单**并交作者逐项核对，全部一致才可放行：
+  - 现场验货日期（区别于页面 Published 发布时间）
+  - 城市 / 产业带
+  - 工厂描述：**案例文只到城市/产业带级，绝不出现厂名**；factory-resource 文以工厂书面授权为准（工厂资源文公开具体信息是工厂同意的引流，不在此限）
+  - AQL / 抽样数 / 判定结论
+- 案例文正文建议带出一次"日期 + 城市"现场锚点句（第一视角叙事，给 Google 与读者可核验的时空）。
+- 放行后页面更新 → 跑 `scripts/validate-seo.ps1` 确认 0 issues。
+- 若启用：先用 1-2 篇最有代表性案例小范围试，评估后再决定铺开；启用即意味着作者愿意接受客户问询核验。
+
+### 12.2 站点结构维护（导航 / 页脚）
+
+- **单一源**：`article-template.html` 同时是 **header** 与 **footer** 的源（页脚机制早已建立；header 机制 2026-09-10 建立）。
+- **改导航**（增删项 / 改文案）：编辑模板 header → `node scripts/sync-header.js --sync` 铺开全站 → `node scripts/sync-header.js` 确认 `45/45 identical`。
+- **改页脚**：`node scripts/sync-footer.js --sync` → `node scripts/sync-footer.js` 确认 `45/45 identical`。
+- 两个脚本都**保留每页当前页高亮**（`class="active"`）：比对时忽略、写回时按原 href 还原，无需手工处理。
+- **禁止**用 JS/CSS 注入导航或页脚：Googlebot 首次抓取的原始 HTML 必须已含这些内链（`validate-seo.ps1` 等静态审计依赖）。
+- 变更留痕：2026-09-10 导航在 Services 之后新增 `/industries/` 单链接，同批建立 `sync-header.js`，并把 `/industries/` 列入核心页（见 2.1、3）。
 
 ---
 

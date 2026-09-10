@@ -411,7 +411,6 @@ for (const f of files) {
     .replace(/<script[\s\S]*?<\/script>/g, ' ')
     .replace(/<style[\s\S]*?<\/style>/g, ' ')
     .replace(/<[^>]+>/g, ' ')
-    .replace(/data-zh="[^"]*"/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
   const words = text.split(' ').filter(Boolean).length;

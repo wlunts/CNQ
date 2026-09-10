@@ -1,8 +1,8 @@
 ================================================================
 NAP CONSISTENCY CHECK - local pre-deploy snapshot
-date: 2026-09-03
-html files: 44 | own pages: 22 | third-party content pages: 21
-baseline: phone +86 131 2892 5565 | China Quality Service | Building A1, Floor 1, Xuexiang Garden, Zhonghao 2nd Road, Bantian Street, Shenzhen 518129
+date: 2026-09-10
+html files: 46 | own pages: 24 | third-party content pages: 21
+baseline: phone +86 131 2892 5565 | China Quality Service | 5/F, Guangyuan Entrepreneurship Park, No. 5231 Longhua Avenue, Longhua District, Shenzhen 518109
 ================================================================
 
 -- STRUCTURED NAME (Organization.name) --
@@ -24,14 +24,15 @@ baseline: phone +86 131 2892 5565 | China Quality Service | Building A1, Floor 1
   [ok    ] every Organization has alternateName ["CNQ","China Quality Service Co., Ltd."]
 
 -- VISIBLE PHONE (own pages: about/contact/legal/services/...) --
-  [ok    ] 4 own-page hit(s) match baseline
+  [ok    ] 29 own-page hit(s) match baseline
   [ok    ] no stray phone on own pages
 
 -- THIRD-PARTY PHONES (factory contacts on factory-resource/ & inspection-cases/, NOT CNQ NAP) --
   [info  ] "8613858910511" appears on: factory-resource/children-tent-zhejiang.html
+  [info  ] "8613128925565" appears on: factory-resource/children-tent-zhejiang.html, factory-resource/display-rack-zhejiang.html, factory-resource/index.html, factory-resource/pencil-factory-yiwu.html, factory-resource/premium-shirt-factory-anhui.html, factory-resource/printing-card-factory.html, factory-resource/qinteng-3d-print.html, factory-resource/wuyishan-tea-factory.html, inspection-cases/3d-printing-dragon-egg-sharp-burrs.html, inspection-cases/acacia-wood-color-difference.html, inspection-cases/cooler-bag-printing-defect.html, inspection-cases/index.html, inspection-cases/kd-fence-drop-test.html, inspection-cases/kd-furniture-loose-hardware-panel-cracks.html, inspection-cases/metal-shed-sharp-edge.html, inspection-cases/milk-warmer-assembly-deviation-electronics-inspection.html, inspection-cases/oven-tray-inspection-painting-contamination.html, inspection-cases/safety-vest-velcro.html, inspection-cases/squishy-toy-color-bleeding-inspection.html, inspection-cases/ss-bottle-polishing.html, inspection-cases/tpr-flow-mark.html
 
 -- PAGES WITH NO VISIBLE CNQ PHONE (enhancement note) --
-  [info  ] 18 own page(s) show email/WhatsApp but no CNQ phone in body/footer: article-template.html, download.html, index.html, industries/index.html, industry-updates/ansi-asq-z1-4-guide.html, industry-updates/eu-regulatory-compliance-guide-china-exporters.html, industry-updates/eu-toy-safety-regulation-2025.html, industry-updates/index.html, industry-updates/pre-shipment-inspection-reduce-returns.html, insights.html, services/china-factory-audit.html, services/during-production-inspection.html, services/initial-production-check.html, services/pre-shipment-inspection.html, terms.html, tools/aql-calculator/index.html, tools/inspection-cost-calculator.html, tools/lead-time-calculator.html
+  [ok    ] every own page shows the CNQ phone
           (Google Local SEO tip: sitewide footer NAP helps, but absence is not a ranking error)
 
 -- OLD-ADDRESS RESIDUE (Shanghai / 上海 in body text) --
