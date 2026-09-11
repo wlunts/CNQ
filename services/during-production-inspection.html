@@ -112,7 +112,8 @@
       "@id": "https://www.chinaqualityservice.com/services/during-production-inspection",
       "url": "https://www.chinaqualityservice.com/services/during-production-inspection",
       "isPartOf": { "@id": "https://www.chinaqualityservice.com/#website" },
-      "mainEntity": { "@id": "https://www.chinaqualityservice.com/services/during-production-inspection#service" }
+      "mainEntity": { "@id": "https://www.chinaqualityservice.com/services/during-production-inspection#service" },
+      "reviewedBy": { "@id": "https://www.chinaqualityservice.com/#organization" }
     },
     {
       "@type": "Service",
@@ -195,7 +196,7 @@
 </script>
 
 <base href="/">
-<link rel="stylesheet" href="/css/style.css?v=1.1">
+<link rel="stylesheet" href="/css/style.css?v=1.2">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
 
@@ -209,7 +210,7 @@
     <div class="container header-inner">
       <div class="logo">
         <a href="/">
-          <img src="/Upload/logo.png" alt="China Quality Service" width="103" height="48" onerror="this.style.display='none'" loading="lazy">
+          <img src="/Upload/logo.png" alt="China Quality Service" width="103" height="48" onerror="this.style.display='none'">
           <span>China Quality Service</span>
         </a>
       </div>
@@ -266,6 +267,13 @@
         <button onclick="changeFontSize('small',this)">S</button>
         <button onclick="changeFontSize('medium',this)" class="active">M</button>
         <button onclick="changeFontSize('large',this)">L</button>
+      </div>
+
+      <!-- Credentials (visible trust signals — wording kept identical to about.html #credentials) -->
+      <div class="credential-strip">
+        <span>ISO 9001:2015 compliant quality management</span>
+        <span>17 years of on-site inspection in China</span>
+        <span>500+ global clients</span>
       </div>
 
       <!-- Article Body -->
@@ -700,6 +708,11 @@
           </figure>
         </div>
 
+        <!-- Author Bio -->
+        <div class="author-bio">
+          <p>Reviewed by the CNQ Inspection Team &mdash; China Quality Service's senior quality engineers, with 17 years of on-site during-production inspection across Guangdong, Fujian and Zhejiang. The in-line check items, defect classifications and AQL sampling rules on this page are drawn from that inspection record and are checked against the current revision of each standard.</p>
+        </div>
+
         <!-- ========== FAQ ========== -->
         <h2>Frequently Asked Questions About DPI</h2>
 
@@ -767,6 +780,10 @@
             <div class="related-card">
               <h4><a href="/tools/aql-calculator/">AQL Sampling Calculator — Instant Sample Size</a></h4>
               <p>Find the correct sample size for your DPI or PSI lot instantly — ANSI/ASQ Z1.4 General Level II built in.</p>
+            </div>
+            <div class="related-card">
+              <h4><a href="/inspection-cases/milk-warmer-assembly-deviation-electronics-inspection">Milk Warmer Assembly Deviation — Electronics Case</a></h4>
+              <p>An assembly deviation that only shows up once units are actually being built — see how it was measured and classified on the line.</p>
             </div>
           </div>
         </div>

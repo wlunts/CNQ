@@ -136,7 +136,8 @@
       "@id": "https://www.chinaqualityservice.com/services/pre-shipment-inspection",
       "url": "https://www.chinaqualityservice.com/services/pre-shipment-inspection",
       "isPartOf": { "@id": "https://www.chinaqualityservice.com/#website" },
-      "mainEntity": { "@id": "https://www.chinaqualityservice.com/services/pre-shipment-inspection#service" }
+      "mainEntity": { "@id": "https://www.chinaqualityservice.com/services/pre-shipment-inspection#service" },
+      "reviewedBy": { "@id": "https://www.chinaqualityservice.com/#organization" }
     },
     {
       "@type": "Service",
@@ -304,7 +305,7 @@
 </script>
 
 <base href="/">
-<link rel="stylesheet" href="/css/style.css?v=1.1">
+<link rel="stylesheet" href="/css/style.css?v=1.2">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
 
@@ -319,7 +320,7 @@
     <div class="container header-inner">
       <div class="logo">
         <a href="/">
-          <img src="/Upload/logo.png" alt="China Quality Service" width="103" height="48" onerror="this.style.display='none'" loading="lazy">
+          <img src="/Upload/logo.png" alt="China Quality Service" width="103" height="48" onerror="this.style.display='none'">
           <span>China Quality Service</span>
         </a>
       </div>
@@ -377,6 +378,13 @@
         <button onclick="changeFontSize('small',this)">S</button>
         <button onclick="changeFontSize('medium',this)" class="active">M</button>
         <button onclick="changeFontSize('large',this)">L</button>
+      </div>
+
+      <!-- Credentials (visible trust signals — wording kept identical to about.html #credentials) -->
+      <div class="credential-strip">
+        <span>ISO 9001:2015 compliant quality management</span>
+        <span>17 years of on-site inspection in China</span>
+        <span>500+ global clients</span>
       </div>
 
       <!-- Article Body -->
@@ -719,7 +727,12 @@
         <p><span>
           Ready to arrange an inspection for your next order? Get your CNQ experts — tell them what you need, and you will be responded with a plan within 12 hours.</span></p>
 
-        <p style="margin-top:12px;">Not ready to reach out yet? Try our online AQL sampling calculator — find out how many units you should be testing for your order size.</p>
+        <p style="margin-top:12px;">Not ready to reach out yet? Try our online AQL sampling calculator — find out how many units you should be testing for your order size. Or download a <a href="/download#sample-reports">sample inspection report</a> to see exactly what a CNQ report contains before you book.</p>
+
+        <!-- Author Bio -->
+        <div class="author-bio">
+          <p>Reviewed by the CNQ Inspection Team &mdash; China Quality Service's senior quality engineers, with 17 years of on-site pre-shipment inspection across Guangdong, Fujian and Zhejiang. The check items, AQL sampling rules and standard references on this page are drawn from that inspection record and are checked against the current revision of each standard.</p>
+        </div>
 
       </div><!-- /.article-body -->
 
@@ -866,6 +879,10 @@
           <div class="related-card">
             <h4><a href="/tools/inspection-cost-calculator">Inspection Cost Calculator — Free &amp; Online Tool</a></h4>
             <p>Quickly estimate how many man-days your pre-shipment inspection needs — plug in product types, quantities, and AQL levels.</p>
+          </div>
+          <div class="related-card">
+            <h4><a href="/inspection-cases/oven-tray-inspection-painting-contamination">Oven Tray Paint Contamination — PSI Case</a></h4>
+            <p>Coat dust in the paint finish, caught during a pre-shipment inspection. See the defect photos, how it was classified, and what the factory had to rework.</p>
           </div>
         </div>
       </div>

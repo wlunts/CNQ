@@ -136,7 +136,8 @@
       "@id": "https://www.chinaqualityservice.com/services/initial-production-check",
       "url": "https://www.chinaqualityservice.com/services/initial-production-check",
       "isPartOf": { "@id": "https://www.chinaqualityservice.com/#website" },
-      "mainEntity": { "@id": "https://www.chinaqualityservice.com/services/initial-production-check#service" }
+      "mainEntity": { "@id": "https://www.chinaqualityservice.com/services/initial-production-check#service" },
+      "reviewedBy": { "@id": "https://www.chinaqualityservice.com/#organization" }
     },
     {
       "@type": "Service",
@@ -320,7 +321,7 @@
 </script>
 
 <base href="/">
-<link rel="stylesheet" href="/css/style.css?v=1.1">
+<link rel="stylesheet" href="/css/style.css?v=1.2">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
 
@@ -335,7 +336,7 @@
     <div class="container header-inner">
       <div class="logo">
         <a href="/">
-          <img src="/Upload/logo.png" alt="China Quality Service" width="103" height="48" onerror="this.style.display='none'" loading="lazy">
+          <img src="/Upload/logo.png" alt="China Quality Service" width="103" height="48" onerror="this.style.display='none'">
           <span>China Quality Service</span>
         </a>
       </div>
@@ -394,6 +395,13 @@
         <button onclick="changeFontSize('small',this)">S</button>
         <button onclick="changeFontSize('medium',this)" class="active">M</button>
         <button onclick="changeFontSize('large',this)">L</button>
+      </div>
+
+      <!-- Credentials (visible trust signals — wording kept identical to about.html #credentials) -->
+      <div class="credential-strip">
+        <span>ISO 9001:2015 compliant quality management</span>
+        <span>17 years of on-site inspection in China</span>
+        <span>500+ global clients</span>
       </div>
 
       <!-- Article Body -->
@@ -675,7 +683,12 @@
         <p><span>
           Ready to arrange an IPC for your next order? Get your CNQ experts — tell them what you need, and you will receive a plan and quote within 12 hours.</span></p>
 
-        <p style="margin-top:12px;"><span>Not sure if your order needs IPC? Try our AQL sampling calculator to understand sampling logic at the shipment stage, or simply reach out for a free recommendation.</span></p>
+        <p style="margin-top:12px;"><span>Not sure if your order needs IPC? Try our AQL sampling calculator to understand sampling logic at the shipment stage, or simply reach out for a free recommendation. You can also download a <a href="/download#sample-reports">sample inspection report</a> to see the format and level of detail you will receive.</span></p>
+
+        <!-- Author Bio -->
+        <div class="author-bio">
+          <p>Reviewed by the CNQ Inspection Team &mdash; China Quality Service's senior quality engineers, with 17 years of on-site initial production checks across Guangdong, Fujian and Zhejiang. The first-article check items, raw material verification points and standard references on this page are drawn from that inspection record and are checked against the current revision of each standard.</p>
+        </div>
 
       </div><!-- /.article-body -->
 
@@ -835,6 +848,10 @@
           <div class="related-card">
             <h4><a href="/tools/inspection-cost-calculator">Inspection Cost Calculator — Free &amp; Online Tool</a></h4>
             <p>Quickly estimate how many man-days your IPC, DPI, or PSI needs — plug in product type, quantity, and complexity.</p>
+          </div>
+          <div class="related-card">
+            <h4><a href="/inspection-cases/squishy-toy-color-bleeding-inspection">Squishy Toy Color Bleeding — Material Check Case</a></h4>
+            <p>Sticky TPR koala with colour bleed traced back to the compound mix — the kind of raw material problem an initial production check is designed to stop on day one.</p>
           </div>
         </div>
       </div>

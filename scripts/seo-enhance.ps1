@@ -8,7 +8,7 @@
 # ============================================================
 param([switch]$Apply)
 $ErrorActionPreference = 'Stop'
-$root = 'C:\Users\bongo\OneDrive\CNQ'
+$root = Split-Path -Parent $PSScriptRoot
 $domain = 'https://www.chinaqualityservice.com'
 $apply = $PSBoundParameters.ContainsKey('Apply')
 $backupDir = Join-Path $env:TEMP ("cnq-seo-backup-" + (Get-Date -Format 'yyyyMMddHHmmss'))

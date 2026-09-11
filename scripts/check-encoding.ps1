@@ -1,5 +1,5 @@
 $ErrorActionPreference = "Stop"
-$root = "c:/Users/bongo/OneDrive/CNQ"
+$root = Split-Path -Parent $PSScriptRoot
 
 $file = Join-Path $root "factory-resource/wuyishan-tea-factory.html"
 $txt = [System.IO.File]::ReadAllText($file)

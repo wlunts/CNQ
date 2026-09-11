@@ -1,6 +1,6 @@
 ================================================================
 NAP CONSISTENCY CHECK - local pre-deploy snapshot
-date: 2026-09-10
+date: 2026-09-11
 html files: 46 | own pages: 24 | third-party content pages: 21
 baseline: phone +86 131 2892 5565 | China Quality Service | 5/F, Guangyuan Entrepreneurship Park, No. 5231 Longhua Avenue, Longhua District, Shenzhen 518109
 ================================================================

@@ -3,16 +3,13 @@
 --- ERROR: 0 ---
   (none)
 
---- WARN: 125 ---
+--- WARN: 122 ---
   [404.html] missing hreflang="en"
   [404.html] missing hreflang="x-default"
   [404.html] missing twitter:image
   [index.html] title too long (70 chars): China Product Inspection &amp; Quality Control | China Quality Service
   [industries/index.html] title too long (70 chars): Product Inspection Categories &amp; Industries | China Quality Service
   [services.html] title too long (69 chars): China Inspection Services &amp; Factory Audit | China Quality Service
-  [tools/aql-calculator/index.html] og:title != <title>
-  [tools/inspection-cost-calculator.html] og:title != <title>
-  [tools/lead-time-calculator.html] og:title != <title>
   [404.html] no JSON-LD at all
   [factory-resource/children-tent-zhejiang.html] non-SEO image filename: 2.jpg
   [factory-resource/children-tent-zhejiang.html] non-SEO image filename: 3.jpg
@@ -130,4 +127,4 @@
   [home] news-grid case card img != article og:image (card img: 1.jpg,factory-gate.jpg,news-2.jpg vs og:image: /images/og-image.png)
   [home] news-grid update card img != article og:image (card img: 1.jpg,factory-gate.jpg,news-2.jpg vs og:image: /images/og-image.png)
 
-TOTAL: 0 errors, 125 warnings
+TOTAL: 0 errors, 122 warnings

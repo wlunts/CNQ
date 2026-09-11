@@ -1,6 +1,6 @@
 ================================================================
 GOOGLEBOT SIMULATED CRAWL - local pre-deploy snapshot
-date: 2026-09-10
+date: 2026-09-11
 html files on disk: 46 | sitemap URLs: 44
 ================================================================
 

@@ -172,7 +172,7 @@
 | industry-updates/eu-regulatory-compliance-guide-china-exporters.html | ANSI/ASQ Z1.4 Sampling Guide — Master AQL Inspection Standards | /industry-updates/ansi-asq-z1-4-guide |
 | industry-updates/eu-regulatory-compliance-guide-china-exporters.html | Pre-Shipment Inspection Benefits: Reduce E-Commerce Returns from 12% to 2.8% | /industry-updates/pre-shipment-inspection-reduce-returns |
 | industry-updates/eu-regulatory-compliance-guide-china-exporters.html | TPR Toy Flow Mark Inspection Case | /inspection-cases/tpr-flow-mark |
-| industry-updates/eu-regulatory-compliance-guide-china-exporters.html | third-party factory audits | /services#audit |
+| industry-updates/eu-regulatory-compliance-guide-china-exporters.html | third-party factory audits | /services/china-factory-audit |
 | industry-updates/eu-regulatory-compliance-guide-china-exporters.html | International Compliance Services | /services#compliance |
 | industry-updates/eu-regulatory-compliance-guide-china-exporters.html | China Factory Audit — Get Right Before Contract | /services/china-factory-audit |
 | industry-updates/eu-toy-safety-regulation-2025.html | Home | / |
@@ -364,15 +364,29 @@
 | services.html | Laboratory Testing | /services#lab |
 | services.html | Supplier Management | /services#supplier |
 | services.html | Learn More → | /services/china-factory-audit |
+| services.html | Learn More → | /services/during-production-inspection |
 | services.html | Learn More → | /services/initial-production-check |
 | services.html | Learn More → | /services/pre-shipment-inspection |
 | services/china-factory-audit.html | Get Your Experts | /contact |
+| services/china-factory-audit.html | On-Site Factory Audit: Overturning the "Big Factory" | /factory-resource/premium-shirt-factory-anhui |
 | services/china-factory-audit.html | China Inspection Services | /services |
 | services/china-factory-audit.html | Initial Production Check — Get Right at Beginning | /services/initial-production-check |
 | services/china-factory-audit.html | Pre-Shipment Inspection — Final Quality Barrier | /services/pre-shipment-inspection |
 | services/china-factory-audit.html | Lead Time Calculator —  Know Factory Delivery Date | /tools/lead-time-calculator |
+| services/during-production-inspection.html | third-party inspection company | /about |
+| services/during-production-inspection.html | Contact CNQ Experts | /contact |
+| services/during-production-inspection.html | Milk Warmer Assembly Deviation — Electronics Case | /inspection-cases/milk-warmer-assembly-deviation-electronics-inspection |
+| services/during-production-inspection.html | product inspection service | /services |
+| services/during-production-inspection.html | Factory Audit in China — Supplier Capability Check | /services/china-factory-audit |
+| services/during-production-inspection.html | initial production check (IPC) | /services/initial-production-check |
+| services/during-production-inspection.html | pre-shipment inspection | /services/pre-shipment-inspection |
+| services/during-production-inspection.html | AQL Sampling Calculator — Instant Sample Size | /tools/aql-calculator/ |
+| services/during-production-inspection.html | Lead Time Calculator — Plan Your Delivery Date | /tools/lead-time-calculator |
+| services/during-production-inspection.html | lead time calculator | /tools/lead-time-calculator |
 | services/initial-production-check.html | China Quality Service | /about |
 | services/initial-production-check.html | Get Your CNQ Expert | /contact |
+| services/initial-production-check.html | sample inspection report | /download#sample-reports |
+| services/initial-production-check.html | Squishy Toy Color Bleeding — Material Check Case | /inspection-cases/squishy-toy-color-bleeding-inspection |
 | services/initial-production-check.html | plain-English AQL guide | /industry-updates/ansi-asq-z1-4-guide |
 | services/initial-production-check.html | inspection services in China | /services#inspection |
 | services/initial-production-check.html | supplier evaluation | /services/china-factory-audit |
@@ -382,7 +396,9 @@
 | services/pre-shipment-inspection.html | third-party inspection companies | /about |
 | services/pre-shipment-inspection.html | Contact us for a custom quality solution | /contact |
 | services/pre-shipment-inspection.html | Get Your CNQ Expert | /contact |
+| services/pre-shipment-inspection.html | sample inspection report | /download#sample-reports |
 | services/pre-shipment-inspection.html | Benefits from more cases → | /inspection-cases/ |
+| services/pre-shipment-inspection.html | Oven Tray Paint Contamination — PSI Case | /inspection-cases/oven-tray-inspection-painting-contamination |
 | services/pre-shipment-inspection.html | inspection service in China | /services#inspection |
 | services/pre-shipment-inspection.html | China Factory Audit — Get Right Before Contract | /services/china-factory-audit |
 | services/pre-shipment-inspection.html | factory audit | /services/china-factory-audit |

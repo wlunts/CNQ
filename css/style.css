@@ -376,6 +376,28 @@ ul, ol { list-style: none; }
 .article-body ul, .article-body ol { list-style: revert; padding-left: 24px; margin-bottom: 20px; }
 .article-body ul li, .article-body ol li { margin-bottom: 8px; }
 
+/* Author Bio (article attribution block) */
+.author-bio {
+  margin: 36px 0 0;
+  padding: 18px 22px;
+  background: var(--bg-light);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.author-bio p { margin: 0; font-size: 0.92rem; color: var(--text-body); line-height: 1.75; }
+.author-bio a { color: var(--primary); }
+
+/* Credential Strip (visible trust signals — industries pages) */
+.credential-strip { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; }
+.credential-strip span {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+
 /* Article Navigation (Prev/Next) */
 /* Related Articles */ 
 .related-articles { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border); }
