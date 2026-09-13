@@ -1,6 +1,13 @@
 # 全站正文锚文本使用跟踪表
 
-> 自动提取自各页 `<main>` 正文区（不含面包屑/导航/页脚）。用途：避免同一目标页锚文本过度重复、支持锚文本轮换（SEO 战略手册第 5 节）。
+> 提取自各页 `<main>` 区域。用途：避免同一目标页锚文本过度重复、支持锚文本轮换（SEO 战略手册第 5 节）。
+
+> **读表须知（2026-09-11 更正，原表头声明作废）**
+>
+> - **本表不是纯正文锚。** 面包屑容器 `<div class="breadcrumb">` 位于 `<main>` 内部，故被一并提取，混入了面包屑等**结构性链接**（典型：21 条 `Home` → `/`，示例 `inspection-cases/tpr-flow-mark.html:83`）。原表头写的"不含面包屑/导航/页脚"**与实际不符**——导航和页脚确在 `<main>` 之外、未混入；**面包屑混入了**。
+> - **本表非脚本产出，无法一键重生成。** 2026-09-11 全量检索 `scripts/`，无任何脚本引用本文件；本表由逐页整理而来，收录口径存在批次差异（同页 `Home` 有收有不收，如 `about.html` 的面包屑 `Home` 未收、`tpr-flow-mark.html` 的收了）。
+> - **引用纪律**：按 SEO 战略手册第 5 节，面包屑/导航/页脚等结构性内链**不计入**轮换额度。引用本表数据前请回原文核对，**勿当"正文锚全量"使用**。
+> - **2026-09-13 更正**：`tools/aql-calculator/index.html` 的记录已按源码逐条重核并整块替换。原记录有 2 条与源码不符——`Serving global buyers since 2009` → `/about`（实为 `product inspections in China` → `/`）、`procedures` → `/services/pre-shipment-inspection`（`procedures` 实为纯文本）。修正后该页 13 条。
 
 | 页面 | 锚文本 (EN) | 目标 URL |
 |---|---|---|
@@ -408,16 +415,18 @@
 | terms.html | Explore Our Services | /services |
 | terms.html | Quality Inspection | /services#inspection |
 | tools/aql-calculator/index.html | Home | / |
-| tools/aql-calculator/index.html | Serving global buyers since 2009 | /about |
-| tools/aql-calculator/index.html | Contact Your Experts | /contact |
 | tools/aql-calculator/index.html | Resources | /download |
 | tools/aql-calculator/index.html | inspection report | /download#sample-reports |
-| tools/aql-calculator/index.html | ANSI ASQ Z1 4 Sampling Guide | /industry-updates/ansi-asq-z1-4-guide |
-| tools/aql-calculator/index.html | ANSI ASQ Z1 4 guide | /industry-updates/ansi-asq-z1-4-guide |
-| tools/aql-calculator/index.html | Pre-Shipment Inspection Process | /services/pre-shipment-inspection |
-| tools/aql-calculator/index.html | procedures | /services/pre-shipment-inspection |
+| tools/aql-calculator/index.html | product inspections in China | / |
 | tools/aql-calculator/index.html | Estimate Inspection Cost | /tools/inspection-cost-calculator |
+| tools/aql-calculator/index.html | third-party inspection agencies in China | /about |
+| tools/aql-calculator/index.html | independent inspection services in China | /services#inspection |
+| tools/aql-calculator/index.html | pre-shipment inspection | /services/pre-shipment-inspection |
+| tools/aql-calculator/index.html | ANSI/ASQ Z1.4 (ISO 2859-1) AQL Sampling Inspection Guide | /industry-updates/ansi-asq-z1-4-guide |
+| tools/aql-calculator/index.html | ANSI/ASQ Z1.4 Sampling Guide | /industry-updates/ansi-asq-z1-4-guide |
+| tools/aql-calculator/index.html | Pre-Shipment Inspection Process | /services/pre-shipment-inspection |
 | tools/aql-calculator/index.html | Inspection Cost Calculator — Free Online Estimator | /tools/inspection-cost-calculator |
+| tools/aql-calculator/index.html | Contact Your Experts | /contact |
 | tools/inspection-cost-calculator.html | Home | / |
 | tools/inspection-cost-calculator.html | Consulting | /contact |
 | tools/inspection-cost-calculator.html | Get Your CNQ Experts | /contact |
@@ -435,4 +444,4 @@
 | tools/lead-time-calculator.html | Inspection Cost Calculator | /tools/inspection-cost-calculator |
 | tools/lead-time-calculator.html | quality inspection company in China | /about |
 
-共 403 条正文内链。
+共 405 条正文内链。

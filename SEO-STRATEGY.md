@@ -3,6 +3,7 @@
 > 用途：每篇新文章上线前，先读本手册对照执行。
 > 状态：2026-08-27 修订（新增 9.2 三类型规则、第 12 节上线 SOP；FAQPage / robots / ANCHOR-LOG 待办落档；E-E-A-T 补充），用户已确认。
 > 状态：2026-09-09 增补 12.1 署名核验 SOP；同日决定暂不启用 Person author——试点已回退（tpr-flow-mark / qinteng-3d-print 恢复机构署名），SOP 保留备用，用户已确认。
+> 状态：2026-09-11 第 4 节新增「锚文本归属定界规则」（4.0），重整 4.1–4.4 锚文本池并新建 4.5 出货前检验池；用户确认「以后就按这个走」。
 
 ---
 
@@ -61,31 +62,88 @@
 - 动作：`book a factory audit` / `schedule product inspection`
 - 地域：`in Guangzhou` / `across China`
 
+## 4.0 锚文本归属定界规则（2026-09-11 定，长期执行）
+
+判定顺序从上到下，**命中即停**，一个锚文本只归一个页面：
+
+| 优先 | 锚文本含 | 归属 |
+|---|---|---|
+| 1 | `company` / `agency` / `agent` / `inspector(s)` | `/about`（公司身份词） |
+| 2 | `factory audit` | `/services/china-factory-audit` |
+| 3 | `pre-shipment inspection` | `/services/pre-shipment-inspection` |
+| 4 | `product inspection`（含省略式 `inspection in China`） | `/` |
+| 5 | 其余：`inspection service(s)` / `quality inspection` / `quality control` / `QC` | `/services#inspection` |
+
+**三条仲裁原则（防止内耗）：**
+
+1. **判定看 `product`，不看 `service`。** `product inspection` 是主页独占头词，`service` 是通用后缀词。按后缀分流会把同族锚劈到两页。
+2. **近义词族必须同页。** 仅差词序、单复数、`service` 后缀的锚（如 `quality inspection China` / `China quality inspection` / `quality inspection in China`）在 Google 眼里是同一个锚，**必须指向同一页**；分散指向两页等于主动制造主题歧义，比全放一页更糟。
+3. **冲突时不按"哪页缺词"分配。** 主页的关键词是 `China Product Inspection`，往它挂 `quality inspection` 之类异族锚不是"补关键词"，是稀释主页主题。一页一个主词。
+
+**权重认知（决定投入力度）：**
+
+- 内部锚文本**不是独立排名因素**，权重低；它的作用是**澄清页面主题**，不是直接提排名。所以本节能做的是"不给 Google 添乱 + 让主题明确"，**不做关键词池重度轮换**。
+- Google 把"以操纵排名为目的构造链接"列为 link spam。内链锚文本过度关键词化，收益极小、名义风险存在 —— **值得做对，不值得做重**。
+- 行业参照（Intertek 服务页实测，2026-09-11）：锚文本以**服务名直陈 + 导航型**为主（`Assurance` / `Testing` / `Inspection` / `Certification` / `Our Company` / `Locations & Contacts`），连 `Read more`、`Continue to Page` 这类零描述锚都在正常使用，**全页没有一条 `china xxx services` 式关键词拼装**。大厂靠服务真名和站点结构吃饭，不做锚文本轮换。
+
 ## 4.1 主页 `/` 锚文本池（目标词：China Product Inspection）
 
 - 精准：`China product inspection`
 - 变体：`product inspection in China`、`professional China product inspection`、`product quality inspection in China`、`Production inspection`、`comprehensive China product inspection`、`comprehensive product inspection`、`inspection in China`、`China product inspection service`、`pre-shipment product inspection in China`、`third-party product inspection in China`、`import product inspection in China`、`independent product inspection in China`
+- 变体（2026-09-11 纳入）：`China product inspection services`（复数形）、`product inspection service`（原在 4.3，按 4.0 第 4 条收归主页）
 - 品牌：`China Quality Service product inspection`
 
 ## 4.2 关于页 `/about` 锚文本池（目标词：China Inspection Company）
 
 - 精准：`China inspection company`
 - 变体：`reliable inspection company in China`、`independent China QC company`、`third-party inspection company`、`third-party inspection agency`、`inspection company with 17 years of experience`、`established China inspection company`、`quality control company in China`、`local China inspection company`、`a China-based inspection company`
+- 变体（2026-09-11 纳入）：`inspection agency in China`、`third-party inspection in China`、`quality inspection company in China`、`product inspection companies in China`
+- 团队/人员（2026-09-11 新增，对应第 3 节"验货员团队"职责）：`inspection agent in China`、`quality control inspectors in China`
 - 品牌：`China Quality Service`、`our China inspection company`、`trusted third-party inspection company in China`、`experienced China inspection company`
 
-## 4.3 服务页 `/services#inspection` 锚文本池（目标词：China Inspection Service）
+## 4.3 服务页 `/services#inspection` 锚文本池（目标词：China Inspection Services）
 
-- 精准：`China inspection service`
-- 变体：`inspection services in China`、`third-party China inspection service`、`quality inspection service`、`inspection services`、`product inspection service`、`third-party inspection service`、`professional inspection service in China`、`independent inspection services in China`、`full-range inspection services in China`、`pre-shipment inspection service in China`、`quality control inspection services in China`
+> **复数形**（2026-09-11 更正，原写单数）。依据：`services.html` 的 `<title>`、meta description、og/twitter、H1（`China Inspection Services — Expert Quality Assurance Solutions`）、H2 全部用复数，与第 2 节关键词地图一致。单数写法作废。
+
+- 精准：`China Inspection Services`（与页面 title/H1 逐字一致——锚文本回收目标页自己的 H1，是最强主题信号）
+- 变体：`China inspection service`（单数形，原为精准项，2026-09-11 降为变体）、`inspection services in China`、`third-party China inspection service`、`quality inspection service`、`inspection services`、`third-party inspection service`、`professional inspection service in China`、`independent inspection services in China`、`full-range inspection services in China`、`quality control inspection services in China`
+- 变体（2026-09-11 纳入）：`China quality control inspection`、`quality inspection in China`、`China quality inspection services`、`third-party inspection services in China`、`QC inspection in China`、`quality control services in China`、`Chinese inspection services`、`China factory inspection services`
+- 词义含糊（用则必须配语境）：`factory inspection China` —— 既可指验厂也可指到厂验货，不单独使用；若用，归本页并让上下文明确是验货
+- 已移出：`product inspection service` → 4.1（按 4.0 第 4 条）；`pre-shipment inspection service in China` → 4.5（按 4.0 第 3 条）
 - 品牌：`China Quality Service's inspection solutions`
 - 语境融入句（链接统一指向 `/services#inspection`）：
   - "You can customize your quality control plan through our `China inspection service`."
   - "We offer a `full range of inspection services in China` to cover your entire supply chain."
 
-## 4.4 验厂页 `/services/china-factory-audit` 锚文本池（建议建）
+## 4.4 验厂页 `/services/china-factory-audit` 锚文本池（目标词：factory audit in China）
 
-- `factory audit in China`、`China factory audit`、`factory audit service`、`independent factory audit`、`third-party factory audit in China`
+页面已上线（`services/china-factory-audit.html`）。
+
+- 精准：`factory audit in China`
+- 变体：`China factory audit`、`factory audit service`、`independent factory audit`、`third-party factory audit in China`
 - 扩池方向：`factory audit company in China`、`supplier factory audit`、`book a factory audit`
+- 2026-09-11 核验：本池已完整覆盖 `china factory audit` / `factory audit china` / `factory audit services in china` 三条，**无需新增**。
+
+## 4.5 出货前检验页 `/services/pre-shipment-inspection` 锚文本池（2026-09-11 新建）
+
+页面已上线（`services/pre-shipment-inspection.html`）。目标词：`pre-shipment inspection in China`。
+
+- 精准：`pre-shipment inspection in China`
+- 变体：`pre-shipment inspection services in China`、`pre-shipment inspection companies in China`、`pre-shipment inspection service in China`（原在 4.3，按 4.0 第 3 条移入）
+- 扩池方向：`pre-shipment inspection process`、`book a pre-shipment inspection`、`China pre-shipment inspection company`
+- **拼写归一**：站内统一 `pre-shipment`（带连字符），**禁止** `pre shipment`（空格写法）。外采词条入库前先归一。
+
+> 同族服务页 `/services/during-production-inspection`、`/services/initial-production-check` **暂共用 4.3 服务页池**；待各自内容体量够（各 ≥5 篇关联内容）再按本节格式单独立池。
+
+**待整改项（2026-09-11 记录，非本轮执行）：**
+
+**先更正一个误读（本手册初稿曾写"`Home` 锚占 52%、白占轮换额度"，作废）**：`ANCHOR-LOG.md` 中指向 `/` 的 22 条 `Home` 锚**不是正文内链，是面包屑**。面包屑容器 `<div class="breadcrumb">` 位于 `<main>` 内部（示例：`inspection-cases/tpr-flow-mark.html:83`），而 ANCHOR-LOG 的提取范围是"各页 `<main>` 正文区"，于是连面包屑一起捞了进来——该表表头声明"不含面包屑/导航/页脚"，实际做不到。按第 5 节，面包屑属结构性内链，**不计入轮换额度**，故这 22 条不占额度、**无需整改**。
+
+> 由此得一条读表纪律：**ANCHOR-LOG 不可当"正文锚"全量真相用。** 它混入了位于 `<main>` 内的面包屑，且收录还不一致（同页 `Home` 有收有不收，如 `about.html` 的面包屑 `Home` 未收、`tpr-flow-mark.html` 的收了）。引用其数据前先回原文核对。
+
+**真正的正文级事项（1 项）**：`product inspection in China` 作为**正文锚**指向 `/`，站内出现约 8 处（`inspection-cases/tpr-flow-mark.html:236`、`inspection-cases/kd-fence-drop-test.html:122`、`inspection-cases/index.html:93`、`insights.html:224`、`industry-updates/eu-toy-safety-regulation-2025.html:110` 等）。它是主页自己的目标词，用没错；但 8 处**逐字相同**偏重复，而 4.1 池里现成有同类变体。整改方向：按第 7 节回链维护时，把其中一部分轮换为 `third-party product inspection in China`、`independent product inspection in China`、`China product inspection`、`product quality inspection in China`。
+
+此项**优先级低**（内部锚文本权重低，见 4.0），不单独排期。
 
 ## 5. 正文内链最终规则
 
@@ -135,6 +193,7 @@
 - [x] robots.txt 核对（2026-08-27：404 处理 = robots `Disallow: /404` + 404 页不进 sitemap + validate-seo.ps1 排除 404）
 - [x] 图片懒加载 + 压缩（2026-08-27 审计确认全站达标：alt 齐全、`loading="lazy"` 齐全、图片已压缩）
 - [x] 全站锚文本使用跟踪表（ANCHOR-LOG.md 已建立并持续维护）
+  - 2026-09-11 补注：该表**混有 `<main>` 内的面包屑等结构性链接，非纯正文锚**（21 条 `Home` → `/` 即面包屑），且无脚本可一键重生成、收录口径有批次差异。引用前回原文核对，详见 4.5 末尾「读表纪律」。
 - [x] 全站 `robots` meta `max-image-preview:large`（2026-08-30）
 - [x] sitemap 真实配图 + lastmod 自动同步文件 mtime（2026-08-30，工具 `scripts/seo-enhance.ps1`，48 URL / 214 图片）
 - [x] footer 版权年份自动更新（2026-08-30，`js/main.js`）
