@@ -148,6 +148,7 @@
           Open Estimator → | /tools/inspection-cost-calculator | 验货人天估算器 |
 | industries/index.html | inspection services in China | /services#inspection |
 | industries/index.html | Toys &amp; Children's Products | /industries/toy-inspection |
+| industries/index.html | Softlines, Apparel &amp; Luggage | /industries/apparel-inspection |
 | industries/furniture-inspection.html | furniture inspection service | /services#inspection |
 | industries/furniture-inspection.html | KD furniture inspection case | /inspection-cases/kd-furniture-loose-hardware-panel-cracks |
 | industries/furniture-inspection.html | AQL Sampling Calculator — Find Your Furniture Sample Size | /tools/aql-calculator/ |
@@ -162,6 +163,16 @@
 | industries/toy-inspection.html | AQL Sample Size Calculator for Toy Orders | /tools/aql-calculator/ |
 | industries/toy-inspection.html | Qinteng Plastic Toys — 3D Printing Factory in Shenzhen | /factory-resource/qinteng-3d-print |
 | industries/toy-inspection.html | Submit Technical Enquiry | /contact |
+| industries/apparel-inspection.html | product inspection in China | / |
+| industries/apparel-inspection.html | pre-shipment inspection | /services/pre-shipment-inspection |
+| industries/apparel-inspection.html | quality inspection service | /services#inspection |
+| industries/apparel-inspection.html | ANSI/ASQ Z1.4-2003 (R2018) sampling | /tools/aql-calculator/ |
+| industries/apparel-inspection.html | third-party inspection companies in China | /about |
+| industries/apparel-inspection.html | factory audit | /services/china-factory-audit |
+| industries/apparel-inspection.html | Cooler Bag Inspection Case — Gradient Print Banding | /inspection-cases/cooler-bag-printing-defect |
+| industries/apparel-inspection.html | Safety Vest Inspection Case — Misaligned Velcro Strips | /inspection-cases/safety-vest-velcro |
+| industries/apparel-inspection.html | AQL Sample Size Calculator for Apparel Orders | /tools/aql-calculator/ |
+| industries/apparel-inspection.html | Submit Technical Enquiry | /contact |
 | industry-updates/ansi-asq-z1-4-guide.html | Home | / |
 | industry-updates/ansi-asq-z1-4-guide.html | product inspections | / |
 | industry-updates/ansi-asq-z1-4-guide.html | China Quality Service | /about |
@@ -444,4 +455,4 @@
 | tools/lead-time-calculator.html | Inspection Cost Calculator | /tools/inspection-cost-calculator |
 | tools/lead-time-calculator.html | quality inspection company in China | /about |
 
-共 405 条正文内链。
+共 416 条正文内链。
