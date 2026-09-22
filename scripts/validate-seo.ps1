@@ -58,13 +58,16 @@ Check-Pattern 'href="industry-updates/' 'Relative path: industry-updates/ (use /
 # 5. Sitemap sanity check
 Write-Host "`n  [CHECK] Sitemap vs actual files:" -ForegroundColor Cyan
 $sitemap = [xml](Get-Content "$Root\sitemap.xml" -Raw -Encoding UTF8)
+$smNs = New-Object System.Xml.XmlNamespaceManager $sitemap.NameTable
+$smNs.AddNamespace('s', 'http://www.sitemaps.org/schemas/sitemap/0.9')
 $sitemapMap = @{}  # normalized -> { orig, lastmod }
-foreach ($url in $sitemap.urlset.url) {
-    $orig = $url.loc -replace 'https://www\.chinaqualityservice\.com/', ''
+foreach ($url in $sitemap.SelectNodes('/s:urlset/s:url', $smNs)) {
+    $orig = $url.SelectSingleNode('s:loc', $smNs).InnerText -replace 'https://www\.chinaqualityservice\.com/', ''
     if ($orig -eq '') { $orig = '/' }
     $norm = $orig.TrimEnd('/')
     if ($norm -eq '') { $norm = '/' }
-    $sitemapMap[$norm] = @{ Orig = $orig; LastMod = $url.lastmod }
+    $lm = $url.SelectSingleNode('s:lastmod', $smNs)
+    $sitemapMap[$norm] = @{ Orig = $orig; LastMod = if ($lm) { $lm.InnerText } else { '' } }
 }
 
 $diskPaths = Get-ChildItem -Path $Root -Recurse -Filter "*.html" | ForEach-Object {

@@ -109,6 +109,11 @@
     body.embed-mode #calcWidget {
       padding: 20px 0;
     }
+
+    /* ======== Standard reference figure ======== */
+    .standard-figure { margin: 24px 0; text-align: center; }
+    .standard-figure img { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); display: block; margin: 0 auto; }
+    .standard-figure figcaption { font-size: 0.85rem; color: #718096; margin-top: 10px; line-height: 1.5; }
   </style>
 
 
@@ -276,8 +281,8 @@
       <div class="trust-grid">
 <div class="trust-card">
   <div class="icon">📋</div>
-  <h4>Sample Reports</h4>
-  <p><span>Review anonymized </span><a href="/download#sample-reports"><span>inspection report</span></a><span> excerpts with defect classifications and on-site photos</span></p>
+  <h4>AQL Sampling Guide</h4>
+  <p><a href="/industry-updates/ansi-asq-z1-4-guide">ANSI/ASQ Z1.4 (ISO 2859-1) inspection sampling guide</a> &amp; Product Category Applications</p>
 </div>
 
 <div class="trust-card">
@@ -311,6 +316,16 @@
 
     <section class="aql-section alt">
       <div class="container seo-text">
+
+        <h2 style="margin-top: 40px;">Note on Special Inspection Levels (S-1 to S-4)</h2>
+        <p>This calculator strictly follows the standard ANSI/ASQ Z1.4 (ISO 2859-1) master tables, including arrow-tracking rules that may automatically increase sample size to ensure statistical validity.<br>
+Field Practice vs. Standard Table:<br>
+In actual quality control practice, Special Levels (S-1 to S-4) are used for special, functional, or destructive tests (e.g., drop tests, hi-pot tests, battery checks). To avoid excessive sample destruction and high testing costs, industry standard practice typically uses the base sample size for the given Code Letter (e.g., 8 units for Code D under S-2) and applies a Zero-Defect criterion (Ac = 0, Re = 1), rather than expanding the sample size via arrow tracking.</p>
+        <figure class="standard-figure">
+          <img src="/Upload/ansi-asq-z1.4.jpg" alt="ANSI/ASQ Z1.4 (ISO 2859-1) acceptance sampling standard reference" width="1200" height="880" loading="lazy" decoding="async">
+          <figcaption>ANSI/ASQ Z1.4 (ISO 2859-1) — the acceptance sampling standard that powers this calculator.</figcaption>
+        </figure>
+
         <h2>What is AQL?</h2>
         <p><span>Acceptable Quality Limit (AQL) is the core metric of the </span><span>ANSI/ASQ Z1.4 and ISO 2859-1</span> acceptance sampling systems, which are widely used by <span><a href="/about">third-party inspection agencies in China</a></span>. It represents the worst tolerable process average that will still allow a lot to be accepted. For example, AQL 2.5 means that when a supplier's actual defect rate is 2.5% or lower, the sampling plan will accept the lot with high probability.</p>
 
@@ -716,13 +731,13 @@ fiNote.appendChild(document.createTextNode(
       fiNote.style.display = 'none';
     }
 
-    // Field sampling note (Major and Minor resolve to different sample sizes)
+    // Field sampling note (Excluding Special Inspection Levels) (Major and Minor resolve to different sample sizes)
     const fsNote = document.getElementById('fieldSamplingNote');
     if (!fullInspect && majorSampleSize !== minorSampleSize) {
       fsNote.style.display = 'block';
       fsNote.replaceChildren();
       const fsStrong = document.createElement('strong');
-      fsStrong.textContent = 'Field Sampling Note: ';
+      fsStrong.textContent = 'Field Sampling Note (Excluding Special Inspection Levels): ';
       fsNote.appendChild(fsStrong);
       const smallerClass = majorSampleSize < minorSampleSize ? 'Major' : 'Minor';
       const smallerSize = Math.min(majorSampleSize, minorSampleSize);
