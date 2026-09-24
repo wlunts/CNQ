@@ -2,7 +2,7 @@
 <urlset xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.chinaqualityservice.com/about</loc>
-    <lastmod>2026-09-21T22:52:18+08:00</lastmod>
+    <lastmod>2026-09-24T22:13:25+08:00</lastmod>
   </url>
   <url>
     <loc>https://www.chinaqualityservice.com/contact</loc>
@@ -52,7 +52,7 @@
   </url>
   <url>
     <loc>https://www.chinaqualityservice.com/</loc>
-    <lastmod>2026-09-21T22:52:18+08:00</lastmod>
+    <lastmod>2026-09-25T02:25:52+08:00</lastmod>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/factory-resource/premium-shirt-factory-anhui/factory-gate.jpg</image:loc></image:image>
   </url>
   <url>
@@ -136,7 +136,7 @@
   </url>
   <url>
     <loc>https://www.chinaqualityservice.com/industries/furniture-inspection</loc>
-    <lastmod>2026-09-21T22:52:18+08:00</lastmod>
+    <lastmod>2026-09-25T02:20:50+08:00</lastmod>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/chair-load-160kg.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/sofa-seat-impact.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/folding-ironing-board-load-pull-test.jpg</image:loc></image:image>
@@ -149,21 +149,27 @@
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/moisture-test.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/tape-adhesion-test.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/color-swatch.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/ceramic-cup-rim-flatness-check.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/ceramic-mould-line-and-glaze-absence.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/ceramic-uneven-decal-check.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/glass-scratch-and-tape-adhesion-test.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/glass-wobble-and-tilt-test.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/stainless-steel-spoon-handle-joint-strength-check.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/entrapment-gap-test.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/movable-squeeze-test.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/outdoor-sharp-point-check.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/bunk-bed-safety-barrier-check.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/mirror-led-illuminated.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/mirror-hi-pot-connection.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture/mirror-hi-pot-reading.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.chinaqualityservice.com/industries/</loc>
-    <lastmod>2026-09-21T22:52:18+08:00</lastmod>
+    <lastmod>2026-09-25T02:16:25+08:00</lastmod>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/furniture-home-goods-inspection-china.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/toys-childrens-products-inspection-china.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/softlines-apparel-luggage-inspection-china.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/electronics-electricals-inspection-china.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/hardware-tools-machinery-inspection-china.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/garden-outdoor-inspection-china.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/industries/building-materials-outdoor-inspection-china.jpg</image:loc></image:image>
   </url>
   <url>
@@ -338,7 +344,7 @@
   </url>
   <url>
     <loc>https://www.chinaqualityservice.com/services</loc>
-    <lastmod>2026-09-21T22:52:18+08:00</lastmod>
+    <lastmod>2026-09-24T22:02:41+08:00</lastmod>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/service-ipc.webp</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/service-dpi.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/service-psi.jpg</image:loc></image:image>
@@ -413,7 +419,7 @@
   </url>
   <url>
     <loc>https://www.chinaqualityservice.com/tools/aql-calculator/</loc>
-    <lastmod>2026-09-22T13:37:42+08:00</lastmod>
+    <lastmod>2026-09-22T14:07:27+08:00</lastmod>
     <image:image><image:loc>https://www.chinaqualityservice.com/Upload/ansi-asq-z1.4.jpg</image:loc></image:image>
   </url>
   <url>
