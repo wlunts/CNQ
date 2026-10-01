@@ -167,6 +167,18 @@
 | industries/garden-outdoor-inspection.html | KD Metal Fence Drop Test Case | /inspection-cases/kd-fence-drop-test |
 | industries/garden-outdoor-inspection.html | Furniture &amp; Home Goods Inspection in China | /industries/furniture-inspection |
 | industries/garden-outdoor-inspection.html | Request Garden &amp; Outdoor Expert | /contact |
+| industries/building-materials-inspection.html | comprehensive product inspection in China | / |
+| industries/building-materials-inspection.html | independent third-party inspection agency | /about |
+| industries/building-materials-inspection.html | quality inspection services | /services#inspection |
+| industries/building-materials-inspection.html | factory audit in China | /services/china-factory-audit |
+| industries/building-materials-inspection.html | KD metal fence carton drop test case | /inspection-cases/kd-fence-drop-test |
+| industries/building-materials-inspection.html | sample size calculator | /tools/aql-calculator/ |
+| industries/building-materials-inspection.html | Garden Metal Shed Inspection Case: Sharp Edges | /inspection-cases/metal-shed-sharp-edge |
+| industries/building-materials-inspection.html | KD Metal Fence Drop Test Case | /inspection-cases/kd-fence-drop-test |
+| industries/building-materials-inspection.html | AQL Sample Size Calculator for Building Materials Orders | /tools/aql-calculator/ |
+| industries/building-materials-inspection.html | Building Materials &amp; Structures Inspection in China | /industries/building-materials-inspection |
+| industries/building-materials-inspection.html | Request Building Materials Expert | /contact |
+| industries/garden-outdoor-inspection.html | Building Materials &amp; Structures Inspection in China | /industries/building-materials-inspection |
 | industries/furniture-inspection.html | Garden &amp; Outdoor Product Inspection in China | /industries/garden-outdoor-inspection |
 | industries/toy-inspection.html | third-party product inspection in China | / |
 | industries/toy-inspection.html | quality inspection service | /services#inspection |
@@ -206,6 +218,8 @@
 | industry-updates/eu-regulatory-compliance-guide-china-exporters.html | third-party factory audits | /services/china-factory-audit |
 | industry-updates/eu-regulatory-compliance-guide-china-exporters.html | International Compliance Services | /services#compliance |
 | industry-updates/eu-regulatory-compliance-guide-china-exporters.html | China Factory Audit — Get Right Before Contract | /services/china-factory-audit |
+| industry-updates/eu-regulatory-compliance-guide-china-exporters.html | All Industry Updates | /industry-updates/ |
+| industry-updates/pre-shipment-inspection-reduce-returns.html | All Industry Updates | /industry-updates/ |
 | industry-updates/eu-toy-safety-regulation-2025.html | Home | / |
 | industry-updates/eu-toy-safety-regulation-2025.html | product inspection in China | / |
 | industry-updates/eu-toy-safety-regulation-2025.html | Get Your CNQ Experts | /contact |
@@ -292,6 +306,7 @@
 | inspection-cases/kd-fence-drop-test.html | Poor Polishing on Stainless Steel Bottle — PSI Inspection | /inspection-cases/ss-bottle-polishing |
 | inspection-cases/kd-fence-drop-test.html | TPR Toy Flow Mark Defect | /inspection-cases/tpr-flow-mark |
 | inspection-cases/kd-fence-drop-test.html | Garden &amp; Outdoor Product Inspection in China | /industries/garden-outdoor-inspection |
+| inspection-cases/kd-fence-drop-test.html | Building Materials &amp; Structures Inspection in China | /industries/building-materials-inspection |
 | inspection-cases/kd-fence-drop-test.html | Final Inspection Service | /services#inspection |
 | inspection-cases/kd-furniture-loose-hardware-panel-cracks.html | Home | / |
 | inspection-cases/kd-furniture-loose-hardware-panel-cracks.html | third-party inspection | / |
@@ -315,6 +330,7 @@
 | inspection-cases/metal-shed-sharp-edge.html | KD Metal Fence — Drop Test Failure | /inspection-cases/kd-fence-drop-test |
 | inspection-cases/metal-shed-sharp-edge.html | Hi-Vis Vest Velcro Failure | /inspection-cases/safety-vest-velcro |
 | inspection-cases/metal-shed-sharp-edge.html | Garden &amp; Outdoor Product Inspection in China | /industries/garden-outdoor-inspection |
+| inspection-cases/metal-shed-sharp-edge.html | Building Materials &amp; Structures Inspection in China | /industries/building-materials-inspection |
 | inspection-cases/metal-shed-sharp-edge.html | Misaligned Velcro Strips — Safety Vest | /inspection-cases/safety-vest-velcro |
 | inspection-cases/metal-shed-sharp-edge.html | Poor Polishing on Stainless Steel Bottle | /inspection-cases/ss-bottle-polishing |
 | inspection-cases/metal-shed-sharp-edge.html | on-site inspection service | /services#inspection |

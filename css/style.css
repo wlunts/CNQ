@@ -163,6 +163,8 @@ ul, ol { list-style: none; }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--primary-light); }
 .card-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.8rem; color: #fff; }
 .card h3 { font-size: 1.25rem; margin-bottom: 12px; color: var(--primary-dark); }
+.card h3 a { color: var(--primary-dark); }
+.card h3 a:hover { color: var(--primary); }
 .card p { font-size: 0.95rem; color: var(--text-body); line-height: 1.7; }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }

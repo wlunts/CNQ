@@ -21,9 +21,279 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
   <link rel="stylesheet" href="/css/style.css?v=1.2">
-  <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.chinaqualityservice.com/#website","name":"China Quality Service","url":"https://www.chinaqualityservice.com/","publisher":{"@id":"https://www.chinaqualityservice.com/#organization"},"inLanguage":"en"},{"@type":"Organization","@id":"https://www.chinaqualityservice.com/#organization","name":"China Quality Service","alternateName":["CNQ","China Quality Service Co., Ltd."],"url":"https://www.chinaqualityservice.com/","foundingDate": "2009","logo": {"@type": "ImageObject", "url": "https://www.chinaqualityservice.com/Upload/logo.png", "width": 332, "height": 154},"sameAs":["https://www.linkedin.com/company/cnq"],"description":"China Quality Service provides independent third-party inspection and export quality control in China \u2013 trusted by 500+ global clients for pre-shipment inspection, factory audit, supplier quality assurance and lab testing.","contactPoint":[{"@type":"ContactPoint","telephone":"+86 131 2892 5565","contactType":"customer service","email":"contact@cn-q.com","availableLanguage":["English","Chinese"]},{"@type":"ContactPoint","email":"dave@cn-q.com","contactType":"sales"},{"@type":"ContactPoint","email":"halery@cn-q.com","contactType":"sales"},{"@type":"ContactPoint","email":"compliance@cn-q.com","contactType":"compliance"}],"address":{"@type":"PostalAddress","streetAddress":"5/F, Guangyuan Entrepreneurship Park, No. 5231 Longhua Avenue, Longhua District","addressLocality":"Shenzhen","addressRegion":"Guangdong","postalCode":"518109","addressCountry":"CN"},"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"ISO 9001:2015 Compliant Quality Management System","credentialCategory":"Quality Management","recognizedBy":{"@type":"Organization","name":"International Organization for Standardization (ISO)"}}],"knowsAbout":[{"@type":"Thing","name":"ANSI/ASQ Z1.4 AQL Sampling Standards","description":"International standard for acceptance sampling in product quality inspection","sameAs":"https://en.wikipedia.org/wiki/Acceptable_quality_limit"},{"@type":"Thing","name":"Third-Party Product Inspection","description":"Pre-shipment inspection, Product inspection service, and container loading supervision","sameAs":"https://en.wikipedia.org/wiki/Pre-shipment_inspection"},{"@type":"Thing","name":"Factory Audit & Supplier Assessment","description":"Quality management system audits, social compliance audits, and supplier capability evaluations","sameAs":"https://en.wikipedia.org/wiki/Quality_management_system"},{"@type":"Thing","name":"International Regulatory Compliance","description":"CE, FDA, RoHS, REACH and other global market access requirements","sameAs":"https://en.wikipedia.org/wiki/Regulatory_compliance"}]},{"@type":"WebApplication","name":"AQL Sampling Calculator","url":"https://www.chinaqualityservice.com/tools/aql-calculator/","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Instant sample size lookup","ANSI/ASQ Z1.4 and ISO 2859-1 single normal inspection","Free to use, no registration","URL-shareable results","iframe embeddable"],"description":"Free online AQL sampling calculator based on ANSI/ASQ Z1.4 single normal inspection. Computes Major and Minor AQL sample sizes, acceptance and rejection numbers.","publisher":{"@type":"Organization","name":"China Quality Service","alternateName":"CNQ","url":"https://www.chinaqualityservice.com"},"@id":"https://www.chinaqualityservice.com/tools/aql-calculator/#webapp","mainEntityOfPage":{"@id":"https://www.chinaqualityservice.com/tools/aql-calculator/"},"isPartOf":{"@id":"https://www.chinaqualityservice.com/#website"}},{"@type":"WebPage","@id":"https://www.chinaqualityservice.com/tools/aql-calculator/","url":"https://www.chinaqualityservice.com/tools/aql-calculator/","isPartOf":{"@id":"https://www.chinaqualityservice.com/#website"},"mainEntity":{"@id":"https://www.chinaqualityservice.com/tools/aql-calculator/#webapp"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.chinaqualityservice.com/"},{"@type":"ListItem","position":2,"name":"Resources","item":"https://www.chinaqualityservice.com/download"},{"@type":"ListItem","position":3,"name":"AQL Calculator","item":"https://www.chinaqualityservice.com/tools/aql-calculator/"}]},{"@type":"FAQPage","@id":"https://www.chinaqualityservice.com/tools/aql-calculator/#faq","isPartOf":{"@id":"https://www.chinaqualityservice.com/#website"},"mainEntity":[{"@type":"Question","name":"What is AQL?","acceptedAnswer":{"@type":"Answer","text":"AQL (Acceptable Quality Limit) is the shared language of sampling inspection. It doesn't guarantee zero defects; it defines the maximum acceptable defect rate per batch, based on ISO 2859-1 / ANSI/ASQ Z1.4 acceptance sampling tables."}},{"@type":"Question","name":"How do I choose the inspection level (I, II, III)?","acceptedAnswer":{"@type":"Answer","text":"Most consumer goods default to General Inspection Level II. Level I samples less (cheaper, riskier); Level III samples more, which suits high-value, high-risk or historically poor suppliers. When unsure, pick II."}},{"@type":"Question","name":"How do I pick AQL values like 2.5 / 4.0?","acceptedAnswer":{"@type":"Answer","text":"2.5 for major defects and 4.0 for minor defects is the most common combination for consumer electronics and toys. Critical defects are never allowed. If the buyer specifies values, follow the buyer."}},{"@type":"Question","name":"How do I read sample size / accept / reject?","acceptedAnswer":{"@type":"Answer","text":"Randomly draw the sample from the batch: if the defects found are no more than the accept number, the lot passes; if they reach the reject number, the lot fails. In single sampling the rejection number is always one more than the acceptance number (Re = Ac + 1), so the decision is unambiguous. Double sampling instead adds a second, larger sample for borderline results - this calculator follows single sampling, the most common choice for consumer goods."}},{"@type":"Question","name":"Why does my supplier's sample size differ?","acceptedAnswer":{"@type":"Answer","text":"Three common reasons: the supplier used Level I instead of II, a different AQL value, or double sampling instead of single. Send them this result to align the basis."}},{"@type":"Question","name":"Why are the Major and Minor sample sizes different?","acceptedAnswer":{"@type":"Answer","text":"Lot size and inspection level fix the code letter, but each AQL is read from the master table separately \u2014 when a cell falls in an arrow region, the plan switches to a different sample size (for example Major 500 units at code N while Minor follows the arrow down to 315 at code M). Per ANSI/ASQ Z1.4 clause 9.4 (equivalently ISO 2859-1 clause 10.3), draw the largest required sample and judge each class against its own accept/reject numbers. Our inspectors check all sampled units for both classes \u2014 the full 500 \u2014 which keeps the plan slightly stricter for the buyer than the table-minimum 315."}},{"@type":"Question","name":"Can I copy or share the result?","acceptedAnswer":{"@type":"Answer","text":"Yes. The copy button generates a plain-text summary - lot size, inspection level, AQL values, sample size and accept/reject numbers - that you can paste into an email, a purchase order or a QC report. The result URL (?lot=...&level=...&major=...&minor=...) reopens the same plan for anyone you send it to."}},{"@type":"Question","name":"Can I embed this calculator on my own website?","acceptedAnswer":{"@type":"Answer","text":"Yes, free. The Embed This Tool section provides an iframe snippet you can paste into your website or quoting system - no registration needed."}},{"@type":"Question","name":"Which standard does this calculator follow?","acceptedAnswer":{"@type":"Answer","text":"It follows the sampling tables of ANSI/ASQ Z1.4 and ISO 2859-1 at Special Inspection Levels S-1 to S-4 and General Inspection Levels I, II and III, with AQL steps from 0.10 to 10."}},{"@type":"Question","name":"What about critical defects?","acceptedAnswer":{"@type":"Answer","text":"Critical defects (safety, regulatory or total function failure) are not negotiated within an AQL framework - one found means the whole lot fails and a 100% quality inspection is required. The calculator shows this warning below the result."}},{"@type":"Question","name":"Is this AQL sampling calculator really free?","acceptedAnswer":{"@type":"Answer","text":"Really. No registration and no limits - a common benchmark so buyers, QA and QC teams can align sampling plans in one message."}}]}]}
-</script>
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.chinaqualityservice.com/#website",
+      "name": "China Quality Service",
+      "url": "https://www.chinaqualityservice.com/",
+      "publisher": {
+        "@id": "https://www.chinaqualityservice.com/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.chinaqualityservice.com/#organization",
+      "name": "China Quality Service",
+      "alternateName": [
+        "CNQ",
+        "China Quality Service Co., Ltd."
+      ],
+      "url": "https://www.chinaqualityservice.com/",
+      "foundingDate": "2009",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.chinaqualityservice.com/Upload/logo.png",
+        "width": 332,
+        "height": 154
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/cnq"
+      ],
+      "description": "China Quality Service provides independent third-party inspection and export quality control in China – trusted by 500+ global clients for pre-shipment inspection, factory audit, supplier quality assurance and lab testing.",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+86 131 2892 5565",
+          "contactType": "customer service",
+          "email": "contact@cn-q.com",
+          "availableLanguage": [
+            "English",
+            "Chinese"
+          ]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "dave@cn-q.com",
+          "contactType": "sales"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "halery@cn-q.com",
+          "contactType": "sales"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "compliance@cn-q.com",
+          "contactType": "compliance"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5/F, Guangyuan Entrepreneurship Park, No. 5231 Longhua Avenue, Longhua District",
+        "addressLocality": "Shenzhen",
+        "addressRegion": "Guangdong",
+        "postalCode": "518109",
+        "addressCountry": "CN"
+      },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ISO 9001:2015 Compliant Quality Management System",
+          "credentialCategory": "Quality Management",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "International Organization for Standardization (ISO)"
+          }
+        }
+      ],
+      "knowsAbout": [
+        {
+          "@type": "Thing",
+          "name": "ANSI/ASQ Z1.4 AQL Sampling Standards",
+          "description": "International standard for acceptance sampling in product quality inspection",
+          "sameAs": "https://en.wikipedia.org/wiki/Acceptable_quality_limit"
+        },
+        {
+          "@type": "Thing",
+          "name": "Third-Party Product Inspection",
+          "description": "Pre-shipment inspection, Product inspection service, and container loading supervision",
+          "sameAs": "https://en.wikipedia.org/wiki/Pre-shipment_inspection"
+        },
+        {
+          "@type": "Thing",
+          "name": "Factory Audit & Supplier Assessment",
+          "description": "Quality management system audits, social compliance audits, and supplier capability evaluations",
+          "sameAs": "https://en.wikipedia.org/wiki/Quality_management_system"
+        },
+        {
+          "@type": "Thing",
+          "name": "International Regulatory Compliance",
+          "description": "CE, FDA, RoHS, REACH and other global market access requirements",
+          "sameAs": "https://en.wikipedia.org/wiki/Regulatory_compliance"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "name": "AQL Sampling Calculator",
+      "url": "https://www.chinaqualityservice.com/tools/aql-calculator/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Instant sample size lookup",
+        "ANSI/ASQ Z1.4 and ISO 2859-1 single normal inspection",
+        "Free to use, no registration",
+        "URL-shareable results",
+        "iframe embeddable"
+      ],
+      "description": "Free online AQL sampling calculator based on ANSI/ASQ Z1.4 single normal inspection. Computes Major and Minor AQL sample sizes, acceptance and rejection numbers.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "China Quality Service",
+        "alternateName": "CNQ",
+        "url": "https://www.chinaqualityservice.com"
+      },
+      "@id": "https://www.chinaqualityservice.com/tools/aql-calculator/#webapp",
+      "mainEntityOfPage": {
+        "@id": "https://www.chinaqualityservice.com/tools/aql-calculator/"
+      },
+      "isPartOf": {
+        "@id": "https://www.chinaqualityservice.com/#website"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.chinaqualityservice.com/tools/aql-calculator/",
+      "url": "https://www.chinaqualityservice.com/tools/aql-calculator/",
+      "isPartOf": {
+        "@id": "https://www.chinaqualityservice.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://www.chinaqualityservice.com/tools/aql-calculator/#webapp"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.chinaqualityservice.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Resources",
+          "item": "https://www.chinaqualityservice.com/download"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AQL Calculator",
+          "item": "https://www.chinaqualityservice.com/tools/aql-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.chinaqualityservice.com/tools/aql-calculator/#faq",
+      "isPartOf": {
+        "@id": "https://www.chinaqualityservice.com/#website"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is AQL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AQL (Acceptable Quality Limit) is the shared language of sampling inspection. It doesn't guarantee zero defects; it defines the maximum acceptable defect rate per batch, based on ISO 2859-1 / ANSI/ASQ Z1.4 acceptance sampling tables."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I choose the inspection level (I, II, III)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most consumer goods default to General Inspection Level II. Level I samples less (cheaper, riskier); Level III samples more, which suits high-value, high-risk or historically poor suppliers. When unsure, pick II."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I pick AQL values like 2.5 / 4.0?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2.5 for major defects and 4.0 for minor defects is the most common combination for consumer electronics and toys. Critical defects are never allowed. If the buyer specifies values, follow the buyer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I read sample size / accept / reject?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Randomly draw the sample from the batch: if the defects found are no more than the accept number, the lot passes; if they reach the reject number, the lot fails. In single sampling the rejection number is always one more than the acceptance number (Re = Ac + 1), so the decision is unambiguous. Double sampling instead adds a second, larger sample for borderline results - this calculator follows single sampling, the most common choice for consumer goods."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my supplier's sample size differ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three common reasons: the supplier used Level I instead of II, a different AQL value, or double sampling instead of single. Send them this result to align the basis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are the Major and Minor sample sizes different?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lot size and inspection level fix the code letter, but each AQL is read from the master table separately — when a cell falls in an arrow region, the plan switches to a different sample size (for example Major 500 units at code N while Minor follows the arrow down to 315 at code M). Per ANSI/ASQ Z1.4 clause 9.4 (equivalently ISO 2859-1 clause 10.3), draw the largest required sample and judge each class against its own accept/reject numbers. Our inspectors check all sampled units for both classes — the full 500 — which keeps the plan slightly stricter for the buyer than the table-minimum 315."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I copy or share the result?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The copy button generates a plain-text summary - lot size, inspection level, AQL values, sample size and accept/reject numbers - that you can paste into an email, a purchase order or a QC report. The result URL (?lot=...&level=...&major=...&minor=...) reopens the same plan for anyone you send it to."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I embed this calculator on my own website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, free. The Embed This Tool section provides an iframe snippet you can paste into your website or quoting system - no registration needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which standard does this calculator follow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It follows the sampling tables of ANSI/ASQ Z1.4 and ISO 2859-1 at Special Inspection Levels S-1 to S-4 and General Inspection Levels I, II and III, with AQL steps from 0.10 to 10."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about critical defects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Critical defects (safety, regulatory or total function failure) are not negotiated within an AQL framework - one found means the whole lot fails and a 100% quality inspection is required. The calculator shows this warning below the result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this AQL sampling calculator really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Really. No registration and no limits - a common benchmark so buyers, QA and QC teams can align sampling plans in one message."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
   
   <style>
     /* AQL Calculator specific styles */
@@ -136,7 +406,7 @@
       <nav class="nav" aria-label="Main navigation">
         <div class="nav-dropdown"><a href="/about">About Us</a><div class="dropdown-menu"><a href="/about#company-intro">Company Profile</a><a href="/about#credentials">Credentials &amp; Accreditations</a><a href="/about#mission">Mission &amp; Vision</a><a href="/about#team">Professional Team</a><a href="/about#advantage">Core Advantages</a></div></div>
         <div class="nav-dropdown"><a href="/services">Services</a><div class="dropdown-menu"><a href="/services#inspection">Product Inspection</a><a href="/services#audit">Factory Audit</a><a href="/services#lab">Lab Testing &amp; Compliance</a><a href="/services#supplier">Supply Chain Management</a></div></div>
-        <a href="/industries/">Industries</a>
+        <div class="nav-dropdown"><a href="/industries/">Industries</a><div class="dropdown-menu"><a href="/industries/toy-inspection">Toys &amp; Children's Products</a><a href="/industries/apparel-inspection">Softlines, Apparel &amp; Luggage</a><a href="/industries/electrical-inspection">Electrical &amp; Electronics</a><a href="/industries/furniture-inspection">Furniture &amp; Home Goods</a><a href="/industries/garden-outdoor-inspection">Garden &amp; Outdoor</a><a href="/industries/building-materials-inspection">Building Materials &amp; Structures</a></div></div>
         <div class="nav-dropdown"><a href="/insights">Insights</a><div class="dropdown-menu"><a href="/inspection-cases/">Inspection Cases</a><a href="/factory-resource/">Factory Resource</a><a href="/industry-updates/">Industry Updates</a></div></div>
         <div class="nav-dropdown">
           <a href="/download" class="active">Resources</a>
@@ -327,7 +597,7 @@ In actual quality control practice, Special Levels (S-1 to S-4) are used for spe
         </figure>
 
         <h2>What is AQL?</h2>
-        <p><span>Acceptable Quality Limit (AQL) is the core metric of the </span><span>ANSI/ASQ Z1.4 and ISO 2859-1</span> acceptance sampling systems, which are widely used by <span><a href="/about">third-party inspection agencies in China</a></span>. It represents the worst tolerable process average that will still allow a lot to be accepted. For example, AQL 2.5 means that when a supplier's actual defect rate is 2.5% or lower, the sampling plan will accept the lot with high probability.</p>
+        <p><span>Acceptable Quality Limit (AQL) is the core metric of the </span><span><a href="https://asq.org/quality-press/display-item?item=T1166E" target="_blank" rel="noopener noreferrer">ANSI/ASQ Z1.4</a> and ISO 2859-1</span> acceptance sampling systems, which are widely used by <span><a href="/about">third-party inspection agencies in China</a></span>. It represents the worst tolerable process average that will still allow a lot to be accepted. For example, AQL 2.5 means that when a supplier's actual defect rate is 2.5% or lower, the sampling plan will accept the lot with high probability.</p>
 
         <div class="knowledge-blocks">
           <div class="knowledge-block">
@@ -406,7 +676,12 @@ In actual quality control practice, Special Levels (S-1 to S-4) are used for spe
           <li><strong>Flexible Standards:</strong> Allows tailored AQL levels based on defect severity and product categories.</li>
           <li><strong>Objective Decisions:</strong> Provides clear, standardized criteria for batch acceptance or rejection.</li>
         </ul>
-        <p><span>You now know the reasoning behind AQL sampling — but might still wonder: <br>1. Which inspection level best fits your products? Most clients follow the general criteria laid out in our </span><span>ANSI/ASQ Z1.4 guide</span><span>. <br>2. What is a </span><a href="/services/pre-shipment-inspection">pre-shipment inspection</span></a> and how does it work to catch defects in your imports? Check the standard <span>procedures we follow for our clients.</span></p>
+        <p><span>You now know the reasoning behind AQL sampling — but might still wonder: <br>1. Which inspection level best fits your products? Most clients follow the general criteria laid out in our </span><a href="/industry-updates/ansi-asq-z1-4-guide">ANSI/ASQ Z1.4 guide</a><span>. <br>2. What is a </span><a href="/services/pre-shipment-inspection">pre-shipment inspection</a><span> and how does it work to catch defects in your imports? Check the standard procedures we follow for our clients.</span></p>
+
+        <!-- Author Bio -->
+        <div class="author-bio">
+          <p>Reviewed by the <a href="/about#team">CNQ Inspection Team</a> &mdash; China Quality Service's senior quality engineers, with 17 years of on-site inspection across China's manufacturing hubs. The sampling tables in this calculator implement the ANSI/ASQ Z1.4-2003 (R2018) single normal inspection plan and are verified against the current edition of the standard.</p>
+        </div>
       </div>
     </section>
 
@@ -566,7 +841,7 @@ In actual quality control practice, Special Levels (S-1 to S-4) are used for spe
             </svg>
             contact@cn-q.com
           </a>
-          <a href="https://wa.me/+13237766558" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <a href="https://wa.me/+13237766558" target="_blank" rel="nofollow noopener noreferrer" class="footer-contact-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
               <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
             </svg>

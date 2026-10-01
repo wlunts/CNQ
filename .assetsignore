@@ -1,0 +1,34 @@
+# Cloudflare Workers static assets — exclude from deployment
+# (.assetsignore syntax = .gitignore; local files are unaffected)
+
+# Internal docs (not for public web)
+SEO-STRATEGY.md
+ANCHOR-LOG.md
+
+# Internal scaffolding (placeholder template, not real content)
+article-template.html
+
+# Deployment / VCS config (already handled by Workers, keep out of public assets)
+wrangler.jsonc
+.gitignore
+.gitattributes
+_assetsignore
+
+# Internal tooling & workspace data
+scripts/
+.codebuddy/
+.git/
+
+# OS / editor junk (guards against recurrence of quote-escape accidents)
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.idea/
+.vscode/
+*.sublime-*
+
+# Zero-byte accident artifacts pattern guard
+{let
+console.log('Preview
